@@ -1,1 +1,78 @@
+name: Test RTE API connection
 
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-rte-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository files
+        uses: actions/checkout@v4
+
+      - name: Request an RTE access token
+        env:
+          RTE_CLIENT_ID: ${{ secrets.RTE_CLIENT_ID }}
+          RTE_CLIENT_SECRET: ${{ secrets.RTE_CLIENT_SECRET }}
+        run: |
+          TOKEN_RESPONSE=$(curl --silent --show-error --fail \
+            --request POST \
+            --user "$RTE_CLIENT_ID:$RTE_CLIENT_SECRET" \
+            "https://digital.iservices.rte-france.com/token/oauth/")
+
+          ACCESS_TOKEN=$(echo "$TOKEN_RESPONSE" | jq -r '.access_token // empty')
+
+          if [ -z "$ACCESS_TOKEN" ]; then
+            echo "RTE did not return an access token."
+            exit 1
+          fi
+
+          echo "::add-mask::$ACCESS_TOKEN"
+          echo "RTE_ACCESS_TOKEN=$ACCESS_TOKEN" >> "$GITHUB_ENV"
+          echo "Success: RTE supplied an access token."
+
+      - name: Request current French consumption data
+        run: |
+          mkdir -p data
+
+          HTTP_STATUS=$(curl --silent --show-error \
+            --output data/latest.json \
+            --write-out "%{http_code}" \
+            --header "Authorization: Bearer $RTE_ACCESS_TOKEN" \
+            --header "Accept: application/json" \
+            "https://digital.iservices.rte-france.com/open_api/consumption/v1/short_term")
+
+          echo "RTE API returned HTTP status: $HTTP_STATUS"
+
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "The API request was not successful."
+            echo "RTE response:"
+            cat data/latest.json
+            exit 1
+          fi
+
+      - name: Check that RTE returned consumption data
+        run: |
+          jq -e '.short_term and (.short_term | length > 0)' \
+            data/latest.json > /dev/null
+
+          echo "Success: RTE returned short-term consumption data."
+
+      - name: Save the test data in the repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/latest.json
+
+          if git diff --cached --quiet; then
+            echo "The data file already contains the latest response."
+          else
+            git commit -m "Test RTE API and update latest data"
+            git push
+          fi
+`

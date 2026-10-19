@@ -75,4 +75,3 @@ jobs:
             git commit -m "Test RTE API and update latest data"
             git push
           fi
-`

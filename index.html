@@ -7,20 +7,83 @@
     content="width=device-width, initial-scale=1"
   >
 
-  <title>French Power Demand Monitor</title>
+  <title>France Power Demand Monitor</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <h1>French Power Demand Monitor</h1>
+  <div class="container">
 
-  <h2>Current Values</h2>
+    <header>
+      <h1>France Power Demand Monitor</h1>
 
-  <p id="actual-demand">Loading actual demand...</p>
+      <p class="subtitle">
+        Data source: RTE Consumption API
+      </p>
 
-  <p id="id-forecast">Loading ID forecast...</p>
+      <div id="time-info">
+        Loading...
+      </div>
+    </header>
 
-  <p id="last-update">Loading update time...</p>
+    <section class="cards">
+
+      <div class="card">
+        <div class="label">Actual Demand</div>
+        <div id="actual-demand" class="value">--</div>
+      </div>
+
+      <div class="card">
+        <div class="label">ID Forecast</div>
+        <div id="id-forecast" class="value">--</div>
+      </div>
+
+      <div class="card">
+        <div class="label">D-1 Forecast</div>
+        <div id="d1-forecast" class="value">--</div>
+      </div>
+
+      <div class="card">
+        <div class="label">D-2 Forecast</div>
+        <div id="d2-forecast" class="value">--</div>
+      </div>
+
+    </section>
+
+    <section class="cards">
+
+      <div class="card wide">
+        <div class="label">Actual vs ID Difference</div>
+        <div id="difference" class="value">--</div>
+      </div>
+
+    </section>
+
+    <section class="card">
+
+      <h2>About this data</h2>
+
+      <p>
+        Actual = realised French electricity demand.
+      </p>
+
+      <p>
+        ID = intraday forecast.
+      </p>
+
+      <p>
+        D-1 = day-ahead forecast.
+      </p>
+
+      <p>
+        D-2 = two-day-ahead forecast.
+      </p>
+
+    </section>
+
+  </div>
 
   <script src="app.js"></script>
 

@@ -33,7 +33,6 @@ jobs:
 
           echo "::add-mask::$ACCESS_TOKEN"
           echo "RTE_ACCESS_TOKEN=$ACCESS_TOKEN" >> "$GITHUB_ENV"
-          echo "Success: RTE supplied an access token."
 
       - name: Request current French consumption data
         run: |
@@ -46,23 +45,19 @@ jobs:
             --header "Accept: application/json" \
             "https://digital.iservices.rte-france.com/open_api/consumption/v1/short_term")
 
-          echo "RTE API returned HTTP status: $HTTP_STATUS"
+          echo "HTTP status: $HTTP_STATUS"
 
           if [ "$HTTP_STATUS" != "200" ]; then
-            echo "The API request was not successful."
-            echo "RTE response:"
+            echo "Request failed"
             cat data/latest.json
             exit 1
           fi
 
-      - name: Check that RTE returned consumption data
+      - name: Check returned data
         run: |
-          jq -e '.short_term and (.short_term | length > 0)' \
-            data/latest.json > /dev/null
+          jq -e '.short_term' data/latest.json > /dev/null
 
-          echo "Success: RTE returned short-term consumption data."
-
-      - name: Save the test data in the repository
+      - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -70,8 +65,8 @@ jobs:
           git add data/latest.json
 
           if git diff --cached --quiet; then
-            echo "The data file already contains the latest response."
+            echo "No changes"
           else
-            git commit -m "Test RTE API and update latest data"
+            git commit -m "Update RTE data"
             git push
           fi

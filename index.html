@@ -2,90 +2,291 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
 
+  <meta
+    name="description"
+    content="Interactive French electricity demand and forecast dashboard using RTE Consumption API data."
+  >
+
   <title>France Power Demand Monitor</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 </head>
 
 <body>
+  <div class="background-glow background-glow-one"></div>
+  <div class="background-glow background-glow-two"></div>
 
-  <div class="container">
+  <header class="site-header">
+    <div class="page-shell header-content">
+      <a class="brand" href="./" aria-label="France Power Demand Monitor home">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
 
-    <header>
-      <h1>France Power Demand Monitor</h1>
+        <span>
+          <strong>France Power</strong>
+          <small>Demand intelligence</small>
+        </span>
+      </a>
 
-      <p class="subtitle">
-        Data source: RTE Consumption API
-      </p>
+      <div class="header-actions">
+        <span class="status-pill">
+          <span id="status-dot" class="status-dot"></span>
+          <span id="data-status">Loading RTE data</span>
+        </span>
 
-      <div id="time-info">
-        Loading...
+        <button id="download-csv" class="button button-secondary" type="button">
+          Download CSV
+        </button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <section class="cards">
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">French electricity system</p>
 
-      <div class="card">
-        <div class="label">Actual Demand</div>
-        <div id="actual-demand" class="value">--</div>
+        <h1>
+          Power demand,
+          <span>at a glance.</span>
+        </h1>
+
+        <p class="hero-description">
+          Track realised electricity demand alongside RTE’s intraday,
+          day-ahead and two-day-ahead forecasts.
+        </p>
       </div>
 
-      <div class="card">
-        <div class="label">ID Forecast</div>
-        <div id="id-forecast" class="value">--</div>
-      </div>
+      <aside class="data-context" aria-label="Latest data context">
+        <p class="context-heading">Latest actual observation</p>
 
-      <div class="card">
-        <div class="label">D-1 Forecast</div>
-        <div id="d1-forecast" class="value">--</div>
-      </div>
+        <dl>
+          <div>
+            <dt>Demand interval</dt>
+            <dd id="actual-interval">Loading...</dd>
+          </div>
 
-      <div class="card">
-        <div class="label">D-2 Forecast</div>
-        <div id="d2-forecast" class="value">--</div>
-      </div>
+          <div>
+            <dt>Published by RTE</dt>
+            <dd id="actual-published">Loading...</dd>
+          </div>
 
+          <div>
+            <dt>Time zone</dt>
+            <dd>Europe/Paris</dd>
+          </div>
+        </dl>
+      </aside>
     </section>
 
-    <section class="cards">
+    <section class="metric-grid" aria-label="Headline demand metrics">
+      <article class="metric-card metric-card-primary">
+        <div class="metric-topline">
+          <span class="metric-label">Actual demand</span>
+          <span class="series-key series-key-actual"></span>
+        </div>
 
-      <div class="card wide">
-        <div class="label">Actual vs ID Difference</div>
-        <div id="difference" class="value">--</div>
+        <p id="actual-demand" class="metric-value">--</p>
+
+        <p id="actual-time" class="metric-detail">
+          Latest completed interval
+        </p>
+      </article>
+
+      <article class="metric-card">
+        <div class="metric-topline">
+          <span class="metric-label">Intraday forecast</span>
+          <span class="series-key series-key-id"></span>
+        </div>
+
+        <p id="id-forecast" class="metric-value">--</p>
+
+        <p id="id-comparison" class="metric-detail">
+          Matching actual interval
+        </p>
+      </article>
+
+      <article class="metric-card">
+        <div class="metric-topline">
+          <span class="metric-label">D-1 forecast peak</span>
+          <span class="series-key series-key-d1"></span>
+        </div>
+
+        <p id="d1-peak" class="metric-value">--</p>
+
+        <p id="d1-context" class="metric-detail">
+          Loading forecast day
+        </p>
+      </article>
+
+      <article class="metric-card">
+        <div class="metric-topline">
+          <span class="metric-label">D-2 forecast peak</span>
+          <span class="series-key series-key-d2"></span>
+        </div>
+
+        <p id="d2-peak" class="metric-value">--</p>
+
+        <p id="d2-context" class="metric-detail">
+          Loading forecast day
+        </p>
+      </article>
+    </section>
+
+    <section class="insight-strip">
+      <div class="insight-icon" aria-hidden="true">↗</div>
+
+      <div>
+        <p class="insight-label">Latest actual versus intraday forecast</p>
+        <p id="forecast-difference" class="insight-value">Calculating...</p>
       </div>
 
+      <div class="insight-secondary">
+        <span>Today’s realised peak</span>
+        <strong id="actual-peak">--</strong>
+      </div>
+
+      <div class="insight-secondary">
+        <span>Today’s realised minimum</span>
+        <strong id="actual-minimum">--</strong>
+      </div>
     </section>
 
-    <section class="card">
+    <section class="panel chart-panel">
+      <div class="panel-heading">
+        <div>
+          <p class="section-kicker">Demand profile</p>
+          <h2>Actual demand and forecast outlook</h2>
+          <p>
+            Hover over the lines for interval values. Use the legend
+            to show or hide individual series.
+          </p>
+        </div>
 
-      <h2>About this data</h2>
+        <div class="chart-unit">
+          <span>Unit</span>
+          <strong>GW</strong>
+        </div>
+      </div>
 
-      <p>
-        Actual = realised French electricity demand.
-      </p>
-
-      <p>
-        ID = intraday forecast.
-      </p>
-
-      <p>
-        D-1 = day-ahead forecast.
-      </p>
-
-      <p>
-        D-2 = two-day-ahead forecast.
-      </p>
-
+      <div
+        id="demand-chart"
+        class="chart"
+        role="img"
+        aria-label="Line chart showing French electricity demand and forecasts"
+      ></div>
     </section>
 
+    <section class="dashboard-grid">
+      <article class="panel chart-panel">
+        <div class="panel-heading compact">
+          <div>
+            <p class="section-kicker">Forecast performance</p>
+            <h2>Actual minus intraday forecast</h2>
+            <p>
+              Positive values mean actual demand exceeded the intraday forecast.
+            </p>
+          </div>
+        </div>
+
+        <div
+          id="error-chart"
+          class="chart chart-small"
+          role="img"
+          aria-label="Bar chart showing actual demand minus intraday forecast"
+        ></div>
+      </article>
+
+      <aside class="panel methodology-panel">
+        <p class="section-kicker">Reading the dashboard</p>
+        <h2>Series guide</h2>
+
+        <div class="series-guide">
+          <div>
+            <span class="guide-line guide-actual"></span>
+            <p>
+              <strong>Actual</strong>
+              Realised French electricity demand.
+            </p>
+          </div>
+
+          <div>
+            <span class="guide-line guide-id"></span>
+            <p>
+              <strong>ID</strong>
+              RTE’s intraday demand forecast.
+            </p>
+          </div>
+
+          <div>
+            <span class="guide-line guide-d1"></span>
+            <p>
+              <strong>D-1</strong>
+              Forecast for the next calendar day.
+            </p>
+          </div>
+
+          <div>
+            <span class="guide-line guide-d2"></span>
+            <p>
+              <strong>D-2</strong>
+              Forecast for the day after next.
+            </p>
+          </div>
+        </div>
+
+        <div class="method-note">
+          <strong>Coverage note</strong>
+          <p>
+            Figures cover mainland France, include grid losses and exclude
+            pumping consumption at hydropower plants.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div>
+        <strong>France Power Demand Monitor</strong>
+        <p>
+          Data source: RTE Consumption API. Times shown in Europe/Paris.
+        </p>
+      </div>
+
+      <a
+        href="./data/latest.json"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View source JSON
+      </a>
+    </footer>
+  </main>
+
+  <div id="error-message" class="error-banner" hidden>
+    <strong>Dashboard data could not be loaded.</strong>
+    <span>Check the browser console for more information.</span>
   </div>
 
   <script src="app.js"></script>
-
 </body>
 </html>

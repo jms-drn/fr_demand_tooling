@@ -2,31 +2,58 @@ fetch('./data/latest.json')
   .then(response => response.json())
   .then(data => {
 
-    const realised = data.short_term.find(
-      item => item.type === "REALISED"
-    );
+    const realised =
+      data.short_term.find(x => x.type === "REALISED");
 
-    const idForecast = data.short_term.find(
-      item => item.type === "ID"
-    );
+    const id =
+      data.short_term.find(x => x.type === "ID");
+
+    const d1 =
+      data.short_term.find(x => x.type === "D-1");
+
+    const d2 =
+      data.short_term.find(x => x.type === "D-2");
 
     const latestActual =
       realised.values[realised.values.length - 1];
 
-    const latestForecast =
-      idForecast.values[idForecast.values.length - 1];
+    const latestId =
+      id.values[id.values.length - 1];
 
-    document.getElementById("actual-demand").textContent =
-      `Actual demand: ${latestActual.value.toLocaleString()} MW`;
+    const latestD1 =
+      d1.values[d1.values.length - 1];
 
-    document.getElementById("id-forecast").textContent =
-      `ID forecast: ${latestForecast.value.toLocaleString()} MW`;
+    const latestD2 =
+      d2.values[d2.values.length - 1];
 
-    document.getElementById("last-update").textContent =
-      `Updated: ${latestActual.updated_date}`;
+    document.getElementById('actual-demand').textContent =
+      `${(latestActual.value / 1000).toFixed(1)} GW`;
 
-    console.log("Actual", latestActual);
-    console.log("Forecast", latestForecast);
+    document.getElementById('id-forecast').textContent =
+      `${(latestId.value / 1000).toFixed(1)} GW`;
+
+    document.getElementById('d1-forecast').textContent =
+      `${(latestD1.value / 1000).toFixed(1)} GW`;
+
+    document.getElementById('d2-forecast').textContent =
+      `${(latestD2.value / 1000).toFixed(1)} GW`;
+
+    const diff =
+      latestId.value - latestActual.value;
+
+    document.getElementById('difference').textContent =
+      `${(diff / 1000).toFixed(1)} GW`;
+
+    document.getElementById('time-info').innerHTML = `
+      <strong>Demand interval:</strong>
+      ${latestActual.start_date}
+      to
+      ${latestActual.end_date}
+      <br><br>
+
+      <strong>Published by RTE:</strong>
+      ${latestActual.updated_date}
+    `;
 
   })
   .catch(error => {

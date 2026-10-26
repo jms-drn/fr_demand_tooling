@@ -1,72 +1,58 @@
-name: Test RTE API connection
+name: Update RTE data (hourly)
 
+# Runs every hour at 17 minutes past (GitHub schedules are in UTC and can
+# start a few minutes late). Can also be started by hand from the Actions tab.
 on:
+  schedule:
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+# The hourly update and the backfill never run at the same time.
+concurrency:
+  group: rte-data
+  cancel-in-progress: false
+
 jobs:
-  test-rte-api:
+  update:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Download repository files
         uses: actions/checkout@v4
 
-      - name: Request an RTE access token
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch RTE data and rebuild summaries
         env:
           RTE_CLIENT_ID: ${{ secrets.RTE_CLIENT_ID }}
           RTE_CLIENT_SECRET: ${{ secrets.RTE_CLIENT_SECRET }}
-        run: |
-          TOKEN_RESPONSE=$(curl --silent --show-error --fail \
-            --request POST \
-            --user "$RTE_CLIENT_ID:$RTE_CLIENT_SECRET" \
-            "https://digital.iservices.rte-france.com/token/oauth/")
-
-          ACCESS_TOKEN=$(echo "$TOKEN_RESPONSE" | jq -r '.access_token // empty')
-
-          if [ -z "$ACCESS_TOKEN" ]; then
-            echo "RTE did not return an access token."
-            exit 1
-          fi
-
-          echo "::add-mask::$ACCESS_TOKEN"
-          echo "RTE_ACCESS_TOKEN=$ACCESS_TOKEN" >> "$GITHUB_ENV"
-
-      - name: Request current French consumption data
-        run: |
-          mkdir -p data
-
-          HTTP_STATUS=$(curl --silent --show-error \
-            --output data/latest.json \
-            --write-out "%{http_code}" \
-            --header "Authorization: Bearer $RTE_ACCESS_TOKEN" \
-            --header "Accept: application/json" \
-            "https://digital.iservices.rte-france.com/open_api/consumption/v1/short_term")
-
-          echo "HTTP status: $HTTP_STATUS"
-
-          if [ "$HTTP_STATUS" != "200" ]; then
-            echo "Request failed"
-            cat data/latest.json
-            exit 1
-          fi
-
-      - name: Check returned data
-        run: |
-          jq -e '.short_term' data/latest.json > /dev/null
+        run: python scripts/update.py
 
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/latest.json
+          git add data
 
           if git diff --cached --quiet; then
             echo "No changes"
-          else
-            git commit -m "Update RTE data"
-            git push
+            exit 0
           fi
+
+          git commit -m "Data update $(date -u '+%Y-%m-%d %H:%M') UTC"
+
+          for attempt in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 10
+          done
+
+          echo "Push failed after 3 attempts"
+          exit 1

@@ -1,0 +1,71 @@
+name: Backfill RTE history (one-off)
+
+# Start by hand from the Actions tab: "Backfill RTE history" → "Run workflow".
+# Safe to re-run; stored data is merged, not duplicated.
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "First day to fetch (YYYY-MM-DD). RTE short-term data starts 2012-12-17."
+        required: true
+        default: "2012-12-17"
+      end:
+        description: "Last day, exclusive (YYYY-MM-DD). Leave blank for today."
+        required: false
+        default: ""
+      datasets:
+        description: "Comma-separated: short_term, weekly, annual"
+        required: true
+        default: "short_term,weekly,annual"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rte-data
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Download repository files
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch history from RTE
+        env:
+          RTE_CLIENT_ID: ${{ secrets.RTE_CLIENT_ID }}
+          RTE_CLIENT_SECRET: ${{ secrets.RTE_CLIENT_SECRET }}
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+          DATASETS: ${{ inputs.datasets }}
+        run: python scripts/backfill.py --start "$START" --end "$END" --datasets "$DATASETS"
+
+      - name: Commit backfilled data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data
+
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+
+          git commit -m "Backfill RTE history from ${{ inputs.start }}"
+
+          for attempt in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 15
+          done
+
+          echo "Push failed after 3 attempts"
+          exit 1

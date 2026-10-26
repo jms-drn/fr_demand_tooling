@@ -3,7 +3,7 @@
 Each run:
   1. Fetches the latest short-term data (actuals, intraday, D-1, D-2) and
      saves the raw response to data/latest.json for the "today" view.
-  2. Re-fetches the past 7 days of actuals and D-1/D-2 forecasts, which
+  2. Re-fetches the past 7 days and today of actuals and D-1/D-2 forecasts, which
      picks up RTE's later consolidation of actuals and fills any gap left
      by a missed run.
   3. Fetches the latest week-ahead (D+3 to D+9) and annual forecasts.
@@ -58,7 +58,8 @@ def step_recent(client):
         {
             "type": "REALISED,D-1,D-2",
             "start_date": rte_param(paris_midnight(today - timedelta(days=LOOKBACK_DAYS))),
-            "end_date": rte_param(paris_midnight(today)),
+            # Through the end of today, so today's D-1/D-2 forecasts are included.
+            "end_date": rte_param(paris_midnight(today + timedelta(days=1))),
         },
     )
     store_short_term(payload, f"Past {LOOKBACK_DAYS} days")

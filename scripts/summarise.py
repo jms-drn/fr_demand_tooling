@@ -2,13 +2,14 @@
 
   data/summary/daily.csv            one row per Paris calendar day
   data/summary/weekly_errors.csv    one row per week-ahead forecast vintage and target day
+  data/summary/error_profile.csv    errors by month and hour of day / weekday
   data/status.json                  coverage, file index and last-update times
 
 Conventions:
   * Forecast error = forecast minus actual (positive = RTE over-forecast).
-  * D-1 is compared with actuals at 15-minute resolution.
-  * D-2 and week-ahead forecasts are half-hourly, so they are compared with
-    the average of the two matching 15-minute actuals.
+  * All forecasts are compared at 30-minute resolution: actuals and D-1 are
+    averaged from their two quarter-hours (D-1 is natively half-hourly for
+    most of its history); D-2 and week-ahead forecasts are half-hourly.
   * Peak error compares the forecast day's maximum with the actual day's
     maximum at the same resolution, only when at least 90% of the day's
     intervals have both a forecast and an actual.
@@ -77,6 +78,22 @@ def load_forecast(series):
             updated = _epoch(row[2]) if len(row) > 2 and row[2] else None
             values[_epoch(row[0])] = (int(row[1]), updated)
     return values
+
+
+def half_hourly_forecast(points):
+    """Average a 15-minute forecast into half-hours.
+
+    RTE's D-1 is natively half-hourly for most of its history (the :15/:45
+    values are interpolated or repeated), so its accuracy is measured at
+    30 minutes, like D-2 and the week-ahead forecast.
+    """
+    result = {}
+    for start, (mw, updated) in points.items():
+        if start % HALF_HOUR == 0 and start + QUARTER in points:
+            mw2, updated2 = points[start + QUARTER]
+            stamps = [u for u in (updated, updated2) if u is not None]
+            result[start] = ((mw + mw2) / 2, max(stamps) if stamps else None)
+    return result
 
 
 def half_hourly(realised):
@@ -208,13 +225,13 @@ def build_daily(realised, realised_30, d1, d2):
                 row["energy_gwh"] = _round(sum(actual.values()) / len(actual) * hours / 1000, 3)
 
         for prefix, points, comparison, minutes in (
-            ("d1", d1_by_day.get(day, {}), realised, 15),
+            ("d1", d1_by_day.get(day, {}), realised_30, 30),
             ("d2", d2_by_day.get(day, {}), realised_30, 30),
         ):
             stats = forecast_day_stats(points, comparison, expected_intervals(day, minutes))
             if stats:
                 row[f"{prefix}_mean_mw"] = _round(stats["mean_mw"])
-                row[f"{prefix}_peak_mw"] = stats["peak_mw"]
+                row[f"{prefix}_peak_mw"] = _round(stats["peak_mw"])
                 row[f"{prefix}_pairs"] = stats["pairs"]
                 row[f"{prefix}_mae_mw"] = _round(stats["mae_mw"])
                 row[f"{prefix}_bias_mw"] = _round(stats["bias_mw"])
@@ -284,7 +301,7 @@ def build_weekly_errors(realised_30):
                 _round(stats["mae_mw"]),
                 _round(stats["bias_mw"]),
                 _round(stats["mape_pct"], 2),
-                stats["peak_mw"],
+                _round(stats["peak_mw"]),
                 _round(actual_peak),
                 _round(stats["peak_error_mw"]),
                 temp,
@@ -293,6 +310,72 @@ def build_weekly_errors(realised_30):
         )
 
     _write_csv(DATA_DIR / "summary" / "weekly_errors.csv", WEEKLY_HEADER, rows)
+    return len(rows), vintages
+
+
+PROFILE_HEADER = [
+    "forecast",
+    "month",
+    "dimension",
+    "key",
+    "n",
+    "sum_abs_err_mw",
+    "sum_err_mw",
+    "sum_actual_mw",
+    "sum_abs_pct_err",
+]
+
+
+def build_error_profile(realised_30, d1_30, d2, weekly_vintages):
+    """Half-hourly forecast errors aggregated by month and hour of day /
+    weekday, so the dashboard can build heatmaps for any period.
+
+    forecast: d1, d2, or w3..w9 (week-ahead at that lead in days; where a
+    lead has several versions for one target day, the latest is used).
+    key: Paris hour 0-23, or weekday 0 (Monday) to 6.
+    """
+    sums = defaultdict(lambda: [0, 0.0, 0.0, 0.0, 0.0])
+
+    def add(forecast, start, fc_mw):
+        actual = realised_30.get(start)
+        if actual is None:
+            return
+        local = datetime.fromtimestamp(start, PARIS)
+        month = local.strftime("%Y-%m")
+        err = fc_mw - actual
+        for dimension, key in (("hour", local.hour), ("weekday", local.weekday())):
+            acc = sums[(forecast, month, dimension, key)]
+            acc[0] += 1
+            acc[1] += abs(err)
+            acc[2] += err
+            acc[3] += actual
+            acc[4] += abs(err) / actual * 100
+
+    for start, (mw, _) in d1_30.items():
+        add("d1", start, mw)
+    for start, (mw, _) in d2.items():
+        add("d2", start, mw)
+
+    latest_by_lead = {}
+    for (target, updated), points in weekly_vintages.items():
+        lead = (target - _paris_day(updated)).days
+        if 3 <= lead <= 9:
+            key = (target, lead)
+            if key not in latest_by_lead or updated > latest_by_lead[key][0]:
+                latest_by_lead[key] = (updated, points)
+
+    for (target, lead), (_, points) in latest_by_lead.items():
+        for start, (mw, _) in points.items():
+            add(f"w{lead}", start, mw)
+
+    rows = []
+    for (forecast, month, dimension, key), acc in sorted(sums.items()):
+        rows.append([
+            forecast, month, dimension, key, acc[0],
+            round(acc[1]), round(acc[2]), round(acc[3]), round(acc[4], 2),
+        ])
+
+    _write_csv(DATA_DIR / "summary" / "error_profile.csv", PROFILE_HEADER, rows)
     return len(rows)
 
 
@@ -340,14 +423,15 @@ def build_status(extra=None):
 def main(extra_status=None):
     realised = load_realised()
     realised_30 = half_hourly(realised)
-    d1 = load_forecast("d1")
+    d1_30 = half_hourly_forecast(load_forecast("d1"))
     d2 = load_forecast("d2")
 
-    days = build_daily(realised, realised_30, d1, d2)
-    weekly = build_weekly_errors(realised_30)
+    days = build_daily(realised, realised_30, d1_30, d2)
+    weekly, vintages = build_weekly_errors(realised_30)
+    profile = build_error_profile(realised_30, d1_30, d2, vintages)
     build_status(extra_status)
 
-    print(f"Summaries rebuilt: {days} days, {weekly} week-ahead vintages.")
+    print(f"Summaries rebuilt: {days} days, {weekly} week-ahead vintages, {profile} error-profile rows.")
 
 
 if __name__ == "__main__":

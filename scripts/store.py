@@ -38,6 +38,15 @@ SHORT_TERM_SERIES = {
 
 FORECAST_SERIES = {"d1", "d2"}
 
+# Values below this are treated as data errors and not stored. Mainland
+# French demand in the 2012-2026 archive never falls below ~28 GW; RTE's D-1
+# history for 2-14 Oct 2019 contains values of ~0.6-0.8 GW.
+MIN_PLAUSIBLE_MW = 15000
+
+
+def plausible(mw):
+    return mw >= MIN_PLAUSIBLE_MW
+
 
 # --------------------------------------------------------------------------
 # Time helpers
@@ -125,10 +134,13 @@ def parse_short_term(payload):
             value = item.get("value")
             if value is None:
                 continue
+            mw = int(round(float(value)))
+            if not plausible(mw):
+                continue
             records[series].append(
                 (
                     parse_ts(item["start_date"]),
-                    int(round(float(value))),
+                    mw,
                     to_minute(parse_ts(item.get("updated_date"))),
                 )
             )
@@ -158,9 +170,9 @@ def parse_weekly(payload):
             value = item.get("value")
             if value is None:
                 continue
-            values.append(
-                (updated, parse_ts(item["start_date"]), int(round(float(value))))
-            )
+            mw = int(round(float(value)))
+            if plausible(mw):
+                values.append((updated, parse_ts(item["start_date"]), mw))
 
         peak = block.get("peak") or {}
         if peak.get("value") is not None:

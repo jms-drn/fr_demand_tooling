@@ -28,6 +28,7 @@ from store import (
     expected_intervals,
     fmt_utc,
     parse_ts,
+    plausible,
 )
 
 QUARTER = 900
@@ -62,7 +63,8 @@ def load_realised():
     values = {}
     for path in _series_files("realised"):
         for row in _read_csv(path):
-            values[_epoch(row[0])] = int(row[1])
+            if plausible(int(row[1])):
+                values[_epoch(row[0])] = int(row[1])
     return values
 
 
@@ -70,6 +72,8 @@ def load_forecast(series):
     values = {}
     for path in _series_files(series):
         for row in _read_csv(path):
+            if not plausible(int(row[1])):
+                continue
             updated = _epoch(row[2]) if len(row) > 2 and row[2] else None
             values[_epoch(row[0])] = (int(row[1]), updated)
     return values
@@ -195,8 +199,13 @@ def build_daily(realised, realised_30, d1, d2):
             row["max_mw"] = actual[peak_start]
             row["peak_time_paris"] = _paris_hhmm(peak_start)
             row["min_time_paris"] = _paris_hhmm(min_start)
-            # MW over a quarter-hour = MW x 0.25 h of energy; /1000 for GWh.
-            row["energy_gwh"] = _round(sum(actual.values()) * 0.25 / 1000, 3)
+            # Energy = average MW x hours in the Paris day (23/24/25) / 1000.
+            # Using the average means one missing quarter-hour (RTE's 2025
+            # data lacks 23:45 on many days) doesn't understate the total.
+            # Left blank when under 90% of the day's intervals are present.
+            if len(actual) >= MIN_COVERAGE * row["expected_intervals"]:
+                hours = row["expected_intervals"] * 0.25
+                row["energy_gwh"] = _round(sum(actual.values()) / len(actual) * hours / 1000, 3)
 
         for prefix, points, comparison, minutes in (
             ("d1", d1_by_day.get(day, {}), realised, 15),
@@ -243,6 +252,8 @@ def build_weekly_errors(realised_30):
         for row in _read_csv(path):
             updated = _epoch(row[0])
             start = _epoch(row[1])
+            if not plausible(int(row[2])):
+                continue
             vintages[(_paris_day(start), updated)][start] = (int(row[2]), updated)
 
     peaks = {}

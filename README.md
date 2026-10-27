@@ -58,3 +58,5 @@ All times are stored in UTC (`2026-10-23T22:00Z`). Files are split by month in P
 - **Clock-change days** have 92 (March) or 100 (October) quarter-hours. Daily rows show `intervals` against `expected_intervals` so incomplete days are visible.
 - **Actuals** are overwritten when RTE revises them; the hourly run re-checks the last 7 days.
 - The undocumented `CORRECTED` block sometimes returned by the API is ignored.
+
+Data updates run every 30 minutes; GitHub can delay or skip scheduled runs, and each run re-checks the past 7 days.

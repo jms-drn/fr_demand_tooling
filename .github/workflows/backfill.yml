@@ -32,10 +32,12 @@ jobs:
 
     steps:
       - name: Download repository files
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          ref: main
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -63,8 +65,15 @@ jobs:
           git commit -m "Backfill RTE history from ${{ inputs.start }}"
 
           for attempt in 1 2 3; do
-            git pull --rebase && git push && exit 0
+            git push origin HEAD:main && exit 0
+            # Another update saved first: keep this run's data where both
+            # changed the same lines, then rebuild the summaries.
             sleep 15
+            git fetch origin main
+            git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
+            python scripts/summarise.py
+            git add data
+            git diff --cached --quiet || git commit -q -m "Rebuild summaries after backfill"
           done
 
           echo "Push failed after 3 attempts"

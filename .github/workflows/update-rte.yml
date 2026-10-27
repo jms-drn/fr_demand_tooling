@@ -1,16 +1,19 @@
 name: Update RTE data (hourly)
 
-# Runs every hour at 17 minutes past (GitHub schedules are in UTC and can
-# start a few minutes late). Can also be started by hand from the Actions tab.
+# Scheduled every 30 minutes (at :07 and :37 UTC). GitHub delays or skips
+# scheduled runs when it is busy, so running twice an hour keeps the data
+# fresh even when some runs are dropped; each run also re-checks the past
+# 7 days, so a missed run loses nothing. Can be started by hand from the
+# Actions tab ("Run workflow"); re-running an old run is also safe.
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "7,37 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
-# The hourly update and the backfill never run at the same time.
+# The update and the backfill never run at the same time.
 concurrency:
   group: rte-data
   cancel-in-progress: false
@@ -20,39 +23,57 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
+    env:
+      RTE_CLIENT_ID: ${{ secrets.RTE_CLIENT_ID }}
+      RTE_CLIENT_SECRET: ${{ secrets.RTE_CLIENT_SECRET }}
+
     steps:
+      # Always start from the latest version of main, not the version the run
+      # was first queued with (re-runs otherwise start from old data).
       - name: Download repository files
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          ref: main
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
       - name: Fetch RTE data and rebuild summaries
-        env:
-          RTE_CLIENT_ID: ${{ secrets.RTE_CLIENT_ID }}
-          RTE_CLIENT_SECRET: ${{ secrets.RTE_CLIENT_SECRET }}
         run: python scripts/update.py
 
-      - name: Commit updated data
+      - name: Save updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data
+          commit_data() {
+            git add data
+            if git diff --cached --quiet; then
+              echo "No changes to save"
+              return 1
+            fi
+            git commit -q -m "Data update $(date -u '+%Y-%m-%d %H:%M') UTC"
+          }
 
-          if git diff --cached --quiet; then
-            echo "No changes"
-            exit 0
-          fi
-
-          git commit -m "Data update $(date -u '+%Y-%m-%d %H:%M') UTC"
+          commit_data || exit 0
 
           for attempt in 1 2 3; do
-            git pull --rebase && git push && exit 0
-            sleep 10
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            # Someone else saved changes first. The data files are generated,
+            # so rather than merge them, start again from the latest version
+            # and fetch the data again on top of it.
+            echo "Push rejected (attempt $attempt); refreshing from the latest version"
+            sleep $((attempt * 10))
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/update.py
+            commit_data || exit 0
           done
 
-          echo "Push failed after 3 attempts"
+          echo "Could not save the data after 3 attempts"
           exit 1

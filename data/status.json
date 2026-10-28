@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-10-27T22:34Z",
+ "generated_utc": "2026-10-28T01:39Z",
  "series": {
   "realised": {
    "months": [
@@ -172,7 +172,7 @@
     "2026-10"
    ],
    "first_utc": "2012-12-16T23:00Z",
-   "last_utc": "2026-10-27T22:15Z"
+   "last_utc": "2026-10-28T01:15Z"
   },
   "d1": {
    "months": [
@@ -345,7 +345,7 @@
     "2026-10"
    ],
    "first_utc": "2012-12-16T23:00Z",
-   "last_utc": "2026-10-28T22:45Z"
+   "last_utc": "2026-10-28T23:00Z"
   },
   "d2": {
    "months": [
@@ -518,7 +518,7 @@
     "2026-10"
    ],
    "first_utc": "2012-12-16T23:00Z",
-   "last_utc": "2026-10-29T22:30Z"
+   "last_utc": "2026-10-30T22:30Z"
   },
   "weekly": {
    "months": [
@@ -692,10 +692,10 @@
     "2026-11"
    ],
    "first_utc": "2012-12-16T23:00Z",
-   "last_utc": "2026-11-05T22:30Z"
+   "last_utc": "2026-11-06T22:30Z"
   }
  },
- "last_live_update_utc": "2026-10-27T22:34Z",
+ "last_live_update_utc": "2026-10-28T01:38Z",
  "last_backfill_utc": "2026-10-26T15:47Z",
  "last_errors": []
 }

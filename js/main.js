@@ -1,55 +1,147 @@
-// Page shell: tabs, Display menu, What's new and About panels, data status,
-// automatic refresh and the Refresh button.
+// Site shell: sidebar pages, per-page tabs and titles, Display menu, What's
+// new and About panels, data status, automatic refresh and the Refresh button.
 
 import { CHANGELOG, VERSION } from "./changelog.js";
-import { refreshAllCharts } from "./chart.js";
+import { refreshAllCharts, setExportBrand } from "./chart.js";
 import { CONFIG } from "./config.js";
 import { dataVersion, getStatus, parseUtc, setDataVersion, setLiveOverride } from "./data.js";
-import { Explorer } from "./explorer.js";
 import { PALETTES, apply, settings, updateSettings } from "./settings.js";
-import { Today } from "./today.js";
-import { el, fmtDateTime, fmtTime, readHash, toast } from "./util.js";
+import { el, fmtDateTime, fmtTime, readHash, toast, writeHash } from "./util.js";
 
 apply();
 
-const loaders = {
-  today: async root => new Today(root),
-  explorer: async root => new Explorer(root),
-  accuracy: async root => new (await import("./accuracy.js")).Accuracy(root),
-  outlook: async root => new (await import("./outlook.js")).Outlook(root)
+// Each page: header title (the part after "France Power"), tabs and loaders.
+const PAGES = {
+  overview: {
+    accent: "Intelligence", doc: "France Power Intelligence",
+    tabs: { main: { label: "Overview", load: async root => new (await import("./overview.js")).Overview(root) } }
+  },
+  demand: {
+    accent: "Demand Intelligence", doc: "France Power Demand Intelligence",
+    tabs: {
+      today: { label: "Today", load: async root => new (await import("./today.js")).Today(root) },
+      explorer: { label: "Explorer", load: async root => new (await import("./explorer.js")).Explorer(root) },
+      accuracy: { label: "Forecast accuracy", load: async root => new (await import("./accuracy.js")).Accuracy(root) },
+      outlook: { label: "Outlook", load: async root => new (await import("./outlook.js")).Outlook(root) }
+    }
+  },
+  nuclear: {
+    accent: "Unavailability Intelligence", doc: "France Power Unavailability Intelligence",
+    tabs: {
+      today: { label: "Today", load: async root => new (await import("./nuclear-today.js")).NuclearToday(root) },
+      explorer: { label: "Explorer", load: async root => new (await import("./nuclear-explorer.js")).NuclearExplorer(root) },
+      outages: { label: "Outages", load: async root => new (await import("./nuclear-outages.js")).NuclearOutages(root) },
+      outlook: { label: "Outlook", load: async root => new (await import("./nuclear-outlook.js")).NuclearOutlook(root) }
+    }
+  },
+  hydro: {
+    accent: "Hydro Intelligence", doc: "France Power Hydro Intelligence",
+    tabs: { main: { label: "Reservoirs", load: async root => new (await import("./hydro.js")).Hydro(root) } }
+  }
 };
 
+const viewsRoot = document.getElementById("views");
+const footer = viewsRoot.querySelector("footer");
+const tabsEl = document.getElementById("tabs");
+const titleEl = document.getElementById("page-title");
 const views = {};
-let current = null;
+let current = null; // "page/tab"
 let status = null;
 
-async function getView(name) {
-  if (!views[name]) {
-    views[name] = await loaders[name](document.getElementById(`view-${name}`));
-    views[name].setStatus?.(status);
+function sectionFor(page, tab) {
+  const id = `view-${page}-${tab}`;
+  let section = document.getElementById(id);
+  if (!section) {
+    section = el("section", { id, "data-view": `${page}/${tab}`, class: "hidden" });
+    viewsRoot.insertBefore(section, footer);
   }
-  return views[name];
+  return section;
 }
 
-async function switchTab(name, params) {
-  if (!loaders[name]) name = "today";
-  document.querySelectorAll("[data-view]").forEach(section => section.classList.toggle("hidden", section.dataset.view !== name));
-  document.querySelectorAll(".tab").forEach(tab => tab.setAttribute("aria-selected", tab.dataset.tab === name));
-  current = name;
-  const view = await getView(name);
+async function getView(key) {
+  if (!views[key]) {
+    const [page, tab] = key.split("/");
+    views[key] = PAGES[page].tabs[tab].load(sectionFor(page, tab)).then(view => {
+      view.setStatus?.(status);
+      return view;
+    });
+  }
+  return views[key];
+}
+
+function renderChrome(page, tab) {
+  const config = PAGES[page];
+  titleEl.innerHTML = `France Power <em>${config.accent}</em>`;
+  document.title = tab && Object.keys(config.tabs).length > 1 ? `${config.tabs[tab].label} · ${config.doc}` : config.doc;
+  setExportBrand(`${config.doc} by jms-drn`);
+  document.querySelectorAll(".side-link[data-page]").forEach(link => {
+    link.classList.toggle("active", link.dataset.page === page);
+    if (link.dataset.page === page) link.setAttribute("aria-current", "page"); else link.removeAttribute("aria-current");
+  });
+  const names = Object.keys(config.tabs);
+  tabsEl.hidden = names.length < 2;
+  tabsEl.innerHTML = names.length < 2 ? "" : names.map(name =>
+    `<button class="tab" role="tab" data-tab="${name}" aria-selected="${name === tab}">${config.tabs[name].label}</button>`).join("");
+  document.body.dataset.page = page;
+}
+
+async function navigate(page, tab, params) {
+  if (!PAGES[page]) page = "overview";
+  const tabs = Object.keys(PAGES[page].tabs);
+  if (!tabs.includes(tab)) tab = tabs[0];
+  const key = `${page}/${tab}`;
+  const pageChanged = !current || current.split("/")[0] !== page;
+  renderChrome(page, tab);
+  document.querySelectorAll("[data-view]").forEach(section => section.classList.toggle("hidden", section.dataset.view !== key));
+  sectionFor(page, tab).classList.remove("hidden");
+  current = key;
+  closeSidebar();
+  if (pageChanged) window.scrollTo({ top: 0 });
+  const view = await getView(key);
+  if (current !== key) return;
   if (params && [...params.keys()].length && view.setParams) view.setParams(params);
+  if (!view.writesHash) writeHash(tabs.length > 1 ? key : page, params);
   view.activate();
   requestAnimationFrame(() => window.dispatchEvent(new Event("resize")));
 }
 
-document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", () => {
-  switchTab(tab.dataset.tab);
+tabsEl.addEventListener("click", event => {
+  const tab = event.target.closest(".tab");
+  if (!tab) return;
+  const page = current.split("/")[0];
+  navigate(page, tab.dataset.tab);
   tab.blur();
-}));
+});
 
 window.addEventListener("hashchange", () => {
-  const { tab, params } = readHash();
-  if (tab !== current || [...params.keys()].length) switchTab(tab, params);
+  const { page, tab, params } = readHash();
+  const key = `${page}/${tab}`;
+  if (key !== current || [...params.keys()].length) navigate(page, tab, params);
+});
+
+// ---------- Sidebar ----------
+
+const sidebar = document.getElementById("sidebar");
+const scrim = document.querySelector(".sidebar-scrim");
+
+function openSidebar() {
+  sidebar.classList.add("open");
+  scrim.hidden = false;
+}
+
+function closeSidebar() {
+  sidebar.classList.remove("open");
+  scrim.hidden = true;
+}
+
+document.getElementById("menu-button").addEventListener("click", openSidebar);
+scrim.addEventListener("click", closeSidebar);
+document.getElementById("collapse").addEventListener("click", () => {
+  const collapsed = document.documentElement.dataset.sidebar !== "collapsed";
+  if (collapsed) document.documentElement.dataset.sidebar = "collapsed";
+  else delete document.documentElement.dataset.sidebar;
+  try { localStorage.setItem("sidebar", collapsed ? "collapsed" : "open"); } catch (error) { /* private mode */ }
+  setTimeout(() => window.dispatchEvent(new Event("resize")), 220);
 });
 
 // ---------- Data status and refresh ----------
@@ -66,7 +158,8 @@ function showStatus() {
   statusDot.className = `status-dot ${ageMinutes < 90 ? "live" : ageMinutes < 360 ? "" : "error"}`;
   statusText.textContent = `Updated ${fmtTime(stamp)}`;
   const next = CONFIG.workerUrl ? ` New data is fetched every ${CONFIG.updateEveryMinutes} minutes.` : "";
-  statusPill.title = `Latest data update: ${fmtDateTime(stamp)} Paris time.${next}${status.last_errors?.length ? `\nLast update problems: ${status.last_errors.join("; ")}` : ""}`;
+  const problems = [...(status.last_errors || []), ...(status.power?.errors || [])];
+  statusPill.title = `Latest data update: ${fmtDateTime(stamp)} Paris time.${next}${problems.length ? `\nLast update problems: ${problems.join("; ")}` : ""}`;
 }
 
 /** Re-read status.json; if there is a newer data update, reload the current view. */
@@ -79,7 +172,7 @@ async function checkForNewData({ rerender = true } = {}) {
     return false;
   }
   const changed = setDataVersion(status.generated_utc);
-  for (const view of Object.values(views)) view.setStatus?.(status);
+  for (const view of Object.values(views)) (await view).setStatus?.(status);
   showStatus();
   if (changed && rerender && current) (await getView(current)).activate();
   return changed;
@@ -156,10 +249,11 @@ function renderDisplayMenu() {
     <div class="menu-section"><label class="check"><input type="checkbox" data-set="markers" ${s.markers ? "checked" : ""}> Show a marker on each data point</label></div>`;
 }
 
-function setDisplay(patch) {
+async function setDisplay(patch) {
   updateSettings(patch);
   renderDisplayMenu();
   refreshAllCharts();
+  if (current && current.split("/")[0] !== "demand") (await getView(current)).refreshTheme?.();
 }
 
 displayMenu.addEventListener("click", event => {
@@ -209,7 +303,9 @@ function whatsNewHtml() {
 function aboutHtml() {
   const term = (t, d) => `<dt>${t}</dt><dd>${d}</dd>`;
   return `
-    <p>All figures come from RTE, the French transmission system operator, through its public consumption API. They cover mainland France, include grid losses and exclude pumping at hydropower plants. Demand is average power over each interval, in MW or GW.</p>
+    <p>All figures come from RTE, the French transmission system operator, through its public APIs: consumption, actual generation and unavailability (REMIT notices). They cover mainland France. Times are Paris time.</p>
+    <h3>Demand</h3>
+    <p>Demand includes grid losses and excludes pumping at hydropower plants. It is average power over each interval, in MW or GW.</p>
     <h4>Forecasts</h4>
     <dl class="glossary">
       ${term("Actual", "Measured demand (RTE calls it \"realised\"), every 15 minutes.")}
@@ -244,7 +340,25 @@ function aboutHtml() {
       <li>RTE's D-1 data for 2–14 Oct 2019 contains corrupt values (around 0.7 GW) and is excluded.</li>
       <li>Clock-change days have 23 or 25 hours; daily figures account for this.</li>
     </ul>
-    <p class="muted">Methodology, data files and code: <a href="${CONFIG.repoUrl}" target="_blank" rel="noopener">GitHub repository</a>.</p>`;
+    <h3 style="margin-top:22px">Nuclear availability</h3>
+    <p>EDF publishes a notice for every planned or unplanned reduction in a reactor's available capacity, and a new version whenever it changes. The site stores every version since December 2010.</p>
+    <dl class="glossary">
+      ${term("Available capacity", "Installed capacity minus the unavailable capacity in the notices covering that moment. Where notices overlap on one reactor, the largest reduction counts (they are not added up).")}
+      ${term("Planned / unplanned", "As declared by EDF: planned outages (refuelling, maintenance, ten-yearly inspections) are announced in advance; unplanned ones (failures, other incidents) are not. Modulation to follow demand is not an outage.")}
+      ${term("Offline / reduced", "Offline means below 10% of the reactor's capacity; reduced means below 90%.")}
+      ${term("Output", "Measured nuclear generation from RTE's actual generation data, hourly (fleet since 15 Dec 2014; per reactor for the past week).")}
+      ${term("Load factor", "Output divided by installed capacity.")}
+      ${term("Outlook as of a date", "The availability implied by the latest version of each notice published by the end of that day (Paris time), for each of the next 540 days. Comparing outlooks from different dates shows how expectations moved.")}
+      ${term("First announced end", "The end date in the first version of a notice. The change against it shows extensions and early returns.")}
+    </dl>
+    <ul>
+      <li>Fessenheim 1 and 2 leave the fleet when they closed (22 Feb and 30 Jun 2020); Flamanville 3 joins at its first grid connection (21 Dec 2024). EDF filed Fessenheim's closure as an outage to 2099 and later cancelled it, so closures come from the site's own reactor list.</li>
+      <li>Notices before 2015, when the EU's REMIT transparency rules took full effect, may be less complete.</li>
+      <li>Outlooks only contain outages already announced, so they are usually above what happens.</li>
+    </ul>
+    <h3 style="margin-top:22px">Hydro reservoirs</h3>
+    <p>RTE's weekly figure for the energy stored in the hydro reservoirs it monitors, in MWh (shown as TWh), since December 2014. Weeks are compared by ISO week number.</p>
+    <p class="muted">Map outline: Natural Earth (public domain). Methodology, data files and code: <a href="${CONFIG.repoUrl}" target="_blank" rel="noopener">GitHub repository</a>.</p>`;
 }
 
 function openDrawer(kind) {
@@ -279,6 +393,7 @@ document.addEventListener("keydown", event => {
   if (event.key !== "Escape") return;
   if (!drawer.hidden) closeDrawer();
   if (!displayMenu.hidden) toggleMenu(false);
+  closeSidebar();
 });
 
 // ---------- Start ----------
@@ -286,8 +401,8 @@ document.addEventListener("keydown", event => {
 (async () => {
   await checkForNewData({ rerender: false });
   if (!dataVersion()) setDataVersion(String(Date.now()));
-  const { tab, params } = readHash();
-  await switchTab(tab, params);
+  const { page, tab, params } = readHash();
+  await navigate(page, tab, params);
   setInterval(() => checkForNewData(), 2 * 60000);
   setInterval(showStatus, 60000);
 })();

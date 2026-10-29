@@ -81,7 +81,7 @@ export class Today {
   }
 
   async update() {
-    writeHash("today", this.state);
+    writeHash("demand/today", this.state);
     this.main.setLoading(true);
     try {
       const latest = await getLatest();

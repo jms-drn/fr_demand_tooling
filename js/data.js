@@ -25,7 +25,7 @@ export function setDataVersion(next) {
   return true;
 }
 
-async function fetchText(path, { optional = false } = {}) {
+export async function fetchText(path, { optional = false } = {}) {
   const url = `${path}?v=${encodeURIComponent(version)}`;
   if (textCache.has(url)) return textCache.get(url);
 
@@ -40,7 +40,7 @@ async function fetchText(path, { optional = false } = {}) {
   return promise;
 }
 
-function cached(key, build) {
+export function cached(key, build) {
   const full = `${version}|${key}`;
   if (!parsedCache.has(full)) {
     const promise = build();
@@ -50,7 +50,7 @@ function cached(key, build) {
   return parsedCache.get(full);
 }
 
-function parseCsv(text) {
+export function parseCsv(text) {
   const lines = text.trim().split("\n");
   if (!lines[0]) return { header: [], rows: [] };
   return { header: lines[0].split(","), rows: lines.slice(1).map(line => line.split(",")) };

@@ -263,15 +263,22 @@ export function holidayName(date) {
 // ---------- URL state ----------
 // The address bar holds "#tab?key=value&…" so any view can be shared.
 
+// Addresses look like #demand/explorer?from=...; pages without tabs are
+// just #hydro. Links from before v3 (#today, #explorer?...) open the
+// matching Demand tab.
+const LEGACY_TABS = new Set(["today", "explorer", "accuracy", "outlook"]);
+
 export function readHash() {
   const raw = location.hash.replace(/^#/, "");
-  const [tab, query = ""] = raw.split("?");
-  return { tab: tab || "today", params: new URLSearchParams(query) };
+  const [path, query = ""] = raw.split("?");
+  let [page, tab] = path.split("/");
+  if (LEGACY_TABS.has(page)) [page, tab] = ["demand", page];
+  return { page: page || "overview", tab: tab || "", params: new URLSearchParams(query) };
 }
 
-export function writeHash(tab, params) {
-  const query = new URLSearchParams(params).toString();
-  const hash = `#${tab}${query ? `?${query}` : ""}`;
+export function writeHash(path, params) {
+  const query = new URLSearchParams(params || {}).toString();
+  const hash = `#${path}${query ? `?${query}` : ""}`;
   if (location.hash !== hash) history.replaceState(null, "", hash);
 }
 

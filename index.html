@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>France Power Demand Intelligence</title>
-  <meta name="description" content="French electricity demand from RTE data: live demand and forecasts, history since 2012 compared with earlier years, forecast accuracy and the outlook.">
+  <title>France Power Intelligence</title>
+  <meta name="description" content="French power system data from RTE: electricity demand and forecasts since 2012, nuclear availability and outages, and hydro reservoir levels, compared with earlier years.">
   <meta name="theme-color" content="#0b1220">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -12,9 +12,9 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="France Power Demand Intelligence">
-  <meta property="og:title" content="France Power Demand Intelligence">
-  <meta property="og:description" content="Live French electricity demand, history since 2012, forecast accuracy and outlook, from RTE data.">
+  <meta property="og:site_name" content="France Power Intelligence">
+  <meta property="og:title" content="France Power Intelligence">
+  <meta property="og:description" content="French electricity demand, nuclear availability and outages, and hydro reservoirs, from RTE data.">
   <meta property="og:url" content="https://jms-drn.github.io/fr_demand_tooling/">
   <meta property="og:image" content="https://jms-drn.github.io/fr_demand_tooling/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -23,11 +23,12 @@
   <meta name="twitter:image" content="https://jms-drn.github.io/fr_demand_tooling/og-image.png">
 
   <script>
-    // Apply the saved theme before anything draws, to avoid a flash.
+    // Apply the saved theme and sidebar width before anything draws, to avoid a flash.
     try {
       const saved = JSON.parse(localStorage.getItem("display") || "{}");
       const theme = saved.theme || localStorage.getItem("theme");
       if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      if (localStorage.getItem("sidebar") === "collapsed") document.documentElement.dataset.sidebar = "collapsed";
     } catch (error) {}
   </script>
 
@@ -39,62 +40,109 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="shell">
-      <div class="header-row">
-        <a class="brand" href="#today" aria-label="France Power Demand Intelligence, home">
-          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-          <span class="brand-text">
-            <span class="brand-name">France Power <em>Demand Intelligence</em></span>
-            <span class="byline">by jms-drn</span>
-          </span>
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Site navigation">
+      <a class="side-brand" href="#overview" title="France Power Intelligence">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="side-brand-text"><b>France Power <em>Intelligence</em></b><span class="byline">by jms-drn</span></span>
+      </a>
+
+      <nav class="side-nav">
+        <a class="side-link" data-page="overview" href="#overview" title="Overview">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg>
+          <span>Overview</span>
         </a>
-
-        <div class="header-actions">
-          <span class="status-pill" id="status-pill" title="Time of the latest data (Paris time)">
-            <span id="status-dot" class="status-dot"></span>
-            <span id="status-text" class="status-text">Loading…</span>
-          </span>
-          <button id="refresh" class="btn" type="button" title="Get the latest data from RTE">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4"/></svg>
-            <span>Refresh</span>
-          </button>
-          <button id="whats-new" class="btn ghost" type="button">What's new<span class="new-dot" hidden></span></button>
-          <div class="menu">
-            <button id="display-button" class="btn ghost" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="display-menu">Display <span aria-hidden="true">▾</span></button>
-            <div id="display-menu" class="popover" hidden></div>
-          </div>
-          <a class="btn ghost projects" href="https://github.com/jms-drn" target="_blank" rel="noopener">Other projects <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-
-      <nav class="tabs" role="tablist" aria-label="Views">
-        <button class="tab" role="tab" data-tab="today" aria-selected="true">Today</button>
-        <button class="tab" role="tab" data-tab="explorer" aria-selected="false">Explorer</button>
-        <button class="tab" role="tab" data-tab="accuracy" aria-selected="false">Forecast accuracy</button>
-        <button class="tab" role="tab" data-tab="outlook" aria-selected="false">Outlook</button>
+        <div class="side-label">Data</div>
+        <a class="side-link" data-page="demand" href="#demand/today" title="Demand">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h3.5l2.5-6 4 11 2.8-7H21"/></svg>
+          <span>Demand</span>
+        </a>
+        <a class="side-link" data-page="nuclear" href="#nuclear/today" title="Nuclear availability">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1.7"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/></svg>
+          <span>Nuclear availability</span>
+        </a>
+        <a class="side-link" data-page="hydro" href="#hydro" title="Hydro reserves">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4.2 6 7.6 6 10.8a6 6 0 0 1-12 0c0-3.2 2.7-6.6 6-10.8Z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg>
+          <span>Hydro reserves</span>
+        </a>
+        <span class="side-link soon" title="Generation: coming soon" aria-disabled="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5 5 13.5h6l-1 8 8-11h-6l1-8Z"/></svg>
+          <span>Generation</span><em>Soon</em>
+        </span>
       </nav>
+
+      <div class="side-foot">
+        <button class="side-link" type="button" id="whats-new" title="What's new">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+          <span>What's new</span><span class="new-dot" hidden></span>
+        </button>
+        <button class="side-link" type="button" data-open="about" title="About the data">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+          <span>About the data</span>
+        </button>
+        <a class="side-link" href="https://github.com/jms-drn" target="_blank" rel="noopener" title="Other projects">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span>Other projects</span>
+        </a>
+        <button class="side-link collapse" type="button" id="collapse" title="Collapse the sidebar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+          <span>Collapse</span>
+        </button>
+      </div>
+    </aside>
+    <div class="sidebar-scrim" hidden></div>
+
+    <div class="main-col">
+      <header class="site-header">
+        <div class="shell">
+          <div class="header-row">
+            <div class="title-wrap">
+              <button class="menu-button" id="menu-button" type="button" aria-label="Open navigation" aria-controls="sidebar">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </button>
+              <a class="brand" id="page-brand" href="#overview">
+                <span class="brand-text">
+                  <span class="brand-name" id="page-title">France Power <em>Intelligence</em></span>
+                  <span class="byline">by jms-drn</span>
+                </span>
+              </a>
+            </div>
+
+            <div class="header-actions">
+              <span class="status-pill" id="status-pill" title="Time of the latest data (Paris time)">
+                <span id="status-dot" class="status-dot"></span>
+                <span id="status-text" class="status-text">Loading…</span>
+              </span>
+              <button id="refresh" class="btn" type="button" title="Get the latest data from RTE">
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4"/></svg>
+                <span>Refresh</span>
+              </button>
+              <div class="menu">
+                <button id="display-button" class="btn ghost" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="display-menu">Display <span aria-hidden="true">▾</span></button>
+                <div id="display-menu" class="popover" hidden></div>
+              </div>
+            </div>
+          </div>
+
+          <nav class="tabs" id="tabs" role="tablist" aria-label="Views"></nav>
+        </div>
+      </header>
+
+      <main class="shell" id="views">
+        <footer>
+          <div>
+            <b>France Power Intelligence</b> <span class="muted">v<span data-version></span> · by jms-drn</span><br>
+            Data: RTE (French transmission system operator) consumption, actual generation and unavailability APIs. Mainland France. Times in Europe/Paris.
+          </div>
+          <div class="footer-links">
+            <button class="link" type="button" data-open="about">About the data</button>
+            <button class="link" type="button" data-open="whatsnew">What's new</button>
+            <a href="https://github.com/jms-drn/fr_demand_tooling" target="_blank" rel="noopener">Data files and code</a>
+          </div>
+        </footer>
+      </main>
     </div>
-  </header>
-
-  <main class="shell">
-    <section id="view-today" data-view="today"></section>
-    <section id="view-explorer" data-view="explorer" class="hidden"></section>
-    <section id="view-accuracy" data-view="accuracy" class="hidden"></section>
-    <section id="view-outlook" data-view="outlook" class="hidden"></section>
-
-    <footer>
-      <div>
-        <b>France Power Demand Intelligence</b> <span class="muted">v<span data-version></span></span><br>
-        Data: RTE consumption API. Mainland France, including grid losses, excluding hydro pumping. Times in Europe/Paris.
-      </div>
-      <div class="footer-links">
-        <button class="link" type="button" data-open="about">About the data</button>
-        <button class="link" type="button" data-open="whatsnew">What's new</button>
-        <a href="https://github.com/jms-drn/fr_demand_tooling" target="_blank" rel="noopener">Data files and code</a>
-      </div>
-    </footer>
-  </main>
+  </div>
 
   <div class="drawer-backdrop" hidden></div>
   <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>

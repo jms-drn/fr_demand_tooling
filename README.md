@@ -1,8 +1,20 @@
 # fr_demand_tooling
 
-**France Power Demand Intelligence**: a web tool for French power demand, covering live data, comparisons with equivalent past periods, the accuracy of RTE's demand forecasts and the outlook.
+**France Power Intelligence**: a web tool for the French power system from RTE data — electricity demand, nuclear availability and outages, and hydro reservoirs — each compared with earlier years.
 
 ## The site
+
+A left sidebar switches between pages; each page keeps its own tabs. Links from before v3 (`#today`, `#explorer?...`) still open the Demand page.
+
+| Page | What it shows |
+|---|---|
+| **Overview** | One tile per dataset with the latest figure, the main comparison and a trend line, plus a copyable list of main points |
+| **Demand** | The four tabs below |
+| **Nuclear availability** | *Today*: availability now, map of every reactor coloured by status, time offline so far or time until return, next 14 days, output by reactor over the past week, notice changes in the past 72 hours. *Explorer*: availability, unavailable capacity (planned/unplanned), availability rate, output, load factor and reactors offline for any period since 2011, by fleet, site or reactor series, compared with earlier years, ranking, outlook extension. *Outages*: timeline per reactor and sortable table of every outage, with the change against the first announced end date. *Outlook*: expected availability for any period up to 540 days ahead, compared with the outlook a week or month earlier or on the same date in earlier years, and with what actually happened |
+| **Hydro reserves** | Weekly stored energy since Dec 2014 against earlier years (average, range, every year), difference view, ranking of the week, full history |
+| **Generation** | Coming soon |
+
+### Demand tabs
 
 | Tab | What it shows |
 |---|---|
@@ -23,7 +35,11 @@ The site is static (GitHub Pages) and reads the CSV files below. Code: `index.ht
 | **Update RTE data** (GitHub workflow) | When started by the refresh service, hourly as a backup, or by hand | Fetches the latest actuals and forecasts, re-checks the past 7 days, fetches week-ahead and annual forecasts, rebuilds the summaries. Safe to re-run |
 | **Backfill RTE history (one-off)** | By hand only | Fetches history in chunks (from 17 Dec 2012 for actuals/D-1/D-2). Safe to re-run |
 
-The workflows use the `RTE_CLIENT_ID` and `RTE_CLIENT_SECRET` repository secrets and never run at the same time. The site checks for new data every two minutes.
+| **Backfill nuclear and hydro history (one-off)** | By hand only | Downloads every nuclear unavailability notice version since Dec 2010 (at most 20 calls an hour, as RTE asks), fleet nuclear output since Dec 2014 and hydro reservoirs since Dec 2014. Safe to re-run |
+
+Each update run also fetches new nuclear notices (every run), nuclear output fleet and per reactor (at most hourly) and reservoir levels (every 12 hours), then rebuilds the nuclear files (`scripts/power_update.py`, `scripts/power_summarise.py`).
+
+The workflows use the `RTE_CLIENT_ID` / `RTE_CLIENT_SECRET` (consumption), `RTE_GENERATION_CLIENT_ID` / `RTE_GENERATION_CLIENT_SECRET` (actual generation) and `RTE_UNAVAILABILITY_CLIENT_ID` / `RTE_UNAVAILABILITY_CLIENT_SECRET` (unavailability) repository secrets, and never write data at the same time. The site checks for new data every two minutes.
 
 ## Data files
 
@@ -42,6 +58,17 @@ All times are stored in UTC (`2026-10-23T22:00Z`). Files are split by month in P
 | `data/summary/weekly_errors.csv` | One row per week-ahead forecast vintage and target day, with lead time and errors |
 | `data/summary/error_profile.csv` | Forecast errors summed by month and hour of day / weekday, for D-1, D-2 and week-ahead leads 3–9 |
 | `data/status.json` | Coverage, list of monthly files, last update times and any errors |
+| `data/nuclear/notices/YYYY/YYYY-MM.csv` | Every version of every nuclear unavailability notice, by publication month |
+| `data/nuclear/output/YYYY/YYYY-MM.csv` | Fleet nuclear output, hourly: `start_utc,mw` |
+| `data/nuclear/unit_output.json` | Output per reactor, hourly, past 8 days |
+| `data/nuclear/fleet.json` | Reactor list (site, series, capacity, location, in-service dates) and file index |
+| `data/nuclear/hourly/YYYY/YYYY-MM.csv` | Fleet hourly: installed, available, planned and unplanned unavailable, output |
+| `data/nuclear/unit_daily/YYYY.csv` | Daily mean available MW per reactor |
+| `data/summary/nuclear_daily.csv` | Daily fleet summary: availability, unavailability, reactors offline, output, load factor |
+| `data/nuclear/outlook/YYYY/YYYY-MM.csv` | For each day: the expected daily availability for the next 540 days as known at the end of that day (values in units of 10 MW) |
+| `data/nuclear/outages/YYYY.csv` | One row per notice (latest version), by start year, with the first announced dates |
+| `data/nuclear/live.json` | Live reactor status, next 14 days, notice changes in the past 72 hours, current outlook |
+| `data/hydro/reserves.csv` | Weekly reservoir levels (MWh) |
 
 ## Methodology notes
 
@@ -56,3 +83,9 @@ All times are stored in UTC (`2026-10-23T22:00Z`). Files are split by month in P
 - **Actuals** are overwritten when RTE revises them; the hourly run re-checks the last 7 days.
 - The undocumented `CORRECTED` block sometimes returned by the API is ignored.
 
+
+### Nuclear
+
+- **Availability** = installed capacity − unavailable capacity in the latest version of each notice covering that moment. Overlapping notices on one reactor are not added: the largest reduction counts. Cancelled (DISMISSED) versions count as no outage. Times are rounded to 15 minutes.
+- **As-of outlooks** use, for each notice, the latest version published by the end of that Paris day.
+- **Fleet changes**: Fessenheim 1 and 2 leave the fleet at their closures in 2020; Flamanville 3 joins at its first grid connection (21 Dec 2024).

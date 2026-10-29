@@ -8,6 +8,7 @@ Each run:
      by a missed run.
   3. Fetches the latest week-ahead (D+3 to D+9) and annual forecasts.
   4. Merges everything into the archive and rebuilds the summaries.
+  5. Updates the nuclear and hydro data (power_update.py).
 """
 
 import json
@@ -91,10 +92,19 @@ def main():
             traceback.print_exc()
             errors.append(f"{name}: {error}")
 
+    try:
+        import power_update  # needs numpy; kept separate so demand never depends on it
+
+        power = power_update.run()
+    except Exception as error:  # the demand data must never be held up by this
+        traceback.print_exc()
+        power = {"updated_utc": None, "errors": [f"power update: {error}"]}
+
     summarise.main(
         {
             "last_live_update_utc": fmt_utc(datetime.now(timezone.utc)),
             "last_errors": errors,
+            "power": power,
         }
     )
 

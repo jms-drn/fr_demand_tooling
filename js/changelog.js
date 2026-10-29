@@ -1,8 +1,52 @@
 // Version history shown in the "What's new" panel. Newest first.
 
-export const VERSION = "2.0";
+export const VERSION = "3.0";
 
 export const CHANGELOG = [
+  {
+    version: "3.0",
+    date: "29 Oct 2026",
+    title: "France Power Intelligence: nuclear availability, hydro reservoirs and a new layout",
+    sections: [
+      {
+        heading: "New layout",
+        items: [
+          "The site is now France Power Intelligence, with a sidebar for its pages: Overview, Demand, Nuclear availability and Hydro reserves (Generation is coming). Each page keeps its own tabs and header. The sidebar can be collapsed to icons, and opens from the menu button on phones.",
+          "New Overview page: the latest demand, nuclear availability and reservoir level, each against earlier years with a trend line, and a list of main points you can copy in one go.",
+          "Old links to the demand tabs still work."
+        ]
+      },
+      {
+        heading: "Nuclear availability: Today",
+        items: [
+          "Available capacity now, output in the latest hour, reactors offline (planned and unplanned) and running below capacity, against the same hour last year and the five-year average for today.",
+          "Map of France with every reactor, sized by capacity. Colour them by status, by how long they have been offline, or by how long until they are due back. Hover for each reactor's notices, including how far the return date has moved since first announced.",
+          "List of reactors not at full capacity with a progress bar from the start of the stoppage to its expected end; click one to see its outage history.",
+          "Available capacity over the past 7 days and the next 14, against the same dates last year; output by reactor over the past week as a heat map; and every notice changed in the past 72 hours (new outages, delays, early returns, cancellations), downloadable."
+        ]
+      },
+      {
+        heading: "Nuclear availability: Explorer, Outages, Outlook",
+        items: [
+          "Explorer: available or unavailable capacity (split into planned and unplanned), availability rate, output, load factor or reactors offline for any period since 2011, hourly to monthly, for the whole fleet or one site or reactor series. Compare with last year, the average and range of up to 10 earlier years, run the period into the months ahead using the current notices, and rank it against every year.",
+          "Outages: every outage as a timeline per reactor and a sortable table, filtered by window, type, length, size, site or text. The red part of each bar shows an overrun beyond the end date first announced; the headline gives the share of planned outages that overran and by how much on average.",
+          "Outlook: expected availability for any period up to 18 months ahead, compared with the outlook a week or a month earlier, on the same date in up to three earlier years, or as of any date you pick — e.g. November as seen today against November 2025 as seen on the same date last year — and with what actually happened. A second chart shows how the outlook for the period has moved, and a third compares the outlook and the outcome at the same lead time in every year."
+        ]
+      },
+      {
+        heading: "Hydro reserves",
+        items: [
+          "Weekly energy stored in hydro reservoirs since December 2014, against last year, the average and range of earlier years or every year, by calendar or hydro year (October start), with a difference view, a ranking of the week across years and the full history."
+        ]
+      },
+      {
+        heading: "Data",
+        items: [
+          "Every version of every nuclear outage notice since December 2010, nuclear output since December 2014 and reservoir levels since December 2014 are now stored and updated with the demand data. Image exports name the page they come from."
+        ]
+      }
+    ]
+  },
   {
     version: "2.0",
     date: "29 Oct 2026",

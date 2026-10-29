@@ -16,6 +16,12 @@ import {
 } from "./util.js";
 
 const panels = new Set();
+let exportBrand = "France Power Intelligence by jms-drn";
+
+/** Name used in the source line of exported images (set per page). */
+export function setExportBrand(text) {
+  exportBrand = text;
+}
 
 window.addEventListener("resize", () => {
   for (const panel of panels) panel.chart?.resize();
@@ -148,6 +154,7 @@ export class ChartPanel {
   render(spec) {
     this.spec = spec;
     this.setLoading(false);
+    spec.series = spec.series || [];
     this.hidden = new Set(spec.series.filter(s => s.hidden).map(s => s.name));
     for (const s of spec.series) delete s._lookup;
 
@@ -157,12 +164,13 @@ export class ChartPanel {
       this.chart.getZr().on("dblclick", () => this.resetZoom());
     }
 
-    const empty = spec.empty || (!spec.series.some(s => s.data?.length) ? "No data for this selection." : "");
+    const empty = spec.empty || (!spec.custom && !spec.series.some(s => s.data?.length) ? "No data for this selection." : "");
     this.emptyEl.hidden = !empty;
     this.emptyEl.textContent = empty;
 
     this.chart.setOption(this.buildOption(spec), { notMerge: true });
-    this.enableDragZoom();
+    if (!spec.custom) this.enableDragZoom();
+    spec.custom?.onReady?.(this.chart);
     this.renderLegend();
     this.notesEl.innerHTML = (spec.notes || []).filter(Boolean).map(note => `<p>${note}</p>`).join("");
     if (this.details?.open) this.renderTable();
@@ -204,6 +212,23 @@ export class ChartPanel {
 
   buildOption(spec, { forExport = false } = {}) {
     const t = themeTokens();
+    if (spec.custom) {
+      // Charts drawn by the caller (map, timeline); the panel adds export framing.
+      const option = spec.custom.option(t, { forExport });
+      if (forExport) {
+        option.backgroundColor = t.panel;
+        option.title = {
+          text: this.title, subtext: this.subtitle, left: 20, top: 14,
+          textStyle: { color: t.text, fontSize: 20, fontFamily: "Inter", fontWeight: 700 },
+          subtextStyle: { color: t.muted, fontSize: 13 }
+        };
+        option.graphic = [...(option.graphic || []), {
+          type: "text", left: 20, bottom: 14,
+          style: { text: `Source: RTE (French TSO) · ${exportBrand} · Exported ${fmtDateTime(Date.now())} Paris time`, fill: t.muted, font: "12px Inter, sans-serif" }
+        }];
+      }
+      return option;
+    }
     const scale = widthScale();
     const markers = settings().markers;
     const series = [];
@@ -243,6 +268,7 @@ export class ChartPanel {
       const showSymbols = s.symbols ?? markers;
       series.push({
         ...common, type: "line", data: points, connectNulls: false,
+        stack: s.stack, areaStyle: s.stack || s.area ? { color: colour, opacity: s.areaOpacity ?? 0.55 } : undefined,
         showSymbol: showSymbols, showAllSymbol: showSymbols ? "auto" : undefined, symbol: "circle",
         symbolSize: points.length > 400 ? 3 : 5,
         step: s.step || false, sampling: points.length > 4000 && !showSymbols ? "lttb" : undefined,
@@ -302,7 +328,7 @@ export class ChartPanel {
 
     const overview = this.overview && this.isTime() && !forExport;
     const exportFooter = forExport
-      ? `Source: RTE (French TSO) · France Power Demand Intelligence by jms-drn · Exported ${fmtDateTime(Date.now())} Paris time`
+      ? `Source: RTE (French TSO) · ${exportBrand} · Exported ${fmtDateTime(Date.now())} Paris time`
       : "";
 
     return {
@@ -431,6 +457,14 @@ export class ChartPanel {
   renderLegend() {
     const spec = this.spec;
     this.legendEl.innerHTML = "";
+    if (spec.custom) {
+      this.legendEl.innerHTML = (spec.custom.legend || []).map(item =>
+        `<span class="legend-item static"><span class="key ${item.shape || "bar"}" style="background:${resolveColour(item.colour)};color:${resolveColour(item.colour)}"></span><span>${item.name}</span></span>`).join("")
+        + (spec.legendCaption ? `<span class="legend-caption">${spec.legendCaption}</span>` : "");
+      this.legendEl.hidden = !this.legendEl.innerHTML;
+      return;
+    }
+    this.legendEl.hidden = false;
 
     for (const s of spec.series) {
       const colour = resolveColour(s.colour);
@@ -454,7 +488,7 @@ export class ChartPanel {
   }
 
   updateLegend() {
-    if (!this.spec) return;
+    if (!this.spec || this.spec.custom) return;
     for (const s of this.spec.series) {
       const slot = s._legendItem?.querySelector("[data-avg]");
       if (!slot) continue;
@@ -468,6 +502,7 @@ export class ChartPanel {
   /** Rows of the data in view: [x label, ...values], with headers. */
   tableData() {
     const spec = this.spec;
+    if (spec.custom) return spec.custom.table ? spec.custom.table() : { headers: [], rows: [] };
     const headers = [spec.xHeader || "Time (Europe/Paris)"];
     const columns = [];
 
@@ -525,9 +560,10 @@ export class ChartPanel {
     const holder = el("div");
     holder.style.cssText = "position:absolute;left:-10000px;top:0;width:1400px;height:760px";
     document.body.appendChild(holder);
+    if (this.spec.custom?.exportSize) holder.style.height = `${this.spec.custom.exportSize}px`;
     const exporter = echarts.init(holder, null, { renderer: "canvas" });
     const option = this.buildOption(this.spec, { forExport: true });
-    const [lo, hi] = this.visibleExtent();
+    const [lo, hi] = this.spec.custom ? [NaN, NaN] : this.visibleExtent();
     if (Number.isFinite(lo)) {
       option.xAxis.min = this.isTime() ? this.cx(lo) : Math.ceil(lo);
       option.xAxis.max = this.isTime() ? this.cx(hi) : Math.floor(hi);

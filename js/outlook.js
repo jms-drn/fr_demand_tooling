@@ -79,7 +79,7 @@ export class Outlook {
 
     this.root.querySelector('[data-k="year"]').addEventListener("change", event => {
       this.state.year = event.target.value;
-      writeHash("outlook", this.state);
+      writeHash("demand/outlook", this.state);
       this.renderAnnual();
     });
     this.root.querySelector('[data-chip="ly"]').addEventListener("click", () => {
@@ -90,7 +90,7 @@ export class Outlook {
     this.root.querySelector('[data-chip="avgw"]').addEventListener("click", () => {
       this.state.avgw = this.state.avgw === "1" ? "0" : "1";
       this.syncControls();
-      writeHash("outlook", this.state);
+      writeHash("demand/outlook", this.state);
       this.renderAnnual();
     });
     this.syncControls();
@@ -102,13 +102,13 @@ export class Outlook {
   }
 
   activate() {
-    writeHash("outlook", this.state);
+    writeHash("demand/outlook", this.state);
     this.renderNext();
     this.renderAnnual();
   }
 
   async renderNext() {
-    writeHash("outlook", this.state);
+    writeHash("demand/outlook", this.state);
     this.ten.setLoading(true);
     try {
       const latest = await getLatest();

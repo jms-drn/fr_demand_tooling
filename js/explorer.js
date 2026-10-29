@@ -459,7 +459,7 @@ export class Explorer {
   async update() {
     const id = ++this.renderId;
     const s = this.state;
-    writeHash("explorer", s);
+    writeHash("demand/explorer", s);
     this.panel.setLoading(true);
     this.headline.textContent = "Loading…";
 

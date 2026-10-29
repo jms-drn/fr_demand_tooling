@@ -26,6 +26,10 @@ jobs:
     env:
       RTE_CLIENT_ID: ${{ secrets.RTE_CLIENT_ID }}
       RTE_CLIENT_SECRET: ${{ secrets.RTE_CLIENT_SECRET }}
+      RTE_GENERATION_CLIENT_ID: ${{ secrets.RTE_GENERATION_CLIENT_ID }}
+      RTE_GENERATION_CLIENT_SECRET: ${{ secrets.RTE_GENERATION_CLIENT_SECRET }}
+      RTE_UNAVAILABILITY_CLIENT_ID: ${{ secrets.RTE_UNAVAILABILITY_CLIENT_ID }}
+      RTE_UNAVAILABILITY_CLIENT_SECRET: ${{ secrets.RTE_UNAVAILABILITY_CLIENT_SECRET }}
 
     steps:
       # Always start from the latest version of main, not the version the run
@@ -39,6 +43,9 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+
+      - name: Install numpy (nuclear calculations)
+        run: pip install --quiet numpy
 
       - name: Fetch RTE data and rebuild summaries
         run: python scripts/update.py

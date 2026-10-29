@@ -163,7 +163,7 @@ export class Accuracy {
 
   async update() {
     const s = this.state;
-    writeHash("accuracy", s);
+    writeHash("demand/accuracy", s);
     this.headline.textContent = "Loading…";
     try {
       const [rows, profile] = await Promise.all([this.dailyErrors(), getErrorProfile()]);
@@ -371,7 +371,7 @@ export class Accuracy {
     this.misses.querySelectorAll("tr[data-date]").forEach(tr => tr.addEventListener("click", () => {
       const d = tr.dataset.date;
       const params = new URLSearchParams({ preset: "custom", from: d, to: d, res: "15m", ly: "0", avg: "0", band: "0", d1: "1", d2: "1" });
-      location.hash = `explorer?${params}`;
+      location.hash = `demand/explorer?${params}`;
     }));
   }
 

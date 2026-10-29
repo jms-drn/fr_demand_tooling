@@ -389,7 +389,7 @@ def build_status(extra=None):
     if previous_path.exists():
         try:
             previous = json.loads(previous_path.read_text(encoding="utf-8"))
-            for key in ("last_live_update_utc", "last_backfill_utc", "last_errors"):
+            for key in ("last_live_update_utc", "last_backfill_utc", "last_errors", "power"):
                 if key in previous:
                     status[key] = previous[key]
         except (json.JSONDecodeError, OSError):

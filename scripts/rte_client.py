@@ -1,9 +1,13 @@
-"""Minimal client for RTE's consumption API (Python standard library only).
+"""Minimal client for RTE's APIs (Python standard library only).
 
 Handles the OAuth token, retries, rate limiting (HTTP 429 with Retry-After)
-and a polite pause between calls. Credentials are read from the
-RTE_CLIENT_ID and RTE_CLIENT_SECRET environment variables, which the
-GitHub workflows fill from the repository secrets.
+and a polite pause between calls. RTE issues separate credentials per API
+application, read from environment variables that the GitHub workflows fill
+from the repository secrets:
+
+  consumption              RTE_CLIENT_ID / RTE_CLIENT_SECRET
+  actual_generation        RTE_GENERATION_CLIENT_ID / RTE_GENERATION_CLIENT_SECRET
+  unavailability           RTE_UNAVAILABILITY_CLIENT_ID / RTE_UNAVAILABILITY_CLIENT_SECRET
 """
 
 import base64
@@ -19,6 +23,15 @@ BASE_URL = "https://digital.iservices.rte-france.com"
 TOKEN_URL = f"{BASE_URL}/token/oauth/"
 API_ROOT = f"{BASE_URL}/open_api/consumption/v1"
 
+APIS = {
+    "consumption": (f"{BASE_URL}/open_api/consumption/v1", "RTE_CLIENT"),
+    "generation": (f"{BASE_URL}/open_api/actual_generation/v1", "RTE_GENERATION_CLIENT"),
+    "unavailability": (
+        f"{BASE_URL}/open_api/unavailability_additional_information/v7",
+        "RTE_UNAVAILABILITY_CLIENT",
+    ),
+}
+
 RETRYABLE_STATUS = {408, 429, 500, 502, 503, 504, 509}
 
 
@@ -27,14 +40,13 @@ class RteApiError(RuntimeError):
 
 
 class RteClient:
-    def __init__(self, client_id=None, client_secret=None, pause_seconds=1.5):
-        self.client_id = client_id or os.environ.get("RTE_CLIENT_ID")
-        self.client_secret = client_secret or os.environ.get("RTE_CLIENT_SECRET")
+    def __init__(self, client_id=None, client_secret=None, pause_seconds=1.5, api="consumption"):
+        self.api_root, prefix = APIS[api]
+        self.client_id = client_id or os.environ.get(f"{prefix}_ID")
+        self.client_secret = client_secret or os.environ.get(f"{prefix}_SECRET")
 
         if not self.client_id or not self.client_secret:
-            raise RteApiError(
-                "RTE_CLIENT_ID and RTE_CLIENT_SECRET must be set."
-            )
+            raise RteApiError(f"{prefix}_ID and {prefix}_SECRET must be set.")
 
         self.pause_seconds = pause_seconds
         self.token = None
@@ -71,11 +83,19 @@ class RteClient:
             self._fetch_token()
 
     def get(self, resource, params=None, max_attempts=6):
-        """GET a consumption API resource and return the parsed JSON.
+        """GET an API resource and return the parsed JSON.
 
         Returns None when RTE answers 404 ("no data found").
         """
-        url = f"{API_ROOT}/{resource}"
+        return self.request(resource, params, max_attempts=max_attempts)[2]
+
+    def request(self, resource, params=None, headers=None, max_attempts=6):
+        """GET a resource; returns (status, response headers, parsed JSON).
+
+        Status 206 means a partial answer: the "continuation_token" header
+        then fetches the rest (it expires after 60 seconds).
+        """
+        url = f"{self.api_root}/{resource}"
 
         if params:
             # Keeps ':' and ',' readable; '+' in time zones becomes %2B.
@@ -92,15 +112,19 @@ class RteClient:
                 headers={
                     "Authorization": f"Bearer {self.token}",
                     "Accept": "application/json",
+                    **(headers or {}),
                 },
             )
 
             try:
-                with urllib.request.urlopen(request, timeout=120) as response:
-                    payload = json.load(response)
+                with urllib.request.urlopen(request, timeout=180) as response:
+                    body = response.read()
+                    status = response.status
+                    response_headers = {k.lower(): v for k, v in response.headers.items()}
+                payload = json.loads(body) if body else None
                 self.call_count += 1
                 time.sleep(self.pause_seconds)
-                return payload
+                return status, response_headers, payload
 
             except urllib.error.HTTPError as error:
                 status = error.code
@@ -108,7 +132,7 @@ class RteClient:
 
                 if status == 404:
                     time.sleep(self.pause_seconds)
-                    return None
+                    return 404, {}, None
 
                 if status == 401 and attempt < max_attempts:
                     self.token = None

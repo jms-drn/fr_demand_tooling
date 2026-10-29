@@ -26,6 +26,17 @@ export function loadMap() {
   return mapReady;
 }
 
+/** Soft red → amber → green scale for the output heat map (0%, 25%, 50%, 75%, 100%). */
+function heatColours() {
+  const light = document.documentElement.dataset.theme === "light";
+  if (settings().palette === "colourblind") {
+    return light ? ["#3b4a8c", "#3f7fa6", "#4fa8a0", "#9cc77a", "#e8d36a"] : ["#2f3b73", "#33688c", "#3f8f88", "#86b26a", "#d9c55c"];
+  }
+  return light
+    ? ["#d0675f", "#e0955a", "#e7bb5c", "#a9c46f", "#6bb383"]
+    : ["#a8474a", "#c4723f", "#cf9f45", "#8fa957", "#4f9a6d"];
+}
+
 const MODES = {
   status: "Status",
   since: "Time offline so far",
@@ -608,6 +619,10 @@ export class NuclearToday {
     const xs = Array.from({ length: hours }, (_, i) => weekStart + i * HOUR);
     const data = [];
     units.forEach((u, y) => u.output_week.forEach((v, x) => {
+      // RTE's per-reactor feed skips an hour on clock-change days: bridge single gaps.
+      const prev = u.output_week[x - 1];
+      const next = u.output_week[x + 1];
+      if (v == null && prev != null && next != null) v = (prev + next) / 2;
       if (v != null) data.push([x, y, Math.max(0, Math.min(110, (100 * v) / u.mw)), v]);
     }));
     const labels = units.map(u => u.label);
@@ -627,9 +642,9 @@ export class NuclearToday {
       visualMap: {
         min: 0, max: 100, calculable: false, orient: "horizontal", left: "center", bottom: forExport ? 40 : 6, itemHeight: 220, itemWidth: 10,
         text: ["100% of capacity", "0%"], textStyle: { color: t.muted, fontSize: 11 }, dimension: 2,
-        inRange: { color: settings().palette === "colourblind" ? ["#440154", "#3b528b", "#21918c", "#5ec962", "#fde725"] : ["#dc2626", "#f59e0b", "#22c55e"] }
+        inRange: { color: heatColours() }
       },
-      series: [{ type: "heatmap", data, progressive: 0, emphasis: { itemStyle: { borderColor: t.text, borderWidth: 1 } } }]
+      series: [{ type: "heatmap", data, progressive: 0, itemStyle: { borderWidth: 0 }, emphasis: { itemStyle: { borderColor: t.text, borderWidth: 1 } } }]
     });
     this.heatPanel.setTitle("Output by reactor, past 7 days", "Hourly output as a share of each reactor's capacity: red 0%, amber 50%, green 100% · blank means no output reported");
     this.heatPanel.render({

@@ -563,7 +563,9 @@ th.sorted.asc::after { content: " ▴"; }
 
 /* ---------- Overview ---------- */
 
-.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 18px 0 16px; }
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 18px 0 16px; }
+.tiles.soon-row { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: -4px; }
+.tiles.soon-row .tile { min-height: 0; padding: 14px 18px; }
 .tile {
   position: relative; display: flex; flex-direction: column; gap: 6px; min-height: 230px; padding: 18px 20px 14px;
   border: 1px solid var(--border); border-radius: 16px; background: var(--panel); color: var(--text); text-decoration: none;
@@ -588,6 +590,7 @@ a.tile:hover { border-color: color-mix(in srgb, var(--accent) 60%, transparent);
 .brief li { margin: 5px 0; }
 
 @media (max-width: 1100px) {
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .map-layout { grid-template-columns: 1fr; }
   .reactor-list { max-height: 520px; }
 }

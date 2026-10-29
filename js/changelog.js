@@ -36,7 +36,10 @@ export const CHANGELOG = [
       },
       {
         heading: "General",
-        items: ["The nuclear page is now France Power Nuclear Availability Intelligence. The colour-blind palette is renamed Colourblind-friendly."]
+        items: [
+          "The nuclear page is now France Power Nuclear Availability Intelligence. The colour-blind palette is renamed Colourblind-friendly.",
+          "Prices (day-ahead spot prices for France and neighbouring markets) added to the sidebar and Overview as coming soon. Softer colours on the reactor output heat map."
+        ]
       }
     ]
   },

@@ -1,7 +1,7 @@
 // Overview: one tile per dataset with the latest figure, the key comparison
 // and a small trend chart, plus a copyable list of the main points.
 
-import { getDaily, getLatest, latestSeries } from "./data.js";
+import { getDaily, getLatest, getRange, latestSeries } from "./data.js";
 import { RESERVOIR_CAPACITY_MWH, isoWeek } from "./hydro.js";
 import { getLive, getNuclearDaily, getReserves } from "./power-data.js";
 import { parseUtc } from "./data.js";
@@ -14,6 +14,7 @@ const ICONS = {
   demand: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h3.5l2.5-6 4 11 2.8-7H21"/></svg>',
   nuclear: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1.7"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/></svg>',
   hydro: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4.2 6 7.6 6 10.8a6 6 0 0 1-12 0c0-3.2 2.7-6.6 6-10.8Z"/></svg>',
+  prices: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 6.5A6.5 6.5 0 1 0 17.5 17.5"/><path d="M4.5 10.5h9M4.5 13.5h9"/></svg>',
   generation: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5 5 13.5h6l-1 8 8-11h-6l1-8Z"/></svg>'
 };
 
@@ -44,13 +45,15 @@ export class Overview {
   constructor(root) {
     this.root = root;
     this.root.innerHTML = `
-      ${heroHtml("France's power system,", "at a glance.", "The latest from RTE's data on French electricity demand, nuclear availability and hydro reservoirs, each against earlier years. Open a tile for the full page with charts, comparisons and downloads.")}
-      <div class="tiles" data-tiles>${'<div class="tile skeleton"></div>'.repeat(4)}</div>
+      ${heroHtml("France's power system,", "at a glance.", "The latest from RTE's data on French electricity demand, nuclear availability and hydro reservoirs, each against earlier years. Open a tile for the full page with charts, comparisons and downloads. Prices and generation are on the way.")}
+      <div class="tiles" data-tiles>${'<div class="tile skeleton"></div>'.repeat(3)}</div>
+      <div class="tiles soon-row" data-soon></div>
       <section class="brief">
         <h2>Main points <button class="btn ghost small" type="button" data-copy>Copy all</button></h2>
         <ul data-points><li class="muted">Loading…</li></ul>
       </section>`;
     this.tiles = this.root.querySelector("[data-tiles]");
+    this.soon = this.root.querySelector("[data-soon]");
     this.points = this.root.querySelector("[data-points]");
     this.root.querySelector("[data-copy]").addEventListener("click", () =>
       copyText([...this.points.querySelectorAll("li")].map(li => `• ${li.textContent}`).join("\n")));
@@ -66,11 +69,15 @@ export class Overview {
       html: this.tile(["demand", "nuclear", "hydro"][i], ["Demand", "Nuclear availability", "Hydro reserves"][i], "#", "–", "", [`<span class="muted">Couldn't load (${r.reason?.message || "error"})</span>`], ""),
       points: []
     }));
-    this.tiles.innerHTML = tiles.map(t => t.html).join("") + `
+    this.tiles.innerHTML = tiles.map(t => t.html).join("");
+    this.soon.innerHTML = `
+      <div class="tile soon">
+        <div class="tile-head"><span class="tile-title">${ICONS.prices}Prices</span><span class="tile-go">Coming soon</span></div>
+        <div class="tile-lines"><span>Day-ahead spot prices for France and neighbouring markets.</span></div>
+      </div>
       <div class="tile soon">
         <div class="tile-head"><span class="tile-title">${ICONS.generation}Generation</span><span class="tile-go">Coming soon</span></div>
-        <div class="tile-value">Generation mix by source</div>
-        <div class="tile-lines"><span>Output by fuel, renewables and exports will appear here.</span></div>
+        <div class="tile-lines"><span>Output by fuel, renewables and exports.</span></div>
       </div>`;
     const points = tiles.flatMap(t => t.points);
     this.points.innerHTML = points.length ? points.map(p => `<li>${p}</li>`).join("") : `<li class="muted">No data available.</li>`;
@@ -87,7 +94,11 @@ export class Overview {
 
   async demand() {
     const [latest, daily] = await Promise.all([getLatest(), getDaily()]);
-    const realised = [...latestSeries(latest, "REALISED")].sort((a, b) => a[0] - b[0]);
+    let realised = [...latestSeries(latest, "REALISED")].sort((a, b) => a[0] - b[0]);
+    if (!realised.length) {
+      // Just after midnight the live feed has no values for the new day yet.
+      realised = [...(await getRange("realised", addDays(todayParis(), -1), todayParis()))].sort((a, b) => a[0] - b[0]);
+    }
     const last = realised.at(-1);
     const today = todayParis();
     const monthStart = `${today.slice(0, 7)}-01`;

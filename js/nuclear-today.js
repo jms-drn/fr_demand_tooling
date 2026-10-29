@@ -153,7 +153,7 @@ export class NuclearToday {
   upcoming(days) {
     const end = this.now + days * DAY;
     const starts = this.outages.filter(o => o.status !== "DISMISSED" && o.start > this.now && o.start <= end
-      && o.end - o.start >= DAY && o.offMw >= 0.5 * o.capMw);
+      && o.end - o.start >= DAY && o.offMw >= 0.25 * o.capMw);
     const unique = new Map();
     for (const o of starts) if (!unique.has(o.unit) || unique.get(o.unit).start > o.start) unique.set(o.unit, o);
     const returns = this.units.filter(u => u.state !== "online" && u.until && u.until <= end);

@@ -47,7 +47,7 @@ export class NuclearOutages {
           <label class="field" data-custom><span>To</span><input type="date" data-k="to" min="2010-12-01"></label>
           <label class="field"><span>Type</span><select data-k="type"><option value="all">Planned and unplanned</option><option value="planned">Planned</option><option value="unplanned">Unplanned</option></select></label>
           <label class="field"><span>Length</span><select data-k="dur">${Object.entries(DURATIONS).map(([k, v]) => `<option value="${k}">${v}</option>`).join("")}</select></label>
-          <label class="field"><span>Size</span><select data-k="size"><option value="major">Half the reactor or more</option><option value="all">Any size</option></select></label>
+          <label class="field"><span>Size</span><select data-k="size"><option value="major">A quarter of the reactor or more</option><option value="half">Half the reactor or more</option><option value="all">Any size</option></select></label>
           <label class="field"><span>Status</span>
             <select data-k="state"><option value="all">Any</option><option value="ongoing">Ongoing now</option><option value="upcoming">Not started yet</option>
               <option value="ended">Ended</option><option value="overran">Ran past first announced end</option><option value="early">Ended early</option></select>
@@ -189,7 +189,8 @@ export class NuclearOutages {
       if (o.end - o.start >= 50 * 365 * DAY) return false; // placeholder end dates (e.g. permanent closures filed to 2099)
       if (s.type !== "all" && o.type !== s.type) return false;
       if (o.end - o.start < Number(s.dur) * DAY) return false;
-      if (s.size === "major" && o.offMw < 0.5 * o.capMw) return false;
+      if (s.size === "major" && o.offMw < 0.25 * o.capMw) return false;
+      if (s.size === "half" && o.offMw < 0.5 * o.capMw) return false;
       if (s.unit && o.unit !== s.unit) return false;
       const now = Date.now();
       if (s.state === "ongoing" && !(o.start <= now && o.end > now)) return false;

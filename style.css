@@ -618,9 +618,10 @@ td.good { color: var(--ok); }
 
 .switch { display: inline-flex; align-items: center; gap: 10px; height: 32px; padding: 0 2px; border: 0; background: none; color: var(--muted); font-size: 13px; font-weight: 600; cursor: pointer; }
 .switch .track { position: relative; width: 44px; height: 24px; border-radius: 999px; background: var(--st-planned); transition: background 0.18s; flex: none; }
-.switch .track::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35); transition: transform 0.18s; }
+.switch .track::after { content: ""; position: absolute; top: 50%; left: 3px; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%; background: #fff; box-shadow: 0 0 2px rgba(0, 0, 0, 0.3); transition: transform 0.18s; }
 .switch[aria-checked="true"] .track { background: var(--st-online); }
 .switch[aria-checked="true"] .track::after { transform: translateX(20px); }
+.switch .track { box-sizing: border-box; padding: 0; line-height: 0; }
 .switch .on { color: var(--text); }
 .switch:disabled { opacity: 0.45; cursor: not-allowed; }
 

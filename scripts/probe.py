@@ -41,7 +41,7 @@ def call(name, tok, path, params=None, headers=None):
     try:
         with urllib.request.urlopen(req, timeout=120) as r:
             body = r.read()
-            entry.update(status=r.status, headers={k: v for k, v in r.headers.items() if k.lower() in ("total_match", "continuation_token", "content-type")}, bytes=len(body))
+            entry.update(status=r.status, headers={k: v for k, v in r.headers.items() if k.lower() in ("total_match", "continuation_token", "content-type", "content-range", "x-ratelimit-remaining")}, bytes=len(body))
             data = json.loads(body) if body else None
     except urllib.error.HTTPError as e:
         entry.update(status=e.code, error=e.read()[:600].decode("utf-8", "replace"))
@@ -60,36 +60,31 @@ def main():
 
     if gen_tok:
         g = "/open_api/actual_generation/v1"
-        call("gen_per_type", gen_tok, f"{g}/actual_generations_per_production_type",
-             {"start_date": "2026-10-27T00:00:00+01:00", "end_date": "2026-10-29T00:00:00+01:00"})
-        call("gen_per_unit", gen_tok, f"{g}/actual_generations_per_unit",
-             {"start_date": "2026-10-28T00:00:00+01:00", "end_date": "2026-10-29T00:00:00+01:00"})
-        call("water_reserves", gen_tok, f"{g}/water_reserves",
-             {"start_date": "2025-10-30T00:00:00+01:00", "end_date": "2026-10-29T00:00:00+01:00"})
-        call("mix15_nuclear", gen_tok, f"{g}/generation_mix_15min_time_scale",
-             {"start_date": "2026-10-28T00:00:00+01:00", "end_date": "2026-10-29T00:00:00+01:00", "production_type": "NUCLEAR"})
-        call("gen_per_unit_2012", gen_tok, f"{g}/actual_generations_per_unit",
-             {"start_date": "2012-01-10T00:00:00+01:00", "end_date": "2012-01-11T00:00:00+01:00"})
+        call("water_default", gen_tok, f"{g}/water_reserves")
+        call("water_year", gen_tok, f"{g}/water_reserves",
+             {"start_date": "2025-10-27T00:00:00+01:00", "end_date": "2026-10-26T00:00:00+01:00"})
+        call("water_2015", gen_tok, f"{g}/water_reserves",
+             {"start_date": "2014-12-01T00:00:00+01:00", "end_date": "2015-12-01T00:00:00+01:00"})
+        call("gen_type_2014", gen_tok, f"{g}/actual_generations_per_production_type",
+             {"start_date": "2014-12-10T00:00:00+01:00", "end_date": "2014-12-20T00:00:00+01:00"})
 
     if una_tok:
         u = "/open_api/unavailability_additional_information/v7/generation_unavailabilities"
-        now_data, _ = call("una_now_last", una_tok, u, {
-            "fuel_type": "NUCLEAR", "date_type": "EVENT_DATE", "last_version": "true",
-            "start_date": "2026-10-29T00:00:00Z", "end_date": "2026-12-31T00:00:00Z"})
-        # Continue paging once if there is more.
-        tok_hdr = summary["una_now_last"].get("headers", {}).get("continuation_token")
-        if tok_hdr:
-            call("una_now_last_page2", una_tok, u, headers={"continuation_token": tok_hdr})
-        items = (now_data or {}).get("generation_unavailabilities", [])
-        if items:
-            ident = items[0]["identifier"]
-            call("una_versions_one", una_tok, u, {"identifier": ident})
-        call("una_2015_jan_last", una_tok, u, {
-            "fuel_type": "NUCLEAR", "date_type": "EVENT_DATE", "last_version": "true",
-            "start_date": "2015-01-01T00:00:00Z", "end_date": "2015-02-01T00:00:00Z"})
-        call("una_pub_lastweek_all", una_tok, u, {
+        call("una_pub_2025_01", una_tok, u, {
             "fuel_type": "NUCLEAR", "date_type": "PUBLICATION_DATE",
-            "start_date": "2026-10-22T00:00:00Z", "end_date": "2026-10-29T00:00:00Z"})
+            "start_date": "2025-01-01T00:00:00Z", "end_date": "2025-02-01T00:00:00Z"})
+        tok_hdr = summary["una_pub_2025_01"].get("headers", {}).get("continuation_token")
+        if tok_hdr:
+            call("una_pub_2025_01_p2", una_tok, u, headers={"continuation_token": tok_hdr})
+        call("una_pub_2010_12", una_tok, u, {
+            "fuel_type": "NUCLEAR", "date_type": "PUBLICATION_DATE",
+            "start_date": "2010-12-01T00:00:00Z", "end_date": "2011-01-01T00:00:00Z"})
+        call("una_pub_2016_q1", una_tok, u, {
+            "fuel_type": "NUCLEAR", "date_type": "PUBLICATION_DATE",
+            "start_date": "2016-01-01T00:00:00Z", "end_date": "2016-04-01T00:00:00Z"})
+        tok_hdr = summary["una_pub_2016_q1"].get("headers", {}).get("continuation_token")
+        if tok_hdr:
+            call("una_pub_2016_q1_p2", una_tok, u, headers={"continuation_token": tok_hdr})
 
     (OUT / "summary.json").write_text(json.dumps(summary, indent=1))
     print(json.dumps(summary, indent=1)[:6000])

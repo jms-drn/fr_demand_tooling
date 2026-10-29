@@ -29,7 +29,7 @@ export const CHANGELOG = [
         heading: "Nuclear availability: Explorer, Outages, Outlook",
         items: [
           "Explorer: available or unavailable capacity (split into planned and unplanned), availability rate, output, load factor or reactors offline for any period since 2011, hourly to monthly, for the whole fleet or one site or reactor series. Compare with last year, the average and range of up to 10 earlier years, run the period into the months ahead using the current notices, and rank it against every year.",
-          "Outages: every outage as a timeline per reactor and a sortable table, filtered by window, type, length, size, site or text. The red part of each bar shows an overrun beyond the end date first announced; the headline gives the share of planned outages that overran and by how much on average.",
+          "Outages: every outage as a timeline per reactor and a sortable table, filtered by window, type, length, size, status (ongoing, not started, ended, overran, ended early), how long a reactor has been offline so far, site or text, with a one-click "Show all outages" switch. The red part of each bar shows an overrun beyond the end date first announced; the headline gives the share of planned outages that overran and by how much on average.",
           "Outlook: expected availability for any period up to 18 months ahead, compared with the outlook a week or a month earlier, on the same date in up to three earlier years, or as of any date you pick — e.g. November as seen today against November 2025 as seen on the same date last year — and with what actually happened. A second chart shows how the outlook for the period has moved, and a third compares the outlook and the outcome at the same lead time in every year."
         ]
       },
@@ -42,7 +42,7 @@ export const CHANGELOG = [
       {
         heading: "Data",
         items: [
-          "Every version of every nuclear outage notice since December 2010, nuclear output since December 2014 and reservoir levels since December 2014 are now stored and updated with the demand data. Image exports name the page they come from."
+          "Every version of every nuclear outage notice since December 2010, nuclear output since December 2014 and reservoir levels since December 2014 are now stored and updated with the demand data. Image exports name the page they come from, and the preview image for shared links is updated."
         ]
       }
     ]

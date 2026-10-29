@@ -11,7 +11,7 @@ import { getFleet, getOutages } from "./power-data.js";
 const DURATIONS = { 0: "Any length", 1: "1 day or more", 7: "1 week or more", 30: "1 month or more" };
 
 function defaults() {
-  return { win: "now", from: "", to: "", type: "all", dur: "1", size: "major", site: "all", unit: "", q: "", sort: "start", dir: "asc" };
+  return { win: "now", from: "", to: "", type: "all", dur: "1", size: "major", state: "all", running: "0", site: "all", unit: "", q: "", sort: "start", dir: "asc" };
 }
 
 export class NuclearOutages {
@@ -48,8 +48,19 @@ export class NuclearOutages {
           <label class="field"><span>Type</span><select data-k="type"><option value="all">Planned and unplanned</option><option value="planned">Planned</option><option value="unplanned">Unplanned</option></select></label>
           <label class="field"><span>Length</span><select data-k="dur">${Object.entries(DURATIONS).map(([k, v]) => `<option value="${k}">${v}</option>`).join("")}</select></label>
           <label class="field"><span>Size</span><select data-k="size"><option value="major">Half the reactor or more</option><option value="all">Any size</option></select></label>
+          <label class="field"><span>Status</span>
+            <select data-k="state"><option value="all">Any</option><option value="ongoing">Ongoing now</option><option value="upcoming">Not started yet</option>
+              <option value="ended">Ended</option><option value="overran">Ran past first announced end</option><option value="early">Ended early</option></select>
+          </label>
+          <label class="field"><span>Offline for</span>
+            <select data-k="running"><option value="0">Any time so far</option><option value="7">Over a week so far</option><option value="30">Over a month so far</option>
+              <option value="91">Over 3 months so far</option><option value="182">Over 6 months so far</option></select>
+          </label>
           <label class="field"><span>Site</span><select data-k="site" data-sites><option value="all">All sites</option></select></label>
           <label class="field grow"><span>Search</span><input type="search" data-k="q" placeholder="Reactor, reason or remark"></label>
+          <div class="field"><span>Quick</span><div class="chips">
+            <button class="chip" type="button" data-all-outages style="color:var(--accent)"><span class="swatch"></span><span class="chip-label">Show all outages</span></button>
+          </div></div>
         </div>
       </div>
       <div class="filter-note" data-unit-note hidden></div>
@@ -69,6 +80,12 @@ export class NuclearOutages {
     this.gantt = new ChartPanel(this.root.querySelector("[data-gantt]"), { title: "Outage timeline", size: "gantt" });
     this.root.querySelector("[data-copy]").addEventListener("click", () => copyText(this.headline.textContent));
     this.root.querySelector("[data-csv]").addEventListener("click", () => this.exportCsv());
+    this.root.querySelector("[data-all-outages]").addEventListener("click", () => {
+      const all = this.isAll();
+      Object.assign(this.state, all ? { dur: "1", size: "major" } : { dur: "0", size: "all", type: "all", state: "all", running: "0", q: "" });
+      this.syncControls();
+      this.update();
+    });
     this.root.querySelectorAll("[data-k]").forEach(input => input.addEventListener(input.type === "search" ? "input" : "change", () => {
       this.state[input.dataset.k] = input.value;
       if (input.dataset.k === "from" || input.dataset.k === "to") this.state.win = "custom";
@@ -99,12 +116,18 @@ export class NuclearOutages {
       this.root.querySelector('[data-k="from"]').value = from;
       this.root.querySelector('[data-k="to"]').value = to;
     }
+    this.root.querySelector("[data-all-outages]").setAttribute("aria-pressed", this.isAll());
     const note = this.root.querySelector("[data-unit-note]");
     note.hidden = !s.unit;
     if (s.unit) {
       note.innerHTML = `Showing <b>${this.labelOf(s.unit)}</b> only. <button class="link" type="button" data-clear>Show all reactors</button>`;
       note.querySelector("[data-clear]").addEventListener("click", () => { this.state.unit = ""; this.syncControls(); this.update(); });
     }
+  }
+
+  isAll() {
+    const s = this.state;
+    return s.dur === "0" && s.size === "all" && s.type === "all" && s.state === "all" && s.running === "0" && !s.q;
   }
 
   labelOf(name) {
@@ -168,6 +191,13 @@ export class NuclearOutages {
       if (o.end - o.start < Number(s.dur) * DAY) return false;
       if (s.size === "major" && o.offMw < 0.5 * o.capMw) return false;
       if (s.unit && o.unit !== s.unit) return false;
+      const now = Date.now();
+      if (s.state === "ongoing" && !(o.start <= now && o.end > now)) return false;
+      if (s.state === "upcoming" && !(o.start > now)) return false;
+      if (s.state === "ended" && !(o.end <= now)) return false;
+      if (s.state === "overran" && !(o.end - o.firstEnd > HOUR && o.firstEnd < now)) return false;
+      if (s.state === "early" && !(o.end <= now && o.firstEnd - o.end > HOUR)) return false;
+      if (Number(s.running) > 0 && !(o.start <= now && o.end > now && now - o.start >= Number(s.running) * DAY)) return false;
       if (s.site !== "all" && site(o.unit) !== s.site) return false;
       if (q && !`${this.labelOf(o.unit)} ${o.unit} ${reasonLabel(o.reason, o.remark)} ${o.remark} ${o.type}`.toLowerCase().includes(q)) return false;
       return true;

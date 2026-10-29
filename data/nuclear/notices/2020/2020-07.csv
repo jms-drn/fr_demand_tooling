@@ -1,0 +1,1073 @@
+identifier,version,publication_utc,unit_eic,unit_name,installed_mw,type,reason,status,start_utc,end_utc,intervals,remarks
+EC-EDF-05470-EDF-T-00046606,1,2020-07-01T00:19Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2023-07-01T00:00Z,2023-08-09T00:00Z,2023-07-01T00:00Z/2023-08-09T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00047364,1,2020-07-01T00:20Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2023-07-01T00:00Z,2023-12-24T01:00Z,2023-07-01T00:00Z/2023-12-24T01:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048158,2,2020-07-01T01:04Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-30T18:00Z,2020-07-03T08:30Z,2020-06-30T18:00Z/2020-07-03T08:30Z/375/535,"Remontée par paliers en cours
+Prochain palier : 785 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00048161,1,2020-07-01T01:53Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T01:45Z,2020-07-02T01:45Z,2020-07-01T01:45Z/2020-07-02T01:45Z/480/425,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048129,3,2020-07-01T02:48Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-29T07:25Z,2020-07-01T15:00Z,2020-06-29T07:25Z/2020-07-01T15:00Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048161,2,2020-07-01T03:23Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T01:45Z,2020-07-02T01:45Z,2020-07-01T01:45Z/2020-07-02T01:45Z/400/505,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048164,1,2020-07-01T04:43Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T22:30Z,2020-07-02T20:30Z,2020-07-01T22:30Z/2020-07-02T20:30Z/1187/143,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048165,1,2020-07-01T04:53Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T22:00Z,2020-08-14T22:00Z,2020-07-01T22:00Z/2020-08-14T22:00Z/810/105,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048158,3,2020-07-01T06:08Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-30T18:00Z,2020-07-03T13:10Z,2020-06-30T18:00Z/2020-07-03T13:10Z/375/535,"Remontée par paliers en cours
+Prochain palier : 785 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00048058,4,2020-07-01T06:19Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-22T22:40Z,2020-07-19T21:00Z,2020-06-22T22:40Z/2020-07-19T21:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00047966,8,2020-07-01T08:29Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-15T14:00Z,2020-07-03T00:00Z,2020-06-15T14:00Z/2020-07-03T00:00Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00023939,11,2020-07-01T08:30Z,17W100P100P0147F,ST LAURENT 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T00:00Z,2020-10-05T00:00Z,2020-07-03T00:00Z/2020-10-05T00:00Z/0/915,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00023935,68,2020-07-01T09:24Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-16T00:15Z,2020-07-01T15:00Z,2020-02-16T00:15Z/2020-07-01T15:00Z/0/890,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 270MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 270MW"
+EC-EDF-05470-EDF-T-00047752,3,2020-07-01T10:16Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-05T22:00Z,2020-07-14T22:00Z,2020-06-05T22:00Z/2020-07-14T22:00Z/380/1115,"Tranche imposée à 400 MW du samedi 06/06 00h00 au dimanche 26/07 00h00.
+Pour plus d'informations / for more information :
+https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages/edf-2020-00077
+https://clients.rte-france.com/lang/fr/clients_producteurs/vie/publications/declarations_list.jsp (message n° 5271)"
+EC-EDF-05470-EDF-T-00048172,1,2020-07-01T13:09Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T23:00Z,2020-07-03T16:00Z,2020-07-02T23:00Z/2020-07-03T16:00Z/1187/143,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048129,4,2020-07-01T13:10Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-29T07:25Z,2020-07-01T17:00Z,2020-06-29T07:25Z/2020-07-01T17:00Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048158,4,2020-07-01T15:30Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-30T18:00Z,2020-07-04T01:00Z,2020-06-30T18:00Z/2020-07-04T01:00Z/375/535,"Remontée par paliers en cours
+Prochain palier : 785 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00023935,69,2020-07-01T15:55Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-16T00:15Z,2020-07-01T16:00Z,2020-02-16T00:15Z/2020-07-01T16:00Z/0/890,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 270MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 270MW"
+EC-EDF-05470-EDF-T-00048129,5,2020-07-01T16:30Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-29T07:25Z,2020-07-01T22:00Z,2020-06-29T07:25Z/2020-07-01T22:00Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048177,1,2020-07-01T16:45Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-04T14:00Z,2020-07-01T16:40Z/2020-07-04T14:00Z/10/880,"Remontée par paliers en cours
+Prochain palier : 270MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 270MW"
+EC-EDF-05470-EDF-T-00048161,3,2020-07-01T18:02Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T01:45Z,2020-07-02T10:00Z,2020-07-01T01:45Z/2020-07-02T10:00Z/400/505,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048129,6,2020-07-01T20:27Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-29T07:25Z,2020-07-02T06:00Z,2020-06-29T07:25Z/2020-07-02T06:00Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048177,2,2020-07-01T23:17Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-04T14:00Z,2020-07-01T16:40Z/2020-07-04T14:00Z/170/720,"Remontée par paliers en cours
+Prochain palier : 410 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 410 MW"
+EC-EDF-05470-EDF-T-00048177,3,2020-07-02T01:17Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-04T14:00Z,2020-07-01T16:40Z/2020-07-04T14:00Z/250/640,"Remontée par paliers en cours
+Prochain palier : 410 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 410 MW"
+EC-EDF-05470-EDF-T-00048182,1,2020-07-02T01:19Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T01:14Z,2020-07-03T01:14Z,2020-07-02T01:14Z/2020-07-03T01:14Z/250/640,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048182,2,2020-07-02T02:22Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-02T01:14Z,2020-07-02T02:18Z,2020-07-02T01:14Z/2020-07-02T02:18Z/250/640,Failure / Défaillance
+EC-EDF-05470-EDF-T-00026232,17,2020-07-02T02:47Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-28T23:00Z,2020-07-04T21:00Z,2020-02-28T23:00Z/2020-07-04T21:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 195 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 195 MW"
+EC-EDF-05470-EDF-T-00048177,4,2020-07-02T03:27Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-04T22:00Z,2020-07-01T16:40Z/2020-07-04T22:00Z/350/540,"Remontée par paliers en cours
+Prochain palier : 785MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00023939,12,2020-07-02T03:47Z,17W100P100P0147F,ST LAURENT 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T00:00Z,2020-10-04T22:00Z,2020-07-03T00:00Z/2020-10-04T22:00Z/0/915,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048187,1,2020-07-02T04:02Z,17W100P100P0144L,PENLY 2,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T04:00Z,2020-07-03T04:00Z,2020-07-02T04:00Z/2020-07-03T04:00Z/760/570,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048187,2,2020-07-02T04:42Z,17W100P100P0144L,PENLY 2,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T04:00Z,2020-07-02T05:00Z,2020-07-02T04:00Z/2020-07-02T05:00Z/760/570,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048129,7,2020-07-02T05:42Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-29T07:25Z,2020-07-02T13:00Z,2020-06-29T07:25Z/2020-07-02T13:00Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048161,4,2020-07-02T06:17Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T01:45Z,2020-07-02T13:00Z,2020-07-01T01:45Z/2020-07-02T13:00Z/400/505,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048158,5,2020-07-02T06:22Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-30T18:00Z,2020-07-04T00:15Z,2020-06-30T18:00Z/2020-07-04T00:15Z/375/535,"Remontée par paliers en cours
+Prochain palier : 785 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00048192,1,2020-07-02T07:44Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-09-19T08:00Z,2020-09-19T14:00Z,2020-09-19T08:00Z/2020-09-19T14:00Z/0/1335,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048161,5,2020-07-02T07:54Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T01:45Z,2020-07-02T10:00Z,2020-07-01T01:45Z/2020-07-02T10:00Z/400/505,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048129,8,2020-07-02T08:47Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-29T07:25Z,2020-07-02T22:00Z,2020-06-29T07:25Z/2020-07-02T22:00Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048161,6,2020-07-02T09:47Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T01:45Z,2020-07-02T16:00Z,2020-07-01T01:45Z/2020-07-02T16:00Z/400/505,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048119,5,2020-07-02T10:52Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T22:00Z,2020-07-07T21:00Z,2020-06-28T22:00Z/2020-07-07T21:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00048158,6,2020-07-02T12:07Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-30T18:00Z,2020-07-04T00:15Z,2020-06-30T18:00Z/2020-07-04T00:15Z/560/350,"Remontée par paliers en cours
+Prochain palier : 785 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00024693,11,2020-07-02T13:32Z,17W100P100P0130W,GRAVELINES 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-21T22:00Z,2020-11-22T23:00Z,2020-08-21T22:00Z/2020-11-22T23:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048104,2,2020-07-02T14:32Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2020-07-02T20:30Z,2020-07-02T22:30Z,2020-07-02T20:30Z/2020-07-02T22:30Z/786/544,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048172,2,2020-07-02T14:37Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2020-07-02T23:00Z,2020-07-03T16:00Z,2020-07-02T23:00Z/2020-07-03T16:00Z/1187/143,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048164,2,2020-07-02T14:38Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T22:30Z,2020-07-03T14:30Z,2020-07-01T22:30Z/2020-07-03T14:30Z/1187/143,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048129,9,2020-07-02T14:52Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-29T07:25Z,2020-07-02T15:30Z,2020-06-29T07:25Z/2020-07-02T15:30Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00022755,23,2020-07-02T16:32Z,17W100P100P0103Z,CATTENOM 2,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-04-03T01:00Z,2020-08-22T22:00Z,2020-04-03T01:00Z/2020-08-22T22:00Z/0/1300,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+----------------------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022607,17,2020-07-02T16:33Z,17W100P100P0141R,PALUEL 3,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-19T22:00Z,2020-12-02T23:00Z,2020-06-19T22:00Z/2020-12-02T23:00Z/0/1330,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022606,9,2020-07-02T16:37Z,17W100P100P00966,BUGEY 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-01-18T01:00Z,2020-09-21T21:00Z,2020-01-18T01:00Z/2020-09-21T21:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+------------------------------------------------------------------------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022751,14,2020-07-02T16:38Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-15T01:00Z,2020-09-29T00:00Z,2020-02-15T01:00Z/2020-09-29T00:00Z/0/1310,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+----------------------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00023937,16,2020-07-02T16:40Z,17W100P100P0136K,GRAVELINES 6,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-12T22:45Z,2020-11-01T22:00Z,2020-06-12T22:45Z/2020-11-01T22:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00023930,9,2020-07-02T16:43Z,17W100P100P0094A,BLAYAIS 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-12T22:00Z,2020-10-21T22:00Z,2020-06-12T22:00Z/2020-10-21T22:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022749,13,2020-07-02T16:44Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-04-24T21:00Z,2020-09-13T21:00Z,2020-04-24T21:00Z/2020-09-13T21:00Z/0/1335,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022760,11,2020-07-02T16:46Z,17W100P100P0090I,BELLEVILLE 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-05T22:00Z,2021-02-04T23:00Z,2020-06-05T22:00Z/2021-02-04T23:00Z/0/1310,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00023938,16,2020-07-02T16:47Z,17W100P100P0143N,PENLY 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-16T00:00Z,2020-11-01T01:30Z,2020-05-16T00:00Z/2020-11-01T01:30Z/0/1330,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022758,11,2020-07-02T16:49Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-05T22:00Z,2020-10-15T22:00Z,2020-06-05T22:00Z/2020-10-15T22:00Z/0/890,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022765,13,2020-07-02T16:50Z,17W100P100P0109N,CHINON 4,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-30T00:00Z,2020-12-12T01:00Z,2020-05-30T00:00Z/2020-12-12T01:00Z/0/905,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00023936,10,2020-07-02T16:51Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-15T00:00Z,2021-01-03T01:00Z,2020-08-15T00:00Z/2021-01-03T01:00Z/0/1310,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00024693,12,2020-07-02T16:53Z,17W100P100P0130W,GRAVELINES 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-21T22:00Z,2020-10-25T23:00Z,2020-08-21T22:00Z/2020-10-25T23:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00024681,8,2020-07-02T16:54Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-09-05T00:00Z,2020-11-05T01:00Z,2020-09-05T00:00Z/2020-11-05T01:00Z/0/1300,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00024662,8,2020-07-02T16:56Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-21T22:00Z,2020-12-30T23:00Z,2020-08-21T22:00Z/2020-12-30T23:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022752,16,2020-07-02T16:57Z,17W100P100P0153K,TRICASTIN 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T22:00Z,2020-11-19T23:00Z,2020-07-03T22:00Z/2020-11-19T23:00Z/0/915,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00026105,7,2020-07-02T16:59Z,17W100P100P00958,BLAYAIS 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-10-31T01:00Z,2020-12-28T01:00Z,2020-10-31T01:00Z/2020-12-28T01:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00023939,13,2020-07-02T17:00Z,17W100P100P0147F,ST LAURENT 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T00:00Z,2020-09-06T22:00Z,2020-07-03T00:00Z/2020-09-06T22:00Z/0/915,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00023934,11,2020-07-02T17:01Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-14T22:30Z,2020-10-18T22:30Z,2020-08-14T22:30Z/2020-10-18T22:30Z/0/905,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00026167,8,2020-07-02T17:03Z,17W100P100P0122V,DAMPIERRE 3,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-09-12T00:00Z,2020-11-09T01:00Z,2020-09-12T00:00Z/2020-11-09T01:00Z/0/890,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+Modification prise en conformité avec les messages REMIT EDF-2020-00073 (site EDF) et 5251 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website).
+Modification made in accordance with message REMIT EDF-2020-00074 (EDF website) and 5251 (RTE website)."
+EC-EDF-05470-EDF-T-00024698,13,2020-07-02T17:04Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-10-10T00:00Z,2020-12-07T01:00Z,2020-10-10T00:00Z/2020-12-07T01:00Z/0/915,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022766,18,2020-07-02T17:06Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-14T22:00Z,2020-12-23T23:00Z,2020-08-14T22:00Z/2020-12-23T23:00Z/0/915,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048164,3,2020-07-02T17:52Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T22:30Z,2020-07-03T15:00Z,2020-07-01T22:30Z/2020-07-03T15:00Z/1187/143,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048227,1,2020-07-02T18:02Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T15:30Z,2020-07-02T19:30Z,2020-07-02T15:30Z/2020-07-02T19:30Z/120/1180,"Remontée par paliers en cours
+Prochain palier : 300MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 300MW"
+EC-EDF-05470-EDF-T-00048158,7,2020-07-02T18:27Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-30T18:00Z,2020-07-04T06:30Z,2020-06-30T18:00Z/2020-07-04T06:30Z/560/350,"Remontée par paliers en cours
+Prochain palier : 785 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00048227,2,2020-07-02T18:42Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T15:30Z,2020-07-02T20:00Z,2020-07-02T15:30Z/2020-07-02T20:00Z/325/975,"Remontée par paliers en cours
+Prochain palier : 1241MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1241MW"
+EC-EDF-05470-EDF-T-00048227,3,2020-07-02T18:57Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T15:30Z,2020-07-02T21:30Z,2020-07-02T15:30Z/2020-07-02T21:30Z/325/975,"Remontée par paliers en cours
+Prochain palier : 1241MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1241MW"
+EC-EDF-05470-EDF-T-00048227,4,2020-07-02T20:06Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T15:30Z,2020-07-02T23:00Z,2020-07-02T15:30Z/2020-07-02T23:00Z/325/975,"Remontée par paliers en cours
+Prochain palier : 1241MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1241MW"
+EC-EDF-05470-EDF-T-00048227,5,2020-07-02T22:32Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T15:30Z,2020-07-03T02:30Z,2020-07-02T15:30Z/2020-07-03T02:30Z/600/700,"Remontée par paliers en cours
+Prochain palier : 1255 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1255 MW"
+EC-EDF-05470-EDF-T-00048177,5,2020-07-02T23:32Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-06T21:00Z,2020-07-01T16:40Z/2020-07-06T21:00Z/350/540,"Remontée par paliers en cours
+Prochain palier : 785MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00048227,6,2020-07-03T00:22Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T15:30Z,2020-07-03T10:30Z,2020-07-02T15:30Z/2020-07-03T10:30Z/600/700,"Remontée par paliers en cours
+Prochain palier : 1255 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1255 MW"
+EC-EDF-05470-EDF-T-00048227,7,2020-07-03T02:42Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T15:30Z,2020-07-03T10:30Z,2020-07-02T15:30Z/2020-07-03T10:30Z/790/510,"Remontée par paliers en cours
+Prochain palier : 1255 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1255 MW"
+EC-EDF-05470-EDF-T-00048236,1,2020-07-03T06:27Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T05:00Z,2020-07-05T07:00Z,2020-07-05T05:00Z/2020-07-05T07:00Z/1150/180,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00022757,15,2020-07-03T06:37Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-06T21:00Z,2020-05-22T22:15Z/2020-07-06T21:00Z/0/915,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048140,5,2020-07-03T08:32Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-29T19:00Z,2020-07-13T00:00Z,2020-06-29T19:00Z/2020-07-13T00:00Z/360/555,"Remontée par paliers en cours
+Prochain palier : 880 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 880MW"
+EC-EDF-05470-EDF-T-00048227,8,2020-07-03T09:22Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T15:30Z,2020-07-04T10:00Z,2020-07-02T15:30Z/2020-07-04T10:00Z/900/400,"Remontée par paliers en cours
+Prochain palier : 1255 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1255 MW"
+EC-EDF-05470-EDF-T-00048123,3,2020-07-03T09:52Z,17W100P100P0128J,GOLFECH 1,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2020-06-28T16:09Z,2020-08-10T00:00Z,2020-06-28T16:09Z/2020-08-10T00:00Z/1180/130,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048242,1,2020-07-03T09:54Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T16:09Z,2020-08-10T00:00Z,2020-06-28T16:09Z/2020-08-10T00:00Z/1180/130,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048158,8,2020-07-03T10:32Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-30T18:00Z,2020-07-04T06:30Z,2020-06-30T18:00Z/2020-07-04T06:30Z/787/123,"Remontée par paliers en cours
+Prochain palier : 910 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 910 MW"
+EC-EDF-05470-EDF-T-00048244,1,2020-07-03T11:02Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T11:00Z,2020-07-12T21:00Z,2020-07-03T11:00Z/2020-07-12T21:00Z/360/555,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048140,6,2020-07-03T11:04Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-06-29T19:00Z,2020-07-03T11:00Z,2020-06-29T19:00Z/2020-07-03T11:00Z/360/555,"Remontée par paliers en cours
+Prochain palier : 880 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 880MW"
+EC-EDF-05470-EDF-T-00048158,9,2020-07-03T11:22Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-30T18:00Z,2020-07-04T13:30Z,2020-06-30T18:00Z/2020-07-04T13:30Z/811/99,"Remontée par paliers en cours
+Prochain palier : 910 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 910 MW"
+EC-EDF-05470-EDF-T-00048158,10,2020-07-03T11:24Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-30T18:00Z,2020-07-04T18:30Z,2020-06-30T18:00Z/2020-07-04T18:30Z/811/99,"Remontée par paliers en cours
+Prochain palier : 910 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 910 MW"
+EC-EDF-05470-EDF-T-00047508,7,2020-07-03T14:11Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-14T23:00Z,2020-07-21T21:00Z,2020-05-14T23:00Z/2020-07-21T21:00Z/0/910,"Indisponibilité fortuite
+
+-----------------------------
+
+Forced unavailability"
+EC-EDF-05470-EDF-T-00048250,1,2020-07-03T15:31Z,17W100P100P0108P,CHINON 3,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T03:00Z,2020-07-05T17:00Z,2020-07-04T03:00Z/2020-07-05T17:00Z/0/905,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048227,9,2020-07-03T15:41Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-02T15:30Z,2020-07-03T21:30Z,2020-07-02T15:30Z/2020-07-03T21:30Z/900/400,"Remontée par paliers en cours
+Prochain palier : 1255 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1255 MW"
+EC-EDF-05470-EDF-T-00048252,1,2020-07-03T19:51Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T19:30Z,2020-07-04T19:30Z,2020-07-03T19:30Z/2020-07-04T19:30Z/590/710,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048252,2,2020-07-03T20:37Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T19:30Z,2020-07-04T00:00Z,2020-07-03T19:30Z/2020-07-04T00:00Z/590/710,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048250,2,2020-07-03T23:11Z,17W100P100P0108P,CHINON 3,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T04:00Z,2020-07-05T17:00Z,2020-07-04T04:00Z/2020-07-05T17:00Z/0/905,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048252,3,2020-07-03T23:16Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T19:30Z,2020-07-04T16:00Z,2020-07-03T19:30Z/2020-07-04T16:00Z/880/420,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048258,1,2020-07-04T04:41Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T05:30Z,2020-07-05T17:30Z,2020-07-05T05:30Z/2020-07-05T17:30Z/441/464,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048250,3,2020-07-04T04:51Z,17W100P100P0108P,CHINON 3,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T05:30Z,2020-07-05T17:00Z,2020-07-04T05:30Z/2020-07-05T17:00Z/0/905,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048260,1,2020-07-04T05:21Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T01:30Z,2020-07-05T15:00Z,2020-07-05T01:30Z/2020-07-05T15:00Z/250/1080,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048177,6,2020-07-04T07:01Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-06T22:00Z,2020-07-01T16:40Z/2020-07-06T22:00Z/350/540,"Remontée par paliers en cours
+Prochain palier : 785MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00048262,1,2020-07-04T09:26Z,17W100P100P0150Q,TRICASTIN 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T09:15Z,2020-07-05T09:15Z,2020-07-04T09:15Z/2020-07-05T09:15Z/450/465,Failure / Défaillance
+EC-EDF-05470-EDF-T-00022757,16,2020-07-04T10:11Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-06T21:00Z,2020-05-22T22:15Z/2020-07-06T21:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048236,2,2020-07-04T10:16Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T08:00Z,2020-07-05T10:00Z,2020-07-05T08:00Z/2020-07-05T10:00Z/1150/180,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00026232,18,2020-07-04T10:46Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-28T23:00Z,2020-07-05T04:00Z,2020-02-28T23:00Z/2020-07-05T04:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 195 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 195 MW"
+EC-EDF-05470-EDF-T-00048262,2,2020-07-04T10:51Z,17W100P100P0150Q,TRICASTIN 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T09:15Z,2020-07-04T15:00Z,2020-07-04T09:15Z/2020-07-04T15:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048262,3,2020-07-04T11:56Z,17W100P100P0150Q,TRICASTIN 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T09:15Z,2020-07-04T15:00Z,2020-07-04T09:15Z/2020-07-04T15:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00026232,19,2020-07-04T11:57Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-28T23:00Z,2020-07-05T04:00Z,2020-02-28T23:00Z/2020-07-05T04:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 195 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 195 MW"
+EC-EDF-05470-EDF-T-00048119,6,2020-07-04T12:46Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T22:00Z,2020-07-08T21:00Z,2020-06-28T22:00Z/2020-07-08T21:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00026232,20,2020-07-04T12:47Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-28T23:00Z,2020-07-05T16:00Z,2020-02-28T23:00Z/2020-07-05T16:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 195 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 195 MW"
+EC-EDF-05470-EDF-T-00048262,4,2020-07-04T12:51Z,17W100P100P0150Q,TRICASTIN 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T09:15Z,2020-07-04T15:00Z,2020-07-04T09:15Z/2020-07-04T15:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00026232,21,2020-07-04T12:52Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-28T23:00Z,2020-07-05T16:00Z,2020-02-28T23:00Z/2020-07-05T16:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 195 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 195 MW"
+EC-EDF-05470-EDF-T-00048119,7,2020-07-04T12:54Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T22:00Z,2020-07-08T21:00Z,2020-06-28T22:00Z/2020-07-08T21:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00048262,5,2020-07-04T13:51Z,17W100P100P0150Q,TRICASTIN 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T09:15Z,2020-07-04T19:00Z,2020-07-04T09:15Z/2020-07-04T19:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048275,1,2020-07-04T13:56Z,17W100P100P01012,CATTENOM 1,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T23:00Z,2020-07-06T01:30Z,2020-07-04T23:00Z/2020-07-06T01:30Z/0/1300,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048262,6,2020-07-04T14:06Z,17W100P100P0150Q,TRICASTIN 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-04T09:15Z,2020-07-04T14:00Z,2020-07-04T09:15Z/2020-07-04T14:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048275,2,2020-07-04T14:26Z,17W100P100P01012,CATTENOM 1,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T23:00Z,2020-07-06T01:30Z,2020-07-04T23:00Z/2020-07-06T01:30Z/0/1300,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048119,8,2020-07-04T14:31Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T22:00Z,2020-07-08T21:00Z,2020-06-28T22:00Z/2020-07-08T21:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00048262,7,2020-07-04T14:32Z,17W100P100P0150Q,TRICASTIN 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-04T09:15Z,2020-07-04T14:00Z,2020-07-04T09:15Z/2020-07-04T14:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00026232,22,2020-07-04T14:34Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-28T23:00Z,2020-07-05T16:00Z,2020-02-28T23:00Z/2020-07-05T16:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 195 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 195 MW"
+EC-EDF-05470-EDF-T-00026232,23,2020-07-04T14:46Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-28T23:00Z,2020-07-05T04:00Z,2020-02-28T23:00Z/2020-07-05T04:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 195 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 195 MW"
+EC-EDF-05470-EDF-T-00022757,17,2020-07-04T14:51Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-05T11:00Z,2020-05-22T22:15Z/2020-07-05T11:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048275,3,2020-07-04T14:56Z,17W100P100P01012,CATTENOM 1,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T23:00Z,2020-07-06T01:30Z,2020-07-04T23:00Z/2020-07-06T01:30Z/0/1300,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048277,1,2020-07-04T15:01Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T14:58Z,2020-07-04T19:00Z,2020-07-04T14:58Z/2020-07-04T19:00Z/810/525,Failure / Défaillance
+EC-EDF-05470-EDF-T-00026232,24,2020-07-04T15:26Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-28T23:00Z,2020-07-05T04:00Z,2020-02-28T23:00Z/2020-07-05T04:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 195 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 195 MW"
+EC-EDF-05470-EDF-T-00048262,8,2020-07-04T15:27Z,17W100P100P0150Q,TRICASTIN 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-04T09:15Z,2020-07-04T14:00Z,2020-07-04T09:15Z/2020-07-04T14:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048277,2,2020-07-04T15:37Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T14:58Z,2020-07-04T19:00Z,2020-07-04T14:58Z/2020-07-04T19:00Z/810/525,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048252,4,2020-07-04T16:07Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T19:30Z,2020-07-05T01:30Z,2020-07-03T19:30Z/2020-07-05T01:30Z/880/420,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048158,11,2020-07-04T16:47Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-30T18:00Z,2020-07-04T23:00Z,2020-06-30T18:00Z/2020-07-04T23:00Z/811/99,"Remontée par paliers en cours
+Prochain palier : 910 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 910 MW"
+EC-EDF-05470-EDF-T-00048277,3,2020-07-04T16:57Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-04T14:58Z,2020-07-04T16:54Z,2020-07-04T14:58Z/2020-07-04T16:54Z/810/525,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048291,1,2020-07-04T18:37Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T04:00Z,2020-07-05T16:00Z,2020-07-05T04:00Z/2020-07-05T16:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048292,1,2020-07-04T18:38Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T23:30Z,2020-07-05T18:00Z,2020-07-04T23:30Z/2020-07-05T18:00Z/0/1310,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048236,3,2020-07-04T18:57Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T20:00Z,2020-07-05T22:00Z,2020-07-05T20:00Z/2020-07-05T22:00Z/1150/180,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00022757,18,2020-07-04T21:32Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-05T18:00Z,2020-05-22T22:15Z/2020-07-05T18:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048177,7,2020-07-04T21:52Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-06T22:00Z,2020-07-01T16:40Z/2020-07-06T22:00Z/425/465,"Remontée par paliers en cours
+Prochain palier : 785MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00048296,1,2020-07-04T22:47Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T22:41Z,2020-07-05T22:41Z,2020-07-04T22:41Z/2020-07-05T22:41Z/0/890,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048296,2,2020-07-05T00:02Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T22:41Z,2020-07-06T00:00Z,2020-07-04T22:41Z/2020-07-06T00:00Z/0/890,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048252,5,2020-07-05T01:37Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T19:30Z,2020-07-05T02:30Z,2020-07-03T19:30Z/2020-07-05T02:30Z/1100/200,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048252,6,2020-07-05T01:42Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T19:30Z,2020-07-05T04:30Z,2020-07-03T19:30Z/2020-07-05T04:30Z/1100/200,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048300,1,2020-07-05T02:12Z,17W100P100P0104X,CATTENOM 3,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T02:00Z,2020-07-06T02:00Z,2020-07-05T02:00Z/2020-07-06T02:00Z/450/850,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048252,7,2020-07-05T05:07Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T19:30Z,2020-07-05T08:00Z,2020-07-03T19:30Z/2020-07-05T08:00Z/1195/105,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048252,8,2020-07-05T05:22Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T19:30Z,2020-07-05T10:00Z,2020-07-03T19:30Z/2020-07-05T10:00Z/1195/105,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048260,2,2020-07-05T06:37Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T01:30Z,2020-07-05T15:00Z,2020-07-05T01:30Z/2020-07-05T15:00Z/125/1205,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048291,2,2020-07-05T07:07Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T04:00Z,2020-07-05T09:00Z,2020-07-05T04:00Z/2020-07-05T09:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048305,1,2020-07-05T09:22Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-08T15:00Z,2020-07-05T09:00Z/2020-07-08T15:00Z/100/815,"Remontée par paliers en cours
+Prochain palier : 194
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 194"
+EC-EDF-05470-EDF-T-00048305,2,2020-07-05T10:32Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-08T15:00Z,2020-07-05T09:00Z/2020-07-08T15:00Z/100/815,"Remontée par paliers en cours
+Prochain palier : 194
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 194"
+EC-EDF-05470-EDF-T-00048291,3,2020-07-05T10:33Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-05T04:00Z,2020-07-05T09:00Z,2020-07-05T04:00Z/2020-07-05T09:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048260,3,2020-07-05T10:35Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T01:30Z,2020-07-05T15:00Z,2020-07-05T01:30Z/2020-07-05T15:00Z/125/1205,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048252,9,2020-07-05T10:36Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-03T19:30Z,2020-07-05T10:00Z,2020-07-03T19:30Z/2020-07-05T10:00Z/1195/105,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048300,2,2020-07-05T10:38Z,17W100P100P0104X,CATTENOM 3,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T02:00Z,2020-07-06T02:00Z,2020-07-05T02:00Z/2020-07-06T02:00Z/450/850,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048296,3,2020-07-05T10:39Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T22:41Z,2020-07-06T00:00Z,2020-07-04T22:41Z/2020-07-06T00:00Z/0/890,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048119,9,2020-07-05T10:51Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T22:00Z,2020-07-08T21:00Z,2020-06-28T22:00Z/2020-07-08T21:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00048305,3,2020-07-05T10:52Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-08T15:00Z,2020-07-05T09:00Z/2020-07-08T15:00Z/100/815,"Remontée par paliers en cours
+Prochain palier : 194
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 194"
+EC-EDF-05470-EDF-T-00048291,4,2020-07-05T10:53Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-05T04:00Z,2020-07-05T09:00Z,2020-07-05T04:00Z/2020-07-05T09:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048260,4,2020-07-05T10:55Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T01:30Z,2020-07-05T15:00Z,2020-07-05T01:30Z/2020-07-05T15:00Z/125/1205,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048296,4,2020-07-05T10:56Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T22:41Z,2020-07-06T00:00Z,2020-07-04T22:41Z/2020-07-06T00:00Z/0/890,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048300,3,2020-07-05T10:58Z,17W100P100P0104X,CATTENOM 3,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T02:00Z,2020-07-06T02:00Z,2020-07-05T02:00Z/2020-07-06T02:00Z/450/850,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048252,10,2020-07-05T10:59Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-03T19:30Z,2020-07-05T10:00Z,2020-07-03T19:30Z/2020-07-05T10:00Z/1195/105,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048177,8,2020-07-05T11:00Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-06T22:00Z,2020-07-01T16:40Z/2020-07-06T22:00Z/425/465,"Remontée par paliers en cours
+Prochain palier : 785MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00022757,19,2020-07-05T11:02Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-05T18:00Z,2020-05-22T22:15Z/2020-07-05T18:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048236,4,2020-07-05T11:03Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T20:00Z,2020-07-05T22:00Z,2020-07-05T20:00Z/2020-07-05T22:00Z/1150/180,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048292,2,2020-07-05T11:05Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T23:30Z,2020-07-05T18:00Z,2020-07-04T23:30Z/2020-07-05T18:00Z/0/1310,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048158,12,2020-07-05T11:06Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-06-30T18:00Z,2020-07-04T23:00Z,2020-06-30T18:00Z/2020-07-04T23:00Z/811/99,"Remontée par paliers en cours
+Prochain palier : 910 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 910 MW"
+EC-EDF-05470-EDF-T-00026232,25,2020-07-05T11:08Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-02-28T23:00Z,2020-07-05T04:00Z,2020-02-28T23:00Z/2020-07-05T04:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 195 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 195 MW"
+EC-EDF-05470-EDF-T-00048275,4,2020-07-05T11:09Z,17W100P100P01012,CATTENOM 1,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T23:00Z,2020-07-06T01:30Z,2020-07-04T23:00Z/2020-07-06T01:30Z/0/1300,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048260,5,2020-07-05T11:11Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T01:30Z,2020-07-05T15:00Z,2020-07-05T01:30Z/2020-07-05T15:00Z/464/866,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048250,4,2020-07-05T12:27Z,17W100P100P0108P,CHINON 3,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T05:30Z,2020-07-06T03:30Z,2020-07-04T05:30Z/2020-07-06T03:30Z/0/905,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00048305,4,2020-07-05T13:27Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-08T15:00Z,2020-07-05T09:00Z/2020-07-08T15:00Z/194/721,"Remontée par paliers en cours
+Prochain palier : 383 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 383 MW"
+EC-EDF-05470-EDF-T-00048258,2,2020-07-05T14:12Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T05:30Z,2020-07-05T21:00Z,2020-07-05T05:30Z/2020-07-05T21:00Z/441/464,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00022757,20,2020-07-05T15:57Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-06T06:00Z,2020-05-22T22:15Z/2020-07-06T06:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048300,4,2020-07-05T16:12Z,17W100P100P0104X,CATTENOM 3,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T02:00Z,2020-07-06T01:00Z,2020-07-05T02:00Z/2020-07-06T01:00Z/450/850,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048305,5,2020-07-05T21:47Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-08T17:00Z,2020-07-05T09:00Z/2020-07-08T17:00Z/360/555,"Remontée par paliers en cours
+Prochain palier : 804 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 804 MW"
+EC-EDF-05470-EDF-T-00048300,5,2020-07-05T23:27Z,17W100P100P0104X,CATTENOM 3,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T02:00Z,2020-07-06T04:30Z,2020-07-05T02:00Z/2020-07-06T04:30Z/450/850,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048296,5,2020-07-06T00:17Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T22:41Z,2020-07-06T06:00Z,2020-07-04T22:41Z/2020-07-06T06:00Z/0/890,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048119,10,2020-07-06T02:57Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T22:00Z,2020-07-11T21:00Z,2020-06-28T22:00Z/2020-07-11T21:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00022757,21,2020-07-06T03:02Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-07T03:00Z,2020-05-22T22:15Z/2020-07-07T03:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048296,6,2020-07-06T03:17Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-04T22:41Z,2020-07-06T04:00Z,2020-07-04T22:41Z/2020-07-06T04:00Z/0/890,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048300,6,2020-07-06T03:37Z,17W100P100P0104X,CATTENOM 3,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T02:00Z,2020-07-06T05:30Z,2020-07-05T02:00Z/2020-07-06T05:30Z/450/850,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048300,7,2020-07-06T05:04Z,17W100P100P0104X,CATTENOM 3,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-05T02:00Z,2020-07-06T05:00Z,2020-07-05T02:00Z/2020-07-06T05:00Z/450/850,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048305,6,2020-07-06T06:19Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-09T01:30Z,2020-07-05T09:00Z/2020-07-09T01:30Z/360/555,"Remontée par paliers en cours
+Prochain palier : 800 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 800 MW"
+EC-EDF-05470-EDF-T-00022757,22,2020-07-06T06:55Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-06T21:00Z,2020-05-22T22:15Z/2020-07-06T21:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00022757,23,2020-07-06T09:29Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-06T21:00Z,2020-05-22T22:15Z/2020-07-06T21:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048305,7,2020-07-06T09:30Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-09T01:30Z,2020-07-05T09:00Z/2020-07-09T01:30Z/360/555,"Remontée par paliers en cours
+Prochain palier : 800 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 800 MW"
+EC-EDF-05470-EDF-T-00048300,8,2020-07-06T09:32Z,17W100P100P0104X,CATTENOM 3,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-05T02:00Z,2020-07-06T05:00Z,2020-07-05T02:00Z/2020-07-06T05:00Z/450/850,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048296,7,2020-07-06T09:34Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-04T22:41Z,2020-07-06T04:00Z,2020-07-04T22:41Z/2020-07-06T04:00Z/0/890,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048119,11,2020-07-06T09:35Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T22:00Z,2020-07-11T21:00Z,2020-06-28T22:00Z/2020-07-11T21:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00048177,9,2020-07-06T09:54Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-07T10:00Z,2020-07-01T16:40Z/2020-07-07T10:00Z/310/580,"Remontée par paliers en cours
+Prochain palier : 785MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00048348,1,2020-07-06T13:03Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-06T12:47Z,2020-07-07T12:47Z,2020-07-06T12:47Z/2020-07-07T12:47Z/760/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048305,8,2020-07-06T13:33Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-09T19:30Z,2020-07-05T09:00Z/2020-07-09T19:30Z/360/555,"Remontée par paliers en cours
+Prochain palier : 800 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 800 MW"
+EC-EDF-05470-EDF-T-00048348,2,2020-07-06T14:23Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-06T12:47Z,2020-07-06T16:00Z,2020-07-06T12:47Z/2020-07-06T16:00Z/760/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00022757,24,2020-07-06T15:03Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-07T14:00Z,2020-05-22T22:15Z/2020-07-07T14:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048348,3,2020-07-06T16:22Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-06T12:47Z,2020-07-06T16:30Z,2020-07-06T12:47Z/2020-07-06T16:30Z/760/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048353,1,2020-07-06T19:24Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-06T19:21Z,2020-07-06T22:00Z,2020-07-06T19:21Z/2020-07-06T22:00Z/800/105,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048353,2,2020-07-06T20:05Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-06T19:21Z,2020-07-07T00:00Z,2020-07-06T19:21Z/2020-07-07T00:00Z/760/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048177,10,2020-07-06T21:34Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-09T04:00Z,2020-07-01T16:40Z/2020-07-09T04:00Z/310/580,"Remontée par paliers en cours
+Prochain palier : 785MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 785 MW"
+EC-EDF-05470-EDF-T-00048353,3,2020-07-06T23:24Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-06T19:21Z,2020-07-07T05:00Z,2020-07-06T19:21Z/2020-07-07T05:00Z/760/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048305,9,2020-07-07T02:44Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-09T08:00Z,2020-07-05T09:00Z/2020-07-09T08:00Z/360/555,"Remontée par paliers en cours
+Prochain palier : 800 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 800 MW"
+EC-EDF-05470-EDF-T-00048353,4,2020-07-07T03:54Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-06T19:21Z,2020-07-07T08:00Z,2020-07-06T19:21Z/2020-07-07T08:00Z/760/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00022757,25,2020-07-07T07:19Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-08T21:00Z,2020-05-22T22:15Z/2020-07-08T21:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048353,5,2020-07-07T07:54Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-06T19:21Z,2020-07-08T08:00Z,2020-07-06T19:21Z/2020-07-08T08:00Z/760/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048177,11,2020-07-07T09:06Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-09T05:30Z,2020-07-01T16:40Z/2020-07-09T05:30Z/560/330,"Remontée par paliers en cours
+Prochain palier : 720MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 720 MW"
+EC-EDF-05470-EDF-T-00022757,26,2020-07-07T12:55Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-08T21:00Z,2020-05-22T22:15Z/2020-07-08T21:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 100 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 100 MW"
+EC-EDF-05470-EDF-T-00048363,1,2020-07-07T14:42Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-12T17:00Z,2020-07-12T03:00Z/2020-07-12T17:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048353,6,2020-07-07T16:37Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-06T19:21Z,2020-07-07T16:30Z,2020-07-06T19:21Z/2020-07-07T16:30Z/760/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048177,12,2020-07-07T17:11Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-09T05:30Z,2020-07-01T16:40Z/2020-07-09T05:30Z/720/170,"Remontée par paliers en cours
+Prochain palier : 820 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 820 MW"
+EC-EDF-05470-EDF-T-00048305,10,2020-07-07T17:46Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-09T08:00Z,2020-07-05T09:00Z/2020-07-09T08:00Z/770/145,"Remontée par paliers en cours
+Prochain palier : 930 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 930 MW"
+EC-EDF-05470-EDF-T-00022757,27,2020-07-07T21:56Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-08T09:00Z,2020-05-22T22:15Z/2020-07-08T09:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 100 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 100 MW"
+EC-EDF-05470-EDF-T-00046604,1,2020-07-08T00:57Z,17W100P100P0143N,PENLY 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2023-07-08T00:00Z,2023-10-03T00:00Z,2023-07-08T00:00Z/2023-10-03T00:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00022757,28,2020-07-08T02:11Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-22T22:15Z,2020-07-08T03:00Z,2020-05-22T22:15Z/2020-07-08T03:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 100 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 100 MW"
+EC-EDF-05470-EDF-T-00048177,13,2020-07-08T02:51Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-09T04:00Z,2020-07-01T16:40Z/2020-07-09T04:00Z/720/170,"Remontée par paliers en cours
+Prochain palier : 820 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 820 MW"
+EC-EDF-05470-EDF-T-00048305,11,2020-07-08T02:57Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-09T12:00Z,2020-07-05T09:00Z/2020-07-09T12:00Z/770/145,"Remontée par paliers en cours
+Prochain palier : 930 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 930 MW"
+EC-EDF-05470-EDF-T-00048369,1,2020-07-08T03:02Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-11T12:00Z,2020-07-08T03:00Z/2020-07-11T12:00Z/10/905,"Remontée par paliers en cours
+Prochain palier : 198MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 198MW"
+EC-EDF-05470-EDF-T-00048369,2,2020-07-08T06:46Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-11T12:00Z,2020-07-08T03:00Z/2020-07-11T12:00Z/190/725,"Remontée par paliers en cours
+Prochain palier : 435 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 435 MW"
+EC-EDF-05470-EDF-T-00048076,2,2020-07-08T08:36Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-09T22:00Z,2020-07-13T00:30Z,2020-07-09T22:00Z/2020-07-13T00:30Z/0/1310,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048377,1,2020-07-08T09:01Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-13T21:00Z,2020-07-11T01:00Z/2020-07-13T21:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048378,1,2020-07-08T09:02Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-10T22:00Z,2020-07-11T01:00Z,2020-07-10T22:00Z/2020-07-11T01:00Z/50/855,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048244,2,2020-07-08T09:06Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T11:00Z,2020-07-19T21:00Z,2020-07-03T11:00Z/2020-07-19T21:00Z/360/555,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048076,3,2020-07-08T09:11Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-09T21:30Z,2020-07-13T03:30Z,2020-07-09T21:30Z/2020-07-13T03:30Z/0/1310,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048369,3,2020-07-08T09:52Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-11T18:00Z,2020-07-08T03:00Z/2020-07-11T18:00Z/370/545,"Remontée par paliers en cours
+Prochain palier : 338 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 338 MW"
+EC-EDF-05470-EDF-T-00048369,4,2020-07-08T09:56Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-11T12:00Z,2020-07-08T03:00Z/2020-07-11T12:00Z/370/545,"Remontée par paliers en cours
+Prochain palier : 338 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 338 MW"
+EC-EDF-05470-EDF-T-00048383,1,2020-07-08T11:21Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T11:15Z,2020-07-09T11:15Z,2020-07-08T11:15Z/2020-07-09T11:15Z/0/1335,Shutdown / Arrêt
+EC-EDF-05470-EDF-T-00047508,8,2020-07-08T16:26Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-14T23:00Z,2020-07-28T21:00Z,2020-05-14T23:00Z/2020-07-28T21:00Z/0/910,"Indisponibilité fortuite
+
+-----------------------------
+
+Forced unavailability"
+EC-EDF-05470-EDF-T-00048386,1,2020-07-08T17:21Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T17:16Z,2020-07-09T17:16Z,2020-07-08T17:16Z/2020-07-09T17:16Z/790/115,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048177,14,2020-07-08T20:56Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-09T19:00Z,2020-07-01T16:40Z/2020-07-09T19:00Z/720/170,"Remontée par paliers en cours
+Prochain palier : 820 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 820 MW"
+EC-EDF-05470-EDF-T-00048383,2,2020-07-08T21:21Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T11:15Z,2020-07-09T19:00Z,2020-07-08T11:15Z/2020-07-09T19:00Z/0/1335,Shutdown / Arrêt
+EC-EDF-05470-EDF-T-00048369,5,2020-07-08T21:31Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-11T21:30Z,2020-07-08T03:00Z/2020-07-11T21:30Z/370/545,"Remontée par paliers en cours
+Prochain palier : 338 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 338 MW"
+EC-EDF-05470-EDF-T-00048378,2,2020-07-09T05:46Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-10T22:00Z,2020-07-11T01:00Z,2020-07-10T22:00Z/2020-07-11T01:00Z/100/805,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048305,12,2020-07-09T06:16Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-09T18:30Z,2020-07-05T09:00Z/2020-07-09T18:30Z/780/135,"Remontée par paliers en cours
+Prochain palier : 930 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 930 MW"
+EC-EDF-05470-EDF-T-00048386,2,2020-07-09T07:11Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T17:16Z,2020-07-09T21:00Z,2020-07-08T17:16Z/2020-07-09T21:00Z/790/115,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048386,3,2020-07-09T07:17Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T17:16Z,2020-07-10T21:00Z,2020-07-08T17:16Z/2020-07-10T21:00Z/790/115,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048383,3,2020-07-09T07:18Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T11:15Z,2020-07-09T09:00Z,2020-07-08T11:15Z/2020-07-09T09:00Z/0/1335,Shutdown / Arrêt
+EC-EDF-05470-EDF-T-00048383,4,2020-07-09T08:01Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T11:15Z,2020-07-09T09:00Z,2020-07-08T11:15Z/2020-07-09T09:00Z/0/1335,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048383,5,2020-07-09T08:46Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T11:15Z,2020-07-09T09:30Z,2020-07-08T11:15Z/2020-07-09T09:30Z/0/1335,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048369,6,2020-07-09T08:56Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-11T21:30Z,2020-07-08T03:00Z/2020-07-11T21:30Z/330/585,"Remontée par paliers en cours
+Prochain palier : 770 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 770 MW"
+EC-EDF-05470-EDF-T-00048177,15,2020-07-09T10:29Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T16:40Z,2020-07-09T15:30Z,2020-07-01T16:40Z/2020-07-09T15:30Z/720/170,"Remontée par paliers en cours
+Prochain palier : 820 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 820 MW"
+EC-EDF-05470-EDF-T-00048369,7,2020-07-09T11:44Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-11T23:00Z,2020-07-08T03:00Z/2020-07-11T23:00Z/330/585,"Remontée par paliers en cours
+Prochain palier : 770 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 770 MW"
+EC-EDF-05470-EDF-T-00048369,8,2020-07-09T12:04Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-12T00:30Z,2020-07-08T03:00Z/2020-07-12T00:30Z/330/585,"Remontée par paliers en cours
+Prochain palier : 770 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 770 MW"
+EC-EDF-05470-EDF-T-00048305,13,2020-07-09T12:59Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-05T09:00Z,2020-07-09T19:30Z,2020-07-05T09:00Z/2020-07-09T19:30Z/780/135,"Remontée par paliers en cours
+Prochain palier : 930 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 930 MW"
+EC-EDF-05470-EDF-T-00048405,1,2020-07-09T15:10Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T12:30Z,2020-07-12T19:30Z,2020-07-12T12:30Z/2020-07-12T19:30Z/710/620,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048076,4,2020-07-09T17:00Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-09T23:30Z,2020-07-13T03:30Z,2020-07-09T23:30Z/2020-07-13T03:30Z/0/1310,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048407,1,2020-07-09T18:06Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-09T18:00Z,2020-07-10T18:00Z,2020-07-09T18:00Z/2020-07-10T18:00Z/700/635,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048408,1,2020-07-09T18:51Z,17W100P100P01012,CATTENOM 1,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-09T18:42Z,2020-07-10T19:00Z,2020-07-09T18:42Z/2020-07-10T19:00Z/1195/105,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048369,9,2020-07-09T20:40Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-12T00:30Z,2020-07-08T03:00Z/2020-07-12T00:30Z/530/385,"Remontée par paliers en cours
+Prochain palier : 770 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 770 MW"
+EC-EDF-05470-EDF-T-00048407,2,2020-07-09T21:40Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-09T18:00Z,2020-07-09T21:37Z,2020-07-09T18:00Z/2020-07-09T21:37Z/700/635,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048369,10,2020-07-10T00:50Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-12T00:30Z,2020-07-08T03:00Z/2020-07-12T00:30Z/640/275,"Remontée par paliers en cours
+Prochain palier : 770 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 770 MW"
+EC-EDF-05470-EDF-T-00048408,2,2020-07-10T03:15Z,17W100P100P01012,CATTENOM 1,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-09T18:42Z,2020-07-10T03:10Z,2020-07-09T18:42Z/2020-07-10T03:10Z/1195/105,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048377,2,2020-07-10T03:17Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-13T22:00Z,2020-07-11T01:00Z/2020-07-13T22:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048058,5,2020-07-10T05:50Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-22T22:40Z,2020-07-24T21:00Z,2020-06-22T22:40Z/2020-07-24T21:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048405,2,2020-07-10T06:15Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T12:30Z,2020-07-12T19:30Z,2020-07-12T12:30Z/2020-07-12T19:30Z/660/670,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048369,11,2020-07-10T06:30Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-12T00:30Z,2020-07-08T03:00Z/2020-07-12T00:30Z/770/145,"Remontée par paliers en cours
+Prochain palier : 900 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 900 MW"
+EC-EDF-05470-EDF-T-00048417,1,2020-07-10T06:55Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T05:00Z,2020-07-12T07:00Z,2020-07-12T05:00Z/2020-07-12T07:00Z/1175/155,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048420,1,2020-07-10T08:51Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-10T07:30Z,2020-07-10T09:00Z,2020-07-10T07:30Z/2020-07-10T09:00Z/735/170,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00022764,13,2020-07-10T09:06Z,17W100P100P0133Q,GRAVELINES 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-29T22:00Z,2020-08-15T21:00Z,2020-05-29T22:00Z/2020-08-15T21:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00024678,10,2020-07-10T13:59Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-09-26T00:00Z,2020-12-04T01:00Z,2020-09-26T00:00Z/2020-12-04T01:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00024693,13,2020-07-10T14:04Z,17W100P100P0130W,GRAVELINES 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-21T22:00Z,2020-11-03T23:00Z,2020-08-21T22:00Z/2020-11-03T23:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048076,5,2020-07-11T03:14Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-09T23:30Z,2020-07-13T11:30Z,2020-07-09T23:30Z/2020-07-13T11:30Z/0/1310,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048405,3,2020-07-11T05:54Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T11:30Z,2020-07-12T16:00Z,2020-07-12T11:30Z/2020-07-12T16:00Z/165/1165,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048430,1,2020-07-11T05:56Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T16:00Z,2020-07-12T19:30Z,2020-07-12T16:00Z/2020-07-12T19:30Z/710/620,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048076,6,2020-07-11T06:24Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-09T23:30Z,2020-07-13T09:30Z,2020-07-09T23:30Z/2020-07-13T09:30Z/0/1310,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048369,12,2020-07-11T10:14Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-08T03:00Z,2020-07-12T06:30Z,2020-07-08T03:00Z/2020-07-12T06:30Z/770/145,"Remontée par paliers en cours
+Prochain palier : 900 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 900 MW"
+EC-EDF-05470-EDF-T-00048119,12,2020-07-11T15:14Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T22:00Z,2020-07-11T17:00Z,2020-06-28T22:00Z/2020-07-11T17:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00048244,3,2020-07-11T17:24Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-03T11:00Z,2020-07-11T17:30Z,2020-07-03T11:00Z/2020-07-11T17:30Z/360/555,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048435,1,2020-07-11T17:29Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T17:30Z,2020-07-11T22:00Z,2020-07-11T17:30Z/2020-07-11T22:00Z/270/645,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048436,1,2020-07-11T17:30Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T22:00Z,2020-07-19T21:00Z,2020-07-11T22:00Z/2020-07-19T21:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048369,13,2020-07-11T18:59Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-08T03:00Z,2020-07-11T01:00Z,2020-07-08T03:00Z/2020-07-11T01:00Z/770/145,"Remontée par paliers en cours
+Prochain palier : 900 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 900 MW"
+EC-EDF-05470-EDF-T-00048435,2,2020-07-11T21:59Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T17:30Z,2020-07-12T04:00Z,2020-07-11T17:30Z/2020-07-12T04:00Z/270/645,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048436,2,2020-07-11T22:00Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T04:00Z,2020-07-19T21:00Z,2020-07-12T04:00Z/2020-07-19T21:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048435,3,2020-07-12T02:49Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T17:30Z,2020-07-12T10:00Z,2020-07-11T17:30Z/2020-07-12T10:00Z/270/645,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048436,3,2020-07-12T02:51Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T10:00Z,2020-07-19T21:00Z,2020-07-12T10:00Z/2020-07-19T21:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048405,4,2020-07-12T04:24Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T13:00Z,2020-07-12T16:00Z,2020-07-12T13:00Z/2020-07-12T16:00Z/165/1165,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048377,3,2020-07-12T08:14Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-12T22:00Z,2020-07-11T01:00Z/2020-07-12T22:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048435,4,2020-07-12T08:15Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T17:30Z,2020-07-12T15:00Z,2020-07-11T17:30Z/2020-07-12T15:00Z/270/645,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048436,4,2020-07-12T08:19Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T15:00Z,2020-07-19T21:00Z,2020-07-12T15:00Z/2020-07-19T21:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048436,5,2020-07-12T14:29Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T19:30Z,2020-07-19T21:00Z,2020-07-12T19:30Z/2020-07-19T21:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048435,5,2020-07-12T14:30Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T17:30Z,2020-07-12T19:30Z,2020-07-11T17:30Z/2020-07-12T19:30Z/270/645,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048363,2,2020-07-12T14:49Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-12T20:00Z,2020-07-12T03:00Z/2020-07-12T20:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048377,4,2020-07-12T16:04Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-13T22:00Z,2020-07-11T01:00Z/2020-07-13T22:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048430,2,2020-07-12T16:59Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T16:00Z,2020-07-12T21:30Z,2020-07-12T16:00Z/2020-07-12T21:30Z/710/620,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048076,7,2020-07-12T18:14Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-09T23:30Z,2020-07-12T21:00Z,2020-07-09T23:30Z/2020-07-12T21:00Z/0/1310,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048363,3,2020-07-12T18:49Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-13T01:00Z,2020-07-12T03:00Z/2020-07-13T01:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048436,6,2020-07-12T19:24Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-13T00:00Z,2020-07-19T21:00Z,2020-07-13T00:00Z/2020-07-19T21:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048435,6,2020-07-12T19:25Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T17:30Z,2020-07-13T00:00Z,2020-07-11T17:30Z/2020-07-13T00:00Z/270/645,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048435,7,2020-07-12T19:27Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T17:30Z,2020-07-13T00:00Z,2020-07-11T17:30Z/2020-07-13T00:00Z/270/645,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048430,3,2020-07-12T21:19Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T16:00Z,2020-07-12T22:00Z,2020-07-12T16:00Z/2020-07-12T22:00Z/710/620,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048363,4,2020-07-12T22:14Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-13T07:00Z,2020-07-12T03:00Z/2020-07-13T07:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048363,5,2020-07-12T23:04Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-13T08:00Z,2020-07-12T03:00Z/2020-07-13T08:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048435,8,2020-07-13T01:14Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T17:30Z,2020-07-13T02:00Z,2020-07-11T17:30Z/2020-07-13T02:00Z/270/645,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048436,7,2020-07-13T01:16Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-13T02:00Z,2020-07-19T21:00Z,2020-07-13T02:00Z/2020-07-19T21:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00043443,63,2020-07-13T06:34Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-22T23:30Z,2020-07-17T21:00Z,2020-02-22T23:30Z/2020-07-17T21:00Z/0/915,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+----------------------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048363,6,2020-07-13T07:24Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-13T11:00Z,2020-07-12T03:00Z/2020-07-13T11:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048363,7,2020-07-13T09:39Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-13T14:00Z,2020-07-12T03:00Z/2020-07-13T14:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048377,5,2020-07-13T13:34Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-14T12:00Z,2020-07-11T01:00Z/2020-07-14T12:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048363,8,2020-07-13T13:36Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-13T16:00Z,2020-07-12T03:00Z/2020-07-13T16:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048363,9,2020-07-13T15:29Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-13T17:00Z,2020-07-12T03:00Z/2020-07-13T17:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048436,8,2020-07-13T16:19Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-13T02:00Z,2020-07-26T21:00Z,2020-07-13T02:00Z/2020-07-26T21:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048377,6,2020-07-13T17:54Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-14T22:00Z,2020-07-11T01:00Z/2020-07-14T22:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048363,10,2020-07-13T17:59Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-13T18:30Z,2020-07-12T03:00Z/2020-07-13T18:30Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048242,2,2020-07-13T18:24Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T16:09Z,2020-08-10T00:00Z,2020-06-28T16:09Z/2020-08-10T00:00Z/1110/200,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048363,11,2020-07-13T18:34Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-13T20:30Z,2020-07-12T03:00Z/2020-07-13T20:30Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048165,2,2020-07-13T20:14Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T22:00Z,2020-08-14T22:00Z,2020-07-01T22:00Z/2020-08-14T22:00Z/770/145,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048363,12,2020-07-13T20:19Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-14T02:00Z,2020-07-12T03:00Z/2020-07-14T02:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048363,13,2020-07-13T20:59Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-12T03:00Z,2020-07-14T07:00Z,2020-07-12T03:00Z/2020-07-14T07:00Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048363,14,2020-07-13T23:24Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-12T03:00Z,2020-07-13T23:20Z,2020-07-12T03:00Z/2020-07-13T23:20Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048377,7,2020-07-14T08:34Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-15T12:00Z,2020-07-11T01:00Z/2020-07-15T12:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048479,1,2020-07-14T14:54Z,17W100P100P0142P,PALUEL 4,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-14T14:45Z,2020-07-15T14:45Z,2020-07-14T14:45Z/2020-07-15T14:45Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048479,2,2020-07-14T15:14Z,17W100P100P0142P,PALUEL 4,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-14T14:45Z,2020-07-14T15:00Z,2020-07-14T14:45Z/2020-07-14T15:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00046602,1,2020-07-15T00:54Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2023-07-15T00:00Z,2023-08-21T00:00Z,2023-07-15T00:00Z/2023-08-21T00:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00022749,14,2020-07-15T06:04Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-04-24T21:00Z,2020-08-27T21:00Z,2020-04-24T21:00Z/2020-08-27T21:00Z/0/1335,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048377,8,2020-07-15T07:57Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-15T21:00Z,2020-07-11T01:00Z/2020-07-15T21:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048377,9,2020-07-15T15:11Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-16T04:00Z,2020-07-11T01:00Z/2020-07-16T04:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048377,10,2020-07-16T01:21Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-16T12:00Z,2020-07-11T01:00Z/2020-07-16T12:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00043443,64,2020-07-16T09:56Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-22T23:30Z,2020-07-18T21:00Z,2020-02-22T23:30Z/2020-07-18T21:00Z/0/915,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+----------------------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048377,11,2020-07-16T12:12Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-16T13:30Z,2020-07-11T01:00Z/2020-07-16T13:30Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048377,12,2020-07-16T13:52Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-11T01:00Z,2020-07-16T14:30Z,2020-07-11T01:00Z/2020-07-16T14:30Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048584,1,2020-07-16T15:17Z,17W100P100P0104X,CATTENOM 3,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-29T00:00Z,2020-08-30T22:00Z,2020-08-29T00:00Z/2020-08-30T22:00Z/0/1300,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048585,1,2020-07-16T16:37Z,17W100P100P0107R,CHINON 2,905,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-16T16:15Z,2020-07-16T17:30Z,2020-07-16T16:15Z/2020-07-16T17:30Z/155/750,Failure / Défaillance
+EC-EDF-05470-EDF-T-00047508,9,2020-07-16T17:02Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-14T23:00Z,2020-07-31T21:00Z,2020-05-14T23:00Z/2020-07-31T21:00Z/0/910,"Indisponibilité fortuite
+
+-----------------------------
+
+Forced unavailability"
+EC-EDF-05470-EDF-T-00043443,65,2020-07-17T00:32Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-22T23:30Z,2020-07-18T21:00Z,2020-02-22T23:30Z/2020-07-18T21:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 370MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 370MW"
+EC-EDF-05470-EDF-T-00048058,6,2020-07-17T05:52Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-22T22:40Z,2020-07-28T21:00Z,2020-06-22T22:40Z/2020-07-28T21:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048581,1,2020-07-17T08:51Z,17W100P100P0104X,CATTENOM 3,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-23T01:00Z,2020-08-23T03:00Z,2020-08-23T01:00Z/2020-08-23T03:00Z/357/943,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00043443,66,2020-07-17T10:02Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-22T23:30Z,2020-07-19T21:00Z,2020-02-22T23:30Z/2020-07-19T21:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 370MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 370MW"
+EC-EDF-05470-EDF-T-00048591,1,2020-07-17T11:45Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T05:00Z,2020-07-19T07:00Z,2020-07-19T05:00Z/2020-07-19T07:00Z/1174/156,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00022751,15,2020-07-17T13:05Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-15T01:00Z,2020-08-30T21:00Z,2020-02-15T01:00Z/2020-08-30T21:00Z/0/1310,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+----------------------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048242,3,2020-07-17T13:33Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T16:09Z,2020-08-09T22:00Z,2020-06-28T16:09Z/2020-08-09T22:00Z/1110/200,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048593,1,2020-07-17T13:35Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-09T22:00Z,2020-08-09T23:30Z,2020-08-09T22:00Z/2020-08-09T23:30Z/100/1210,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00047135,3,2020-07-17T13:36Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-09T23:30Z,2020-08-15T00:00Z,2020-08-09T23:30Z/2020-08-15T00:00Z/0/1310,Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient ----------------------------------------------------------------------------------------------- The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons
+EC-EDF-05470-EDF-T-00048581,2,2020-07-17T14:04Z,17W100P100P0104X,CATTENOM 3,1300,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2020-08-23T01:00Z,2020-08-23T03:00Z,2020-08-23T01:00Z/2020-08-23T03:00Z/357/943,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048598,1,2020-07-18T05:50Z,17W100P100P0104X,CATTENOM 3,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-20T06:00Z,2020-07-20T09:00Z,2020-07-20T06:00Z/2020-07-20T09:00Z/1163/137,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048600,1,2020-07-18T08:45Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-18T08:30Z,2020-08-14T20:00Z,2020-07-18T08:30Z/2020-08-14T20:00Z/790/115,"Tranche en prolongation de campagne
+--------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00043443,67,2020-07-19T08:15Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-22T23:30Z,2020-07-19T17:00Z,2020-02-22T23:30Z/2020-07-19T17:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 370MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 370MW"
+EC-EDF-05470-EDF-T-00048436,9,2020-07-19T14:25Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-13T02:00Z,2020-07-26T21:00Z,2020-07-13T02:00Z/2020-07-26T21:00Z/280/635,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048603,1,2020-07-19T15:25Z,17W100P100P0115S,CRUAS 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T15:20Z,2020-07-20T15:20Z,2020-07-19T15:20Z/2020-07-20T15:20Z/460/455,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048436,10,2020-07-19T15:45Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-13T02:00Z,2020-07-26T21:00Z,2020-07-13T02:00Z/2020-07-26T21:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048603,2,2020-07-19T16:00Z,17W100P100P0115S,CRUAS 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T15:20Z,2020-07-19T16:00Z,2020-07-19T15:20Z/2020-07-19T16:00Z/460/455,Failure / Défaillance
+EC-EDF-05470-EDF-T-00043443,68,2020-07-19T16:55Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-22T23:30Z,2020-07-19T18:00Z,2020-02-22T23:30Z/2020-07-19T18:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 370MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 370MW"
+EC-EDF-05470-EDF-T-00048605,1,2020-07-19T18:05Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-23T00:30Z,2020-07-19T18:00Z/2020-07-23T00:30Z/100/815,"Remontée par paliers en cours
+Prochain palier : 370MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 370MW"
+EC-EDF-05470-EDF-T-00048605,2,2020-07-19T20:35Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-23T03:30Z,2020-07-19T18:00Z/2020-07-23T03:30Z/100/815,"Remontée par paliers en cours
+Prochain palier : 370MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 370MW"
+EC-EDF-05470-EDF-T-00048605,3,2020-07-19T22:30Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-23T03:30Z,2020-07-19T18:00Z/2020-07-23T03:30Z/210/705,"Remontée par paliers en cours
+Prochain palier : 370MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 370MW"
+EC-EDF-05470-EDF-T-00048605,4,2020-07-19T22:35Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-23T05:30Z,2020-07-19T18:00Z/2020-07-23T05:30Z/210/705,"Remontée par paliers en cours
+Prochain palier : 370MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 370MW"
+EC-EDF-05470-EDF-T-00048605,5,2020-07-20T00:55Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-23T11:00Z,2020-07-19T18:00Z/2020-07-23T11:00Z/210/705,"Remontée par paliers en cours
+Prochain palier : 370MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 370MW"
+EC-EDF-05470-EDF-T-00048605,6,2020-07-20T04:55Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-23T14:00Z,2020-07-19T18:00Z/2020-07-23T14:00Z/210/705,"Remontée par paliers en cours
+Prochain palier : 370MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 370MW"
+EC-EDF-05470-EDF-T-00048605,7,2020-07-20T10:00Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-23T18:00Z,2020-07-19T18:00Z/2020-07-23T18:00Z/210/705,"Remontée par paliers en cours
+Prochain palier : 370MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 370MW"
+EC-EDF-05470-EDF-T-00048605,8,2020-07-20T16:40Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-24T19:30Z,2020-07-19T18:00Z/2020-07-24T19:30Z/210/705,"Remontée par paliers en cours
+Prochain palier : 370MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 370MW"
+EC-EDF-05470-EDF-T-00048436,11,2020-07-21T10:13Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-13T02:00Z,2020-08-02T21:00Z,2020-07-13T02:00Z/2020-08-02T21:00Z/400/515,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048058,7,2020-07-21T12:21Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-22T22:40Z,2020-07-26T21:00Z,2020-06-22T22:40Z/2020-07-26T21:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048605,9,2020-07-21T16:42Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-24T21:30Z,2020-07-19T18:00Z/2020-07-24T21:30Z/210/705,"Remontée par paliers en cours
+Prochain palier : 370MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 370MW"
+EC-EDF-05470-EDF-T-00048605,10,2020-07-21T20:32Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-24T21:30Z,2020-07-19T18:00Z/2020-07-24T21:30Z/357/558,"Remontée par paliers en cours
+Prochain palier : 777 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777 MW"
+EC-EDF-05470-EDF-T-00048605,11,2020-07-22T02:37Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-24T23:00Z,2020-07-19T18:00Z/2020-07-24T23:00Z/357/558,"Remontée par paliers en cours
+Prochain palier : 777 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777 MW"
+EC-EDF-05470-EDF-T-00048629,1,2020-07-22T06:25Z,17W100P100P0108P,CHINON 3,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-24T22:00Z,2020-07-26T14:00Z,2020-07-24T22:00Z/2020-07-26T14:00Z/0/905,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048605,12,2020-07-22T12:33Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-19T18:00Z,2020-07-25T19:00Z,2020-07-19T18:00Z/2020-07-25T19:00Z/357/558,"Remontée par paliers en cours
+Prochain palier : 777 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777 MW"
+EC-EDF-05470-EDF-T-00048632,1,2020-07-22T16:26Z,17W100P100P0129H,GOLFECH 2,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-22T16:11Z,2020-07-23T16:11Z,2020-07-22T16:11Z/2020-07-23T16:11Z/1100/210,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048632,2,2020-07-22T22:01Z,17W100P100P0129H,GOLFECH 2,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-22T16:11Z,2020-07-23T10:00Z,2020-07-22T16:11Z/2020-07-23T10:00Z/1130/180,Failure / Défaillance
+EC-EDF-05470-EDF-T-00047853,2,2020-07-23T06:50Z,17W100P100P0115S,CRUAS 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T05:00Z,2020-08-02T22:00Z,2020-07-25T05:00Z/2020-08-02T22:00Z/0/915,Pour plus d'informations / for more information : https://one.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages/edf-2020-00087 https://clients.rte-france.com/lang/fr/clients_producteurs/vie/publications/declarations_list.jsp (message n° 5276)
+EC-EDF-05470-EDF-T-00048638,1,2020-07-23T07:02Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-23T06:55Z,2020-07-24T06:55Z,2020-07-23T06:55Z/2020-07-24T06:55Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048639,1,2020-07-23T08:20Z,17W100P100P0137I,NOGENT 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T00:30Z,2020-07-25T17:00Z,2020-07-25T00:30Z/2020-07-25T17:00Z/890/420,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048632,3,2020-07-23T10:10Z,17W100P100P0129H,GOLFECH 2,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-22T16:11Z,2020-07-23T14:00Z,2020-07-22T16:11Z/2020-07-23T14:00Z/1130/180,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048638,2,2020-07-23T12:45Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-23T06:55Z,2020-07-24T16:00Z,2020-07-23T06:55Z/2020-07-24T16:00Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00047853,3,2020-07-23T15:26Z,17W100P100P0115S,CRUAS 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T05:00Z,2020-08-09T22:00Z,2020-07-25T05:00Z/2020-08-09T22:00Z/0/915,Pour plus d'informations / for more information : https://one.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages/edf-2020-00087 https://clients.rte-france.com/lang/fr/clients_producteurs/vie/publications/declarations_list.jsp (message n° 5302)
+EC-EDF-05470-EDF-T-00022764,14,2020-07-23T15:39Z,17W100P100P0133Q,GRAVELINES 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-29T22:00Z,2020-08-08T21:00Z,2020-05-29T22:00Z/2020-08-08T21:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048638,3,2020-07-23T17:10Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-23T06:55Z,2020-07-25T06:55Z,2020-07-23T06:55Z/2020-07-25T06:55Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048638,4,2020-07-23T23:15Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-23T06:55Z,2020-07-25T18:00Z,2020-07-23T06:55Z/2020-07-25T18:00Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048638,5,2020-07-24T07:10Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-23T06:55Z,2020-07-26T21:00Z,2020-07-23T06:55Z/2020-07-26T21:00Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048656,1,2020-07-24T10:25Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T05:00Z,2020-07-26T07:00Z,2020-07-26T05:00Z/2020-07-26T07:00Z/1174/156,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048657,1,2020-07-24T10:40Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T06:00Z,2020-07-25T08:00Z,2020-07-25T06:00Z/2020-07-25T08:00Z/800/115,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048657,2,2020-07-24T11:15Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2020-07-25T06:00Z,2020-07-25T08:00Z,2020-07-25T06:00Z/2020-07-25T08:00Z/800/115,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048659,1,2020-07-24T15:55Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T13:00Z,2020-07-25T17:00Z,2020-07-25T13:00Z/2020-07-25T17:00Z/1225/105,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048638,6,2020-07-24T16:30Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-23T06:55Z,2020-07-27T21:00Z,2020-07-23T06:55Z/2020-07-27T21:00Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048639,2,2020-07-25T02:05Z,17W100P100P0137I,NOGENT 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T00:30Z,2020-07-25T17:00Z,2020-07-25T00:30Z/2020-07-25T17:00Z/750/560,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048638,7,2020-07-25T04:40Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-23T06:55Z,2020-07-27T21:00Z,2020-07-23T06:55Z/2020-07-27T21:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 370 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 370 MW"
+EC-EDF-05470-EDF-T-00048600,2,2020-07-25T04:50Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-18T08:30Z,2020-08-14T20:00Z,2020-07-18T08:30Z/2020-08-14T20:00Z/750/155,"Tranche en prolongation de campagne
+--------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048165,3,2020-07-25T04:51Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T22:00Z,2020-08-14T22:00Z,2020-07-01T22:00Z/2020-08-14T22:00Z/720/195,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048666,1,2020-07-25T05:55Z,17W100P100P0122V,DAMPIERRE 3,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T08:00Z,2020-07-27T04:00Z,2020-07-26T08:00Z/2020-07-27T04:00Z/500/390,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048639,3,2020-07-25T14:15Z,17W100P100P0137I,NOGENT 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T00:30Z,2020-07-25T15:00Z,2020-07-25T00:30Z/2020-07-25T15:00Z/750/560,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048668,1,2020-07-25T15:05Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T15:30Z,2020-07-25T17:30Z,2020-07-25T15:30Z/2020-07-25T17:30Z/400/515,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048656,2,2020-07-25T20:50Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2020-07-26T05:00Z,2020-07-26T07:00Z,2020-07-26T05:00Z/2020-07-26T07:00Z/1174/156,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048669,1,2020-07-25T20:52Z,17W100P100P0142P,PALUEL 4,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T21:20Z,2020-07-26T21:20Z,2020-07-25T21:20Z/2020-07-26T21:20Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048671,1,2020-07-26T04:15Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T04:30Z,2020-07-26T06:30Z,2020-07-26T04:30Z/2020-07-26T06:30Z/377/538,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048672,1,2020-07-26T08:25Z,17W100P100P0116Q,CRUAS 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T07:30Z,2020-07-26T09:30Z,2020-07-26T07:30Z/2020-07-26T09:30Z/770/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048673,1,2020-07-26T08:50Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T13:30Z,2020-07-26T22:00Z,2020-07-26T13:30Z/2020-07-26T22:00Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048673,2,2020-07-26T09:10Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T13:30Z,2020-07-26T23:00Z,2020-07-26T13:30Z/2020-07-26T23:00Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048669,2,2020-07-26T09:15Z,17W100P100P0142P,PALUEL 4,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T21:20Z,2020-07-27T10:00Z,2020-07-25T21:20Z/2020-07-27T10:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048672,2,2020-07-26T09:40Z,17W100P100P0116Q,CRUAS 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T07:30Z,2020-07-27T07:30Z,2020-07-26T07:30Z/2020-07-27T07:30Z/770/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048672,3,2020-07-26T10:20Z,17W100P100P0116Q,CRUAS 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-26T07:30Z,2020-07-26T10:15Z,2020-07-26T07:30Z/2020-07-26T10:15Z/770/145,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048678,1,2020-07-26T13:37Z,17W100P100P01012,CATTENOM 1,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T13:00Z,2020-07-26T18:00Z,2020-07-26T13:00Z/2020-07-26T18:00Z/1030/270,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048673,3,2020-07-26T14:15Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T14:10Z,2020-07-26T23:00Z,2020-07-26T14:10Z/2020-07-26T23:00Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048678,2,2020-07-26T16:20Z,17W100P100P01012,CATTENOM 1,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T13:00Z,2020-07-26T22:00Z,2020-07-26T13:00Z/2020-07-26T22:00Z/1030/270,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048678,3,2020-07-26T20:30Z,17W100P100P01012,CATTENOM 1,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T13:00Z,2020-07-27T04:00Z,2020-07-26T13:00Z/2020-07-27T04:00Z/1030/270,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048669,3,2020-07-26T22:00Z,17W100P100P0142P,PALUEL 4,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T21:20Z,2020-07-28T06:00Z,2020-07-25T21:20Z/2020-07-28T06:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048673,4,2020-07-26T23:45Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T14:10Z,2020-07-27T00:30Z,2020-07-26T14:10Z/2020-07-27T00:30Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048684,1,2020-07-27T00:50Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-27T00:00Z,2020-07-28T00:00Z,2020-07-27T00:00Z/2020-07-28T00:00Z/50/840,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048678,4,2020-07-27T00:55Z,17W100P100P01012,CATTENOM 1,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-26T13:00Z,2020-07-27T00:49Z,2020-07-26T13:00Z/2020-07-27T00:49Z/1030/270,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048684,2,2020-07-27T01:55Z,17W100P100P0123T,DAMPIERRE 4,890,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-27T00:30Z,2020-07-27T01:52Z,2020-07-27T00:30Z/2020-07-27T01:52Z/50/840,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048666,2,2020-07-27T04:45Z,17W100P100P0122V,DAMPIERRE 3,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T08:00Z,2020-07-27T16:00Z,2020-07-26T08:00Z/2020-07-27T16:00Z/500/390,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048638,8,2020-07-27T07:50Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-23T06:55Z,2020-07-28T04:00Z,2020-07-23T06:55Z/2020-07-28T04:00Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 370 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 370 MW"
+EC-EDF-05470-EDF-T-00048693,1,2020-07-27T13:46Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-15T00:00Z,2020-09-06T22:00Z,2020-08-15T00:00Z/2020-09-06T22:00Z/0/915,Pour plus d'informations / for more information : https://one.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages/edf-2020-00105 https://clients.rte-france.com/lang/fr/clients_producteurs/vie/publications/declarations_list.jsp (message n° 5305)
+EC-EDF-05470-EDF-T-00048666,3,2020-07-27T14:21Z,17W100P100P0122V,DAMPIERRE 3,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T08:00Z,2020-07-30T22:00Z,2020-07-26T08:00Z/2020-07-30T22:00Z/500/390,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048669,4,2020-07-27T17:31Z,17W100P100P0142P,PALUEL 4,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-25T21:20Z,2020-07-28T17:00Z,2020-07-25T21:20Z/2020-07-28T17:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048638,9,2020-07-27T23:01Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-23T06:55Z,2020-07-28T00:30Z,2020-07-23T06:55Z/2020-07-28T00:30Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 370 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 370 MW"
+EC-EDF-05470-EDF-T-00048638,10,2020-07-28T01:16Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-23T06:55Z,2020-07-28T01:29Z,2020-07-23T06:55Z/2020-07-28T01:29Z/0/915,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 435 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 435MW"
+EC-EDF-05470-EDF-T-00048696,1,2020-07-28T01:56Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-28T01:30Z,2020-07-31T01:00Z,2020-07-28T01:30Z/2020-07-31T01:00Z/10/905,"Remontée par paliers en cours
+Prochain palier : 436MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 436MW"
+EC-EDF-05470-EDF-T-00048696,2,2020-07-28T03:26Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-28T01:30Z,2020-07-31T01:00Z,2020-07-28T01:30Z/2020-07-31T01:00Z/190/725,"Remontée par paliers en cours
+Prochain palier : 436MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 436MW"
+EC-EDF-05470-EDF-T-00048696,3,2020-07-28T07:26Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-28T01:30Z,2020-07-31T00:00Z,2020-07-28T01:30Z/2020-07-31T00:00Z/360/555,"Remontée par paliers en cours
+Prochain palier : 630MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 630MW"
+EC-EDF-05470-EDF-T-00048702,1,2020-07-28T08:16Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-31T22:00Z,2020-08-16T22:00Z,2020-07-31T22:00Z/2020-08-16T22:00Z/400/1095,Tranche imposée à 400 MW du samedi 01/08 00h00 au lundi 17/08 00h00. Pour plus d'informations / for more information : https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages/edf-2020-00077 https://clients.rte-france.com/lang/fr/clients_producteurs/vie/publications/declarations_list.jsp (message n° 5297)
+EC-EDF-05470-EDF-T-00047114,4,2020-07-28T10:02Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-04-24T22:00Z,2020-10-04T22:00Z,2020-04-24T22:00Z/2020-10-04T22:00Z/0/890,"Pour plus d'informations / for more information : 
+https://one.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages/edf-2020-00078
+https://clients.rte-france.com/lang/fr/clients_producteurs/vie/publications/declarations_list.jsp (message n° 5307)"
+EC-EDF-05470-EDF-T-00048705,1,2020-07-28T10:16Z,17W100P100P0135M,GRAVELINES 5,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-31T07:00Z,2020-07-31T08:30Z,2020-07-31T07:00Z/2020-07-31T08:30Z/480/430,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048696,4,2020-07-28T15:21Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-28T01:30Z,2020-07-31T05:00Z,2020-07-28T01:30Z/2020-07-31T05:00Z/360/555,"Remontée par paliers en cours
+Prochain palier : 590MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 590MW"
+EC-EDF-05470-EDF-T-00048669,5,2020-07-28T18:01Z,17W100P100P0142P,PALUEL 4,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-25T21:20Z,2020-07-28T18:00Z,2020-07-25T21:20Z/2020-07-28T18:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048711,1,2020-07-29T00:01Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-29T01:30Z,2020-07-29T03:30Z,2020-07-29T01:30Z/2020-07-29T03:30Z/370/545,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00047266,1,2020-07-29T00:56Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2023-07-29T00:00Z,2023-10-22T00:00Z,2023-07-29T00:00Z/2023-10-22T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00048696,5,2020-07-29T03:06Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-28T01:30Z,2020-07-31T05:00Z,2020-07-28T01:30Z/2020-07-31T05:00Z/590/325,"Remontée par paliers en cours
+Prochain palier : 777MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777MW"
+EC-EDF-05470-EDF-T-00048714,1,2020-07-29T05:21Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-29T05:10Z,2020-07-30T05:10Z,2020-07-29T05:10Z/2020-07-30T05:10Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048666,4,2020-07-29T06:21Z,17W100P100P0122V,DAMPIERRE 3,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T08:00Z,2020-07-31T22:00Z,2020-07-26T08:00Z/2020-07-31T22:00Z/500/390,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00047508,10,2020-07-29T09:10Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-14T23:00Z,2020-08-04T21:00Z,2020-05-14T23:00Z/2020-08-04T21:00Z/0/910,"Indisponibilité fortuite
+-----------------------------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00048714,2,2020-07-29T09:16Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-29T05:10Z,2020-07-30T21:00Z,2020-07-29T05:10Z/2020-07-30T21:00Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048165,4,2020-07-29T12:29Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T22:00Z,2020-08-14T22:00Z,2020-07-01T22:00Z/2020-08-14T22:00Z/670/245,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048165,5,2020-07-29T12:36Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-01T22:00Z,2020-08-14T20:30Z,2020-07-01T22:00Z/2020-08-14T20:30Z/670/245,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048714,3,2020-07-29T18:06Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-29T05:10Z,2020-07-31T21:00Z,2020-07-29T05:10Z/2020-07-31T21:00Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048696,6,2020-07-29T18:07Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-28T01:30Z,2020-07-29T18:00Z,2020-07-28T01:30Z/2020-07-29T18:00Z/590/325,"Remontée par paliers en cours
+Prochain palier : 777MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777MW"
+EC-EDF-05470-EDF-T-00048725,1,2020-07-29T23:01Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-30T03:00Z,2020-07-30T05:00Z,2020-07-30T03:00Z/2020-07-30T05:00Z/370/545,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048726,1,2020-07-29T23:46Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-30T00:00Z,2020-07-31T00:00Z,2020-07-30T00:00Z/2020-07-31T00:00Z/1211/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048727,1,2020-07-30T05:21Z,17W100P100P0116Q,CRUAS 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-30T05:00Z,2020-07-31T05:00Z,2020-07-30T05:00Z/2020-07-31T05:00Z/450/465,Failure / Défaillance
+EC-EDF-05470-EDF-T-00048666,5,2020-07-30T06:01Z,17W100P100P0122V,DAMPIERRE 3,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-26T08:00Z,2020-08-01T22:00Z,2020-07-26T08:00Z/2020-08-01T22:00Z/500/390,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048727,2,2020-07-30T06:11Z,17W100P100P0116Q,CRUAS 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2020-07-30T05:00Z,2020-07-30T06:05Z,2020-07-30T05:00Z/2020-07-30T06:05Z/450/465,Failure / Défaillance
+EC-EDF-05470-EDF-T-00022764,15,2020-07-30T10:05Z,17W100P100P0133Q,GRAVELINES 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-29T22:00Z,2020-08-06T21:00Z,2020-05-29T22:00Z/2020-08-06T21:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048693,2,2020-07-30T11:11Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-13T00:00Z,2020-09-06T22:00Z,2020-08-13T00:00Z/2020-09-06T22:00Z/0/915,Pour plus d'informations / for more information : https://one.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages/edf-2020-00105 https://clients.rte-france.com/lang/fr/clients_producteurs/vie/publications/declarations_list.jsp (message n° 5305)
+EC-EDF-05470-EDF-T-00022606,10,2020-07-30T16:02Z,17W100P100P00966,BUGEY 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-01-18T01:00Z,2020-09-10T21:00Z,2020-01-18T01:00Z/2020-09-10T21:00Z/0/910,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+------------------------------------------------------------------------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048705,2,2020-07-30T16:36Z,17W100P100P0135M,GRAVELINES 5,910,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2020-07-31T07:00Z,2020-07-31T08:30Z,2020-07-31T07:00Z/2020-07-31T08:30Z/480/430,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00047753,2,2020-07-30T16:51Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-19T22:00Z,2020-09-13T22:00Z,2020-08-19T22:00Z/2020-09-13T22:00Z/0/1495,"Pour plus d'informations / for more information :
+https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages/edf-2020-00077
+https://clients.rte-france.com/lang/fr/clients_producteurs/vie/publications/declarations_list.jsp (message n° 5297)"
+EC-EDF-05470-EDF-T-00048714,4,2020-07-30T17:15Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-29T05:10Z,2020-08-01T11:00Z,2020-07-29T05:10Z/2020-08-01T11:00Z/0/915,NULL
+EC-EDF-05470-EDF-T-00022751,16,2020-07-30T17:29Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-15T01:00Z,2020-08-15T21:00Z,2020-02-15T01:00Z/2020-08-15T21:00Z/0/1310,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+----------------------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022749,15,2020-07-30T17:33Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-04-24T21:00Z,2020-08-21T21:00Z,2020-04-24T21:00Z/2020-08-21T21:00Z/0/1335,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048242,4,2020-07-30T20:41Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T16:09Z,2020-08-09T22:00Z,2020-06-28T16:09Z/2020-08-09T22:00Z/1070/240,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048726,2,2020-07-31T02:27Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-30T00:00Z,2020-07-31T03:30Z,2020-07-30T00:00Z/2020-07-31T03:30Z/1211/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00022758,12,2020-07-31T06:02Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-05T22:00Z,2020-09-15T21:00Z,2020-06-05T22:00Z/2020-09-15T21:00Z/0/890,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+-------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00022751,17,2020-07-31T06:07Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-15T01:00Z,2020-08-06T21:00Z,2020-02-15T01:00Z/2020-08-06T21:00Z/0/1310,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+----------------------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00047753,3,2020-07-31T08:19Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-14T22:00Z,2020-09-13T22:00Z,2020-08-14T22:00Z/2020-09-13T22:00Z/0/1495,"Pour plus d'informations / for more information :
+https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages/edf-2020-00077
+https://clients.rte-france.com/lang/fr/clients_producteurs/vie/publications/declarations_list.jsp (message n° 5271)"
+EC-EDF-05470-EDF-T-00022751,18,2020-07-31T08:46Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-15T01:00Z,2020-08-30T21:00Z,2020-02-15T01:00Z/2020-08-30T21:00Z/0/1310,"Prise en compte des incertitudes COVID-19 conformément aux messages REMIT EDF-2020-067 à 070 (site EDF) et 5246 (site RTE).
+----------------------------
+Change due to COVID-19 uncertainties in accordance with REMIT messages EDF-2020-067 to 070 (EDF website) and 5246 (RTE website)."
+EC-EDF-05470-EDF-T-00048748,1,2020-07-31T11:38Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-31T13:00Z,2020-08-01T13:00Z,2020-07-31T13:00Z/2020-08-01T13:00Z/0/1310,"cause externe liée à l'environnement 
+-------------------------------------------------------
+Environmental issue"
+EC-EDF-05470-EDF-T-00048748,2,2020-07-31T15:04Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-31T17:00Z,2020-08-01T17:00Z,2020-07-31T17:00Z/2020-08-01T17:00Z/190/1120,"cause externe liée à l'environnement 
+-------------------------------------------------------
+Environmental issue"
+EC-EDF-05470-EDF-T-00048748,3,2020-07-31T16:06Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-31T13:00Z,2020-08-01T17:00Z,2020-07-31T13:00Z/2020-08-01T17:00Z/190/1120,"cause externe liée à l'environnement 
+-------------------------------------------------------
+Environmental issue"
+EC-EDF-05470-EDF-T-00048600,3,2020-07-31T20:10Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-18T08:30Z,2020-08-14T20:00Z,2020-07-18T08:30Z/2020-08-14T20:00Z/700/205,"Tranche en prolongation de campagne
+--------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048242,5,2020-07-31T20:20Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-28T16:09Z,2020-08-09T22:00Z,2020-06-28T16:09Z/2020-08-09T22:00Z/1000/310,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00048754,1,2020-07-31T20:42Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-08-02T05:00Z,2020-08-02T07:00Z,2020-08-02T05:00Z/2020-08-02T07:00Z/1167/163,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00048748,4,2020-07-31T22:17Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-31T13:00Z,2020-08-01T17:00Z,2020-07-31T13:00Z/2020-08-01T17:00Z/260/1050,"cause externe liée à l'environnement 
+-------------------------------------------------------
+Environmental issue"
+EC-EDF-05470-EDF-T-00048756,1,2020-07-31T22:57Z,17W100P100P0135M,GRAVELINES 5,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-07-31T22:10Z,2020-08-01T22:10Z,2020-07-31T22:10Z/2020-08-01T22:10Z/780/130,Failure / Défaillance

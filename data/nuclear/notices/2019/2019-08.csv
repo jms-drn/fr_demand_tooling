@@ -1,0 +1,1256 @@
+identifier,version,publication_utc,unit_eic,unit_name,installed_mw,type,reason,status,start_utc,end_utc,intervals,remarks
+EC-EDF-05470-EDF-T-00018247,16,2019-08-01T00:32Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-06-28T22:10Z,2019-08-01T10:00Z,2019-06-28T22:10Z/2019-08-01T10:00Z/0/915,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 102 MW
+------------------------------------------------------
+After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 102 MW"
+EC-EDF-05470-EDF-T-00018247,17,2019-08-01T03:12Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-06-28T22:10Z,2019-08-01T08:30Z,2019-06-28T22:10Z/2019-08-01T08:30Z/0/915,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 102 MW
+------------------------------------------------------
+After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 102 MW"
+EC-EDF-05470-EDF-T-00040279,16,2019-08-01T06:23Z,17W100P100P0132S,GRAVELINES 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-10T03:30Z,2019-08-04T00:30Z,2019-07-10T03:30Z/2019-08-04T00:30Z/505/405,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040414,13,2019-08-01T06:27Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T00:30Z,2019-08-04T15:30Z,2019-08-04T00:30Z/2019-08-04T15:30Z/505/405,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00018247,18,2019-08-01T07:07Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-06-28T22:10Z,2019-08-01T11:30Z,2019-06-28T22:10Z/2019-08-01T11:30Z/0/915,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 102 MW
+------------------------------------------------------
+After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 102 MW"
+EC-EDF-05470-EDF-T-00018247,19,2019-08-01T10:27Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-06-28T22:10Z,2019-08-01T10:35Z,2019-06-28T22:10Z/2019-08-01T10:35Z/0/915,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 102 MW
+------------------------------------------------------
+After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 102 MW"
+EC-EDF-05470-EDF-T-00040851,5,2019-08-01T10:42Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-07-31T02:40Z,2019-08-01T10:35Z,2019-07-31T02:40Z/2019-08-01T10:35Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040864,1,2019-08-01T10:57Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-05T02:05Z,2019-08-01T10:35Z/2019-08-05T02:05Z/10/905,"Planifié
+Information Complémentaire
+
+Remontée par paliers en cours
+Prochain palier :102MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 102MW"
+EC-EDF-05470-EDF-T-00040864,2,2019-08-01T12:37Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-05T02:30Z,2019-08-01T10:35Z/2019-08-05T02:30Z/110/805,"Remontée par paliers en cours
+Prochain palier : 205 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 205 MW"
+EC-EDF-05470-EDF-T-00040864,3,2019-08-01T15:27Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-05T01:30Z,2019-08-01T10:35Z/2019-08-05T01:30Z/190/725,"Remontée par paliers en cours
+Prochain palier : 376 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 376 MW"
+EC-EDF-05470-EDF-T-00040864,4,2019-08-01T17:27Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-05T03:00Z,2019-08-01T10:35Z/2019-08-05T03:00Z/360/555,"Remontée par paliers en cours
+Prochain palier : 777 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777 MW"
+EC-EDF-05470-EDF-T-00040864,5,2019-08-02T01:12Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-05T07:00Z,2019-08-01T10:35Z/2019-08-05T07:00Z/360/555,"Remontée par paliers en cours
+Prochain palier : 777 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777 MW"
+EC-EDF-05470-EDF-T-00040841,3,2019-08-02T01:32Z,17W100P100P0136K,GRAVELINES 6,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-02T00:30Z,2019-08-02T04:30Z,2019-08-02T00:30Z/2019-08-02T04:30Z/335/575,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040841,4,2019-08-02T02:42Z,17W100P100P0136K,GRAVELINES 6,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-02T00:30Z,2019-08-02T02:45Z,2019-08-02T00:30Z/2019-08-02T02:45Z/335/575,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040279,17,2019-08-02T07:02Z,17W100P100P0132S,GRAVELINES 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-10T03:30Z,2019-08-05T18:00Z,2019-07-10T03:30Z/2019-08-05T18:00Z/495/415,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040414,14,2019-08-02T07:07Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-05T18:00Z,2019-08-06T11:30Z,2019-08-05T18:00Z/2019-08-06T11:30Z/495/415,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040883,1,2019-08-02T07:52Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T22:00Z,2019-08-11T22:00Z,2019-08-09T22:00Z/2019-08-11T22:00Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00032753,8,2019-08-02T09:02Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-24T23:00Z,2019-08-04T21:00Z,2019-05-24T23:00Z/2019-08-04T21:00Z/0/880,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 130 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 130 MW"
+EC-EDF-05470-EDF-T-00040864,6,2019-08-02T12:42Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-05T08:30Z,2019-08-01T10:35Z/2019-08-05T08:30Z/360/555,"Remontée par paliers en cours
+Prochain palier : 777 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777 MW"
+EC-EDF-05470-EDF-T-00017460,12,2019-08-02T19:12Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-03-15T21:00Z,2019-08-05T21:00Z,2019-03-15T21:00Z/2019-08-05T21:00Z/0/1500,Durée d'arrêt susceptible d'être prolongée en raison d'un programme maintenance chargé intégrant des activités nouvelles (tête de série VD 2 palier 1450 MW). The duration of the unavailability may be extended due to a busy maintenance plan that includes new activities (first 1450 MW unit to undergo a 2nd 10-year inspection).
+EC-EDF-05470-EDF-T-00040864,7,2019-08-02T22:12Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-05T11:30Z,2019-08-01T10:35Z/2019-08-05T11:30Z/360/555,"Remontée par paliers en cours
+Prochain palier : 777 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777 MW"
+EC-EDF-05470-EDF-T-00038471,2,2019-08-03T00:27Z,17W100P100P0135M,GRAVELINES 5,910,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-02T21:30Z,2019-08-03T00:22Z,2019-08-02T21:30Z/2019-08-03T00:22Z/50/860,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00014489,11,2019-08-03T00:32Z,17W100P100P0135M,GRAVELINES 5,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T00:22Z,2019-12-09T02:00Z,2019-08-03T00:22Z/2019-12-09T02:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00032753,9,2019-08-03T04:27Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-24T23:00Z,2019-08-04T10:00Z,2019-05-24T23:00Z/2019-08-04T10:00Z/0/880,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 130 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 130 MW"
+EC-EDF-05470-EDF-T-00040864,8,2019-08-03T04:42Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-06T11:30Z,2019-08-01T10:35Z/2019-08-06T11:30Z/360/555,"Remontée par paliers en cours
+Prochain palier : 777 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777 MW"
+EC-EDF-05470-EDF-T-00040279,18,2019-08-03T04:47Z,17W100P100P0132S,GRAVELINES 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-10T03:30Z,2019-08-05T20:00Z,2019-07-10T03:30Z/2019-08-05T20:00Z/495/415,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040414,15,2019-08-03T04:48Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-05T20:00Z,2019-08-06T13:30Z,2019-08-05T20:00Z/2019-08-06T13:30Z/495/415,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040896,1,2019-08-03T07:07Z,17W100P100P0133Q,GRAVELINES 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-05T21:00Z,2019-08-06T02:00Z,2019-08-05T21:00Z/2019-08-06T02:00Z/368/542,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040414,16,2019-08-03T07:17Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-05T20:00Z,2019-08-06T11:00Z,2019-08-05T20:00Z/2019-08-06T11:00Z/495/415,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040898,1,2019-08-03T08:02Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T07:57Z,2019-08-04T07:57Z,2019-08-03T07:57Z/2019-08-04T07:57Z/800/530,Failure / Défaillance
+EC-EDF-05470-EDF-T-00019377,5,2019-08-03T08:12Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-10T21:00Z,2019-07-05T22:00Z/2019-08-10T21:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00032753,10,2019-08-03T08:37Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-24T23:00Z,2019-08-03T16:00Z,2019-05-24T23:00Z/2019-08-03T16:00Z/0/880,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 130 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 130 MW"
+EC-EDF-05470-EDF-T-00040864,9,2019-08-03T08:47Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-06T11:30Z,2019-08-01T10:35Z/2019-08-06T11:30Z/445/470,"Remontée par paliers en cours
+Prochain palier : 777 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777 MW"
+EC-EDF-05470-EDF-T-00040898,2,2019-08-03T09:17Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-03T07:57Z,2019-08-03T09:11Z,2019-08-03T07:57Z/2019-08-03T09:11Z/800/530,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040864,10,2019-08-03T10:27Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-05T13:30Z,2019-08-01T10:35Z/2019-08-05T13:30Z/475/440,"Remontée par paliers en cours
+Prochain palier : 777 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 777 MW"
+EC-EDF-05470-EDF-T-00032753,11,2019-08-03T13:22Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-24T23:00Z,2019-08-03T14:00Z,2019-05-24T23:00Z/2019-08-03T14:00Z/0/880,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 130 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 130 MW"
+EC-EDF-05470-EDF-T-00040905,1,2019-08-03T14:17Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-06T00:00Z,2019-08-03T14:05Z/2019-08-06T00:00Z/10/870,"Remontée par paliers en cours
+Prochain palier : 130MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 130MW"
+EC-EDF-05470-EDF-T-00040906,1,2019-08-03T17:17Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T17:15Z,2019-08-04T17:15Z,2019-08-03T17:15Z/2019-08-04T17:15Z/800/535,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040905,2,2019-08-03T18:52Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-06T00:00Z,2019-08-03T14:05Z/2019-08-06T00:00Z/130/750,"Remontée par paliers en cours
+Prochain palier : 300MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 300MW"
+EC-EDF-05470-EDF-T-00040906,2,2019-08-03T21:12Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T17:15Z,2019-08-03T21:45Z,2019-08-03T17:15Z/2019-08-03T21:45Z/800/535,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040905,3,2019-08-03T23:27Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-06T07:00Z,2019-08-03T14:05Z/2019-08-06T07:00Z/130/750,"Remontée par paliers en cours
+Prochain palier : 300MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 300MW"
+EC-EDF-05470-EDF-T-00040864,11,2019-08-03T23:28Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-05T15:00Z,2019-08-01T10:35Z/2019-08-05T15:00Z/767/148,"Remontée par paliers en cours
+Prochain palier : 900 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 900 MW"
+EC-EDF-05470-EDF-T-00040864,12,2019-08-04T05:17Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-05T14:30Z,2019-08-01T10:35Z/2019-08-05T14:30Z/767/148,"Remontée par paliers en cours
+Prochain palier : 900 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 900 MW"
+EC-EDF-05470-EDF-T-00040279,19,2019-08-04T05:27Z,17W100P100P0132S,GRAVELINES 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-10T03:30Z,2019-08-07T11:00Z,2019-07-10T03:30Z/2019-08-07T11:00Z/495/415,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040414,17,2019-08-04T05:32Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-07T11:00Z,2019-08-08T02:00Z,2019-08-07T11:00Z/2019-08-08T02:00Z/495/415,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040861,2,2019-08-04T09:12Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-05T21:00Z,2019-08-05T23:00Z,2019-08-05T21:00Z/2019-08-05T23:00Z/50/865,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040905,4,2019-08-04T12:22Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-06T07:00Z,2019-08-03T14:05Z/2019-08-06T07:00Z/330/550,"Remontée par paliers en cours
+Prochain palier : 710MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 710MW"
+EC-EDF-05470-EDF-T-00040916,1,2019-08-04T12:37Z,17W100P100P0108P,CHINON 3,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-05T15:00Z,2019-08-05T16:30Z,2019-08-05T15:00Z/2019-08-05T16:30Z/790/115,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040917,1,2019-08-04T14:22Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T14:15Z,2019-08-04T15:30Z,2019-08-04T14:15Z/2019-08-04T15:30Z/700/215,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040918,1,2019-08-04T20:47Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-06T20:43Z,2019-08-04T20:43Z/2019-08-06T20:43Z/450/465,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040905,5,2019-08-04T20:48Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-06T14:30Z,2019-08-03T14:05Z/2019-08-06T14:30Z/330/550,"Remontée par paliers en cours
+Prochain palier : 710MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 710MW"
+EC-EDF-05470-EDF-T-00040918,2,2019-08-05T04:32Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-06T20:43Z,2019-08-04T20:43Z/2019-08-06T20:43Z/380/535,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040921,1,2019-08-05T06:12Z,17W100P100P0116Q,CRUAS 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-05T06:08Z,2019-08-05T11:00Z,2019-08-05T06:08Z/2019-08-05T11:00Z/815/100,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040905,6,2019-08-05T07:12Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-06T17:30Z,2019-08-03T14:05Z/2019-08-06T17:30Z/425/455,"Remontée par paliers en cours
+Prochain palier : 710MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 710MW"
+EC-EDF-05470-EDF-T-00040918,3,2019-08-05T07:17Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-07T22:00Z,2019-08-04T20:43Z/2019-08-07T22:00Z/375/540,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040905,7,2019-08-05T10:17Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-06T20:30Z,2019-08-03T14:05Z/2019-08-06T20:30Z/425/455,"Remontée par paliers en cours
+Prochain palier : 710MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 710MW"
+EC-EDF-05470-EDF-T-00017460,13,2019-08-05T10:32Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-03-15T21:00Z,2019-08-06T11:00Z,2019-03-15T21:00Z/2019-08-06T11:00Z/0/1500,Durée d'arrêt susceptible d'être prolongée en raison d'un programme maintenance chargé intégrant des activités nouvelles (tête de série VD 2 palier 1450 MW). The duration of the unavailability may be extended due to a busy maintenance plan that includes new activities (first 1450 MW unit to undergo a 2nd 10-year inspection).
+EC-EDF-05470-EDF-T-00040864,13,2019-08-05T11:27Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-06T05:00Z,2019-08-01T10:35Z/2019-08-06T05:00Z/767/148,"Remontée par paliers en cours
+Prochain palier : 900 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 900 MW"
+EC-EDF-05470-EDF-T-00040916,2,2019-08-05T14:42Z,17W100P100P0108P,CHINON 3,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-05T22:00Z,2019-08-06T00:00Z,2019-08-05T22:00Z/2019-08-06T00:00Z/790/115,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00018864,14,2019-08-05T14:52Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-31T23:00Z,2019-08-11T21:00Z,2019-05-31T23:00Z/2019-08-11T21:00Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00040918,4,2019-08-05T16:37Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-09T15:00Z,2019-08-04T20:43Z/2019-08-09T15:00Z/375/540,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040861,3,2019-08-05T16:47Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T21:00Z,2019-08-06T23:00Z,2019-08-06T21:00Z/2019-08-06T23:00Z/50/865,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040856,3,2019-08-05T16:52Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T23:00Z,2019-08-18T21:00Z,2019-08-06T23:00Z/2019-08-18T21:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040864,14,2019-08-05T17:02Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-06T18:00Z,2019-08-01T10:35Z/2019-08-06T18:00Z/767/148,"Remontée par paliers en cours
+Prochain palier : 900 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 900 MW"
+EC-EDF-05470-EDF-T-00040896,2,2019-08-05T22:47Z,17W100P100P0133Q,GRAVELINES 4,910,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-05T21:00Z,2019-08-05T22:45Z,2019-08-05T21:00Z/2019-08-05T22:45Z/368/542,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040905,8,2019-08-06T02:47Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-06T22:30Z,2019-08-03T14:05Z/2019-08-06T22:30Z/680/200,"Remontée par paliers en cours
+Prochain palier : 840MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 840MW"
+EC-EDF-05470-EDF-T-00040279,20,2019-08-06T02:57Z,17W100P100P0132S,GRAVELINES 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-10T03:30Z,2019-08-09T06:30Z,2019-07-10T03:30Z/2019-08-09T06:30Z/495/415,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040414,18,2019-08-06T03:07Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T06:30Z,2019-08-09T21:30Z,2019-08-09T06:30Z/2019-08-09T21:30Z/495/415,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040905,9,2019-08-06T07:42Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-06T21:00Z,2019-08-03T14:05Z/2019-08-06T21:00Z/680/200,"Remontée par paliers en cours
+Prochain palier : 880 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 880 MW"
+EC-EDF-05470-EDF-T-00040942,1,2019-08-06T08:32Z,17W100P100P01101,CHOOZ 1,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-07T07:00Z,2019-08-19T22:00Z,2019-08-07T07:00Z/2019-08-19T22:00Z/0/1500,"Le placement et la durée de cet arrêt pour contraintes environnementales seront réinterrogés en fonction de l'évolution des prévisions météorologiques. 
+--------------------------------------------------------------------- 
+The planning and the duration of the unavailability for environmental issues will be reassessed according to the weather forecast."
+EC-EDF-05470-EDF-T-00017460,14,2019-08-06T08:42Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-03-15T21:00Z,2019-08-06T14:00Z,2019-03-15T21:00Z/2019-08-06T14:00Z/0/1500,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 690 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 690 MW"
+EC-EDF-05470-EDF-T-00039858,2,2019-08-06T08:43Z,17W100P100P01101,CHOOZ 1,1500,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2019-08-14T22:00Z,2019-08-18T22:00Z,2019-08-14T22:00Z/2019-08-18T22:00Z/0/1500,"Le placement et la durée de cet arrêt seront réinterrogés si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability will be reassessed if economically justified."
+EC-EDF-05470-EDF-T-00019377,6,2019-08-06T09:02Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-12T21:00Z,2019-07-05T22:00Z/2019-08-12T21:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00040864,15,2019-08-06T10:27Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T10:35Z,2019-08-06T19:00Z,2019-08-01T10:35Z/2019-08-06T19:00Z/767/148,"Remontée par paliers en cours
+Prochain palier : 900 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 900 MW"
+EC-EDF-05470-EDF-T-00040939,1,2019-08-06T14:32Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T14:30Z,2019-08-09T10:00Z,2019-08-06T14:30Z/2019-08-09T10:00Z/10/1490,"Remontée par paliers en cours
+Prochain palier : 350 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 350MW"
+EC-EDF-05470-EDF-T-00040939,2,2019-08-06T15:27Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T14:30Z,2019-08-09T10:00Z,2019-08-06T14:30Z/2019-08-09T10:00Z/180/1320,"Remontée par paliers en cours
+Prochain palier : 690MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 690MW"
+EC-EDF-05470-EDF-T-00040905,10,2019-08-06T16:02Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-07T00:30Z,2019-08-03T14:05Z/2019-08-07T00:30Z/680/200,"Remontée par paliers en cours
+Prochain palier : 880 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 880 MW"
+EC-EDF-05470-EDF-T-00040939,3,2019-08-06T18:22Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T14:30Z,2019-08-09T10:00Z,2019-08-06T14:30Z/2019-08-09T10:00Z/470/1030,"Remontée par paliers en cours
+Prochain palier : 690MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 690MW"
+EC-EDF-05470-EDF-T-00040952,1,2019-08-06T18:52Z,17W100P100P01101,CHOOZ 1,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-07T05:30Z,2019-08-07T07:00Z,2019-08-07T05:30Z/2019-08-07T07:00Z/450/1050,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040905,11,2019-08-06T18:57Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-09T23:00Z,2019-08-03T14:05Z/2019-08-09T23:00Z/680/200,"Remontée par paliers en cours
+Prochain palier : 840 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 840 MW"
+EC-EDF-05470-EDF-T-00040939,4,2019-08-06T19:52Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T14:30Z,2019-08-09T10:00Z,2019-08-06T14:30Z/2019-08-09T10:00Z/520/980,"Remontée par paliers en cours
+Prochain palier : 1130MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1130MW"
+EC-EDF-05470-EDF-T-00040939,5,2019-08-06T20:12Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T14:30Z,2019-08-09T15:00Z,2019-08-06T14:30Z/2019-08-09T15:00Z/520/980,"Remontée par paliers en cours
+Prochain palier : 1130MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1130MW"
+EC-EDF-05470-EDF-T-00040918,5,2019-08-07T06:22Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-09T22:00Z,2019-08-04T20:43Z/2019-08-09T22:00Z/375/540,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040942,2,2019-08-07T06:57Z,17W100P100P01101,CHOOZ 1,1500,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2019-08-07T07:00Z,2019-08-19T22:00Z,2019-08-07T07:00Z/2019-08-19T22:00Z/0/1500,"Le placement et la durée de cet arrêt pour contraintes environnementales seront réinterrogés en fonction de l'évolution des prévisions météorologiques. 
+--------------------------------------------------------------------- 
+The planning and the duration of the unavailability for environmental issues will be reassessed according to the weather forecast."
+EC-EDF-05470-EDF-T-00040958,1,2019-08-07T08:07Z,17W100P100P01101,CHOOZ 1,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T22:00Z,2019-08-18T22:00Z,2019-08-09T22:00Z/2019-08-18T22:00Z/0/1500,"Le placement et la durée de cet arrêt seront réinterrogés si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability will be reassessed if economically justified."
+EC-EDF-05470-EDF-T-00040905,12,2019-08-07T09:02Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-09T19:00Z,2019-08-03T14:05Z/2019-08-09T19:00Z/680/200,"Remontée par paliers en cours
+Prochain palier : 630 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 630 MW"
+EC-EDF-05470-EDF-T-00040918,6,2019-08-07T10:02Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-12T15:00Z,2019-08-04T20:43Z/2019-08-12T15:00Z/375/540,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040939,6,2019-08-07T18:17Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T14:30Z,2019-08-09T21:00Z,2019-08-06T14:30Z/2019-08-09T21:00Z/520/980,"Remontée par paliers en cours
+Prochain palier : 1130MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1130MW"
+EC-EDF-05470-EDF-T-00040279,21,2019-08-08T00:47Z,17W100P100P0132S,GRAVELINES 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-10T03:30Z,2019-08-10T13:00Z,2019-07-10T03:30Z/2019-08-10T13:00Z/495/415,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040414,19,2019-08-08T00:48Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T13:00Z,2019-08-10T21:59Z,2019-08-10T13:00Z/2019-08-10T21:59Z/495/415,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040856,4,2019-08-08T03:32Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T23:00Z,2019-08-19T10:00Z,2019-08-06T23:00Z/2019-08-19T10:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040939,7,2019-08-08T07:17Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T14:30Z,2019-08-09T20:00Z,2019-08-06T14:30Z/2019-08-09T20:00Z/978/522,"Remontée par paliers en cours
+Prochain palier : 1130 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1130 MW"
+EC-EDF-05470-EDF-T-00040883,2,2019-08-08T08:07Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T23:30Z,2019-08-11T07:30Z,2019-08-09T23:30Z/2019-08-11T07:30Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00017775,11,2019-08-08T09:23Z,17W100P100P01012,CATTENOM 1,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-10T22:00Z,2019-08-24T21:00Z,2019-05-10T22:00Z/2019-08-24T21:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00040939,8,2019-08-08T10:22Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T14:30Z,2019-08-09T20:00Z,2019-08-06T14:30Z/2019-08-09T20:00Z/1130/370,"Remontée par paliers en cours
+Prochain palier : 1472 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1472 MW"
+EC-EDF-05470-EDF-T-00040883,3,2019-08-08T17:22Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T23:30Z,2019-08-12T07:30Z,2019-08-10T23:30Z/2019-08-12T07:30Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040974,1,2019-08-08T18:12Z,17W100P100P0115S,CRUAS 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T07:00Z,2019-08-10T09:00Z,2019-08-10T07:00Z/2019-08-10T09:00Z/810/105,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040975,1,2019-08-08T18:17Z,17W100P100P0126N,FLAMANVILLE 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T08:00Z,2019-08-10T10:00Z,2019-08-10T08:00Z/2019-08-10T10:00Z/1225/105,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040976,1,2019-08-09T01:32Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T01:15Z,2019-08-10T01:15Z,2019-08-09T01:15Z/2019-08-10T01:15Z/1225/105,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040976,2,2019-08-09T03:17Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-09T01:15Z,2019-08-09T03:08Z,2019-08-09T01:15Z/2019-08-09T03:08Z/1225/105,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040939,9,2019-08-09T05:37Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T14:30Z,2019-08-12T23:00Z,2019-08-06T14:30Z/2019-08-12T23:00Z/1130/370,"Remontée par paliers en cours
+Prochain palier : 1472 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1472 MW"
+EC-EDF-05470-EDF-T-00019377,7,2019-08-09T05:42Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-13T21:00Z,2019-07-05T22:00Z/2019-08-13T21:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00018864,15,2019-08-09T05:43Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-31T23:00Z,2019-08-13T21:00Z,2019-05-31T23:00Z/2019-08-13T21:00Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00040905,13,2019-08-09T06:02Z,17W100P100P0125P,FESSENHEIM 2,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-03T14:05Z,2019-08-09T19:00Z,2019-08-03T14:05Z/2019-08-09T19:00Z/630/250,"Remontée par paliers en cours
+Prochain palier : 840 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 840 MW"
+EC-EDF-05470-EDF-T-00040982,1,2019-08-09T06:07Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-11T08:30Z,2019-08-11T21:59Z,2019-08-11T08:30Z/2019-08-11T21:59Z/559/331,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040982,2,2019-08-09T06:37Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-12T08:30Z,2019-08-12T21:59Z,2019-08-12T08:30Z/2019-08-12T21:59Z/559/331,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040984,1,2019-08-09T07:27Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T10:00Z,2019-08-10T14:00Z,2019-08-10T10:00Z/2019-08-10T14:00Z/0/1300,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040883,4,2019-08-09T09:17Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2019-08-10T23:30Z,2019-08-12T07:30Z,2019-08-10T23:30Z/2019-08-12T07:30Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040982,3,2019-08-09T09:22Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T23:00Z,2019-08-11T23:30Z,2019-08-10T23:00Z/2019-08-11T23:30Z/559/331,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00022752,10,2019-08-09T10:07Z,17W100P100P0153K,TRICASTIN 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-13T00:00Z,2020-09-01T00:00Z,2020-06-13T00:00Z/2020-09-01T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00033011,3,2019-08-09T10:08Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-03-06T01:00Z,2021-04-07T00:00Z,2021-03-06T01:00Z/2021-04-07T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00026232,7,2019-08-09T10:10Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-29T01:00Z,2020-05-04T00:00Z,2020-02-29T01:00Z/2020-05-04T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00024698,8,2019-08-09T10:11Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-09-05T00:00Z,2020-10-07T00:00Z,2020-09-05T00:00Z/2020-10-07T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00024697,6,2019-08-09T10:12Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-09-12T00:00Z,2020-11-22T01:00Z,2020-09-12T00:00Z/2020-11-22T01:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00037569,3,2019-08-09T10:14Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-02-05T01:00Z,2022-04-28T00:00Z,2022-02-05T01:00Z/2022-04-28T00:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00022749,8,2019-08-09T10:15Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-04-17T21:00Z,2020-07-03T00:00Z,2020-04-17T21:00Z/2020-07-03T00:00Z/0/1335,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00024696,6,2019-08-09T10:16Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-10-03T00:00Z,2020-11-07T01:00Z,2020-10-03T00:00Z/2020-11-07T01:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00022607,8,2019-08-09T10:18Z,17W100P100P0141R,PALUEL 3,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-30T00:00Z,2020-08-13T00:00Z,2020-05-30T00:00Z/2020-08-13T00:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00028816,5,2019-08-09T10:19Z,17W100P100P0140T,PALUEL 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-04-10T00:00Z,2021-07-03T00:00Z,2021-04-10T00:00Z/2021-07-03T00:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00026918,5,2019-08-09T10:20Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-11-14T01:00Z,2020-12-19T01:00Z,2020-11-14T01:00Z/2020-12-19T01:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00023937,7,2019-08-09T10:22Z,17W100P100P0136K,GRAVELINES 6,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-23T00:00Z,2020-10-04T00:00Z,2020-05-23T00:00Z/2020-10-04T00:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00037560,3,2019-08-09T10:23Z,17W100P100P0135M,GRAVELINES 5,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-02-12T01:00Z,2022-04-19T00:00Z,2022-02-12T01:00Z/2022-04-19T00:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00037559,2,2019-08-09T10:24Z,17W100P100P0133Q,GRAVELINES 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-05-21T00:00Z,2022-06-22T00:00Z,2022-05-21T00:00Z/2022-06-22T00:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00038426,2,2019-08-09T10:26Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-03-19T01:00Z,2022-04-20T00:00Z,2022-03-19T01:00Z/2022-04-20T00:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00035686,2,2019-08-09T10:27Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-02-05T01:00Z,2022-07-17T00:00Z,2022-02-05T01:00Z/2022-07-17T00:00Z/0/1310,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00029424,4,2019-08-09T10:28Z,17W100P100P0133Q,GRAVELINES 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-04-17T00:00Z,2021-06-25T00:00Z,2021-04-17T00:00Z/2021-06-25T00:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00024692,2,2019-08-09T10:30Z,17W100P100P0127L,FLAMANVILLE 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-11-07T01:00Z,2020-12-12T01:00Z,2020-11-07T01:00Z/2020-12-12T01:00Z/0/1330,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period may take several days.
+--
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée peut prendre plusieurs jours."
+EC-EDF-05470-EDF-T-00021117,8,2019-08-09T10:31Z,17W100P100P0126N,FLAMANVILLE 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-02T00:00Z,2020-06-18T00:00Z,2020-05-02T00:00Z/2020-06-18T00:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00035006,3,2019-08-09T10:32Z,17W100P100P0122V,DAMPIERRE 3,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-11-06T01:00Z,2022-01-13T01:00Z,2021-11-06T01:00Z/2022-01-13T01:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00036360,3,2019-08-09T10:34Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-04-30T00:00Z,2022-07-07T00:00Z,2022-04-30T00:00Z/2022-07-07T00:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00023935,10,2019-08-09T10:35Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-01-25T01:00Z,2020-03-30T00:00Z,2020-01-25T01:00Z/2020-03-30T00:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00030279,3,2019-08-09T10:36Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-06-05T00:00Z,2021-11-18T01:00Z,2021-06-05T00:00Z/2021-11-18T01:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00030278,5,2019-08-09T10:38Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-07-17T00:00Z,2021-08-18T00:00Z,2021-07-17T00:00Z/2021-08-18T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00022766,8,2019-08-09T10:39Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-06-27T00:00Z,2020-08-31T00:00Z,2020-06-27T00:00Z/2020-08-31T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00024689,5,2019-08-09T10:41Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-03-20T01:00Z,2021-04-21T00:00Z,2021-03-20T01:00Z/2021-04-21T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00020633,13,2019-08-09T10:42Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-08T01:00Z,2020-04-26T00:00Z,2020-02-08T01:00Z/2020-04-26T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00028807,6,2019-08-09T10:43Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-05-02T00:00Z,2021-07-14T00:00Z,2021-05-02T00:00Z/2021-07-14T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00036358,3,2019-08-09T10:45Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-04-09T00:00Z,2022-08-30T00:00Z,2022-04-09T00:00Z/2022-08-30T00:00Z/0/1495,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00029419,5,2019-08-09T10:46Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-05-29T00:00Z,2021-10-19T00:00Z,2021-05-29T00:00Z/2021-10-19T00:00Z/0/1495,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00022756,6,2019-08-09T10:47Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-03-14T01:00Z,2020-05-29T00:00Z,2020-03-14T01:00Z/2020-05-29T00:00Z/0/1495,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00022748,7,2019-08-09T10:49Z,17W100P100P01101,CHOOZ 1,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-02-22T01:00Z,2020-07-07T00:00Z,2020-02-22T01:00Z/2020-07-07T00:00Z/0/1500,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00031231,4,2019-08-09T10:50Z,17W100P100P0109N,CHINON 4,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-07-31T00:00Z,2021-09-01T00:00Z,2021-07-31T00:00Z/2021-09-01T00:00Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00031227,3,2019-08-09T10:51Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-09-11T00:00Z,2021-10-13T00:00Z,2021-09-11T00:00Z/2021-10-13T00:00Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00026130,5,2019-08-09T10:53Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-09-12T00:00Z,2020-11-16T01:00Z,2020-09-12T00:00Z/2020-11-16T01:00Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00029413,5,2019-08-09T10:54Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-05-08T00:00Z,2021-07-21T00:00Z,2021-05-08T00:00Z/2021-07-21T00:00Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00032925,3,2019-08-09T10:55Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-09-18T00:00Z,2021-12-02T01:00Z,2021-09-18T00:00Z/2021-12-02T01:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00028802,3,2019-08-09T10:57Z,17W100P100P0104X,CATTENOM 3,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-02-06T01:00Z,2021-08-03T00:00Z,2021-02-06T01:00Z/2021-08-03T00:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00031221,3,2019-08-09T10:58Z,17W100P100P0103Z,CATTENOM 2,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-08-07T00:00Z,2021-09-11T00:00Z,2021-08-07T00:00Z/2021-09-11T00:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00036357,2,2019-08-09T10:59Z,17W100P100P01012,CATTENOM 1,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-03-12T01:00Z,2022-05-31T00:00Z,2022-03-12T01:00Z/2022-05-31T00:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00030274,5,2019-08-09T11:00Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2021-04-03T00:00Z,2021-05-26T00:00Z,2021-04-03T00:00Z/2021-05-26T00:00Z/0/1310,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00026239,4,2019-08-09T11:02Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-10-24T00:00Z,2021-04-02T00:00Z,2020-10-24T00:00Z/2021-04-02T00:00Z/0/880,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00022760,6,2019-08-09T11:03Z,17W100P100P0090I,BELLEVILLE 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-05-02T00:00Z,2020-10-27T01:00Z,2020-05-02T00:00Z/2020-10-27T01:00Z/0/1310,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00026110,3,2019-08-09T11:04Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2020-04-25T00:00Z,2020-05-09T00:00Z,2020-04-25T00:00Z/2020-05-09T00:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00038385,2,2019-08-09T11:05Z,17W100P100P0094A,BLAYAIS 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-04-16T00:00Z,2022-06-21T00:00Z,2022-04-16T00:00Z/2022-06-21T00:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00038439,2,2019-08-09T11:07Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-06-04T00:00Z,2022-08-25T00:00Z,2022-06-04T00:00Z/2022-08-25T00:00Z/0/1335,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00038433,2,2019-08-09T11:08Z,17W100P100P0137I,NOGENT 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-05-21T00:00Z,2022-08-07T00:00Z,2022-05-21T00:00Z/2022-08-07T00:00Z/0/1310,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00038399,2,2019-08-09T11:09Z,17W100P100P0109N,CHINON 4,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-06-18T00:00Z,2022-08-30T00:00Z,2022-06-18T00:00Z/2022-08-30T00:00Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00038392,2,2019-08-09T11:11Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-06-04T00:00Z,2022-08-21T00:00Z,2022-06-04T00:00Z/2022-08-21T00:00Z/0/1310,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041052,1,2019-08-09T11:50Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-07-09T00:00Z,2022-09-22T00:00Z,2022-07-09T00:00Z/2022-09-22T00:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041050,1,2019-08-09T11:51Z,17W100P100P0136K,GRAVELINES 6,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-08-06T00:00Z,2022-10-11T00:00Z,2022-08-06T00:00Z/2022-10-11T00:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041049,1,2019-08-09T11:52Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-07-30T00:00Z,2023-01-19T01:00Z,2022-07-30T00:00Z/2023-01-19T01:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00035685,3,2019-08-09T11:53Z,17W100P100P0127L,FLAMANVILLE 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-03-26T01:00Z,2022-09-20T00:00Z,2022-03-26T01:00Z/2022-09-20T00:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00035678,2,2019-08-09T11:55Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-04-02T00:00Z,2022-09-13T00:00Z,2022-04-02T00:00Z/2022-09-13T00:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041043,1,2019-08-09T11:56Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-07-02T00:00Z,2022-09-07T00:00Z,2022-07-02T00:00Z/2022-09-07T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041040,1,2019-08-09T11:57Z,17W100P100P0104X,CATTENOM 3,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-07-30T00:00Z,2022-09-03T00:00Z,2022-07-30T00:00Z/2022-09-03T00:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041038,1,2019-08-09T11:58Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-07-09T00:00Z,2022-08-13T00:00Z,2022-07-09T00:00Z/2022-08-13T00:00Z/0/880,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00040975,2,2019-08-09T12:19Z,17W100P100P0126N,FLAMANVILLE 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T20:00Z,2019-08-10T22:00Z,2019-08-10T20:00Z/2019-08-10T22:00Z/1227/103,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041057,1,2019-08-09T13:32Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T23:00Z,2019-08-11T15:30Z,2019-08-09T23:00Z/2019-08-11T15:30Z/0/1310,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00041058,1,2019-08-09T13:33Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T00:00Z,2019-08-11T14:30Z,2019-08-10T00:00Z/2019-08-11T14:30Z/0/1310,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00041059,1,2019-08-09T13:35Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T03:30Z,2019-08-11T15:30Z,2019-08-10T03:30Z/2019-08-11T15:30Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00041060,1,2019-08-09T13:37Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T14:00Z,2019-08-10T16:00Z,2019-08-10T14:00Z/2019-08-10T16:00Z/0/1300,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00040958,2,2019-08-09T13:44Z,17W100P100P01101,CHOOZ 1,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T22:00Z,2019-08-18T22:00Z,2019-08-09T22:00Z/2019-08-18T22:00Z/0/1500,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041062,1,2019-08-09T14:39Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T02:30Z,2019-08-11T15:00Z,2019-08-10T02:30Z/2019-08-11T15:00Z/737/573,"Le placement et la durée de cette baisse pour modulation seront réinterrogés en fonction des conditions économiques
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed according to the economic conditions"
+EC-EDF-05470-EDF-T-00040939,10,2019-08-09T18:19Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-06T14:30Z,2019-08-09T18:15Z,2019-08-06T14:30Z/2019-08-09T18:15Z/1400/100,"Remontée par paliers en cours
+Prochain palier : 1472 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 1472 MW"
+EC-EDF-05470-EDF-T-00040279,22,2019-08-09T18:54Z,17W100P100P0132S,GRAVELINES 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-10T03:30Z,2019-08-09T20:00Z,2019-07-10T03:30Z/2019-08-09T20:00Z/495/415,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040414,20,2019-08-09T18:55Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-10T11:00Z,2019-08-09T20:00Z/2019-08-10T11:00Z/495/415,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00041059,2,2019-08-09T20:34Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T02:00Z,2019-08-11T15:30Z,2019-08-10T02:00Z/2019-08-11T15:30Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00040984,2,2019-08-09T22:04Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T08:30Z,2019-08-10T14:00Z,2019-08-10T08:30Z/2019-08-10T14:00Z/0/1300,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041057,2,2019-08-09T22:39Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T22:45Z,2019-08-11T15:30Z,2019-08-09T22:45Z/2019-08-11T15:30Z/0/1310,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00041058,2,2019-08-09T22:40Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T23:15Z,2019-08-11T14:30Z,2019-08-09T23:15Z/2019-08-11T14:30Z/0/1310,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00040414,21,2019-08-10T00:44Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-10T11:00Z,2019-08-09T20:00Z/2019-08-10T11:00Z/660/250,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040918,7,2019-08-10T01:44Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-12T15:00Z,2019-08-04T20:43Z/2019-08-12T15:00Z/480/435,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040918,8,2019-08-10T02:49Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-12T15:00Z,2019-08-04T20:43Z/2019-08-12T15:00Z/510/405,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040982,4,2019-08-10T06:34Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T23:00Z,2019-08-11T21:00Z,2019-08-10T23:00Z/2019-08-11T21:00Z/570/320,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040918,9,2019-08-10T07:14Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-12T22:00Z,2019-08-04T20:43Z/2019-08-12T22:00Z/510/405,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040974,2,2019-08-10T07:49Z,17W100P100P0115S,CRUAS 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T07:00Z,2019-08-10T08:00Z,2019-08-10T07:00Z/2019-08-10T08:00Z/810/105,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040414,22,2019-08-10T08:49Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-10T11:00Z,2019-08-09T20:00Z/2019-08-10T11:00Z/790/120,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040414,23,2019-08-10T09:34Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-10T11:00Z,2019-08-09T20:00Z/2019-08-10T11:00Z/790/120,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040414,24,2019-08-10T10:54Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-10T13:00Z,2019-08-09T20:00Z/2019-08-10T13:00Z/790/120,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040414,25,2019-08-10T11:24Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-14T12:00Z,2019-08-09T20:00Z/2019-08-14T12:00Z/790/120,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00041079,1,2019-08-10T11:25Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T11:15Z,2019-08-10T15:15Z,2019-08-10T11:15Z/2019-08-10T15:15Z/100/1230,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041081,1,2019-08-10T12:19Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T12:10Z,2019-08-11T12:10Z,2019-08-10T12:10Z/2019-08-11T12:10Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040984,3,2019-08-10T12:54Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T08:30Z,2019-08-10T13:00Z,2019-08-10T08:30Z/2019-08-10T13:00Z/0/1300,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041060,2,2019-08-10T12:55Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T13:00Z,2019-08-10T16:00Z,2019-08-10T13:00Z/2019-08-10T16:00Z/0/1300,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00041079,2,2019-08-10T14:14Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T11:15Z,2019-08-10T16:00Z,2019-08-10T11:15Z/2019-08-10T16:00Z/30/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041059,3,2019-08-10T14:29Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T02:00Z,2019-08-11T15:00Z,2019-08-10T02:00Z/2019-08-11T15:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00041087,1,2019-08-10T16:44Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T16:37Z,2019-08-11T16:37Z,2019-08-10T16:37Z/2019-08-11T16:37Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041087,2,2019-08-10T17:09Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T16:37Z,2019-08-10T19:00Z,2019-08-10T16:37Z/2019-08-10T19:00Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041087,3,2019-08-10T18:44Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T16:37Z,2019-08-10T21:59Z,2019-08-10T16:37Z/2019-08-10T21:59Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041062,2,2019-08-10T19:54Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T02:30Z,2019-08-11T15:00Z,2019-08-10T02:30Z/2019-08-11T15:00Z/850/460,"Le placement et la durée de cette baisse pour modulation seront réinterrogés en fonction des conditions économiques
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed according to the economic conditions"
+EC-EDF-05470-EDF-T-00041081,2,2019-08-10T21:29Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T12:10Z,2019-08-11T12:00Z,2019-08-10T12:10Z/2019-08-11T12:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041087,4,2019-08-10T21:54Z,17W100P100P0105V,CATTENOM 4,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-10T16:37Z,2019-08-10T21:40Z,2019-08-10T16:37Z/2019-08-10T21:40Z/0/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041093,1,2019-08-10T22:29Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T22:24Z,2019-08-11T22:24Z,2019-08-10T22:24Z/2019-08-11T22:24Z/760/570,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041093,2,2019-08-10T22:59Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T22:24Z,2019-08-11T22:24Z,2019-08-10T22:24Z/2019-08-11T22:24Z/670/660,Failure / Défaillance
+EC-EDF-05470-EDF-T-00019377,8,2019-08-10T23:00Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-13T21:00Z,2019-07-05T22:00Z/2019-08-13T21:00Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00040918,10,2019-08-10T23:04Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-13T22:00Z,2019-08-04T20:43Z/2019-08-13T22:00Z/510/405,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041093,3,2019-08-11T00:09Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T22:24Z,2019-08-11T22:24Z,2019-08-10T22:24Z/2019-08-11T22:24Z/100/1230,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041093,4,2019-08-11T00:49Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T22:24Z,2019-08-11T22:24Z,2019-08-10T22:24Z/2019-08-11T22:24Z/20/1310,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041093,5,2019-08-11T03:49Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T22:24Z,2019-08-11T22:24Z,2019-08-10T22:24Z/2019-08-11T22:24Z/380/950,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041093,6,2019-08-11T04:24Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T22:24Z,2019-08-11T05:30Z,2019-08-10T22:24Z/2019-08-11T05:30Z/435/895,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041081,3,2019-08-11T09:59Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T12:10Z,2019-08-11T16:00Z,2019-08-10T12:10Z/2019-08-11T16:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041062,3,2019-08-11T13:09Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T02:30Z,2019-08-11T16:00Z,2019-08-10T02:30Z/2019-08-11T16:00Z/850/460,"Le placement et la durée de cette baisse pour modulation seront réinterrogés en fonction des conditions économiques
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed according to the economic conditions"
+EC-EDF-05470-EDF-T-00041105,1,2019-08-11T14:19Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-11T15:00Z,2019-08-11T17:00Z,2019-08-11T15:00Z/2019-08-11T17:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041081,4,2019-08-11T14:24Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T12:10Z,2019-08-11T18:00Z,2019-08-10T12:10Z/2019-08-11T18:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041081,5,2019-08-11T16:04Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T12:10Z,2019-08-11T20:00Z,2019-08-10T12:10Z/2019-08-11T20:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040982,5,2019-08-11T16:29Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-10T23:00Z,2019-08-11T16:25Z,2019-08-10T23:00Z/2019-08-11T16:25Z/570/320,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041105,2,2019-08-11T17:24Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-11T15:00Z,2019-08-11T18:30Z,2019-08-11T15:00Z/2019-08-11T18:30Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041105,3,2019-08-11T18:14Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-11T15:00Z,2019-08-12T18:30Z,2019-08-11T15:00Z/2019-08-12T18:30Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041081,6,2019-08-11T19:54Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T12:10Z,2019-08-11T21:00Z,2019-08-10T12:10Z/2019-08-11T21:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00019377,9,2019-08-11T20:14Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-15T04:00Z,2019-07-05T22:00Z/2019-08-15T04:00Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00041105,4,2019-08-11T21:09Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-11T15:00Z,2019-08-12T04:00Z,2019-08-11T15:00Z/2019-08-12T04:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041081,7,2019-08-11T21:49Z,17W100P100P0143N,PENLY 1,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-10T12:10Z,2019-08-11T22:00Z,2019-08-10T12:10Z/2019-08-11T22:00Z/0/1330,Failure / Défaillance
+EC-EDF-05470-EDF-T-00018864,16,2019-08-11T23:29Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-31T23:00Z,2019-08-14T21:00Z,2019-05-31T23:00Z/2019-08-14T21:00Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041105,5,2019-08-12T02:59Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-11T15:00Z,2019-08-12T11:00Z,2019-08-11T15:00Z/2019-08-12T11:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040414,26,2019-08-12T06:14Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-14T22:00Z,2019-08-09T20:00Z/2019-08-14T22:00Z/790/120,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040918,11,2019-08-12T06:54Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-14T22:00Z,2019-08-04T20:43Z/2019-08-14T22:00Z/510/405,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040168,4,2019-08-12T08:14Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-14T21:00Z,2019-08-25T22:00Z,2019-08-14T21:00Z/2019-08-25T22:00Z/0/915,Pour plus d'informations/For more information: http://clients.rte-france.com/lang/fr/visiteurs/vie/publications/declarations_list.jsp (message n° 4928) https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages (message n° 2019-00119)
+EC-EDF-05470-EDF-T-00041124,1,2019-08-12T08:29Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-14T21:30Z,2019-08-16T06:30Z,2019-08-14T21:30Z/2019-08-16T06:30Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041105,6,2019-08-12T08:39Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-11T15:00Z,2019-08-12T18:00Z,2019-08-11T15:00Z/2019-08-12T18:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041105,7,2019-08-12T16:14Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-11T15:00Z,2019-08-12T23:00Z,2019-08-11T15:00Z/2019-08-12T23:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041105,8,2019-08-12T23:39Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-11T15:00Z,2019-08-13T00:00Z,2019-08-11T15:00Z/2019-08-13T00:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041055,1,2019-08-13T00:04Z,17W100P100P0153K,TRICASTIN 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-08-13T00:00Z,2022-10-17T00:00Z,2022-08-13T00:00Z/2022-10-17T00:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041130,1,2019-08-13T02:34Z,17W100P100P0128J,GOLFECH 1,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-13T02:30Z,2019-08-14T02:30Z,2019-08-13T02:30Z/2019-08-14T02:30Z/340/970,Failure / Défaillance
+EC-EDF-05470-EDF-T-00019377,10,2019-08-13T03:04Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-16T02:00Z,2019-07-05T22:00Z/2019-08-16T02:00Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00041132,1,2019-08-13T03:44Z,17W100P100P0116Q,CRUAS 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-13T03:30Z,2019-08-14T03:30Z,2019-08-13T03:30Z/2019-08-14T03:30Z/710/205,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041130,2,2019-08-13T04:29Z,17W100P100P0128J,GOLFECH 1,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-13T02:30Z,2019-08-13T04:25Z,2019-08-13T02:30Z/2019-08-13T04:25Z/340/970,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040168,5,2019-08-13T04:54Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-14T21:00Z,2019-08-25T00:00Z,2019-08-14T21:00Z/2019-08-25T00:00Z/0/915,Pour plus d'informations/For more information: http://clients.rte-france.com/lang/fr/visiteurs/vie/publications/declarations_list.jsp (message n° 4928) https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages (message n° 2019-00119)
+EC-EDF-05470-EDF-T-00040918,12,2019-08-13T05:09Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-15T22:00Z,2019-08-04T20:43Z/2019-08-15T22:00Z/510/405,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040414,27,2019-08-13T06:54Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-15T22:00Z,2019-08-09T20:00Z/2019-08-15T22:00Z/790/120,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00040168,6,2019-08-13T07:09Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-14T21:00Z,2019-08-25T22:30Z,2019-08-14T21:00Z/2019-08-25T22:30Z/0/915,Pour plus d'informations/For more information: http://clients.rte-france.com/lang/fr/visiteurs/vie/publications/declarations_list.jsp (message n° 4928) https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages (message n° 2019-00119)
+EC-EDF-05470-EDF-T-00041132,2,2019-08-13T07:54Z,17W100P100P0116Q,CRUAS 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-13T03:30Z,2019-08-13T08:00Z,2019-08-13T03:30Z/2019-08-13T08:00Z/710/205,Failure / Défaillance
+EC-EDF-05470-EDF-T-00018864,17,2019-08-13T08:24Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-31T23:00Z,2019-08-15T21:00Z,2019-05-31T23:00Z/2019-08-15T21:00Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00040958,3,2019-08-13T14:59Z,17W100P100P01101,CHOOZ 1,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T22:00Z,2019-08-25T22:00Z,2019-08-09T22:00Z/2019-08-25T22:00Z/0/1500,Pour plus d'informations/For more information: http://clients.rte-france.com/lang/fr/visiteurs/vie/publications/declarations_list.jsp (message n° 4973) https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages (message n° 2019-00151)
+EC-EDF-05470-EDF-T-00040918,13,2019-08-13T15:26Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-04T20:43Z,2019-08-13T21:00Z,2019-08-04T20:43Z/2019-08-13T21:00Z/510/405,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040414,28,2019-08-14T04:45Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-16T22:00Z,2019-08-09T20:00Z/2019-08-16T22:00Z/790/120,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00041144,1,2019-08-14T06:40Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T09:00Z,2019-08-23T11:00Z,2019-08-18T09:00Z/2019-08-23T11:00Z/510/400,"The plant will gradually ramp-down to the treshold. The ramp-down period will take several hours. At the end, the ramp-up period may take several hours.
+-----------------------------------------------------------------------
+La tranche baissera progressivement jusqu'au palier. La baisse prendra plusieurs heures. A l'issue du palier, la remontée peut prendre plusieurs heures."
+EC-EDF-05470-EDF-T-00040414,29,2019-08-14T06:42Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-18T09:00Z,2019-08-09T20:00Z/2019-08-18T09:00Z/790/120,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040656,2,2019-08-14T11:45Z,17W100P100P00958,BLAYAIS 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-23T09:30Z,2019-08-31T00:00Z,2019-07-23T09:30Z/2019-08-31T00:00Z/738/172,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00018864,18,2019-08-14T11:55Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-31T23:00Z,2019-08-15T21:30Z,2019-05-31T23:00Z/2019-08-15T21:30Z/0/905,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 181 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 181 MW"
+EC-EDF-05470-EDF-T-00041148,1,2019-08-14T11:57Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T13:00Z,2019-08-18T15:00Z,2019-08-18T13:00Z/2019-08-18T15:00Z/0/1300,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041150,1,2019-08-14T13:05Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T00:00Z,2019-08-19T00:00Z,2019-08-17T00:00Z/2019-08-19T00:00Z/0/1310,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040414,30,2019-08-14T14:15Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T20:00Z,2019-08-16T00:00Z,2019-08-09T20:00Z/2019-08-16T00:00Z/790/120,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041144,2,2019-08-14T14:17Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T00:00Z,2019-08-19T06:00Z,2019-08-16T00:00Z/2019-08-19T06:00Z/510/400,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00019377,11,2019-08-15T11:06Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-16T21:00Z,2019-07-05T22:00Z/2019-08-16T21:00Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00018864,19,2019-08-15T12:26Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-31T23:00Z,2019-08-16T21:00Z,2019-05-31T23:00Z/2019-08-16T21:00Z/0/905,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 181 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 181 MW"
+EC-EDF-05470-EDF-T-00041155,1,2019-08-15T16:11Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-15T16:08Z,2019-08-16T16:08Z,2019-08-15T16:08Z/2019-08-16T16:08Z/1084/246,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041155,2,2019-08-15T16:26Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-15T16:08Z,2019-08-16T16:08Z,2019-08-15T16:08Z/2019-08-16T16:08Z/760/570,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041155,3,2019-08-15T16:51Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-15T16:08Z,2019-08-16T16:08Z,2019-08-15T16:08Z/2019-08-16T16:08Z/235/1095,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041155,4,2019-08-15T17:06Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-15T16:08Z,2019-08-16T16:08Z,2019-08-15T16:08Z/2019-08-16T16:08Z/30/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041155,5,2019-08-15T18:46Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-15T16:08Z,2019-08-15T20:30Z,2019-08-15T16:08Z/2019-08-15T20:30Z/30/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041160,1,2019-08-15T19:06Z,17W100P100P00958,BLAYAIS 4,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-15T19:00Z,2019-08-16T19:00Z,2019-08-15T19:00Z/2019-08-16T19:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041155,6,2019-08-15T20:21Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-15T16:08Z,2019-08-15T21:30Z,2019-08-15T16:08Z/2019-08-15T21:30Z/30/1300,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041160,2,2019-08-15T20:51Z,17W100P100P00958,BLAYAIS 4,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-15T19:00Z,2019-08-16T20:00Z,2019-08-15T19:00Z/2019-08-16T20:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041124,2,2019-08-16T03:51Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-14T21:30Z,2019-08-16T16:00Z,2019-08-14T21:30Z/2019-08-16T16:00Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00037529,3,2019-08-16T06:51Z,17W100P100P0094A,BLAYAIS 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-24T00:10Z,2019-08-24T01:30Z,2019-08-24T00:10Z/2019-08-24T01:30Z/0/910,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00038259,2,2019-08-16T10:06Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-09-13T20:15Z,2019-09-13T22:30Z,2019-09-13T20:15Z/2019-09-13T22:30Z/60/845,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00017463,9,2019-08-16T10:07Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-09-13T22:30Z,2019-10-15T22:30Z,2019-09-13T22:30Z/2019-10-15T22:30Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00019377,12,2019-08-16T10:36Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-16T11:00Z,2019-07-05T22:00Z/2019-08-16T11:00Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00019377,13,2019-08-16T11:26Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-16T13:00Z,2019-07-05T22:00Z/2019-08-16T13:00Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00018864,20,2019-08-16T11:31Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-31T23:00Z,2019-08-17T21:00Z,2019-05-31T23:00Z/2019-08-17T21:00Z/0/905,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 181 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 181 MW"
+EC-EDF-05470-EDF-T-00038259,3,2019-08-16T12:51Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-09-13T19:45Z,2019-09-13T22:30Z,2019-09-13T19:45Z/2019-09-13T22:30Z/60/845,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00019377,14,2019-08-16T12:56Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-16T15:00Z,2019-07-05T22:00Z/2019-08-16T15:00Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00041173,1,2019-08-16T13:51Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T07:30Z,2019-08-17T13:30Z,2019-08-17T07:30Z/2019-08-17T13:30Z/0/880,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00019377,15,2019-08-16T14:56Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-16T17:00Z,2019-07-05T22:00Z/2019-08-16T17:00Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00041124,3,2019-08-16T15:16Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-14T21:30Z,2019-08-17T11:00Z,2019-08-14T21:30Z/2019-08-17T11:00Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00040856,5,2019-08-16T16:51Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T23:00Z,2019-08-23T21:00Z,2019-08-06T23:00Z/2019-08-23T21:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00019377,16,2019-08-16T16:56Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-17T17:00Z,2019-07-05T22:00Z/2019-08-17T17:00Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00019377,17,2019-08-16T17:51Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-05T22:00Z,2019-08-16T20:30Z,2019-07-05T22:00Z/2019-08-16T20:30Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00041160,3,2019-08-16T18:31Z,17W100P100P00958,BLAYAIS 4,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-15T19:00Z,2019-08-17T23:00Z,2019-08-15T19:00Z/2019-08-17T23:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00019377,18,2019-08-16T20:21Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-07-05T22:00Z,2019-08-16T20:15Z,2019-07-05T22:00Z/2019-08-16T20:15Z/0/910,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 189MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 189MW"
+EC-EDF-05470-EDF-T-00041170,1,2019-08-16T20:22Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T20:15Z,2019-08-20T02:00Z,2019-08-16T20:15Z/2019-08-20T02:00Z/10/900,"Remontée par paliers en cours
+Prochain palier : 189 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 189 MW"
+EC-EDF-05470-EDF-T-00041170,2,2019-08-16T21:56Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T20:15Z,2019-08-20T02:00Z,2019-08-16T20:15Z/2019-08-20T02:00Z/135/775,"Remontée par paliers en cours
+Prochain palier : 189 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 189 MW"
+EC-EDF-05470-EDF-T-00041170,3,2019-08-16T23:36Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T20:15Z,2019-08-20T02:00Z,2019-08-16T20:15Z/2019-08-20T02:00Z/250/660,"Remontée par paliers en cours
+Prochain palier : 189 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 189 MW"
+EC-EDF-05470-EDF-T-00041124,4,2019-08-17T00:11Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-14T21:30Z,2019-08-17T04:00Z,2019-08-14T21:30Z/2019-08-17T04:00Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041184,1,2019-08-17T00:16Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T04:00Z,2019-08-18T04:00Z,2019-08-17T04:00Z/2019-08-18T04:00Z/546/344,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041170,4,2019-08-17T00:51Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T20:15Z,2019-08-20T02:00Z,2019-08-16T20:15Z/2019-08-20T02:00Z/360/550,"Remontée par paliers en cours
+Prochain palier : 787 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 787 MW"
+EC-EDF-05470-EDF-T-00041170,5,2019-08-17T01:16Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T20:15Z,2019-08-20T00:00Z,2019-08-16T20:15Z/2019-08-20T00:00Z/360/550,"Remontée par paliers en cours
+Prochain palier : 787 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 787 MW"
+EC-EDF-05470-EDF-T-00040656,3,2019-08-17T02:06Z,17W100P100P00958,BLAYAIS 4,910,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-07-23T09:30Z,2019-08-15T19:00Z,2019-07-23T09:30Z/2019-08-15T19:00Z/738/172,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00041189,1,2019-08-17T02:11Z,17W100P100P00958,BLAYAIS 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T23:00Z,2019-08-31T00:00Z,2019-08-17T23:00Z/2019-08-31T00:00Z/737/173,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00041148,2,2019-08-17T02:16Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T13:00Z,2019-08-18T16:00Z,2019-08-18T13:00Z/2019-08-18T16:00Z/0/1300,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041124,5,2019-08-17T02:56Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-14T21:30Z,2019-08-17T02:51Z,2019-08-14T21:30Z/2019-08-17T02:51Z/0/890,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041184,2,2019-08-17T02:57Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T02:51Z,2019-08-18T04:00Z,2019-08-17T02:51Z/2019-08-18T04:00Z/546/344,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041184,3,2019-08-17T08:26Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T02:51Z,2019-08-18T04:00Z,2019-08-17T02:51Z/2019-08-18T04:00Z/496/394,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041148,3,2019-08-17T11:21Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T13:00Z,2019-08-18T15:00Z,2019-08-18T13:00Z/2019-08-18T15:00Z/0/1300,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00018864,21,2019-08-17T12:01Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-31T23:00Z,2019-08-17T21:30Z,2019-05-31T23:00Z/2019-08-17T21:30Z/0/905,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 181 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 181 MW"
+EC-EDF-05470-EDF-T-00018864,22,2019-08-17T12:36Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-31T23:00Z,2019-08-17T14:00Z,2019-05-31T23:00Z/2019-08-17T14:00Z/0/905,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 181 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 181 MW"
+EC-EDF-05470-EDF-T-00018864,23,2019-08-17T12:46Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-31T23:00Z,2019-08-17T14:30Z,2019-05-31T23:00Z/2019-08-17T14:30Z/0/905,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 181 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 181 MW"
+EC-EDF-05470-EDF-T-00041199,1,2019-08-17T13:41Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T13:30Z,2019-08-17T14:30Z,2019-08-17T13:30Z/2019-08-17T14:30Z/0/880,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041199,2,2019-08-17T14:31Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T13:30Z,2019-08-17T16:00Z,2019-08-17T13:30Z/2019-08-17T16:00Z/0/880,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041197,1,2019-08-17T14:36Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-20T19:30Z,2019-08-17T14:30Z/2019-08-20T19:30Z/10/895,"Remontée par paliers en cours
+Prochain palier : 181 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 181 MW"
+EC-EDF-05470-EDF-T-00041199,3,2019-08-17T16:11Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T13:30Z,2019-08-17T18:00Z,2019-08-17T13:30Z/2019-08-17T18:00Z/0/880,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041197,2,2019-08-17T16:46Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-20T21:30Z,2019-08-17T14:30Z/2019-08-20T21:30Z/10/895,"Remontée par paliers en cours
+Prochain palier : 181 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 181 MW"
+EC-EDF-05470-EDF-T-00041170,6,2019-08-17T17:11Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T20:15Z,2019-08-20T07:00Z,2019-08-16T20:15Z/2019-08-20T07:00Z/360/550,"Remontée par paliers en cours
+Prochain palier : 787 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 787 MW"
+EC-EDF-05470-EDF-T-00041199,4,2019-08-17T17:51Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T13:30Z,2019-08-17T21:00Z,2019-08-17T13:30Z/2019-08-17T21:00Z/0/880,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041197,3,2019-08-17T18:26Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-20T23:00Z,2019-08-17T14:30Z/2019-08-20T23:00Z/80/825,"Remontée par paliers en cours
+Prochain palier : 181 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 181 MW"
+EC-EDF-05470-EDF-T-00041160,4,2019-08-17T19:31Z,17W100P100P00958,BLAYAIS 4,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-15T19:00Z,2019-08-18T03:00Z,2019-08-15T19:00Z/2019-08-18T03:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041189,2,2019-08-17T20:06Z,17W100P100P00958,BLAYAIS 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T03:00Z,2019-08-31T00:00Z,2019-08-18T03:00Z/2019-08-31T00:00Z/737/173,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00041184,4,2019-08-17T20:16Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T02:51Z,2019-08-17T20:20Z,2019-08-17T02:51Z/2019-08-17T20:20Z/496/394,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041209,1,2019-08-17T20:17Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T00:00Z,2019-08-20T00:00Z,2019-08-19T00:00Z/2019-08-20T00:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041197,4,2019-08-17T20:26Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-20T23:00Z,2019-08-17T14:30Z/2019-08-20T23:00Z/180/725,"Remontée par paliers en cours
+Prochain palier : 367 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 367 MW"
+EC-EDF-05470-EDF-T-00041211,1,2019-08-17T20:36Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T06:00Z,2019-08-19T22:00Z,2019-08-19T06:00Z/2019-08-19T22:00Z/791/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041197,5,2019-08-17T21:01Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-21T00:30Z,2019-08-17T14:30Z/2019-08-21T00:30Z/180/725,"Remontée par paliers en cours
+Prochain palier : 367 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 367 MW"
+EC-EDF-05470-EDF-T-00041199,5,2019-08-17T21:21Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T13:30Z,2019-08-17T22:00Z,2019-08-17T13:30Z/2019-08-17T22:00Z/0/880,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041199,6,2019-08-17T22:21Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T13:30Z,2019-08-17T22:30Z,2019-08-17T13:30Z/2019-08-17T22:30Z/0/880,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041199,7,2019-08-17T22:46Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T13:30Z,2019-08-17T23:00Z,2019-08-17T13:30Z/2019-08-17T23:00Z/0/880,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041216,1,2019-08-17T23:41Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T23:00Z,2019-08-18T00:30Z,2019-08-17T23:00Z/2019-08-18T00:30Z/130/750,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041216,2,2019-08-18T00:21Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-17T23:00Z,2019-08-18T00:15Z,2019-08-17T23:00Z/2019-08-18T00:15Z/130/750,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041216,3,2019-08-18T00:51Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T23:00Z,2019-08-18T01:30Z,2019-08-17T23:00Z/2019-08-18T01:30Z/160/720,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041197,6,2019-08-18T01:31Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-21T00:30Z,2019-08-17T14:30Z/2019-08-21T00:30Z/130/775,"Remontée par paliers en cours
+Prochain palier : 367 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 367 MW"
+EC-EDF-05470-EDF-T-00041160,5,2019-08-18T02:11Z,17W100P100P00958,BLAYAIS 4,910,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-15T19:00Z,2019-08-18T02:00Z,2019-08-15T19:00Z/2019-08-18T02:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041189,3,2019-08-18T02:12Z,17W100P100P00958,BLAYAIS 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T02:00Z,2019-08-31T00:00Z,2019-08-18T02:00Z/2019-08-31T00:00Z/737/173,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00041222,1,2019-08-18T03:06Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T02:30Z,2019-08-19T02:30Z,2019-08-18T02:30Z/2019-08-19T02:30Z/786/129,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041222,2,2019-08-18T05:26Z,17W100P100P0147F,ST LAURENT 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-18T02:30Z,2019-08-18T05:20Z,2019-08-18T02:30Z/2019-08-18T05:20Z/786/129,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041209,2,2019-08-18T06:31Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T00:00Z,2019-08-20T22:00Z,2019-08-19T00:00Z/2019-08-20T22:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041225,1,2019-08-18T07:36Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T07:20Z,2019-08-18T17:00Z,2019-08-18T07:20Z/2019-08-18T17:00Z/0/1310,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00041150,2,2019-08-18T07:37Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-17T00:00Z,2019-08-18T07:20Z,2019-08-17T00:00Z/2019-08-18T07:20Z/0/1310,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041209,3,2019-08-18T09:46Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T02:00Z,2019-08-25T08:00Z,2019-08-19T02:00Z/2019-08-25T08:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041228,1,2019-08-18T13:06Z,17W100P100P0094A,BLAYAIS 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T13:00Z,2019-08-19T13:00Z,2019-08-18T13:00Z/2019-08-19T13:00Z/545/365,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041197,7,2019-08-18T15:06Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-21T18:00Z,2019-08-17T14:30Z/2019-08-21T18:00Z/130/775,"Remontée par paliers en cours
+Prochain palier : 367 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 367 MW"
+EC-EDF-05470-EDF-T-00041225,2,2019-08-18T15:16Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T07:20Z,2019-08-18T16:30Z,2019-08-18T07:20Z/2019-08-18T16:30Z/0/1310,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+------------------------------------------------------------------------- 
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons"
+EC-EDF-05470-EDF-T-00041228,2,2019-08-18T17:11Z,17W100P100P0094A,BLAYAIS 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-18T13:00Z,2019-08-18T17:00Z,2019-08-18T13:00Z/2019-08-18T17:00Z/545/365,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041170,7,2019-08-18T17:16Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T20:15Z,2019-08-20T07:00Z,2019-08-16T20:15Z/2019-08-20T07:00Z/765/145,"Remontée par paliers en cours
+Prochain palier : 910 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 910 MW"
+EC-EDF-05470-EDF-T-00041197,8,2019-08-18T21:51Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-21T18:00Z,2019-08-17T14:30Z/2019-08-21T18:00Z/367/538,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00041234,1,2019-08-19T02:21Z,17W100P100P0103Z,CATTENOM 2,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T02:16Z,2019-08-20T02:16Z,2019-08-19T02:16Z/2019-08-20T02:16Z/337/963,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041197,9,2019-08-19T02:31Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-21T20:00Z,2019-08-17T14:30Z/2019-08-21T20:00Z/367/538,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00041211,2,2019-08-19T02:36Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T06:00Z,2019-08-21T22:00Z,2019-08-19T06:00Z/2019-08-21T22:00Z/791/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041234,2,2019-08-19T03:26Z,17W100P100P0103Z,CATTENOM 2,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T02:16Z,2019-08-19T05:30Z,2019-08-19T02:16Z/2019-08-19T05:30Z/360/940,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041144,3,2019-08-19T03:31Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T00:00Z,2019-08-19T09:00Z,2019-08-16T00:00Z/2019-08-19T09:00Z/510/400,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041211,3,2019-08-19T03:32Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T09:00Z,2019-08-21T22:00Z,2019-08-19T09:00Z/2019-08-21T22:00Z/791/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041234,3,2019-08-19T04:31Z,17W100P100P0103Z,CATTENOM 2,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T02:16Z,2019-08-19T10:00Z,2019-08-19T02:16Z/2019-08-19T10:00Z/360/940,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041144,4,2019-08-19T07:41Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T00:00Z,2019-08-19T21:00Z,2019-08-16T00:00Z/2019-08-19T21:00Z/510/400,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041211,4,2019-08-19T08:56Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T21:00Z,2019-08-21T22:00Z,2019-08-19T21:00Z/2019-08-21T22:00Z/791/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00017775,12,2019-08-19T09:26Z,17W100P100P01012,CATTENOM 1,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-10T22:00Z,2019-08-29T21:00Z,2019-05-10T22:00Z/2019-08-29T21:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041197,10,2019-08-19T11:21Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-22T15:00Z,2019-08-17T14:30Z/2019-08-22T15:00Z/367/538,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00041144,5,2019-08-19T18:51Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T00:00Z,2019-08-20T21:00Z,2019-08-16T00:00Z/2019-08-20T21:00Z/510/400,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041211,5,2019-08-19T18:53Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2019-08-19T21:00Z,2019-08-21T22:00Z,2019-08-19T21:00Z/2019-08-21T22:00Z/791/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041247,1,2019-08-19T18:56Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-20T23:00Z,2019-08-22T16:00Z,2019-08-20T23:00Z/2019-08-22T16:00Z/0/910,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041248,1,2019-08-19T21:11Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T16:00Z,2019-08-23T19:00Z,2019-08-22T16:00Z/2019-08-23T19:00Z/510/400,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041051,1,2019-08-20T00:06Z,17W100P100P0140T,PALUEL 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2022-08-20T00:00Z,2022-09-24T00:00Z,2022-08-20T00:00Z/2022-09-24T00:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041170,8,2019-08-20T01:21Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T20:15Z,2019-08-20T06:00Z,2019-08-16T20:15Z/2019-08-20T06:00Z/765/145,"Remontée par paliers en cours
+Prochain palier : 910 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 910 MW"
+EC-EDF-05470-EDF-T-00041197,11,2019-08-20T02:06Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-23T05:00Z,2019-08-17T14:30Z/2019-08-23T05:00Z/367/538,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00041144,6,2019-08-20T02:11Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-16T00:00Z,2019-08-20T23:00Z,2019-08-16T00:00Z/2019-08-20T23:00Z/510/400,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041197,12,2019-08-20T04:26Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-23T05:00Z,2019-08-17T14:30Z/2019-08-23T05:00Z/333/572,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00041253,1,2019-08-20T08:55Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-09-20T21:30Z,2019-09-21T00:00Z,2019-09-20T21:30Z/2019-09-21T00:00Z/100/815,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041209,4,2019-08-20T13:36Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T02:00Z,2019-08-27T21:00Z,2019-08-19T02:00Z/2019-08-27T21:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00018246,8,2019-08-20T14:35Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-19T18:00Z,2019-08-24T21:00Z,2019-07-19T18:00Z/2019-08-24T21:00Z/0/1495,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041197,13,2019-08-20T17:41Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-24T03:00Z,2019-08-17T14:30Z/2019-08-24T03:00Z/333/572,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00041144,7,2019-08-20T22:21Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-16T00:00Z,2019-08-20T22:20Z,2019-08-16T00:00Z/2019-08-20T22:20Z/510/400,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041247,2,2019-08-20T22:26Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-20T22:20Z,2019-08-22T16:00Z,2019-08-20T22:20Z/2019-08-22T16:00Z/0/910,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041197,14,2019-08-21T04:26Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-26T05:00Z,2019-08-17T14:30Z/2019-08-26T05:00Z/333/572,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00036937,2,2019-08-21T04:31Z,17W100P100P0108P,CHINON 3,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T20:30Z,2019-08-23T22:30Z,2019-08-23T20:30Z/2019-08-23T22:30Z/50/855,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041247,3,2019-08-21T04:36Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-20T22:20Z,2019-08-22T13:00Z,2019-08-20T22:20Z/2019-08-22T13:00Z/0/910,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041248,2,2019-08-21T04:41Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T13:00Z,2019-08-23T19:00Z,2019-08-22T13:00Z/2019-08-23T19:00Z/515/395,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041269,1,2019-08-21T04:42Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T19:00Z,2019-08-23T22:00Z,2019-08-23T19:00Z/2019-08-23T22:00Z/791/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041270,1,2019-08-21T08:01Z,17W100P100P0143N,PENLY 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T04:00Z,2019-08-22T15:00Z,2019-08-22T04:00Z/2019-08-22T15:00Z/827/503,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041271,1,2019-08-21T08:02Z,17W100P100P0143N,PENLY 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T04:00Z,2019-08-23T15:00Z,2019-08-23T04:00Z/2019-08-23T15:00Z/827/503,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00020635,8,2019-08-21T09:06Z,17W100P100P0130W,GRAVELINES 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-12T22:00Z,2019-09-20T21:00Z,2019-07-12T22:00Z/2019-09-20T21:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00040856,6,2019-08-21T14:51Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T23:00Z,2019-08-25T10:00Z,2019-08-06T23:00Z/2019-08-25T10:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00018241,8,2019-08-21T15:11Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-27T02:00Z,2019-08-31T21:00Z,2019-07-27T02:00Z/2019-08-31T21:00Z/0/880,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041197,15,2019-08-21T16:41Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-17T14:30Z,2019-08-22T13:00Z,2019-08-17T14:30Z/2019-08-22T13:00Z/333/572,"Remontée par paliers en cours
+Prochain palier : 0 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 0 MW"
+EC-EDF-05470-EDF-T-00041277,1,2019-08-21T16:46Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T13:00Z,2019-08-25T21:00Z,2019-08-22T13:00Z/2019-08-25T21:00Z/0/905,"Indisponibilité fortuite
+
+-------------------------------------------
+
+Forced unavailability"
+EC-EDF-05470-EDF-T-00018246,9,2019-08-21T16:47Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-19T18:00Z,2019-08-25T21:00Z,2019-07-19T18:00Z/2019-08-25T21:00Z/0/1495,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00019383,12,2019-08-21T17:01Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-06-21T21:30Z,2019-09-09T21:00Z,2019-06-21T21:30Z/2019-09-09T21:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041280,1,2019-08-21T22:26Z,17W100P100P0119K,CRUAS 4,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-21T23:00Z,2019-08-22T11:00Z,2019-08-21T23:00Z/2019-08-22T11:00Z/540/375,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041247,4,2019-08-21T22:51Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-20T22:20Z,2019-08-22T03:30Z,2019-08-20T22:20Z/2019-08-22T03:30Z/0/910,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041248,3,2019-08-21T22:56Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T03:30Z,2019-08-23T09:30Z,2019-08-22T03:30Z/2019-08-23T09:30Z/515/395,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041269,2,2019-08-21T23:01Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T09:30Z,2019-08-27T22:00Z,2019-08-23T09:30Z/2019-08-27T22:00Z/791/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041280,2,2019-08-21T23:11Z,17W100P100P0119K,CRUAS 4,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-21T23:00Z,2019-08-22T11:00Z,2019-08-21T23:00Z/2019-08-22T11:00Z/460/455,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041247,5,2019-08-22T01:41Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-20T22:20Z,2019-08-22T01:45Z,2019-08-20T22:20Z/2019-08-22T01:45Z/0/910,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041248,4,2019-08-22T01:46Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T01:45Z,2019-08-23T08:00Z,2019-08-22T01:45Z/2019-08-23T08:00Z/515/395,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041269,3,2019-08-22T01:48Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T08:00Z,2019-08-27T20:30Z,2019-08-23T08:00Z/2019-08-27T20:30Z/791/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041280,3,2019-08-22T02:26Z,17W100P100P0119K,CRUAS 4,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-21T23:00Z,2019-08-22T03:00Z,2019-08-21T23:00Z/2019-08-22T03:00Z/460/455,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041248,5,2019-08-22T03:41Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T01:45Z,2019-08-23T08:00Z,2019-08-22T01:45Z/2019-08-23T08:00Z/425/485,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041248,6,2019-08-22T08:46Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T01:45Z,2019-08-23T13:00Z,2019-08-22T01:45Z/2019-08-23T13:00Z/425/485,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041269,4,2019-08-22T08:51Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T13:00Z,2019-08-24T04:00Z,2019-08-23T13:00Z/2019-08-24T04:00Z/791/119,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041270,2,2019-08-22T13:16Z,17W100P100P0143N,PENLY 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T04:00Z,2019-08-22T13:30Z,2019-08-22T04:00Z/2019-08-22T13:30Z/827/503,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00018246,10,2019-08-22T17:31Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-19T18:00Z,2019-08-26T21:00Z,2019-07-19T18:00Z/2019-08-26T21:00Z/0/1495,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041248,7,2019-08-22T20:56Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T01:45Z,2019-08-23T13:00Z,2019-08-22T01:45Z/2019-08-23T13:00Z/495/415,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00018246,11,2019-08-23T03:26Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-19T18:00Z,2019-08-26T21:00Z,2019-07-19T18:00Z/2019-08-26T21:00Z/0/1495,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 601 MW
+-------------------------------------------------------------
+After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 601 MW"
+EC-EDF-05470-EDF-T-00041299,1,2019-08-23T04:31Z,17W100P100P0126N,FLAMANVILLE 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T04:30Z,2019-08-23T19:00Z,2019-08-23T04:30Z/2019-08-23T19:00Z/718/612,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00018866,11,2019-08-23T05:21Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-06-28T22:00Z,2019-10-04T21:00Z,2019-06-28T22:00Z/2019-10-04T21:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041269,5,2019-08-23T06:26Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T13:00Z,2019-08-25T22:00Z,2019-08-23T13:00Z/2019-08-25T22:00Z/670/240,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041299,2,2019-08-23T07:16Z,17W100P100P0126N,FLAMANVILLE 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T04:30Z,2019-08-23T19:00Z,2019-08-23T04:30Z/2019-08-23T19:00Z/840/490,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00041271,2,2019-08-23T07:26Z,17W100P100P0143N,PENLY 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T04:00Z,2019-08-23T14:00Z,2019-08-23T04:00Z/2019-08-23T14:00Z/777/553,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041248,8,2019-08-23T09:16Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-22T01:45Z,2019-08-23T09:00Z,2019-08-22T01:45Z/2019-08-23T09:00Z/495/415,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041269,6,2019-08-23T09:17Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T09:00Z,2019-08-25T22:00Z,2019-08-23T09:00Z/2019-08-25T22:00Z/710/200,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041269,7,2019-08-23T09:46Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T09:00Z,2019-08-25T22:00Z,2019-08-23T09:00Z/2019-08-25T22:00Z/790/120,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041299,3,2019-08-23T10:31Z,17W100P100P0126N,FLAMANVILLE 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T04:30Z,2019-08-23T19:00Z,2019-08-23T04:30Z/2019-08-23T19:00Z/947/383,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00041271,3,2019-08-23T12:51Z,17W100P100P0143N,PENLY 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-23T04:00Z,2019-08-23T12:45Z,2019-08-23T04:00Z/2019-08-23T12:45Z/777/553,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00017775,13,2019-08-23T13:51Z,17W100P100P01012,CATTENOM 1,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-10T22:00Z,2019-09-03T21:00Z,2019-05-10T22:00Z/2019-09-03T21:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041299,4,2019-08-23T14:41Z,17W100P100P0126N,FLAMANVILLE 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T04:30Z,2019-08-23T19:00Z,2019-08-23T04:30Z/2019-08-23T19:00Z/1120/210,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00017779,16,2019-08-23T16:26Z,17W100P100P0137I,NOGENT 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-04-20T21:00Z,2019-09-15T21:00Z,2019-04-20T21:00Z/2019-09-15T21:00Z/0/1310,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00018246,12,2019-08-23T17:11Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-19T18:00Z,2019-09-01T21:00Z,2019-07-19T18:00Z/2019-09-01T21:00Z/0/1495,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 601 MW
+-------------------------------------------------------------
+After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 601 MW"
+EC-EDF-05470-EDF-T-00041277,2,2019-08-24T03:51Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T13:00Z,2019-08-26T00:00Z,2019-08-22T13:00Z/2019-08-26T00:00Z/0/905,"Indisponibilité fortuite
+
+-------------------------------------------
+
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041269,8,2019-08-24T05:01Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T09:00Z,2019-08-26T22:00Z,2019-08-23T09:00Z/2019-08-26T22:00Z/790/120,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041316,1,2019-08-24T06:01Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-24T06:00Z,2019-08-25T06:00Z,2019-08-24T06:00Z/2019-08-25T06:00Z/1154/176,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041316,2,2019-08-24T07:51Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-24T06:00Z,2019-08-25T06:00Z,2019-08-24T06:00Z/2019-08-25T06:00Z/1220/110,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041316,3,2019-08-24T08:46Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-24T06:00Z,2019-08-24T08:42Z,2019-08-24T06:00Z/2019-08-24T08:42Z/1230/100,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041277,3,2019-08-24T10:36Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T13:00Z,2019-08-26T21:00Z,2019-08-22T13:00Z/2019-08-26T21:00Z/0/905,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 367 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 367 MW"
+EC-EDF-05470-EDF-T-00041320,1,2019-08-24T11:11Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-24T11:08Z,2019-08-25T11:08Z,2019-08-24T11:08Z/2019-08-25T11:08Z/1220/110,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041320,2,2019-08-24T15:16Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-24T11:08Z,2019-08-25T11:08Z,2019-08-24T11:08Z/2019-08-25T11:08Z/1145/185,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041320,3,2019-08-24T17:41Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-24T11:08Z,2019-08-24T17:38Z,2019-08-24T11:08Z/2019-08-24T17:38Z/1145/185,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040859,2,2019-08-25T01:46Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-25T00:00Z,2019-08-25T01:40Z,2019-08-25T00:00Z/2019-08-25T01:40Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041324,1,2019-08-25T02:26Z,17W100P100P0113W,CIVAUX 1,1495,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T02:23Z,2019-08-26T02:23Z,2019-08-25T02:23Z/2019-08-26T02:23Z/0/1495,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041269,9,2019-08-25T03:36Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T09:00Z,2019-08-27T22:00Z,2019-08-23T09:00Z/2019-08-27T22:00Z/790/120,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041324,2,2019-08-25T04:01Z,17W100P100P0113W,CIVAUX 1,1495,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T02:23Z,2019-08-26T04:00Z,2019-08-25T02:23Z/2019-08-26T04:00Z/0/1495,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040856,7,2019-08-25T06:56Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-06T23:00Z,2019-08-25T07:00Z,2019-08-06T23:00Z/2019-08-25T07:00Z/0/915,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041328,1,2019-08-25T07:16Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T07:00Z,2019-08-25T22:00Z,2019-08-25T07:00Z/2019-08-25T22:00Z/10/905,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00041328,2,2019-08-25T07:56Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T07:00Z,2019-08-25T18:00Z,2019-08-25T07:00Z/2019-08-25T18:00Z/20/895,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00041209,5,2019-08-25T09:11Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T02:00Z,2019-08-27T02:00Z,2019-08-19T02:00Z/2019-08-27T02:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041328,3,2019-08-25T09:21Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T07:00Z,2019-08-25T18:00Z,2019-08-25T07:00Z/2019-08-25T18:00Z/90/825,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00041328,4,2019-08-25T10:26Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T07:00Z,2019-08-25T18:00Z,2019-08-25T07:00Z/2019-08-25T18:00Z/173/742,"La remontée peut prendre plusieurs heures
+ ---------------------------------------------------------- 
+The ramp-up period may take several hours"
+EC-EDF-05470-EDF-T-00041335,1,2019-08-25T11:51Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T11:30Z,2019-08-26T11:30Z,2019-08-25T11:30Z/2019-08-26T11:30Z/173/742,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041324,3,2019-08-25T11:56Z,17W100P100P0113W,CIVAUX 1,1495,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T02:23Z,2019-08-31T21:00Z,2019-08-25T02:23Z/2019-08-31T21:00Z/0/1495,Failure / Défaillance
+EC-EDF-05470-EDF-T-00040958,4,2019-08-25T20:03Z,17W100P100P01101,CHOOZ 1,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-09T22:00Z,2019-08-25T21:00Z,2019-08-09T22:00Z/2019-08-25T21:00Z/0/1500,Pour plus d'informations/For more information: http://clients.rte-france.com/lang/fr/visiteurs/vie/publications/declarations_list.jsp (message n° 4973) https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages (message n° 2019-00151)
+EC-EDF-05470-EDF-T-00040168,7,2019-08-25T20:41Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-14T21:00Z,2019-08-26T00:00Z,2019-08-14T21:00Z/2019-08-26T00:00Z/0/915,Pour plus d'informations/For more information: http://clients.rte-france.com/lang/fr/visiteurs/vie/publications/declarations_list.jsp (message n° 4928) https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages (message n° 2019-00119)
+EC-EDF-05470-EDF-T-00041269,10,2019-08-26T04:31Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T09:00Z,2019-08-28T22:00Z,2019-08-23T09:00Z/2019-08-28T22:00Z/790/120,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041342,1,2019-08-26T07:24Z,17W100P100P0131U,GRAVELINES 2,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:15Z,2019-08-27T07:15Z,2019-08-26T07:15Z/2019-08-27T07:15Z/520/390,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041341,1,2019-08-26T07:29Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:20Z,2019-08-27T07:20Z,2019-08-26T07:20Z/2019-08-27T07:20Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041335,2,2019-08-26T07:30Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T11:30Z,2019-08-26T15:00Z,2019-08-25T11:30Z/2019-08-26T15:00Z/173/742,Failure / Défaillance
+EC-EDF-05470-EDF-T-00019383,13,2019-08-26T09:29Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-06-21T21:30Z,2019-09-13T21:00Z,2019-06-21T21:30Z/2019-09-13T21:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041335,3,2019-08-26T10:29Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T11:30Z,2019-08-26T13:00Z,2019-08-25T11:30Z/2019-08-26T13:00Z/173/742,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041342,2,2019-08-26T10:44Z,17W100P100P0131U,GRAVELINES 2,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:15Z,2019-08-26T14:00Z,2019-08-26T07:15Z/2019-08-26T14:00Z/520/390,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041341,2,2019-08-26T11:59Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:20Z,2019-08-27T11:45Z,2019-08-26T07:20Z/2019-08-27T11:45Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041277,4,2019-08-26T12:00Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-22T13:00Z,2019-08-26T14:30Z,2019-08-22T13:00Z/2019-08-26T14:30Z/0/905,"After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 367 MW
+-----------------------------------------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 367 MW"
+EC-EDF-05470-EDF-T-00041335,4,2019-08-26T12:49Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T11:30Z,2019-08-26T15:00Z,2019-08-25T11:30Z/2019-08-26T15:00Z/173/742,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041342,3,2019-08-26T13:19Z,17W100P100P0131U,GRAVELINES 2,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:15Z,2019-08-26T17:00Z,2019-08-26T07:15Z/2019-08-26T17:00Z/520/390,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041335,5,2019-08-26T13:34Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T11:30Z,2019-08-26T16:00Z,2019-08-25T11:30Z/2019-08-26T16:00Z/173/742,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041341,3,2019-08-26T14:09Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:20Z,2019-08-27T10:00Z,2019-08-26T07:20Z/2019-08-27T10:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041357,1,2019-08-26T14:39Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T14:30Z,2019-08-29T03:30Z,2019-08-26T14:30Z/2019-08-29T03:30Z/10/895,"Remontée par paliers en cours
+Prochain palier : 367 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 367 MW"
+EC-EDF-05470-EDF-T-00041357,2,2019-08-26T15:34Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T14:30Z,2019-08-29T03:30Z,2019-08-26T14:30Z/2019-08-29T03:30Z/50/855,"Remontée par paliers en cours
+Prochain palier : 367 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 367 MW"
+EC-EDF-05470-EDF-T-00041342,4,2019-08-26T15:59Z,17W100P100P0131U,GRAVELINES 2,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:15Z,2019-08-26T22:00Z,2019-08-26T07:15Z/2019-08-26T22:00Z/520/390,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041357,3,2019-08-26T16:54Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T14:30Z,2019-08-29T03:30Z,2019-08-26T14:30Z/2019-08-29T03:30Z/4/901,"Remontée par paliers en cours
+Prochain palier : 367 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 367 MW"
+EC-EDF-05470-EDF-T-00041357,4,2019-08-26T17:29Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T14:30Z,2019-08-29T07:00Z,2019-08-26T14:30Z/2019-08-29T07:00Z/15/890,"Remontée par paliers en cours
+Prochain palier : 367 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 367 MW"
+EC-EDF-05470-EDF-T-00041357,5,2019-08-26T18:15Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T14:30Z,2019-08-29T03:00Z,2019-08-26T14:30Z/2019-08-29T03:00Z/150/755,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00041357,6,2019-08-26T21:39Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T14:30Z,2019-08-29T03:00Z,2019-08-26T14:30Z/2019-08-29T03:00Z/350/555,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00041209,6,2019-08-26T23:29Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T02:00Z,2019-08-27T07:00Z,2019-08-19T02:00Z/2019-08-27T07:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041209,7,2019-08-27T02:14Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T02:00Z,2019-08-27T08:00Z,2019-08-19T02:00Z/2019-08-27T08:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041269,11,2019-08-27T02:29Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T09:00Z,2019-08-29T22:00Z,2019-08-23T09:00Z/2019-08-29T22:00Z/790/120,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041357,7,2019-08-27T02:44Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T14:30Z,2019-08-29T08:30Z,2019-08-26T14:30Z/2019-08-29T08:30Z/370/535,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00041341,4,2019-08-27T06:24Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:20Z,2019-08-27T16:00Z,2019-08-26T07:20Z/2019-08-27T16:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041209,8,2019-08-27T07:19Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T02:00Z,2019-08-27T09:00Z,2019-08-19T02:00Z/2019-08-27T09:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041357,8,2019-08-27T08:04Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T14:30Z,2019-08-29T12:30Z,2019-08-26T14:30Z/2019-08-29T12:30Z/370/535,"Remontée par paliers en cours
+Prochain palier : 781 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 781 MW"
+EC-EDF-05470-EDF-T-00018246,13,2019-08-27T09:54Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-19T18:00Z,2019-09-02T21:00Z,2019-07-19T18:00Z/2019-09-02T21:00Z/0/1495,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 601 MW
+-------------------------------------------------------------
+After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 601 MW"
+EC-EDF-05470-EDF-T-00041209,9,2019-08-27T09:55Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-19T02:00Z,2019-08-27T10:00Z,2019-08-19T02:00Z/2019-08-27T10:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041209,10,2019-08-27T09:57Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-19T02:00Z,2019-08-27T09:45Z,2019-08-19T02:00Z/2019-08-27T09:45Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041383,1,2019-08-27T12:14Z,17W100P100P00974,BUGEY 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-27T12:05Z,2019-08-28T12:05Z,2019-08-27T12:05Z/2019-08-28T12:05Z/140/770,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041269,12,2019-08-27T14:24Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-23T09:00Z,2019-08-29T12:30Z,2019-08-23T09:00Z/2019-08-29T12:30Z/790/120,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041386,1,2019-08-27T14:25Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T12:30Z,2019-09-01T21:00Z,2019-08-29T12:30Z/2019-09-01T21:00Z/510/400,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041385,1,2019-08-27T14:26Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-09-01T21:00Z,2019-09-28T00:00Z,2019-09-01T21:00Z/2019-09-28T00:00Z/790/120,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00020635,9,2019-08-27T14:39Z,17W100P100P0130W,GRAVELINES 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-12T22:00Z,2019-09-24T21:00Z,2019-07-12T22:00Z/2019-09-24T21:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041383,2,2019-08-27T14:44Z,17W100P100P00974,BUGEY 3,910,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-27T12:05Z,2019-08-27T14:35Z,2019-08-27T12:05Z/2019-08-27T14:35Z/140/770,Failure / Défaillance
+EC-EDF-05470-EDF-T-00019383,14,2019-08-27T15:01Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-06-21T21:30Z,2019-09-17T21:00Z,2019-06-21T21:30Z/2019-09-17T21:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041341,5,2019-08-27T15:04Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:20Z,2019-08-27T18:00Z,2019-08-26T07:20Z/2019-08-27T18:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041341,6,2019-08-27T17:29Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:20Z,2019-08-27T20:00Z,2019-08-26T07:20Z/2019-08-27T20:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041341,7,2019-08-27T19:29Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T07:20Z,2019-08-27T21:30Z,2019-08-26T07:20Z/2019-08-27T21:30Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041341,8,2019-08-27T21:19Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-26T07:20Z,2019-08-27T21:15Z,2019-08-26T07:20Z/2019-08-27T21:15Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041395,1,2019-08-27T21:24Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-27T21:15Z,2019-08-28T22:30Z,2019-08-27T21:15Z/2019-08-28T22:30Z/387/523,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041396,1,2019-08-27T21:29Z,17W100P100P00966,BUGEY 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-27T22:00Z,2019-08-28T17:00Z,2019-08-27T22:00Z/2019-08-28T17:00Z/805/105,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041397,1,2019-08-27T21:30Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-27T21:22Z,2019-08-28T06:00Z,2019-08-27T21:22Z/2019-08-28T06:00Z/800/110,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041395,2,2019-08-27T23:59Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-27T21:15Z,2019-08-28T22:30Z,2019-08-27T21:15Z/2019-08-28T22:30Z/325/585,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041396,2,2019-08-28T00:04Z,17W100P100P00966,BUGEY 2,910,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-27T22:00Z,2019-08-28T00:00Z,2019-08-27T22:00Z/2019-08-28T00:00Z/805/105,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041357,9,2019-08-28T02:04Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T14:30Z,2019-08-29T15:00Z,2019-08-26T14:30Z/2019-08-29T15:00Z/765/140,"Remontée par paliers en cours
+Prochain palier : 905 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 905 MW"
+EC-EDF-05470-EDF-T-00041189,4,2019-08-28T02:14Z,17W100P100P00958,BLAYAIS 4,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-18T02:00Z,2019-08-31T00:00Z,2019-08-18T02:00Z/2019-08-31T00:00Z/690/220,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00041386,2,2019-08-28T05:24Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T12:30Z,2019-09-01T21:00Z,2019-08-29T12:30Z/2019-09-01T21:00Z/495/415,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041397,2,2019-08-28T06:34Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-27T21:22Z,2019-08-28T08:00Z,2019-08-27T21:22Z/2019-08-28T08:00Z/800/110,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00018241,9,2019-08-28T07:39Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-27T02:00Z,2019-09-01T21:00Z,2019-07-27T02:00Z/2019-09-01T21:00Z/0/880,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041397,3,2019-08-28T07:49Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-27T21:22Z,2019-08-28T09:00Z,2019-08-27T21:22Z/2019-08-28T09:00Z/800/110,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041397,4,2019-08-28T08:34Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-27T21:22Z,2019-08-28T10:00Z,2019-08-27T21:22Z/2019-08-28T10:00Z/800/110,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041409,1,2019-08-28T09:49Z,17W100P100P0133Q,GRAVELINES 4,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-28T09:44Z,2019-08-29T09:44Z,2019-08-28T09:44Z/2019-08-29T09:44Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00037586,6,2019-08-28T09:59Z,17W100P100P0152M,TRICASTIN 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T00:00Z,2019-09-02T22:00Z,2019-08-01T00:00Z/2019-09-02T22:00Z/0/915,Pour plus d'informations/For more information: http://clients.rte-france.com/lang/fr/visiteurs/vie/publications/declarations_list.jsp (message n° 4830) https://www.edf.fr/groupe-edf/qui-sommes-nous/activites/optimisation-et-trading/listes-des-indisponibilites-et-des-messages/liste-des-messages (message n° 2019-00011)
+EC-EDF-05470-EDF-T-00041395,3,2019-08-28T10:39Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-27T21:15Z,2019-08-28T15:00Z,2019-08-27T21:15Z/2019-08-28T15:00Z/325/585,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041395,4,2019-08-28T13:07Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-27T21:15Z,2019-08-28T13:00Z,2019-08-27T21:15Z/2019-08-28T13:00Z/325/585,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041409,2,2019-08-28T17:56Z,17W100P100P0133Q,GRAVELINES 4,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-28T09:44Z,2019-08-29T21:00Z,2019-08-28T09:44Z/2019-08-29T21:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041417,1,2019-08-28T22:26Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T01:00Z,2019-08-30T01:00Z,2019-08-29T01:00Z/2019-08-30T01:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041417,2,2019-08-28T22:51Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T01:00Z,2019-09-01T22:00Z,2019-08-29T01:00Z/2019-09-01T22:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041417,3,2019-08-29T01:51Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T02:00Z,2019-09-01T22:00Z,2019-08-29T02:00Z/2019-09-01T22:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041417,4,2019-08-29T02:06Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T02:30Z,2019-09-01T22:00Z,2019-08-29T02:30Z/2019-09-01T22:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041357,10,2019-08-29T06:11Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-26T14:30Z,2019-08-29T23:00Z,2019-08-26T14:30Z/2019-08-29T23:00Z/780/125,"Remontée par paliers en cours
+Prochain palier : 905 MW
+---------------------------------------------------------------------------------
+Unit is currently ramping up by steps
+Next step : 905 MW"
+EC-EDF-05470-EDF-T-00041409,3,2019-08-29T13:31Z,17W100P100P0133Q,GRAVELINES 4,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-28T09:44Z,2019-08-31T21:00Z,2019-08-28T09:44Z/2019-08-31T21:00Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041429,1,2019-08-29T18:01Z,17W100P100P0153K,TRICASTIN 4,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T17:55Z,2019-08-30T17:55Z,2019-08-29T17:55Z/2019-08-30T17:55Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041324,4,2019-08-29T18:56Z,17W100P100P0113W,CIVAUX 1,1495,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T02:23Z,2019-09-03T21:00Z,2019-08-25T02:23Z/2019-09-03T21:00Z/0/1495,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041429,2,2019-08-29T22:56Z,17W100P100P0153K,TRICASTIN 4,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T17:55Z,2019-08-30T21:00Z,2019-08-29T17:55Z/2019-08-30T21:00Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041417,5,2019-08-30T03:46Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T02:30Z,2019-09-02T22:00Z,2019-08-29T02:30Z/2019-09-02T22:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041417,6,2019-08-30T07:01Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T02:30Z,2019-09-01T22:00Z,2019-08-29T02:30Z/2019-09-01T22:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00018246,14,2019-08-30T08:21Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-19T18:00Z,2019-09-03T21:00Z,2019-07-19T18:00Z/2019-09-03T21:00Z/0/1495,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+Premier palier à atteindre : 601 MW
+-------------------------------------------------------------
+After its restart, the plant will gradually return by various load threshold to full power. The ramp-up period will take at least 48 hours.
+First threshold after restart : 601 MW"
+EC-EDF-05470-EDF-T-00017775,14,2019-08-30T08:26Z,17W100P100P01012,CATTENOM 1,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-10T22:00Z,2019-09-05T21:00Z,2019-05-10T22:00Z/2019-09-05T21:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00020635,10,2019-08-30T08:36Z,17W100P100P0130W,GRAVELINES 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-12T22:00Z,2019-10-03T21:00Z,2019-07-12T22:00Z/2019-10-03T21:00Z/0/910,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00017779,17,2019-08-30T08:41Z,17W100P100P0137I,NOGENT 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-04-20T21:00Z,2019-09-10T21:00Z,2019-04-20T21:00Z/2019-09-10T21:00Z/0/1310,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041386,3,2019-08-30T08:56Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T12:30Z,2019-08-31T21:00Z,2019-08-29T12:30Z/2019-08-31T21:00Z/495/415,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041385,2,2019-08-30T08:57Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2019-09-01T21:00Z,2019-09-28T00:00Z,2019-09-01T21:00Z/2019-09-28T00:00Z/790/120,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041441,1,2019-08-30T08:58Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-31T21:00Z,2019-09-06T21:00Z,2019-08-31T21:00Z/2019-09-06T21:00Z/0/910,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041429,3,2019-08-30T12:06Z,17W100P100P0153K,TRICASTIN 4,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T17:55Z,2019-08-31T21:00Z,2019-08-29T17:55Z/2019-08-31T21:00Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041417,7,2019-08-30T14:41Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T02:30Z,2019-09-03T21:00Z,2019-08-29T02:30Z/2019-09-03T21:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability"
+EC-EDF-05470-EDF-T-00041441,2,2019-08-30T16:31Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-01T21:00Z,2019-09-07T21:00Z,2019-08-01T21:00Z/2019-09-07T21:00Z/0/910,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041441,3,2019-08-30T17:16Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-09-01T21:00Z,2019-09-07T21:00Z,2019-09-01T21:00Z/2019-09-07T21:00Z/0/910,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041386,4,2019-08-30T17:36Z,17W100P100P0132S,GRAVELINES 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T12:30Z,2019-09-01T21:00Z,2019-08-29T12:30Z/2019-09-01T21:00Z/495/415,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041409,4,2019-08-31T03:11Z,17W100P100P0133Q,GRAVELINES 4,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-28T09:44Z,2019-09-01T06:30Z,2019-08-28T09:44Z/2019-09-01T06:30Z/0/910,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041429,4,2019-08-31T08:51Z,17W100P100P0153K,TRICASTIN 4,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-29T17:55Z,2019-09-01T21:00Z,2019-08-29T17:55Z/2019-09-01T21:00Z/0/915,Failure / Défaillance
+EC-EDF-05470-EDF-T-00041452,1,2019-08-31T12:01Z,17W100P100P0115S,CRUAS 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-31T11:52Z,2019-09-06T22:15Z,2019-08-31T11:52Z/2019-09-06T22:15Z/810/105,"Tranche en prolongation de campagne
+-----------------------------------------------------------------------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00041453,1,2019-08-31T12:56Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-09-01T06:00Z,2019-09-01T14:00Z,2019-09-01T06:00Z/2019-09-01T14:00Z/800/115,Foreseen Maintenance / Maintenance prévue
+EC-EDF-05470-EDF-T-00041454,1,2019-08-31T13:01Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-31T13:00Z,2019-09-01T13:00Z,2019-08-31T13:00Z/2019-09-01T13:00Z/800/115,Failure / Défaillance
+EC-EDF-05470-EDF-T-00016673,14,2019-08-31T13:03Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-01-05T01:00Z,2019-09-18T21:00Z,2019-01-05T01:00Z/2019-09-18T21:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041324,5,2019-08-31T13:04Z,17W100P100P0113W,CIVAUX 1,1495,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-08-25T02:23Z,2019-09-04T21:00Z,2019-08-25T02:23Z/2019-09-04T21:00Z/0/1495,Failure / Défaillance
+EC-EDF-05470-EDF-T-00018866,12,2019-08-31T13:05Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-06-28T22:00Z,2019-10-08T21:00Z,2019-06-28T22:00Z/2019-10-08T21:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00041454,2,2019-08-31T16:02Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2019-08-31T13:00Z,2019-08-31T16:00Z,2019-08-31T13:00Z/2019-08-31T16:00Z/800/115,Failure / Défaillance
+EC-EDF-05470-EDF-T-00017775,15,2019-08-31T17:22Z,17W100P100P01012,CATTENOM 1,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-05-10T22:00Z,2019-09-07T21:00Z,2019-05-10T22:00Z/2019-09-07T21:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00018241,10,2019-08-31T18:37Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2019-07-27T02:00Z,2019-09-02T21:00Z,2019-07-27T02:00Z/2019-09-02T21:00Z/0/880,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."

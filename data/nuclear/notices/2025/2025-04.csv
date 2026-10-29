@@ -1,0 +1,1730 @@
+identifier,version,publication_utc,unit_eic,unit_name,installed_mw,type,reason,status,start_utc,end_utc,intervals,remarks
+EDF-05470_EDF_T_00210844,2,2025-04-01T03:15Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-01T05:00Z,2025-04-01T13:00Z,2025-04-01T05:00Z/2025-04-01T13:00Z/260/1040,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00211080,1,2025-04-01T16:31Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-01T17:00Z,2025-04-02T15:00Z,2025-04-01T17:00Z/2025-04-02T15:00Z/0/880,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00211090,1,2025-04-01T16:32Z,17W100P100P0130W,GRAVELINES 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-01T12:44Z,2025-04-02T12:44Z,2025-04-01T12:44Z/2025-04-02T12:44Z/300/610,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00211092,1,2025-04-01T16:33Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T11:30Z,2025-04-06T17:00Z,2025-04-02T11:30Z/2025-04-06T17:00Z/0/1500,"Arrêt pour économie combustible, sous réserve d'accord du gestionnaire de réseau de transport
+------------
+Fuel saving outage, subject to TSO agreement"
+EDF-05470_EDF_T_00211020,1,2025-04-01T16:36Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-05-23T22:00Z,2025-05-30T22:00Z,2025-05-23T22:00Z/2025-05-30T22:00Z/0/880,"Arrêt pour économie combustible, sous réserve d'accord du gestionnaire de réseau de transport
+------------
+Fuel saving outage, subject to TSO agreement"
+EDF-05470_EDF_T_00211106,1,2025-04-01T16:37Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T12:00Z,2025-04-02T14:00Z,2025-04-02T12:00Z/2025-04-02T14:00Z/623/292,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00210849,7,2025-04-01T16:38Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,FAILURE,ACTIVE,2025-03-31T14:43Z,2025-04-01T17:00Z,2025-03-31T14:43Z/2025-04-01T17:00Z/0/880,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00211017,1,2025-04-01T16:38Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T08:30Z,2025-04-08T22:00Z,2025-04-05T08:30Z/2025-04-08T22:00Z/0/880,"Arrêt pour économie combustible, sous réserve d'accord du gestionnaire de réseau de transport
+------------
+Fuel saving outage, subject to TSO agreement"
+EDF-05470_EDF_T_00211116,1,2025-04-01T16:38Z,17W100P100P0130W,GRAVELINES 1,910,UNPLANNED,FAILURE,INACTIVE,2025-04-01T15:51Z,2025-04-01T16:14Z,2025-04-01T15:51Z/2025-04-01T16:14Z/510/400,-
+EC-EDF-05470-EDF-T-00047270,20,2025-04-01T16:39Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-02-07T22:00Z,2025-04-08T21:00Z,2025-02-07T22:00Z/2025-04-08T21:00Z/0/1310,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+------------------------------------- 
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00210845,2,2025-04-01T16:39Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-01T10:00Z,2025-04-01T15:00Z,2025-04-01T10:00Z/2025-04-01T15:00Z/180/730,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00210847,2,2025-04-01T16:39Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-01T12:00Z,2025-04-01T14:00Z,2025-04-01T12:00Z/2025-04-01T14:00Z/627/288,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00210877,2,2025-04-01T16:39Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,INACTIVE,2025-03-31T20:00Z,2025-04-01T16:00Z,2025-03-31T20:00Z/2025-04-01T16:00Z/443/472,-
+EDF-05470_EDF_T_00210877,3,2025-04-01T16:39Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,ACTIVE,2025-03-31T20:00Z,2025-04-02T09:00Z,2025-03-31T20:00Z/2025-04-02T09:00Z/438/477,-
+EDF-05470_EDF_T_00211090,2,2025-04-01T16:39Z,17W100P100P0130W,GRAVELINES 1,910,UNPLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-01T12:44Z,2025-04-02T12:44Z,2025-04-01T12:44Z/2025-04-02T12:44Z/300/610,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00211103,1,2025-04-01T16:39Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T09:00Z,2025-04-06T17:00Z,2025-04-02T09:00Z/2025-04-06T17:00Z/0/1300,"Arrêt pour économie combustible, sous réserve d'accord du gestionnaire de réseau de transport
+------------
+Fuel saving outage, subject to TSO agreement"
+EDF-05470_EDF_T_00211105,1,2025-04-01T16:39Z,17W100P100P0130W,GRAVELINES 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T12:00Z,2025-04-02T16:00Z,2025-04-02T12:00Z/2025-04-02T16:00Z/182/728,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00211080,2,2025-04-01T16:40Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-01T17:00Z,2025-04-03T15:00Z,2025-04-01T17:00Z/2025-04-03T15:00Z/0/880,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00211104,1,2025-04-01T16:40Z,17W100P100P0115S,CRUAS 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T12:00Z,2025-04-02T13:00Z,2025-04-02T12:00Z/2025-04-02T13:00Z/370/545,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00209173,12,2025-04-02T08:44Z,17W100P100P0145J,ST ALBAN 1,1335,UNPLANNED,FAILURE,INACTIVE,2025-03-25T02:00Z,2025-04-02T01:00Z,2025-03-25T02:00Z/2025-04-02T01:00Z/1208/127,-
+EC-EDF-05470-EDF-T-00066688,15,2025-04-02T08:46Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-24T23:00Z,2025-04-03T21:00Z,2025-01-24T23:00Z/2025-04-03T21:00Z/0/915,"Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+Early restart, subject to TSO agreement."
+EDF-05470_EDF_T_00201497,7,2025-04-02T08:46Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,ACTIVE,2025-02-15T00:00Z,2025-04-08T21:00Z,2025-02-15T00:00Z/2025-04-08T21:00Z/0/1620,-
+EDF-05470_EDF_T_00211103,2,2025-04-02T08:46Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T15:00Z,2025-04-06T17:00Z,2025-04-02T15:00Z/2025-04-06T17:00Z/0/1300,"Arrêt pour économie combustible, sous réserve d'accord du gestionnaire de réseau de transport
+------------
+Fuel saving outage, subject to TSO agreement"
+EC-EDF-05470-EDF-T-00199838,2,2025-04-02T08:47Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-04T12:30Z,2025-04-04T20:00Z,2025-04-04T12:30Z/2025-04-04T20:00Z/20/1475,"Baisse avant arrêt Baisse à 450 MW : 1h – palier à 450 MW : 5h – baisse à 20 MW : 0h30 – palier à 20 MW : 2h … baisse jusqu’à découplage. 
+-----
+Unit Ramping down before outage Ramp down to 450 MW : 1h – threshold at 450 MW : 5h – ramp down to 20 MW : 0h30 – threshold at 20 MW : 2h … ramp down until decoupling"
+EDF-05470_EDF_T_00211105,2,2025-04-02T08:47Z,17W100P100P0130W,GRAVELINES 1,910,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-02T12:00Z,2025-04-02T16:00Z,2025-04-02T12:00Z/2025-04-02T16:00Z/182/728,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00211168,1,2025-04-02T08:47Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,FORESEEN_MAINTENANCE,INACTIVE,2025-04-02T05:00Z,2025-04-02T08:00Z,2025-04-02T05:00Z/2025-04-02T08:00Z/1208/127,-
+EDF-05470_EDF_T_00211168,2,2025-04-02T08:47Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-02T05:30Z,2025-04-02T11:00Z,2025-04-02T05:30Z/2025-04-02T11:00Z/1200/135,-
+EDF-05470_EDF_T_00211106,2,2025-04-02T14:38Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-02T12:00Z,2025-04-02T14:00Z,2025-04-02T12:00Z/2025-04-02T14:00Z/623/292,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00210877,4,2025-04-02T14:39Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,ACTIVE,2025-03-31T20:00Z,2025-04-02T16:00Z,2025-03-31T20:00Z/2025-04-02T16:00Z/438/477,-
+EDF-05470_EDF_T_00211168,3,2025-04-02T14:40Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,FORESEEN_MAINTENANCE,INACTIVE,2025-04-02T05:30Z,2025-04-02T14:30Z,2025-04-02T05:30Z/2025-04-02T14:30Z/1200/135,-
+EDF-05470_EDF_T_00211168,4,2025-04-02T14:40Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-02T05:30Z,2025-04-02T17:00Z,2025-04-02T05:30Z/2025-04-02T17:00Z/1200/135,-
+EDF-05470_EDF_T_00211351,1,2025-04-02T14:40Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T16:00Z,2025-04-02T22:30Z,2025-04-02T16:00Z/2025-04-02T22:30Z/905/10,"La remontée peut prendre plusieurs heures en fonction de l'évolution de paramètres techniques
+--------
+The ramp-up period may take several hours according to technical issues monitoring."
+EDF-05470_EDF_T_00210877,5,2025-04-02T16:43Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,INACTIVE,2025-03-31T20:00Z,2025-04-02T16:30Z,2025-03-31T20:00Z/2025-04-02T16:30Z/438/477,-
+EDF-05470_EDF_T_00211351,2,2025-04-02T16:43Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T16:30Z,2025-04-02T23:00Z,2025-04-02T16:30Z/2025-04-02T23:00Z/905/10,"La remontée peut prendre plusieurs heures en fonction de l'évolution de paramètres techniques
+--------
+The ramp-up period may take several hours according to technical issues monitoring."
+EDF-05470_EDF_T_00211168,5,2025-04-02T17:16Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-02T05:30Z,2025-04-02T17:30Z,2025-04-02T05:30Z/2025-04-02T17:30Z/1200/135,-
+EDF-05470_EDF_T_00211168,6,2025-04-02T17:51Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-02T05:30Z,2025-04-02T18:15Z,2025-04-02T05:30Z/2025-04-02T18:15Z/1200/135,-
+EC-EDF-05470-EDF-T-00066688,16,2025-04-02T22:08Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-24T23:00Z,2025-04-03T11:30Z,2025-01-24T23:00Z/2025-04-03T11:30Z/0/915,"Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+Early restart, subject to TSO agreement."
+EDF-05470_EDF_T_00211422,1,2025-04-03T04:31Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T04:27Z,2025-04-04T04:27Z,2025-04-03T04:27Z/2025-04-04T04:27Z/770/560,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00211422,2,2025-04-03T04:57Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T04:27Z,2025-04-04T04:27Z,2025-04-03T04:27Z/2025-04-04T04:27Z/670/660,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00211422,3,2025-04-03T06:33Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-03T04:27Z,2025-04-03T09:00Z,2025-04-03T04:27Z/2025-04-03T09:00Z/670/660,-
+EC-EDF-05470-EDF-T-00066688,17,2025-04-03T07:41Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-24T23:00Z,2025-04-03T13:30Z,2025-01-24T23:00Z/2025-04-03T13:30Z/0/915,"Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+Early restart, subject to TSO agreement."
+EDF-05470_EDF_T_00211540,1,2025-04-03T07:45Z,17W100P100P0127L,FLAMANVILLE 2,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-05T13:00Z,2025-04-05T14:00Z,2025-04-05T13:00Z/2025-04-05T14:00Z/1230/100,-
+EDF-05470_EDF_T_00211422,4,2025-04-03T09:04Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-03T04:27Z,2025-04-03T11:00Z,2025-04-03T04:27Z/2025-04-03T11:00Z/670/660,-
+EC-EDF-05470-EDF-T-00090893,4,2025-04-03T09:59Z,17W100P100P0141R,PALUEL 3,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2026-05-22T22:00Z,2026-07-04T22:00Z,2026-05-22T22:00Z/2026-07-04T22:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+ ------------------------------------- 
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00104303,7,2025-04-03T10:00Z,17W100P100P0142P,PALUEL 4,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2026-09-18T22:00Z,2026-10-31T23:00Z,2026-09-18T22:00Z/2026-10-31T23:00Z/0/1330,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00211422,5,2025-04-03T10:32Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-03T04:27Z,2025-04-03T16:00Z,2025-04-03T04:27Z/2025-04-03T16:00Z/670/660,-
+EC-EDF-05470-EDF-T-00066688,18,2025-04-03T12:19Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-24T23:00Z,2025-04-03T20:30Z,2025-01-24T23:00Z/2025-04-03T20:30Z/0/915,"Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+Early restart, subject to TSO agreement."
+EDF-05470_EDF_T_00211621,1,2025-04-03T13:56Z,17W100P100P01004,BUGEY 5,880,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-03T15:00Z,2025-04-03T17:00Z,2025-04-03T15:00Z/2025-04-03T17:00Z/0/880,-
+EDF-05470_EDF_T_00211621,2,2025-04-03T13:58Z,17W100P100P01004,BUGEY 5,880,PLANNED,FORESEEN_MAINTENANCE,DISMISSED,2025-04-03T15:00Z,2025-04-03T17:00Z,2025-04-03T15:00Z/2025-04-03T17:00Z/0/880,-
+EDF-05470_EDF_T_00211625,1,2025-04-03T14:00Z,17W100P100P01004,BUGEY 5,880,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-03T15:00Z,2025-04-03T17:00Z,2025-04-03T15:00Z/2025-04-03T17:00Z/0/880,-
+EDF-05470_EDF_T_00211628,1,2025-04-03T14:10Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-04T14:00Z,2025-04-04T16:00Z,2025-04-04T14:00Z/2025-04-04T16:00Z/546/764,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00211636,1,2025-04-03T14:28Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T17:00Z,2025-04-03T20:00Z,2025-04-03T17:00Z/2025-04-03T20:00Z/180/700,"Remontée par paliers en cours
+--------
+Unit is currently ramping up by steps"
+EDF-05470_EDF_T_00211643,1,2025-04-03T14:38Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-04T07:00Z,2025-04-04T14:00Z,2025-04-04T07:00Z/2025-04-04T14:00Z/437/1058,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00211625,2,2025-04-03T15:14Z,17W100P100P01004,BUGEY 5,880,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-03T15:00Z,2025-04-03T16:30Z,2025-04-03T15:00Z/2025-04-03T16:30Z/0/880,-
+EDF-05470_EDF_T_00211636,2,2025-04-03T15:15Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T16:30Z,2025-04-03T20:00Z,2025-04-03T16:30Z/2025-04-03T20:00Z/180/700,"Remontée par paliers en cours
+--------
+Unit is currently ramping up by steps"
+EDF-05470_EDF_T_00211422,6,2025-04-03T15:26Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-03T04:27Z,2025-04-04T11:00Z,2025-04-03T04:27Z/2025-04-04T11:00Z/685/645,-
+EDF-05470_EDF_T_00205375,3,2025-04-03T17:40Z,17W100P100P0129H,GOLFECH 2,1310,UNPLANNED,FAILURE,ACTIVE,2025-03-08T09:14Z,2025-04-17T20:00Z,2025-03-08T09:14Z/2025-04-17T20:00Z/1095/215,"Tranche en prolongation de campagne
+--------
+Ongoing stretch"
+EC-EDF-05470-EDF-T-00066688,19,2025-04-03T20:35Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-24T23:00Z,2025-04-03T21:30Z,2025-01-24T23:00Z/2025-04-03T21:30Z/0/915,"Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+Early restart, subject to TSO agreement."
+EC-EDF-05470-EDF-T-00066688,20,2025-04-03T21:01Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-24T23:00Z,2025-04-03T22:00Z,2025-01-24T23:00Z/2025-04-03T22:00Z/0/915,"Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+Early restart, subject to TSO agreement."
+EDF-05470_EDF_T_00211683,1,2025-04-03T22:31Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-06T23:30Z,2025-04-03T22:00Z/2025-04-06T23:30Z/10/905,"Remontée par paliers en cours
+Prochain palier : 198 MW
+--------
+Unit is currently ramping up by steps
+Next step : 198 MW."
+EDF-05470_EDF_T_00211683,2,2025-04-04T03:22Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T04:00Z,2025-04-03T22:00Z/2025-04-07T04:00Z/260/655,"Remontée par paliers en cours
+Prochain palier : 389 MW
+--------
+Unit is currently ramping up by steps
+Next step : 389 MW."
+EDF-05470_EDF_T_00211683,3,2025-04-04T05:35Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T04:00Z,2025-04-03T22:00Z/2025-04-07T04:00Z/320/595,"Remontée par paliers en cours
+Prochain palier : 813 MW
+--------
+Unit is currently ramping up by steps
+Next step : 813 MW."
+EDF-05470_EDF_T_00211683,4,2025-04-04T06:16Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T03:15Z,2025-04-03T22:00Z/2025-04-07T03:15Z/320/595,"Remontée par paliers en cours
+Prochain palier : 813 MW
+--------
+Unit is currently ramping up by steps
+Next step : 813 MW."
+EDF-05470_EDF_T_00211017,2,2025-04-04T07:19Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T08:30Z,2025-04-08T22:00Z,2025-04-05T08:30Z/2025-04-08T22:00Z/0/880,"Arrêt pour économie combustible
+------------
+Fuel saving outage"
+EDF-05470_EDF_T_00211092,2,2025-04-04T07:20Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T11:30Z,2025-04-06T17:00Z,2025-04-02T11:30Z/2025-04-06T17:00Z/0/1500,"Arrêt pour économie combustible
+------------
+Fuel saving outage"
+EDF-05470_EDF_T_00211103,3,2025-04-04T07:20Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T15:00Z,2025-04-06T17:00Z,2025-04-02T15:00Z/2025-04-06T17:00Z/0/1300,"Arrêt pour économie combustible
+------------
+Fuel saving outage"
+EDF-05470_EDF_T_00211628,2,2025-04-04T08:37Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-04T14:00Z,2025-04-04T16:00Z,2025-04-04T14:00Z/2025-04-04T16:00Z/546/764,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00211422,7,2025-04-04T08:58Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-03T04:27Z,2025-04-04T12:00Z,2025-04-03T04:27Z/2025-04-04T12:00Z/685/645,-
+EDF-05470_EDF_T_00211857,1,2025-04-04T11:13Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-04T11:11Z,2025-04-04T14:00Z,2025-04-04T11:11Z/2025-04-04T14:00Z/379/951,-
+EDF-05470_EDF_T_00211422,8,2025-04-04T12:03Z,17W100P100P0141R,PALUEL 3,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-03T04:27Z,2025-04-04T12:30Z,2025-04-03T04:27Z/2025-04-04T12:30Z/685/645,-
+EDF-05470_EDF_T_00211870,1,2025-04-04T12:48Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-04T14:00Z,2025-04-04T16:00Z,2025-04-04T14:00Z/2025-04-04T16:00Z/0/1330,-
+EC-EDF-05470-EDF-T-00199838,3,2025-04-04T13:08Z,17W100P100P0114U,CIVAUX 2,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-04T12:30Z,2025-04-04T20:00Z,2025-04-04T12:30Z/2025-04-04T20:00Z/20/1475,"Baisse avant arrêt Baisse à 340 MW : 1h – palier à 340 MW : 5h – baisse à 20 MW : 0h30 – palier à 20 MW : 2h … baisse jusqu’à découplage. 
+-----
+Unit Ramping down before outage Ramp down to 340 MW : 1h – threshold at 340 MW : 5h – ramp down to 20 MW : 0h30 – threshold at 20 MW : 2h … ramp down until decoupling"
+EDF-05470_EDF_T_00211880,1,2025-04-04T14:21Z,17W100P100P0150Q,TRICASTIN 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T08:30Z,2025-04-06T17:00Z,2025-04-05T08:30Z/2025-04-06T17:00Z/310/605,"Le placement et la durée de ce palier pour modulation seront réinterrogés
+et la tranche sera redémarrée si les conditions économiques le justifient.
+--------
+The planning and duration of this unavailability for modulation supply will
+be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00211884,1,2025-04-04T14:42Z,17W100P100P0150Q,TRICASTIN 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-06T17:00Z,2025-04-11T15:00Z,2025-04-06T17:00Z/2025-04-11T15:00Z/310/605,-
+EDF-05470_EDF_T_00211870,2,2025-04-04T14:43Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-04T14:00Z,2025-04-04T18:30Z,2025-04-04T14:00Z/2025-04-04T18:30Z/0/1330,-
+EDF-05470_EDF_T_00211870,3,2025-04-04T18:16Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-04T14:00Z,2025-04-04T21:00Z,2025-04-04T14:00Z/2025-04-04T21:00Z/0/1330,-
+EDF-05470_EDF_T_00211880,2,2025-04-04T18:36Z,17W100P100P0150Q,TRICASTIN 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T08:00Z,2025-04-05T23:00Z,2025-04-05T08:00Z/2025-04-05T23:00Z/310/605,"Le placement et la durée de ce palier pour modulation seront réinterrogés
+et la tranche sera redémarrée si les conditions économiques le justifient.
+--------
+The planning and duration of this unavailability for modulation supply will
+be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00211922,1,2025-04-04T18:39Z,17W100P100P0150Q,TRICASTIN 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T23:00Z,2025-04-11T15:00Z,2025-04-05T23:00Z/2025-04-11T15:00Z/200/715,"Le placement et la durée de ce palier pour modulation seront réinterrogés
+et la tranche sera redémarrée si les conditions économiques le justifient.
+--------
+The planning and duration of this unavailability for modulation supply will
+be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00211683,5,2025-04-04T18:45Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T17:00Z,2025-04-03T22:00Z/2025-04-07T17:00Z/320/595,"Remontée par paliers en cours
+Prochain palier : 813 MW
+--------
+Unit is currently ramping up by steps
+Next step : 813 MW."
+EDF-05470_EDF_T_00211930,1,2025-04-04T19:40Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T04:30Z,2025-04-05T07:30Z,2025-04-05T04:30Z/2025-04-05T07:30Z/745/135,"Baisse avant arrêt
+Baisse à 745 MW : (10 min) - palier à 745 MW : (3 h)  baisse jusqu'à découplage
+--------
+Unit Ramping down before outage
+Ramp down to 745 MW : (10 min)  - threshold at 745 MW : (3 h)  ramp down until decoupling."
+EDF-05470_EDF_T_00211870,4,2025-04-04T19:45Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-04T14:00Z,2025-04-04T22:00Z,2025-04-04T14:00Z/2025-04-04T22:00Z/0/1330,-
+EDF-05470_EDF_T_00211870,5,2025-04-04T21:45Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-04T14:00Z,2025-04-04T22:30Z,2025-04-04T14:00Z/2025-04-04T22:30Z/0/1330,-
+EDF-05470_EDF_T_00211942,1,2025-04-04T23:21Z,17W100P100P0127L,FLAMANVILLE 2,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-04T23:17Z,2025-04-05T23:17Z,2025-04-04T23:17Z/2025-04-05T23:17Z/650/680,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00211540,2,2025-04-04T23:23Z,17W100P100P0127L,FLAMANVILLE 2,1330,PLANNED,FORESEEN_MAINTENANCE,DISMISSED,2025-04-05T13:00Z,2025-04-05T14:00Z,2025-04-05T13:00Z/2025-04-05T14:00Z/1230/100,-
+EDF-05470_EDF_T_00211942,2,2025-04-04T23:29Z,17W100P100P0127L,FLAMANVILLE 2,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-04T23:17Z,2025-04-05T16:00Z,2025-04-04T23:17Z/2025-04-05T16:00Z/650/680,
+EDF-05470_EDF_T_00211683,6,2025-04-05T01:06Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T10:00Z,2025-04-03T22:00Z/2025-04-07T10:00Z/320/595,"Remontée par paliers en cours
+Prochain palier : 813 MW
+--------
+Unit is currently ramping up by steps
+Next step : 813 MW."
+EDF-05470_EDF_T_00211952,1,2025-04-05T05:26Z,17W100P100P0090I,BELLEVILLE 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T22:00Z,2025-04-11T21:00Z,2025-04-05T22:00Z/2025-04-11T21:00Z/1210/100,"Tranche en prolongation de campagne
+--------
+Ongoing stretch."
+EDF-05470_EDF_T_00211956,1,2025-04-05T05:37Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-05T08:30Z,2025-04-05T10:30Z,2025-04-05T08:30Z/2025-04-05T10:30Z/434/901,-
+EDF-05470_EDF_T_00211957,1,2025-04-05T05:42Z,17W100P100P0141R,PALUEL 3,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-05T22:30Z,2025-04-06T00:00Z,2025-04-05T22:30Z/2025-04-06T00:00Z/1224/106,-
+EDF-05470_EDF_T_00211922,2,2025-04-05T06:03Z,17W100P100P0150Q,TRICASTIN 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T23:00Z,2025-04-06T17:00Z,2025-04-05T23:00Z/2025-04-06T17:00Z/200/715,"Le placement et la durée de ce palier pour modulation seront réinterrogés
+et la tranche sera redémarrée si les conditions économiques le justifient.
+--------
+The planning and duration of this unavailability for modulation supply will
+be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00211884,2,2025-04-05T06:04Z,17W100P100P0150Q,TRICASTIN 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-06T17:00Z,2025-04-11T15:00Z,2025-04-06T17:00Z/2025-04-11T15:00Z/200/715,-
+EDF-05470_EDF_T_00212092,1,2025-04-05T09:58Z,17W100P100P0149B,TRICASTIN 1,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T09:56Z,2025-04-06T09:56Z,2025-04-05T09:56Z/2025-04-06T09:56Z/460/455,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00211683,7,2025-04-05T10:01Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T10:00Z,2025-04-03T22:00Z/2025-04-07T10:00Z/460/455,"Planning de remontée en cours de recalage 
+---------------------
+The ramp-up planning is being updated."
+EDF-05470_EDF_T_00212092,2,2025-04-05T12:04Z,17W100P100P0149B,TRICASTIN 1,915,UNPLANNED,FAILURE,ACTIVE,2025-04-05T09:56Z,2025-04-05T14:00Z,2025-04-05T09:56Z/2025-04-05T14:00Z/420/495,-
+EDF-05470_EDF_T_00211683,8,2025-04-05T12:05Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T17:00Z,2025-04-03T22:00Z/2025-04-07T17:00Z/420/495,"Planning de remontée en cours de recalage 
+---------------------
+The ramp-up planning is being updated."
+EDF-05470_EDF_T_00211103,4,2025-04-05T13:50Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T15:00Z,2025-04-06T15:00Z,2025-04-02T15:00Z/2025-04-06T15:00Z/0/1300,"Arrêt pour économie combustible
+------------
+Fuel saving outage"
+EDF-05470_EDF_T_00211092,3,2025-04-05T13:51Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-02T11:30Z,2025-04-06T16:30Z,2025-04-02T11:30Z/2025-04-06T16:30Z/0/1500,"Arrêt pour économie combustible
+------------
+Fuel saving outage"
+EDF-05470_EDF_T_00211683,9,2025-04-05T14:33Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T22:00Z,2025-04-03T22:00Z/2025-04-07T22:00Z/420/495,"Planning de remontée en cours de recalage 
+---------------------
+The ramp-up planning is being updated."
+EDF-05470_EDF_T_00211942,3,2025-04-05T15:47Z,17W100P100P0127L,FLAMANVILLE 2,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-04T23:17Z,2025-04-05T17:00Z,2025-04-04T23:17Z/2025-04-05T17:00Z/650/680,-
+EDF-05470_EDF_T_00211880,3,2025-04-05T20:57Z,17W100P100P0150Q,TRICASTIN 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T08:00Z,2025-04-05T23:45Z,2025-04-05T08:00Z/2025-04-05T23:45Z/310/605,"Le placement et la durée de ce palier pour modulation seront réinterrogés
+et la tranche sera redémarrée si les conditions économiques le justifient.
+--------
+The planning and duration of this unavailability for modulation supply will
+be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00211922,3,2025-04-05T20:59Z,17W100P100P0150Q,TRICASTIN 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-05T23:45Z,2025-04-06T17:00Z,2025-04-05T23:45Z/2025-04-06T17:00Z/200/715,"Le placement et la durée de ce palier pour modulation seront réinterrogés
+et la tranche sera redémarrée si les conditions économiques le justifient.
+--------
+The planning and duration of this unavailability for modulation supply will
+be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00212155,1,2025-04-05T21:30Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-06T05:20Z,2025-04-07T05:20Z,2025-04-06T05:20Z/2025-04-07T05:20Z/0/1310,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00212157,1,2025-04-06T00:46Z,17W100P100P0127L,FLAMANVILLE 2,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-06T08:00Z,2025-04-06T09:00Z,2025-04-06T08:00Z/2025-04-06T09:00Z/1230/100,-
+EDF-05470_EDF_T_00212161,1,2025-04-06T02:35Z,17W100P100P0121X,DAMPIERRE 2,890,UNPLANNED,FAILURE,ACTIVE,2025-04-06T02:32Z,2025-04-06T08:00Z,2025-04-06T02:32Z/2025-04-06T08:00Z/296/594,-
+EDF-05470_EDF_T_00212155,2,2025-04-06T05:34Z,17W100P100P0091G,BELLEVILLE 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-06T05:30Z,2025-04-07T05:30Z,2025-04-06T05:30Z/2025-04-07T05:30Z/0/1310,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00212161,2,2025-04-06T05:39Z,17W100P100P0121X,DAMPIERRE 2,890,UNPLANNED,FAILURE,INACTIVE,2025-04-06T02:32Z,2025-04-06T05:38Z,2025-04-06T02:32Z/2025-04-06T05:38Z/296/594,-
+EDF-05470_EDF_T_00211683,10,2025-04-06T07:09Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T22:00Z,2025-04-03T22:00Z/2025-04-07T22:00Z/750/165,"Remontée par paliers en cours
+Prochain palier : 940 MW
+--------
+Unit is currently ramping up by steps
+Next step : 940 MW."
+EDF-05470_EDF_T_00209489,7,2025-04-06T09:08Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,FAILURE,ACTIVE,2025-03-26T08:24Z,2025-04-07T21:00Z,2025-03-26T08:24Z/2025-04-07T21:00Z/0/1335,-
+EC-EDF-05470-EDF-T-00047270,21,2025-04-06T09:49Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-02-07T22:00Z,2025-04-08T21:00Z,2025-02-07T22:00Z/2025-04-08T21:00Z/0/1310,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 539 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 539 MW."
+EDF-05470_EDF_T_00211683,11,2025-04-06T10:00Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T23:00Z,2025-04-03T22:00Z/2025-04-07T23:00Z/770/145,"Remontée par paliers en cours
+Prochain palier : 940 MW
+--------
+Unit is currently ramping up by steps
+Next step : 940 MW."
+EDF-05470_EDF_T_00212315,1,2025-04-06T11:58Z,17W100P100P0135M,GRAVELINES 5,910,UNPLANNED,FAILURE,ACTIVE,2025-04-06T11:57Z,2025-04-06T15:30Z,2025-04-06T11:57Z/2025-04-06T15:30Z/200/710,-
+EDF-05470_EDF_T_00212317,1,2025-04-06T13:51Z,17W100P100P0141R,PALUEL 3,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-06T15:00Z,2025-04-06T17:00Z,2025-04-06T15:00Z/2025-04-06T17:00Z/1210/120,-
+EDF-05470_EDF_T_00212320,1,2025-04-06T14:20Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-07T10:00Z,2025-04-07T13:00Z,2025-04-07T10:00Z/2025-04-07T13:00Z/180/710,-
+EDF-05470_EDF_T_00212317,2,2025-04-06T14:53Z,17W100P100P0141R,PALUEL 3,1330,PLANNED,FORESEEN_MAINTENANCE,DISMISSED,2025-04-06T15:00Z,2025-04-06T17:00Z,2025-04-06T15:00Z/2025-04-06T17:00Z/1210/120,-
+EDF-05470_EDF_T_00212336,1,2025-04-06T17:18Z,17W100P100P0112Y,CHOOZ 2,1500,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-06T17:16Z,2025-04-07T17:16Z,2025-04-06T17:16Z/2025-04-07T17:16Z/700/800,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00201497,8,2025-04-06T17:36Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,ACTIVE,2025-02-15T00:00Z,2025-04-11T21:00Z,2025-02-15T00:00Z/2025-04-11T21:00Z/0/1620,-
+EDF-05470_EDF_T_00212336,2,2025-04-06T18:16Z,17W100P100P0112Y,CHOOZ 2,1500,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-06T17:16Z,2025-04-07T04:00Z,2025-04-06T17:16Z/2025-04-07T04:00Z/700/800,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00212336,3,2025-04-07T00:30Z,17W100P100P0112Y,CHOOZ 2,1500,UNPLANNED,FAILURE,ACTIVE,2025-04-06T17:16Z,2025-04-07T10:00Z,2025-04-06T17:16Z/2025-04-07T10:00Z/700/800,-
+EDF-05470_EDF_T_00211683,12,2025-04-07T07:10Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-07T22:00Z,2025-04-03T22:00Z/2025-04-07T22:00Z/770/145,"Remontée par paliers en cours
+Prochain palier : 940 MW
+--------
+Unit is currently ramping up by steps
+Next step : 940 MW."
+EDF-05470_EDF_T_00212320,2,2025-04-07T07:17Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-07T10:00Z,2025-04-07T13:00Z,2025-04-07T10:00Z/2025-04-07T13:00Z/180/710,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00212320,3,2025-04-07T07:42Z,17W100P100P0121X,DAMPIERRE 2,890,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-07T10:00Z,2025-04-07T13:00Z,2025-04-07T10:00Z/2025-04-07T13:00Z/180/710,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00212336,4,2025-04-07T08:23Z,17W100P100P0112Y,CHOOZ 2,1500,UNPLANNED,FAILURE,ACTIVE,2025-04-06T17:16Z,2025-04-07T15:00Z,2025-04-06T17:16Z/2025-04-07T15:00Z/700/800,-
+EDF-05470_EDF_T_00212476,1,2025-04-07T08:26Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T10:00Z,2025-05-18T14:00Z,2025-04-25T10:00Z/2025-05-18T14:00Z/905/10,"Essais prévus avec variations de puissance. Si une limitation de puissance se produit pendant l'essai, elle fera l'objet d'une publication spécifique.
+____________________________________
+
+Test runs. In this phase the dispatch schedule and the availability can be affected on short notice by the pending technical test schedules. In case of any limitation, a specific message wille be publisched."
+EDF-05470_EDF_T_00212483,1,2025-04-07T08:42Z,17W100P100P0141R,PALUEL 3,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-07T08:45Z,2025-04-07T09:45Z,2025-04-07T08:45Z/2025-04-07T09:45Z/1210/120,-
+EDF-05470_EDF_T_00212524,1,2025-04-07T13:59Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-08T13:00Z,2025-04-08T14:00Z,2025-04-08T13:00Z/2025-04-08T14:00Z/385/525,-
+EDF-05470_EDF_T_00212525,1,2025-04-07T14:05Z,17W100P100P0119K,CRUAS 4,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-08T11:00Z,2025-04-08T15:00Z,2025-04-08T11:00Z/2025-04-08T15:00Z/672/243,-
+EDF-05470_EDF_T_00212521,1,2025-04-07T14:19Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-07-04T20:30Z,2025-07-04T22:00Z,2025-07-04T20:30Z/2025-07-04T22:00Z/100/815,"Baisse avant arrêt 
+Baisse à 100 MW : 1h – palier à 100 MW : 1h – baisse jusqu’à découplage : 30 min.
+--------------------------------------
+Unit Ramping down before outage
+Ramp down to 100 MW : 1h – threshold at 100 MW : 1h – ramp down until decoupling : 30 min."
+EDF-05470_EDF_T_00212527,1,2025-04-07T15:28Z,17W100P100P0135M,GRAVELINES 5,910,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-07T15:27Z,2025-04-08T15:27Z,2025-04-07T15:27Z/2025-04-08T15:27Z/0/910,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00209489,8,2025-04-07T16:09Z,17W100P100P0146H,ST ALBAN 2,1335,UNPLANNED,FAILURE,ACTIVE,2025-03-26T08:24Z,2025-04-07T17:00Z,2025-03-26T08:24Z/2025-04-07T17:00Z/0/1335,-
+EDF-05470_EDF_T_00211683,13,2025-04-07T17:12Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-08T00:00Z,2025-04-03T22:00Z/2025-04-08T00:00Z/770/145,"Remontée par paliers en cours
+Prochain palier : 940 MW
+--------
+Unit is currently ramping up by steps
+Next step : 940 MW."
+EDF-05470_EDF_T_00212527,2,2025-04-07T18:15Z,17W100P100P0135M,GRAVELINES 5,910,UNPLANNED,FAILURE,ACTIVE,2025-04-07T15:27Z,2025-04-09T05:00Z,2025-04-07T15:27Z/2025-04-09T05:00Z/0/910,-
+EDF-05470_EDF_T_00211683,14,2025-04-07T19:03Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-03T22:00Z,2025-04-08T01:00Z,2025-04-03T22:00Z/2025-04-08T01:00Z/770/145,"Remontée par paliers en cours
+Prochain palier : 940 MW
+--------
+Unit is currently ramping up by steps
+Next step : 940 MW."
+EDF-05470_EDF_T_00209977,1,2025-04-07T22:03Z,17W100P100P0103Z,CATTENOM 2,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2028-04-07T22:00Z,2028-11-04T23:00Z,2028-04-07T22:00Z/2028-11-04T23:00Z/0/1300,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00047270,22,2025-04-08T05:51Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-02-07T22:00Z,2025-04-09T04:00Z,2025-02-07T22:00Z/2025-04-09T04:00Z/0/1310,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 539 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 539 MW."
+EDF-05470_EDF_T_00212692,1,2025-04-08T07:33Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-08T22:00Z,2025-04-09T03:00Z,2025-04-08T22:00Z/2025-04-09T03:00Z/835/45,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00212527,3,2025-04-08T10:59Z,17W100P100P0135M,GRAVELINES 5,910,UNPLANNED,FAILURE,ACTIVE,2025-04-07T15:27Z,2025-04-08T21:00Z,2025-04-07T15:27Z/2025-04-08T21:00Z/0/910,-
+EC-EDF-05470-EDF-T-00047270,23,2025-04-08T18:32Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-02-07T22:00Z,2025-04-09T00:00Z,2025-02-07T22:00Z/2025-04-09T00:00Z/0/1310,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 539 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 539 MW."
+EDF-05470_EDF_T_00212527,4,2025-04-08T20:00Z,17W100P100P0135M,GRAVELINES 5,910,UNPLANNED,FAILURE,ACTIVE,2025-04-07T15:27Z,2025-04-09T03:00Z,2025-04-07T15:27Z/2025-04-09T03:00Z/0/910,-
+EDF-05470_EDF_T_00212766,1,2025-04-08T20:58Z,17W100P100P00982,BUGEY 4,880,UNPLANNED,FAILURE,ACTIVE,2025-04-08T20:57Z,2025-04-09T07:00Z,2025-04-08T20:57Z/2025-04-09T07:00Z/0/880,-
+EDF-05470_EDF_T_00212692,2,2025-04-08T21:00Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T07:00Z,2025-04-09T12:00Z,2025-04-09T07:00Z/2025-04-09T12:00Z/835/45,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EC-EDF-05470-EDF-T-00047270,24,2025-04-08T21:43Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-02-07T22:00Z,2025-04-09T01:00Z,2025-02-07T22:00Z/2025-04-09T01:00Z/0/1310,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 539 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 539 MW."
+EDF-05470_EDF_T_00212527,5,2025-04-08T22:13Z,17W100P100P0135M,GRAVELINES 5,910,UNPLANNED,FAILURE,ACTIVE,2025-04-07T15:27Z,2025-04-08T23:00Z,2025-04-07T15:27Z/2025-04-08T23:00Z/0/910,-
+EC-EDF-05470-EDF-T-00047270,25,2025-04-08T23:46Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-02-07T22:00Z,2025-04-09T02:00Z,2025-02-07T22:00Z/2025-04-09T02:00Z/0/1310,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 539 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 539 MW."
+EC-EDF-05470-EDF-T-00047270,26,2025-04-09T02:54Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-02-07T22:00Z,2025-04-09T03:00Z,2025-02-07T22:00Z/2025-04-09T03:00Z/0/1310,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 539 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 539 MW."
+EDF-05470_EDF_T_00212761,1,2025-04-09T02:55Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-11T04:30Z,2025-04-09T03:00Z/2025-04-11T04:30Z/10/1300,"Remontée par paliers en cours
+Prochain palier : 540 MW
+--------
+Unit is currently ramping up by steps
+Next step : 540 MW."
+EDF-05470_EDF_T_00212766,2,2025-04-09T03:08Z,17W100P100P00982,BUGEY 4,880,UNPLANNED,FAILURE,ACTIVE,2025-04-08T20:57Z,2025-04-09T04:00Z,2025-04-08T20:57Z/2025-04-09T04:00Z/0/880,-
+EDF-05470_EDF_T_00212692,3,2025-04-09T03:11Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T04:00Z,2025-04-09T09:00Z,2025-04-09T04:00Z/2025-04-09T09:00Z/835/45,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00212790,1,2025-04-09T04:08Z,17W100P100P0094A,BLAYAIS 3,910,UNPLANNED,FAILURE,ACTIVE,2025-04-09T04:00Z,2025-04-09T05:00Z,2025-04-09T04:00Z/2025-04-09T05:00Z/258/652,-
+EDF-05470_EDF_T_00212766,3,2025-04-09T04:22Z,17W100P100P00982,BUGEY 4,880,UNPLANNED,FAILURE,ACTIVE,2025-04-08T20:57Z,2025-04-09T06:00Z,2025-04-08T20:57Z/2025-04-09T06:00Z/0/880,-
+EDF-05470_EDF_T_00212692,4,2025-04-09T04:23Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T06:00Z,2025-04-09T11:00Z,2025-04-09T06:00Z/2025-04-09T11:00Z/835/45,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00212761,2,2025-04-09T05:04Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-11T05:30Z,2025-04-09T03:00Z/2025-04-11T05:30Z/270/1040,"Remontée par paliers en cours
+Prochain palier : 540 MW
+--------
+Unit is currently ramping up by steps
+Next step : 540 MW."
+EDF-05470_EDF_T_00212766,4,2025-04-09T06:19Z,17W100P100P00982,BUGEY 4,880,UNPLANNED,FAILURE,ACTIVE,2025-04-08T20:57Z,2025-04-09T07:00Z,2025-04-08T20:57Z/2025-04-09T07:00Z/0/880,-
+EDF-05470_EDF_T_00212766,5,2025-04-09T06:21Z,17W100P100P00982,BUGEY 4,880,UNPLANNED,FAILURE,ACTIVE,2025-04-08T20:57Z,2025-04-09T10:00Z,2025-04-08T20:57Z/2025-04-09T10:00Z/0/880,-
+EDF-05470_EDF_T_00212692,5,2025-04-09T06:22Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T10:00Z,2025-04-09T15:00Z,2025-04-09T10:00Z/2025-04-09T15:00Z/835/45,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00212761,3,2025-04-09T08:08Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-11T06:00Z,2025-04-09T03:00Z/2025-04-11T06:00Z/484/826,"Remontée par paliers en cours
+Prochain palier : 1124 MW
+--------
+Unit is currently ramping up by steps
+Next step :1124 MW."
+EDF-05470_EDF_T_00212766,6,2025-04-09T09:18Z,17W100P100P00982,BUGEY 4,880,UNPLANNED,FAILURE,ACTIVE,2025-04-08T20:57Z,2025-04-09T15:00Z,2025-04-08T20:57Z/2025-04-09T15:00Z/0/880,-
+EDF-05470_EDF_T_00212692,6,2025-04-09T09:20Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T15:00Z,2025-04-09T20:00Z,2025-04-09T15:00Z/2025-04-09T20:00Z/835/45,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00212947,1,2025-04-09T09:29Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-10T09:00Z,2025-04-10T15:00Z,2025-04-10T09:00Z/2025-04-10T15:00Z/650/685,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00212947,2,2025-04-09T09:32Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-10T09:00Z,2025-04-10T15:00Z,2025-04-10T09:00Z/2025-04-10T15:00Z/650/685,-
+EDF-05470_EDF_T_00212766,7,2025-04-09T13:39Z,17W100P100P00982,BUGEY 4,880,UNPLANNED,FAILURE,ACTIVE,2025-04-08T20:57Z,2025-04-09T18:00Z,2025-04-08T20:57Z/2025-04-09T18:00Z/0/880,-
+EDF-05470_EDF_T_00212692,7,2025-04-09T13:40Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T18:00Z,2025-04-09T23:00Z,2025-04-09T18:00Z/2025-04-09T23:00Z/835/45,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00212979,1,2025-04-09T13:46Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-10T12:00Z,2025-04-10T14:00Z,2025-04-10T12:00Z/2025-04-10T14:00Z/747/588,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00212980,1,2025-04-09T13:47Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-10T12:00Z,2025-04-10T13:00Z,2025-04-10T12:00Z/2025-04-10T13:00Z/260/1050,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00212981,1,2025-04-09T13:48Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-10T12:00Z,2025-04-10T15:00Z,2025-04-10T12:00Z/2025-04-10T15:00Z/180/735,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00212947,3,2025-04-09T15:36Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-10T08:00Z,2025-04-10T15:00Z,2025-04-10T08:00Z/2025-04-10T15:00Z/650/685,-
+EDF-05470_EDF_T_00212766,8,2025-04-09T18:26Z,17W100P100P00982,BUGEY 4,880,UNPLANNED,FAILURE,ACTIVE,2025-04-08T20:57Z,2025-04-09T19:30Z,2025-04-08T20:57Z/2025-04-09T19:30Z/0/880,-
+EDF-05470_EDF_T_00212692,8,2025-04-09T18:27Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T19:30Z,2025-04-10T00:30Z,2025-04-09T19:30Z/2025-04-10T00:30Z/835/45,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00212692,9,2025-04-09T18:42Z,17W100P100P00982,BUGEY 4,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T18:40Z,2025-04-09T23:40Z,2025-04-09T18:40Z/2025-04-09T23:40Z/835/45,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00212766,9,2025-04-09T18:42Z,17W100P100P00982,BUGEY 4,880,UNPLANNED,FAILURE,INACTIVE,2025-04-08T20:57Z,2025-04-09T18:40Z,2025-04-08T20:57Z/2025-04-09T18:40Z/0/880,-
+EDF-05470_EDF_T_00213019,1,2025-04-09T21:13Z,17W100P100P0094A,BLAYAIS 3,910,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-09T22:25Z,2025-04-10T16:00Z,2025-04-09T22:25Z/2025-04-10T16:00Z/297/613,-
+EDF-05470_EDF_T_00212761,4,2025-04-10T00:21Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-12T04:30Z,2025-04-09T03:00Z/2025-04-12T04:30Z/484/826,"Remontée par paliers en cours
+Prochain palier : 1124 MW
+--------
+Unit is currently ramping up by steps
+Next step :1124 MW."
+EDF-05470_EDF_T_00213023,1,2025-04-10T06:27Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,ACTIVE,2025-02-15T00:00Z,2025-04-17T21:00Z,2025-02-15T00:00Z/2025-04-17T21:00Z/0/1620,"arrêt susceptible de se prolonger
+--------------------------------------------
+stop likely to be extended"
+EDF-05470_EDF_T_00213147,1,2025-04-10T08:16Z,17W100P100P0112Y,CHOOZ 2,1500,UNPLANNED,FAILURE,ACTIVE,2025-04-10T08:11Z,2025-04-10T09:30Z,2025-04-10T08:11Z/2025-04-10T09:30Z/1385/115,-
+EDF-05470_EDF_T_00212980,2,2025-04-10T08:23Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-10T12:00Z,2025-04-10T13:00Z,2025-04-10T12:00Z/2025-04-10T13:00Z/260/1050,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00213019,2,2025-04-10T08:43Z,17W100P100P0094A,BLAYAIS 3,910,PLANNED,FORESEEN_MAINTENANCE,INACTIVE,2025-04-09T22:25Z,2025-04-10T08:40Z,2025-04-09T22:25Z/2025-04-10T08:40Z/297/613,-
+EDF-05470_EDF_T_00213151,1,2025-04-10T08:53Z,17W100P100P0094A,BLAYAIS 3,910,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-10T10:00Z,2025-04-11T10:00Z,2025-04-10T10:00Z/2025-04-11T10:00Z/297/613,-
+EDF-05470_EDF_T_00213151,2,2025-04-10T09:22Z,17W100P100P0094A,BLAYAIS 3,910,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-10T10:00Z,2025-04-11T09:00Z,2025-04-10T10:00Z/2025-04-11T09:00Z/297/613,-
+EDF-05470_EDF_T_00212980,3,2025-04-10T11:59Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-10T12:00Z,2025-04-10T13:00Z,2025-04-10T12:00Z/2025-04-10T13:00Z/260/1050,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00201497,9,2025-04-10T13:51Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,ACTIVE,2025-02-15T00:00Z,2025-04-17T21:00Z,2025-02-15T00:00Z/2025-04-17T21:00Z/0/1620,"Arrêt susceptible de se prolonger
+
+-----
+
+Stop likely to be extended"
+EDF-05470_EDF_T_00213023,2,2025-04-10T13:51Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,DISMISSED,2025-02-15T00:00Z,2025-04-17T21:00Z,2025-02-15T00:00Z/2025-04-17T21:00Z/0/1620,"arrêt susceptible de se prolonger
+--------------------------------------------
+stop likely to be extended"
+EDF-05470_EDF_T_00213201,1,2025-04-10T14:01Z,17W100P100P0138G,NOGENT 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-11T12:30Z,2025-04-11T13:30Z,2025-04-11T12:30Z/2025-04-11T13:30Z/260/1050,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00212947,4,2025-04-10T14:20Z,17W100P100P0145J,ST ALBAN 1,1335,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-10T08:00Z,2025-04-10T16:30Z,2025-04-10T08:00Z/2025-04-10T16:30Z/650/685,-
+EDF-05470_EDF_T_00213207,1,2025-04-10T14:44Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-11T06:00Z,2025-04-13T15:00Z,2025-04-11T06:00Z/2025-04-13T15:00Z/0/1500,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient.
+La durée minimale d'arrêt est de 24h.
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions.
+The duration of the outage will be a least of 24 hours."
+EDF-05470_EDF_T_00213214,1,2025-04-10T15:54Z,17W100P100P0094A,BLAYAIS 3,910,UNPLANNED,FAILURE,ACTIVE,2025-04-10T15:53Z,2025-04-10T19:00Z,2025-04-10T15:53Z/2025-04-10T19:00Z/225/685,-
+EDF-05470_EDF_T_00213217,1,2025-04-10T16:14Z,17W100P100P0145J,ST ALBAN 1,1335,UNPLANNED,FAILURE,ACTIVE,2025-04-10T16:13Z,2025-04-10T18:00Z,2025-04-10T16:13Z/2025-04-10T18:00Z/434/901,-
+EDF-05470_EDF_T_00213229,1,2025-04-10T19:31Z,17W100P100P0120Z,DAMPIERRE 1,890,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-10T19:28Z,2025-04-11T19:30Z,2025-04-10T19:28Z/2025-04-11T19:30Z/0/890,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00212761,5,2025-04-10T19:41Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-12T23:30Z,2025-04-09T03:00Z/2025-04-12T23:30Z/506/804,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00213236,1,2025-04-10T19:47Z,17W100P100P00982,BUGEY 4,880,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-11T07:00Z,2025-04-11T09:00Z,2025-04-11T07:00Z/2025-04-11T09:00Z/793/87,-
+EDF-05470_EDF_T_00213151,3,2025-04-10T21:49Z,17W100P100P0094A,BLAYAIS 3,910,PLANNED,FORESEEN_MAINTENANCE,INACTIVE,2025-04-10T10:00Z,2025-04-10T21:46Z,2025-04-10T10:00Z/2025-04-10T21:46Z/297/613,-
+EDF-05470_EDF_T_00213256,1,2025-04-11T05:57Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-13T20:30Z,2025-04-13T22:00Z,2025-04-13T20:30Z/2025-04-13T22:00Z/180/735,-
+EDF-05470_EDF_T_00212761,6,2025-04-11T07:33Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-13T02:30Z,2025-04-09T03:00Z/2025-04-13T02:30Z/506/804,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00213256,2,2025-04-11T09:44Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-13T20:30Z,2025-04-14T05:30Z,2025-04-13T20:30Z/2025-04-14T05:30Z/180/735,-
+EDF-05470_EDF_T_00213229,2,2025-04-11T10:00Z,17W100P100P0120Z,DAMPIERRE 1,890,UNPLANNED,FAILURE,ACTIVE,2025-04-10T19:28Z,2025-04-12T21:00Z,2025-04-10T19:28Z/2025-04-12T21:00Z/0/890,-
+EDF-05470_EDF_T_00212761,7,2025-04-11T10:04Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-13T06:30Z,2025-04-09T03:00Z/2025-04-13T06:30Z/506/804,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00212761,8,2025-04-11T10:13Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-13T06:30Z,2025-04-09T03:00Z/2025-04-13T06:30Z/506/804,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00213428,1,2025-04-11T13:15Z,17W100P100P0091G,BELLEVILLE 2,1310,UNPLANNED,FAILURE,ACTIVE,2025-04-11T13:13Z,2025-04-11T15:00Z,2025-04-11T13:13Z/2025-04-11T15:00Z/1200/110,-
+EDF-05470_EDF_T_00212761,9,2025-04-11T13:24Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-13T13:30Z,2025-04-09T03:00Z/2025-04-13T13:30Z/506/804,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00213424,1,2025-04-11T13:46Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-12T12:30Z,2025-04-12T15:30Z,2025-04-12T12:30Z/2025-04-12T15:30Z/707/208,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00213425,1,2025-04-11T13:46Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-12T10:00Z,2025-04-12T14:00Z,2025-04-12T10:00Z/2025-04-12T14:00Z/180/725,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00213426,1,2025-04-11T13:47Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-12T06:00Z,2025-04-12T10:30Z,2025-04-12T06:00Z/2025-04-12T10:30Z/260/1040,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00213428,2,2025-04-11T14:14Z,17W100P100P0091G,BELLEVILLE 2,1310,UNPLANNED,FAILURE,INACTIVE,2025-04-11T13:13Z,2025-04-11T14:13Z,2025-04-11T13:13Z/2025-04-11T14:13Z/1200/110,-
+EDF-05470_EDF_T_00213443,1,2025-04-11T14:43Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-12T09:00Z,2025-04-13T16:00Z,2025-04-12T09:00Z/2025-04-13T16:00Z/0/910,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient.
+La durée minimale d'arrêt est de 24h.
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions.
+The duration of the outage will be a least of 24 hours."
+EDF-05470_EDF_T_00212761,10,2025-04-11T18:29Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-13T18:30Z,2025-04-09T03:00Z/2025-04-13T18:30Z/506/804,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00213229,3,2025-04-11T18:41Z,17W100P100P0120Z,DAMPIERRE 1,890,UNPLANNED,FAILURE,ACTIVE,2025-04-10T19:28Z,2025-04-13T04:00Z,2025-04-10T19:28Z/2025-04-13T04:00Z/0/890,-
+EDF-05470_EDF_T_00213472,1,2025-04-11T19:29Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-12T10:30Z,2025-04-13T10:30Z,2025-04-12T10:30Z/2025-04-13T10:30Z/0/1300,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00213480,1,2025-04-11T22:59Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T04:00Z,2025-04-15T18:00Z,2025-04-13T04:00Z/2025-04-15T18:00Z/10/880,"Remontée par paliers en cours - prochain palier :  671MW
+Montée à 671 MW :14h - Palier à 671MW : 48h , heure d’arrivée à PMD incertaine
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+-----
+Unit is currently ramping up by steps - next step : 671 MW
+Ramp-up to 671MW : 14h - Threshold at 671 MW :48h , arrival time at PMD uncertain
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00212761,11,2025-04-12T02:50Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-14T00:30Z,2025-04-09T03:00Z/2025-04-14T00:30Z/490/820,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00213486,1,2025-04-12T05:14Z,17W100P100P0093C,BLAYAIS 2,910,UNPLANNED,FAILURE,ACTIVE,2025-04-12T05:11Z,2025-04-12T09:00Z,2025-04-12T05:11Z/2025-04-12T09:00Z/298/612,-
+EDF-05470_EDF_T_00212761,12,2025-04-12T07:29Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-14T01:30Z,2025-04-09T03:00Z/2025-04-14T01:30Z/490/820,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00213425,2,2025-04-12T07:54Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-12T10:30Z,2025-04-12T14:00Z,2025-04-12T10:30Z/2025-04-12T14:00Z/180/725,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00213425,3,2025-04-12T08:19Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-12T10:30Z,2025-04-12T14:00Z,2025-04-12T10:30Z/2025-04-12T14:00Z/180/725,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00212761,13,2025-04-12T08:45Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-14T03:30Z,2025-04-09T03:00Z/2025-04-14T03:30Z/490/820,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00212761,14,2025-04-12T10:37Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-14T05:30Z,2025-04-09T03:00Z/2025-04-14T05:30Z/490/820,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00213632,1,2025-04-12T13:14Z,17W100P100P0109N,CHINON 4,905,UNPLANNED,FAILURE,ACTIVE,2025-04-12T13:12Z,2025-04-12T14:30Z,2025-04-12T13:12Z/2025-04-12T14:30Z/778/127,-
+EDF-05470_EDF_T_00212761,15,2025-04-12T13:40Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-14T07:00Z,2025-04-09T03:00Z/2025-04-14T07:00Z/490/820,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00213472,2,2025-04-12T13:42Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-12T10:30Z,2025-04-13T16:00Z,2025-04-12T10:30Z/2025-04-13T16:00Z/0/1300,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00213632,2,2025-04-12T13:44Z,17W100P100P0109N,CHINON 4,905,UNPLANNED,FAILURE,INACTIVE,2025-04-12T13:12Z,2025-04-12T13:43Z,2025-04-12T13:12Z/2025-04-12T13:43Z/778/127,-
+EDF-05470_EDF_T_00212761,16,2025-04-12T14:36Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-14T09:30Z,2025-04-09T03:00Z/2025-04-14T09:30Z/490/820,"Remontée par paliers en cours
+Prochain palier : 978 MW
+--------
+Unit is currently ramping up by steps
+Next step : 978 MW."
+EDF-05470_EDF_T_00206908,3,2025-04-12T14:46Z,17W100P100P0137I,NOGENT 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-03-15T23:00Z,2025-04-18T22:00Z,2025-03-15T23:00Z/2025-04-18T22:00Z/1040/270,"Tranche en prolongation de campagne
+--------
+Ongoing stretch."
+EDF-05470_EDF_T_00213674,1,2025-04-12T19:23Z,17W100P100P0094A,BLAYAIS 3,910,UNPLANNED,FAILURE,ACTIVE,2025-04-12T19:21Z,2025-04-13T10:00Z,2025-04-12T19:21Z/2025-04-13T10:00Z/235/675,-
+EDF-05470_EDF_T_00213691,1,2025-04-13T04:15Z,17W100P100P0108P,CHINON 3,905,UNPLANNED,FAILURE,ACTIVE,2025-04-13T04:14Z,2025-04-13T05:00Z,2025-04-13T04:14Z/2025-04-13T05:00Z/740/165,-
+EDF-05470_EDF_T_00213480,2,2025-04-13T05:24Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T04:00Z,2025-04-15T22:00Z,2025-04-13T04:00Z/2025-04-15T22:00Z/10/880,"Remontée par paliers en cours - prochain palier :  671MW
+Montée à 671 MW :14h - Palier à 671MW : 48h , heure d’arrivée à PMD incertaine
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+-----
+Unit is currently ramping up by steps - next step : 671 MW
+Ramp-up to 671MW : 14h - Threshold at 671 MW :48h , arrival time at PMD uncertain
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00213480,3,2025-04-13T05:27Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T04:00Z,2025-04-15T22:00Z,2025-04-13T04:00Z/2025-04-15T22:00Z/185/705,"Remontée par paliers en cours - prochain palier :  671MW
+Montée à 671 MW :14h - Palier à 671MW : 48h , heure d’arrivée à PMD incertaine
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+-----
+Unit is currently ramping up by steps - next step : 671 MW
+Ramp-up to 671MW : 14h - Threshold at 671 MW :48h , arrival time at PMD uncertain
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00213480,4,2025-04-13T05:53Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T04:00Z,2025-04-15T22:00Z,2025-04-13T04:00Z/2025-04-15T22:00Z/185/705,"Remontée par paliers en cours - prochain palier :  671MW
+Montée à 671 MW :14h - Palier à 671MW : 48h , montée à PMD : 4h
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+-----
+Unit is currently ramping up by steps - next step : 671 MW
+Ramp-up to 671MW : 14h - Threshold at 671 MW :48h , Ramp-up to PMD : 4h
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00213696,1,2025-04-13T06:01Z,17W100P100P0104X,CATTENOM 3,1300,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-14T12:30Z,2025-04-14T13:30Z,2025-04-14T12:30Z/2025-04-14T13:30Z/1200/100,-
+EDF-05470_EDF_T_00212761,17,2025-04-13T06:33Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-14T18:30Z,2025-04-09T03:00Z/2025-04-14T18:30Z/925/385,"Remontée par paliers en cours
+Prochain palier : 1300 MW
+--------
+Unit is currently ramping up by steps
+Next step : 1300 MW."
+EDF-05470_EDF_T_00213674,2,2025-04-13T07:47Z,17W100P100P0094A,BLAYAIS 3,910,UNPLANNED,FAILURE,INACTIVE,2025-04-12T19:21Z,2025-04-13T07:45Z,2025-04-12T19:21Z/2025-04-13T07:45Z/235/675,-
+EDF-05470_EDF_T_00213480,5,2025-04-13T09:02Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T04:00Z,2025-04-15T22:00Z,2025-04-13T04:00Z/2025-04-15T22:00Z/560/330,"Remontée par paliers en cours - prochain palier :  671MW
+Montée à 671 MW :14h - Palier à 671MW : 48h , montée à PMD : 4h
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+-----
+Unit is currently ramping up by steps - next step : 671 MW
+Ramp-up to 671MW : 14h - Threshold at 671 MW :48h , Ramp-up to PMD : 4h
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00213849,1,2025-04-13T10:16Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T14:00Z,2025-04-14T14:00Z,2025-04-13T14:00Z/2025-04-14T14:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability."
+EDF-05470_EDF_T_00213849,2,2025-04-13T10:45Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T14:00Z,2025-04-13T18:00Z,2025-04-13T14:00Z/2025-04-13T18:00Z/0/910,"Indisponibilité fortuite
+--------
+Forced unavailability."
+EDF-05470_EDF_T_00213849,3,2025-04-13T13:17Z,17W100P100P00974,BUGEY 3,910,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-13T13:30Z,2025-04-13T15:30Z,2025-04-13T13:30Z/2025-04-13T15:30Z/200/710,-
+EDF-05470_EDF_T_00213849,4,2025-04-13T13:34Z,17W100P100P00974,BUGEY 3,910,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-13T13:30Z,2025-04-13T15:30Z,2025-04-13T13:30Z/2025-04-13T15:30Z/138/772,-
+EDF-05470_EDF_T_00213881,1,2025-04-13T14:53Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T15:30Z,2025-04-13T20:00Z,2025-04-13T15:30Z/2025-04-13T20:00Z/900/10,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00213849,5,2025-04-13T15:12Z,17W100P100P00974,BUGEY 3,910,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-13T13:30Z,2025-04-13T16:30Z,2025-04-13T13:30Z/2025-04-13T16:30Z/138/772,-
+EDF-05470_EDF_T_00213881,2,2025-04-13T15:13Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T16:30Z,2025-04-13T21:00Z,2025-04-13T16:30Z/2025-04-13T21:00Z/900/10,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00213849,6,2025-04-13T15:35Z,17W100P100P00974,BUGEY 3,910,PLANNED,FORESEEN_MAINTENANCE,INACTIVE,2025-04-13T13:30Z,2025-04-13T15:34Z,2025-04-13T13:30Z/2025-04-13T15:34Z/138/772,-
+EDF-05470_EDF_T_00213881,3,2025-04-13T15:36Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T15:34Z,2025-04-13T20:00Z,2025-04-13T15:34Z/2025-04-13T20:00Z/900/10,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00213898,1,2025-04-13T16:31Z,17W100P100P00974,BUGEY 3,910,UNPLANNED,FAILURE,ACTIVE,2025-04-13T16:30Z,2025-04-13T17:30Z,2025-04-13T16:30Z/2025-04-13T17:30Z/148/762,-
+EDF-05470_EDF_T_00213881,4,2025-04-13T16:33Z,17W100P100P00974,BUGEY 3,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T15:34Z,2025-04-13T22:00Z,2025-04-13T15:34Z/2025-04-13T22:00Z/900/10,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00213443,2,2025-04-13T16:46Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-12T09:00Z,2025-04-13T17:00Z,2025-04-12T09:00Z/2025-04-13T17:00Z/0/910,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient.
+La durée minimale d'arrêt est de 24h.
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions.
+The duration of the outage will be a least of 24 hours."
+EDF-05470_EDF_T_00213480,6,2025-04-13T17:40Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T04:00Z,2025-04-15T22:00Z,2025-04-13T04:00Z/2025-04-15T22:00Z/671/219,"Remontée par paliers en cours - prochain palier :  860 MW
+Palier à 671MW : 48h , montée à PMD : 4h
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+-----
+Unit is currently ramping up by steps - next step : 860 MW
+Threshold at 671 MW :48h , Ramp-up to PMD : 4h
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00214029,1,2025-04-14T08:56Z,17W100P100P0108P,CHINON 3,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-14T13:00Z,2025-04-14T14:00Z,2025-04-14T13:00Z/2025-04-14T14:00Z/459/446,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00212761,18,2025-04-14T10:59Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-14T23:00Z,2025-04-09T03:00Z/2025-04-14T23:00Z/925/385,"Remontée par paliers en cours
+Prochain palier : 1300 MW
+--------
+Unit is currently ramping up by steps
+Next step : 1300 MW."
+EDF-05470_EDF_T_00214093,1,2025-04-14T12:08Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-14T21:00Z,2025-04-14T22:00Z,2025-04-14T21:00Z/2025-04-14T22:00Z/502/993,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EC-EDF-05470-EDF-T-00081166,12,2025-04-14T12:17Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:30Z,2025-05-03T21:00Z,2025-01-31T23:30Z/2025-05-03T21:00Z/0/905,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+---------------------- 
+After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours."
+EDF-05470_EDF_T_00214098,1,2025-04-14T12:21Z,17W100P100P00982,BUGEY 4,880,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-14T13:00Z,2025-04-14T14:30Z,2025-04-14T13:00Z/2025-04-14T14:30Z/780/100,-
+EDF-05470_EDF_T_00214103,1,2025-04-14T13:16Z,17W100P100P00974,BUGEY 3,910,UNPLANNED,FAILURE,ACTIVE,2025-04-14T13:09Z,2025-04-15T13:09Z,2025-04-14T13:09Z/2025-04-15T13:09Z/540/370,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00214116,1,2025-04-14T14:06Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-15T07:30Z,2025-04-15T16:30Z,2025-04-15T07:30Z/2025-04-15T16:30Z/772/563,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00214117,1,2025-04-14T14:06Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-15T05:00Z,2025-04-15T06:00Z,2025-04-15T05:00Z/2025-04-15T06:00Z/502/993,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00214103,2,2025-04-14T14:43Z,17W100P100P00974,BUGEY 3,910,UNPLANNED,FAILURE,ACTIVE,2025-04-14T13:09Z,2025-04-14T15:00Z,2025-04-14T13:09Z/2025-04-14T15:00Z/540/370,-
+EDF-05470_EDF_T_00214129,1,2025-04-14T15:41Z,17W100P100P0112Y,CHOOZ 2,1500,UNPLANNED,FAILURE,ACTIVE,2025-04-14T15:36Z,2025-04-15T22:00Z,2025-04-14T15:36Z/2025-04-15T22:00Z/570/930,-
+EDF-05470_EDF_T_00212761,19,2025-04-14T19:57Z,17W100P100P0128J,GOLFECH 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-09T03:00Z,2025-04-15T00:00Z,2025-04-09T03:00Z/2025-04-15T00:00Z/925/385,"Remontée par paliers en cours
+Prochain palier : 1300 MW
+--------
+Unit is currently ramping up by steps
+Next step : 1300 MW."
+EDF-05470_EDF_T_00209995,1,2025-04-14T22:03Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2028-04-14T22:00Z,2028-07-20T22:00Z,2028-04-14T22:00Z/2028-07-20T22:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00210032,1,2025-04-14T22:03Z,17W100P100P0153K,TRICASTIN 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2028-04-14T22:00Z,2028-07-20T22:00Z,2028-04-14T22:00Z/2028-07-20T22:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00214175,1,2025-04-15T02:03Z,17W100P100P0137I,NOGENT 1,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-15T02:02Z,2025-04-16T02:02Z,2025-04-15T02:02Z/2025-04-16T02:02Z/0/1310,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00214175,2,2025-04-15T05:56Z,17W100P100P0137I,NOGENT 1,1310,UNPLANNED,FAILURE,ACTIVE,2025-04-15T02:02Z,2025-04-16T21:00Z,2025-04-15T02:02Z/2025-04-16T21:00Z/0/1310,-
+EDF-05470_EDF_T_00206908,4,2025-04-15T05:58Z,17W100P100P0137I,NOGENT 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-03-16T22:00Z,2025-04-18T22:00Z,2025-03-16T22:00Z/2025-04-18T22:00Z/1040/270,"Tranche en prolongation de campagne
+--------
+Ongoing stretch."
+EDF-05470_EDF_T_00214311,1,2025-04-15T08:47Z,17W100P100P0129H,GOLFECH 2,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-15T08:45Z,2025-04-16T08:45Z,2025-04-15T08:45Z/2025-04-16T08:45Z/0/1310,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00214311,2,2025-04-15T10:16Z,17W100P100P0129H,GOLFECH 2,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2025-04-15T08:45Z,2025-04-15T10:14Z,2025-04-15T08:45Z/2025-04-15T10:14Z/0/1310,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00214362,1,2025-04-15T11:50Z,17W100P100P0129H,GOLFECH 2,1310,UNPLANNED,FAILURE,ACTIVE,2025-04-15T11:47Z,2025-04-15T14:00Z,2025-04-15T11:47Z/2025-04-15T14:00Z/850/460,-
+EDF-05470_EDF_T_00214175,3,2025-04-15T11:55Z,17W100P100P0137I,NOGENT 1,1310,UNPLANNED,FAILURE,ACTIVE,2025-04-15T02:02Z,2025-04-18T22:00Z,2025-04-15T02:02Z/2025-04-18T22:00Z/0/1310,-
+EC-EDF-05470-EDF-T-00197205,2,2025-04-15T11:56Z,17W100P100P0137I,NOGENT 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-18T20:00Z,2025-04-18T22:00Z,2025-04-18T20:00Z/2025-04-18T22:00Z/80/1230,"Baisse avant arrêt
+Baisse à 100 MW de 21h à 22h – palier à 100 MW de 22h à 23h – baisse à 80 MW de 23h à 23h30 – palier à 80 MW de 23h30 à 0h – baisse jusqu’à découplage.
+------------------------------------------------------------------------------------------------
+Unit Ramping down before outage
+Ramp down to 100 MW from 21h to 22h – threshold at 100 MW from 22h to 23h – Ramp down to 80 MW from 23h to 23h30 – threshold at 80 MW from 23h30 to 0h – ramp down until decoupling."
+EDF-05470_EDF_T_00206908,5,2025-04-15T11:57Z,17W100P100P0137I,NOGENT 1,1310,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2025-03-16T22:00Z,2025-04-15T11:56Z,2025-03-16T22:00Z/2025-04-15T11:56Z/1040/270,"Tranche en prolongation de campagne
+--------
+Ongoing stretch."
+EDF-05470_EDF_T_00214362,2,2025-04-15T13:34Z,17W100P100P0129H,GOLFECH 2,1310,UNPLANNED,FAILURE,ACTIVE,2025-04-15T11:47Z,2025-04-15T15:00Z,2025-04-15T11:47Z/2025-04-15T15:00Z/850/460,-
+EDF-05470_EDF_T_00214383,1,2025-04-15T13:45Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-15T15:00Z,2025-04-16T09:00Z,2025-04-15T15:00Z/2025-04-16T09:00Z/1084/226,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00214383,2,2025-04-15T14:09Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-15T15:00Z,2025-04-16T14:00Z,2025-04-15T15:00Z/2025-04-16T14:00Z/1084/226,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00214383,3,2025-04-15T14:39Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-15T15:00Z,2025-04-16T14:00Z,2025-04-15T15:00Z/2025-04-16T14:00Z/1084/226,"Remontée à puissance maximale sans palier.
+--------
+Ramp-up to maximal power without load threshold."
+EDF-05470_EDF_T_00214362,3,2025-04-15T14:42Z,17W100P100P0129H,GOLFECH 2,1310,UNPLANNED,FAILURE,INACTIVE,2025-04-15T11:47Z,2025-04-15T14:38Z,2025-04-15T11:47Z/2025-04-15T14:38Z/850/460,-
+EDF-05470_EDF_T_00214410,1,2025-04-15T16:49Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-16T07:00Z,2025-04-16T10:00Z,2025-04-16T07:00Z/2025-04-16T10:00Z/950/385,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00213480,7,2025-04-15T17:54Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T04:00Z,2025-04-16T20:30Z,2025-04-13T04:00Z/2025-04-16T20:30Z/671/219,"Remontée par paliers en cours - prochain palier :  790 MW
+Palier à 671MW : 4h30 , montée à PMD : 22h00
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+-----
+Unit is currently ramping up by steps - next step : 790 MW
+Threshold at 671 MW :4h30 , Ramp-up to PMD : 22h
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00213480,8,2025-04-15T22:18Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-13T04:00Z,2025-04-17T04:30Z,2025-04-13T04:00Z/2025-04-17T04:30Z/671/219,"Remontée par paliers en cours - prochain palier :  PMD
+ montée à PMD : 30h00
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+-----
+Unit is currently ramping up by steps - next step : PMD
+ Ramp-up to PMD : 30h00
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00214410,2,2025-04-16T05:27Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-16T07:00Z,2025-04-16T10:00Z,2025-04-16T07:00Z/2025-04-16T10:00Z/950/385,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00214462,1,2025-04-16T06:02Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-16T06:00Z,2025-04-17T06:00Z,2025-04-16T06:00Z/2025-04-17T06:00Z/600/730,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00214452,1,2025-04-16T06:28Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-17T21:00Z,2025-04-18T22:00Z,2025-04-17T21:00Z/2025-04-18T22:00Z/90/1530,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00214462,2,2025-04-16T06:37Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-16T06:00Z,2025-04-16T12:00Z,2025-04-16T06:00Z/2025-04-16T12:00Z/1035/295,-
+EDF-05470_EDF_T_00201497,10,2025-04-16T07:10Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,ACTIVE,2025-02-15T00:00Z,2025-04-21T21:00Z,2025-02-15T00:00Z/2025-04-21T21:00Z/0/1620,"Arrêt susceptible de se prolonger
+
+-----
+
+Stop likely to be extended"
+EDF-05470_EDF_T_00214452,2,2025-04-16T07:12Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-21T21:00Z,2025-04-22T22:00Z,2025-04-21T21:00Z/2025-04-22T22:00Z/90/1530,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00214462,3,2025-04-16T09:00Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-16T06:00Z,2025-04-16T21:00Z,2025-04-16T06:00Z/2025-04-16T21:00Z/1185/145,-
+EC-EDF-05470-EDF-T-00066673,8,2025-04-16T09:19Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-06-27T22:00Z,2025-09-27T22:00Z,2025-06-27T22:00Z/2025-09-27T22:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.Outage duration may be extended :  https://doaat.edf.fr/message/edf-2023-00231
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.Arrêt susceptible d'être prolongé :  https://doaat.edf.fr/message/edf-2023-00230"
+EC-EDF-05470-EDF-T-00167103,4,2025-04-16T09:19Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-06-20T22:00Z,2025-06-27T22:00Z,2025-06-20T22:00Z/2025-06-27T22:00Z/0/890,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés si les conditions économiques le justifient. https://doaat.edf.fr/message/edf-2024-00277
+Déplacement et réduction d'arrêt, sous réserve d'accord du gestionnaire de réseau de transport
+-------
+The planning and duration of this unavailability for modulation supply will be reassessed for economic reasons. https://doaat.edf.fr/message/edf-2024-00278
+New placement and duration, subject to TSO agreement"
+EDF-05470_EDF_T_00203637,2,2025-04-16T10:05Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-17T20:00Z,2025-04-17T22:00Z,2025-04-17T20:00Z/2025-04-17T22:00Z/100/1210,"Baisse avant arrêt 
+Baisse à 100 MW : 1h – palier à 100 MW : 1h – baisse jusqu’à découplage.
+-----------------------------------------------------------------------------------------------------------
+Unit Ramping down before outage
+Ramp down to 100 MW : 1h – threshold at 100 MW : 1h – ramp down until decoupling."
+EDF-05470_EDF_T_00214718,1,2025-04-16T12:24Z,17W100P100P01004,BUGEY 5,880,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-18T18:00Z,2025-04-21T21:00Z,2025-04-18T18:00Z/2025-04-21T21:00Z/0/880,-
+EDF-05470_EDF_T_00214718,2,2025-04-16T12:31Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-18T18:00Z,2025-04-21T21:00Z,2025-04-18T18:00Z/2025-04-21T21:00Z/0/880,Sous réserve d’accord du gestionnaire de réseau de transport --- Subject to TSO agreement
+EDF-05470_EDF_T_00214718,3,2025-04-16T12:56Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-18T18:00Z,2025-04-21T21:00Z,2025-04-18T18:00Z/2025-04-21T21:00Z/0/880,Sous réserve d’accord du gestionnaire de réseau de transport --- Subject to TSO agreement
+EDF-05470_EDF_T_00214718,4,2025-04-16T14:36Z,17W100P100P01004,BUGEY 5,880,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-18T18:00Z,2025-04-21T21:00Z,2025-04-18T18:00Z/2025-04-21T21:00Z/0/880,-
+EDF-05470_EDF_T_00214462,4,2025-04-16T16:08Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-16T06:00Z,2025-04-19T05:00Z,2025-04-16T06:00Z/2025-04-19T05:00Z/1185/145,-
+EDF-05470_EDF_T_00214740,1,2025-04-16T16:13Z,17W100P100P0140T,PALUEL 2,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-19T05:00Z,2025-04-19T11:00Z,2025-04-19T05:00Z/2025-04-19T11:00Z/130/1200,-
+EDF-05470_EDF_T_00213480,9,2025-04-17T02:40Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2025-04-13T04:00Z,2025-04-17T02:39Z,2025-04-13T04:00Z/2025-04-17T02:39Z/671/219,"Remontée par paliers en cours - prochain palier :  PMD
+ montée à PMD : 30h00
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+-----
+Unit is currently ramping up by steps - next step : PMD
+ Ramp-up to PMD : 30h00
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00200261,2,2025-04-17T09:15Z,17W100P100P0109N,CHINON 4,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T21:30Z,2025-04-25T22:30Z,2025-04-25T21:30Z/2025-04-25T22:30Z/60/845,"Baisse avant arrêt Baisse à 230 MW : durée 0h25 – palier à 230 MW : 0h30 – baisse à 60 MW : 0h05 – palier à 60 MW : 1h55 … baisse jusqu’à découplage 
+Unit Ramping down before outage Ramp down to 230 MW : duration 0h25 – threshold at 230 MW : 0h30 – ramp down to 60 MW : 0h05 – threshold at 60 MW : 1h55 … ramp down until decoupling"
+EDF-05470_EDF_T_00200261,3,2025-04-17T09:56Z,17W100P100P0109N,CHINON 4,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T19:55Z,2025-04-25T21:30Z,2025-04-25T19:55Z/2025-04-25T21:30Z/60/845,"Baisse avant arrêt Baisse à 230 MW : durée 0h25 – palier à 230 MW : 0h30 – baisse à 60 MW : 0h05 – palier à 60 MW : 1h55 … baisse jusqu’à découplage 
+Unit Ramping down before outage Ramp down to 230 MW : duration 0h25 – threshold at 230 MW : 0h30 – ramp down to 60 MW : 0h05 – threshold at 60 MW : 1h55 … ramp down until decoupling"
+EC-EDF-05470-EDF-T-00071053,9,2025-04-17T09:57Z,17W100P100P0109N,CHINON 4,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T21:30Z,2025-06-05T22:30Z,2025-04-25T21:30Z/2025-06-05T22:30Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00203637,3,2025-04-17T11:58Z,17W100P100P0129H,GOLFECH 2,1310,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-17T21:00Z,2025-04-17T22:00Z,2025-04-17T21:00Z/2025-04-17T22:00Z/100/1210,"Baisse avant arrêt 
+Baisse à 100 MW : 1h – palier à 100 MW : 1h – baisse jusqu’à découplage.
+-----------------------------------------------------------------------------------------------------------
+Unit Ramping down before outage
+Ramp down to 100 MW : 1h – threshold at 100 MW : 1h – ramp down until decoupling."
+EDF-05470_EDF_T_00205375,4,2025-04-17T11:59Z,17W100P100P0129H,GOLFECH 2,1310,UNPLANNED,FAILURE,ACTIVE,2025-03-08T09:14Z,2025-04-17T21:00Z,2025-03-08T09:14Z/2025-04-17T21:00Z/1095/215,"Tranche en prolongation de campagne
+--------
+Ongoing stretch"
+EDF-05470_EDF_T_00214970,1,2025-04-17T12:32Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-20T04:00Z,2025-04-20T22:00Z,2025-04-20T04:00Z/2025-04-20T22:00Z/0/1495,-
+EC-EDF-05470-EDF-T-00171431,3,2025-04-17T13:35Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-18T10:00Z,2025-05-04T21:00Z,2025-04-18T10:00Z/2025-05-04T21:00Z/0/1300,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+https://doaat.edf.fr/message/edf-2024-00273
+------------------------------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant may be restarted for economic reasons
+https://doaat.edf.fr/message/edf-2024-00274"
+EC-EDF-05470-EDF-T-00144762,5,2025-04-17T13:37Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-18T10:30Z,2025-06-29T22:00Z,2025-04-18T10:30Z/2025-06-29T22:00Z/0/1500,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés si les conditions économiques le justifient. https://doaat.edf.fr/message/edf-2024-00275
+-------------------------------------------------------------------------
+The planning and duration of this unavailability for modulation supply will be reassessed for economic reasons. https://doaat.edf.fr/message/edf-2024-00276"
+EDF-05470_EDF_T_00214462,5,2025-04-17T17:21Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-16T06:00Z,2025-04-18T05:00Z,2025-04-16T06:00Z/2025-04-18T05:00Z/1185/145,-
+EDF-05470_EDF_T_00214740,2,2025-04-17T17:30Z,17W100P100P0140T,PALUEL 2,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-18T06:00Z,2025-04-18T13:00Z,2025-04-18T06:00Z/2025-04-18T13:00Z/100/1230,-
+EDF-05470_EDF_T_00214462,6,2025-04-17T17:31Z,17W100P100P0140T,PALUEL 2,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-16T06:00Z,2025-04-18T06:00Z,2025-04-16T06:00Z/2025-04-18T06:00Z/1185/145,-
+EDF-05470_EDF_T_00215020,1,2025-04-17T17:46Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-18T08:30Z,2025-04-18T09:30Z,2025-04-18T08:30Z/2025-04-18T09:30Z/50/1250,"Baisse avant arrêt pour modulation
+Baisse à 50 MW : 30min  - palier à 50 MW : 1h  - baisse jusqu'à découplage
+--------
+Unit Ramping down before outage for modulation 
+Ramp down to 50 MW : 30min  - threshold at 50 MW : 1h - ramp down until decoupling."
+EDF-05470_EDF_T_00215020,2,2025-04-17T17:59Z,17W100P100P0105V,CATTENOM 4,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-18T08:30Z,2025-04-18T10:00Z,2025-04-18T08:30Z/2025-04-18T10:00Z/50/1250,"Baisse avant arrêt pour modulation
+Baisse à 50 MW : 30min  - palier à 50 MW : 1h  - baisse jusqu'à découplage
+--------
+Unit Ramping down before outage for modulation 
+Ramp down to 50 MW : 30min  - threshold at 50 MW : 1h - ramp down until decoupling."
+EDF-05470_EDF_T_00214970,2,2025-04-18T05:46Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-20T00:00Z,2025-04-21T03:00Z,2025-04-20T00:00Z/2025-04-21T03:00Z/0/1495,-
+EDF-05470_EDF_T_00215030,1,2025-04-18T06:03Z,17W100P100P0109N,CHINON 4,905,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-19T16:00Z,2025-04-19T17:30Z,2025-04-19T16:00Z/2025-04-19T17:30Z/768/137,-
+EDF-05470_EDF_T_00215135,1,2025-04-18T08:16Z,17W100P100P0118M,CRUAS 3,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-19T22:00Z,2025-04-20T22:00Z,2025-04-19T22:00Z/2025-04-20T22:00Z/0/915,-
+EDF-05470_EDF_T_00214740,3,2025-04-18T11:33Z,17W100P100P0140T,PALUEL 2,1330,PLANNED,FORESEEN_MAINTENANCE,INACTIVE,2025-04-18T06:00Z,2025-04-18T11:32Z,2025-04-18T06:00Z/2025-04-18T11:32Z/100/1230,-
+EDF-05470_EDF_T_00215170,1,2025-04-18T12:19Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T22:00Z,2025-04-21T02:40Z,2025-04-20T22:00Z/2025-04-21T02:40Z/906/9,"Remontée par paliers - prochain palier : 100 MW
+Montée à 200 MW : 15 minutes - Palier à 200 MW : 1 heure - Montée à 400 MW : 1 heure  - Palier à 400 MW : 1 heure
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques"
+EDF-05470_EDF_T_00215190,1,2025-04-18T13:57Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-19T02:00Z,2025-04-19T22:00Z,2025-04-19T02:00Z/2025-04-19T22:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EC-EDF-05470-EDF-T-00086809,7,2025-04-18T16:41Z,17W100P100P0139E,PALUEL 1,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2026-01-02T23:00Z,2026-09-11T22:00Z,2026-01-02T23:00Z/2026-09-11T22:00Z/0/1330,"Outage duration may be extended. After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Arrêt susceptible d'être prolongé. Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00215030,2,2025-04-18T17:48Z,17W100P100P0109N,CHINON 4,905,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-20T13:30Z,2025-04-20T15:00Z,2025-04-20T13:30Z/2025-04-20T15:00Z/768/137,-
+EDF-05470_EDF_T_00215170,2,2025-04-18T20:58Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T22:00Z,2025-04-21T02:40Z,2025-04-20T22:00Z/2025-04-21T02:40Z/10/905,"Remontée par paliers - prochain palier : 100 MW
+Montée à 100 MW : 15 minutes - Palier à 100 MW : 1 heure - Montée à 200 MW : 15 minutes  - Palier à 200 MW : 1 heure - Montée à 400 MW : 20 minutes - 
+Palier à 400 MW : 1 heure - Montée à PMD : 50 minutes 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques"
+EDF-05470_EDF_T_00215170,3,2025-04-18T20:59Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T22:00Z,2025-04-21T02:40Z,2025-04-20T22:00Z/2025-04-21T02:40Z/10/905,"Remontée par paliers - prochain palier : 100 MW
+Montée à 100 MW : 15 minutes - Palier à 100 MW : 1 heure - Montée à 200 MW : 15 minutes  - Palier à 200 MW : 1 heure - Montée à 400 MW : 20 minutes - 
+Palier à 400 MW : 1 heure - Montée à PMD : 50 minutes 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques"
+EDF-05470_EDF_T_00215355,1,2025-04-19T08:50Z,17W100P100P0094A,BLAYAIS 3,910,UNPLANNED,FAILURE,ACTIVE,2025-04-19T08:49Z,2025-04-19T09:49Z,2025-04-19T08:49Z/2025-04-19T09:49Z/712/198,-
+EDF-05470_EDF_T_00201497,11,2025-04-19T09:09Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,ACTIVE,2025-02-15T00:00Z,2025-04-20T08:00Z,2025-02-15T00:00Z/2025-04-20T08:00Z/0/1620,"Arrêt susceptible de se prolonger
+
+-----
+
+Stop likely to be extended"
+EDF-05470_EDF_T_00215355,2,2025-04-19T09:18Z,17W100P100P0094A,BLAYAIS 3,910,UNPLANNED,FAILURE,DISMISSED,2025-04-19T08:49Z,2025-04-19T09:49Z,2025-04-19T08:49Z/2025-04-19T09:49Z/712/198,-
+EC-EDF-05470-EDF-T-00052465,13,2025-04-19T09:25Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2024-10-02T22:00Z,2025-04-23T21:00Z,2024-10-02T22:00Z/2025-04-23T21:00Z/0/1330,"Outage duration may be extended :  https://doaat.edf.fr/message/edf-2023-00229
+After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Arrêt susceptible d'être prolongé :  https://doaat.edf.fr/message/edf-2023-00228
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00214452,3,2025-04-19T10:02Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T08:00Z,2025-04-22T22:00Z,2025-04-20T08:00Z/2025-04-22T22:00Z/10/1610,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00214452,4,2025-04-19T10:50Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T08:00Z,2025-04-21T22:00Z,2025-04-20T08:00Z/2025-04-21T22:00Z/90/1530,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EC-EDF-05470-EDF-T-00052465,14,2025-04-19T11:02Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2024-10-02T22:00Z,2025-04-23T21:00Z,2024-10-02T22:00Z/2025-04-23T21:00Z/0/1330,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+Early restart, subject to TSO agreement."
+EDF-05470_EDF_T_00215400,1,2025-04-19T11:54Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-19T14:00Z,2025-04-19T16:00Z,2025-04-19T14:00Z/2025-04-19T16:00Z/216/699,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00215410,1,2025-04-19T14:00Z,17W100P100P0107R,CHINON 2,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T12:30Z,2025-04-20T14:30Z,2025-04-20T12:30Z/2025-04-20T14:30Z/216/689,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00215431,1,2025-04-19T15:31Z,17W100P100P0103Z,CATTENOM 2,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T06:00Z,2025-04-20T08:00Z,2025-04-20T06:00Z/2025-04-20T08:00Z/434/866,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00201497,12,2025-04-19T16:39Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,ACTIVE,2025-02-15T00:00Z,2025-04-19T18:30Z,2025-02-15T00:00Z/2025-04-19T18:30Z/0/1620,"Arrêt susceptible de se prolonger
+
+-----
+
+Stop likely to be extended"
+EDF-05470_EDF_T_00214452,5,2025-04-19T16:41Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-19T18:30Z,2025-04-21T22:00Z,2025-04-19T18:30Z/2025-04-21T22:00Z/90/1530,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00214452,6,2025-04-20T04:14Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-19T18:30Z,2025-04-22T22:00Z,2025-04-19T18:30Z/2025-04-22T22:00Z/90/1530,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EC-EDF-05470-EDF-T-00052465,15,2025-04-20T06:04Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2024-10-02T22:00Z,2025-04-23T21:00Z,2024-10-02T22:00Z/2025-04-23T21:00Z/0/1330,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+Premier palier à atteindre : 547 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+Early restart, subject to TSO agreement.
+First threshold after restart : 547 MW."
+EDF-05470_EDF_T_00214970,3,2025-04-20T08:55Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-20T00:00Z,2025-04-20T14:00Z,2025-04-20T00:00Z/2025-04-20T14:00Z/0/1495,-
+EC-EDF-05470-EDF-T-00052465,16,2025-04-20T09:03Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2024-10-02T22:00Z,2025-04-22T21:00Z,2024-10-02T22:00Z/2025-04-22T21:00Z/0/1330,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+Premier palier à atteindre : 547 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+Early restart, subject to TSO agreement.
+First threshold after restart : 547 MW."
+EDF-05470_EDF_T_00214970,4,2025-04-20T11:03Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-20T00:00Z,2025-04-20T15:00Z,2025-04-20T00:00Z/2025-04-20T15:00Z/0/1495,-
+EDF-05470_EDF_T_00214970,5,2025-04-20T14:40Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-20T00:00Z,2025-04-20T16:45Z,2025-04-20T00:00Z/2025-04-20T16:45Z/0/1495,-
+EDF-05470_EDF_T_00214970,6,2025-04-20T16:22Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-20T00:00Z,2025-04-20T18:00Z,2025-04-20T00:00Z/2025-04-20T18:00Z/0/1495,-
+EDF-05470_EDF_T_00214970,7,2025-04-20T18:10Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-20T00:00Z,2025-04-20T20:00Z,2025-04-20T00:00Z/2025-04-20T20:00Z/0/1495,-
+EDF-05470_EDF_T_00215135,2,2025-04-20T22:43Z,17W100P100P0118M,CRUAS 3,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-19T22:00Z,2025-04-20T23:00Z,2025-04-19T22:00Z/2025-04-20T23:00Z/0/915,-
+EDF-05470_EDF_T_00215170,4,2025-04-20T22:46Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T23:00Z,2025-04-21T03:40Z,2025-04-20T23:00Z/2025-04-21T03:40Z/10/905,"Remontée par paliers - prochain palier : 100 MW
+Montée à 100 MW : 15 minutes - Palier à 100 MW : 1 heure - Montée à 200 MW : 15 minutes  - Palier à 200 MW : 1 heure - Montée à 400 MW : 20 minutes - 
+Palier à 400 MW : 1 heure - Montée à PMD : 50 minutes 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques"
+EDF-05470_EDF_T_00215170,5,2025-04-21T00:17Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T23:00Z,2025-04-21T03:40Z,2025-04-20T23:00Z/2025-04-21T03:40Z/75/840,"Remontée par paliers - prochain palier : 200 MW
+Palier à 75 MW : 1 heure - Montée à 200 MW : 15 minutes  - Palier à 200 MW : 1 heure - Montée à 400 MW : 20 minutes - 
+Palier à 400 MW : 1 heure - Montée à PMD : 50 minutes 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques"
+EDF-05470_EDF_T_00215170,6,2025-04-21T00:56Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T23:00Z,2025-04-21T03:40Z,2025-04-20T23:00Z/2025-04-21T03:40Z/188/727,"Remontée par paliers - prochain palier : 400 MW
+Palier à 188 MW : 1 heure - Montée à 400 MW : 20 minutes - Palier à 400 MW : 1 heure - Montée à PMD : 50 minutes 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques"
+EDF-05470_EDF_T_00215170,7,2025-04-21T02:11Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T23:00Z,2025-04-21T04:35Z,2025-04-20T23:00Z/2025-04-21T04:35Z/188/727,"Remontée par paliers - prochain palier : 400 MW
+Palier à 188 MW : 1 heure - Montée à 400 MW : 20 minutes - Palier à 400 MW : 1 heure - Montée à PMD : 50 minutes 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques"
+EDF-05470_EDF_T_00215170,8,2025-04-21T03:14Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T23:00Z,2025-04-21T04:35Z,2025-04-20T23:00Z/2025-04-21T04:35Z/400/515,"Remontée par paliers - prochain palier :  916 MW
+Palier à 400 MW : 1 heure - Montée à 916 MW : 50 minutes 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques"
+EDF-05470_EDF_T_00215170,9,2025-04-21T03:24Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-20T23:00Z,2025-04-21T04:35Z,2025-04-20T23:00Z/2025-04-21T04:35Z/515/400,"Remontée par paliers - prochain palier :  916 MW
+Montée à 916 MW : 50 minutes 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques"
+EDF-05470_EDF_T_00214452,7,2025-04-21T05:52Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-19T18:30Z,2025-04-23T22:00Z,2025-04-19T18:30Z/2025-04-23T22:00Z/90/1530,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00214452,8,2025-04-21T09:02Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-19T18:30Z,2025-04-23T22:00Z,2025-04-19T18:30Z/2025-04-23T22:00Z/200/1420,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00214718,5,2025-04-21T12:02Z,17W100P100P01004,BUGEY 5,880,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-18T18:00Z,2025-04-25T21:00Z,2025-04-18T18:00Z/2025-04-25T21:00Z/0/880,-
+EDF-05470_EDF_T_00210028,1,2025-04-21T22:03Z,17W100P100P0147F,ST LAURENT 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2028-04-21T22:00Z,2028-05-31T22:00Z,2028-04-21T22:00Z/2028-05-31T22:00Z/0/915,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00215880,1,2025-04-22T05:59Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-23T22:00Z,2025-04-24T22:00Z,2025-04-23T22:00Z/2025-04-24T22:00Z/90/1530,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00214718,6,2025-04-22T08:02Z,17W100P100P01004,BUGEY 5,880,PLANNED,FORESEEN_MAINTENANCE,INACTIVE,2025-04-18T18:00Z,2025-04-22T08:01Z,2025-04-18T18:00Z/2025-04-22T08:01Z/0/880,-
+EDF-05470_EDF_T_00215998,1,2025-04-22T08:04Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,FAILURE,ACTIVE,2025-04-22T08:01Z,2025-04-25T21:00Z,2025-04-22T08:01Z/2025-04-25T21:00Z/0/880,-
+EDF-05470_EDF_T_00215880,2,2025-04-22T08:08Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-23T22:00Z,2025-04-24T22:00Z,2025-04-23T22:00Z/2025-04-24T22:00Z/300/1320,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216013,1,2025-04-22T09:13Z,17W100P100P0123T,DAMPIERRE 4,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T12:00Z,2025-04-22T15:00Z,2025-04-22T12:00Z/2025-04-22T15:00Z/180/710,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EC-EDF-05470-EDF-T-00052465,17,2025-04-22T14:19Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2024-10-02T22:00Z,2025-04-23T01:00Z,2024-10-02T22:00Z/2025-04-23T01:00Z/0/1330,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+Premier palier à atteindre : 547 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+Early restart, subject to TSO agreement.
+First threshold after restart : 547 MW."
+EC-EDF-05470-EDF-T-00077033,11,2025-04-22T18:47Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:00Z,2025-05-12T21:00Z,2025-01-31T23:00Z/2025-05-12T21:00Z/0/910,"Outage duration may be extended : https://doaat.edf.fr/message/edf-2023-00231
+After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Arrêt susceptible d'être prolongé : https://doaat.edf.fr/message/edf-2023-00230
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00216073,1,2025-04-22T20:10Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-24T01:00Z,2025-04-24T01:30Z,2025-04-24T01:00Z/2025-04-24T01:30Z/643/692,"Essai programmé. La remontée à puissance maximale prendra 66 minutes.
+--------
+Test. The unit will return to full load in 66 minutes."
+EC-EDF-05470-EDF-T-00052465,18,2025-04-22T22:16Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2024-10-02T22:00Z,2025-04-22T22:10Z,2024-10-02T22:00Z/2025-04-22T22:10Z/0/1330,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+Premier palier à atteindre : 547 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+Early restart, subject to TSO agreement.
+First threshold after restart : 547 MW."
+EDF-05470_EDF_T_00216074,1,2025-04-22T22:18Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-25T03:00Z,2025-04-22T22:10Z/2025-04-25T03:00Z/60/1270,"Remontée par paliers en cours
+Prochain palier : 120 MW
+--------
+Unit is currently ramping up by steps
+Next step : 120 MW."
+EDF-05470_EDF_T_00216085,1,2025-04-22T23:42Z,17W100P100P0144L,PENLY 2,1330,UNPLANNED,FAILURE,ACTIVE,2025-04-22T23:30Z,2025-04-23T02:00Z,2025-04-22T23:30Z/2025-04-23T02:00Z/75/1255,-
+EDF-05470_EDF_T_00216074,2,2025-04-23T03:15Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-25T06:00Z,2025-04-22T22:10Z/2025-04-25T06:00Z/500/830,"Remontée par paliers en cours
+Prochain palier : 999 MW
+--------
+Unit is currently ramping up by steps
+Next step : 999 MW."
+EDF-05470_EDF_T_00216074,3,2025-04-23T03:34Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-25T05:30Z,2025-04-22T22:10Z/2025-04-25T05:30Z/500/830,"Remontée par paliers en cours
+Prochain palier : 999 MW
+--------
+Unit is currently ramping up by steps
+Next step : 999 MW."
+EDF-05470_EDF_T_00216099,1,2025-04-23T05:29Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-24T22:00Z,2025-04-25T22:00Z,2025-04-24T22:00Z/2025-04-25T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216217,1,2025-04-23T06:21Z,17W100P100P0109N,CHINON 4,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-23T22:00Z,2025-04-25T19:55Z,2025-04-23T22:00Z/2025-04-25T19:55Z/805/100,"Tranche en prolongation de campagne
+--------
+Ongoing stretch."
+EC-EDF-05470-EDF-T-00081175,8,2025-04-23T07:08Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:00Z,2025-04-25T21:00Z,2025-01-31T23:00Z/2025-04-25T21:00Z/0/915,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+Early restart, subject to TSO agreement."
+EC-EDF-05470-EDF-T-00071053,10,2025-04-23T08:11Z,17W100P100P0109N,CHINON 4,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T21:30Z,2025-06-05T21:30Z,2025-04-25T21:30Z/2025-06-05T21:30Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EC-EDF-05470-EDF-T-00081175,9,2025-04-23T09:11Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:00Z,2025-04-25T21:00Z,2025-01-31T23:00Z/2025-04-25T21:00Z/0/915,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours."
+EDF-05470_EDF_T_00216245,1,2025-04-23T09:40Z,17W100P100P0120Z,DAMPIERRE 1,890,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-23T09:38Z,2025-04-24T09:38Z,2025-04-23T09:38Z/2025-04-24T09:38Z/0/890,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00216245,2,2025-04-23T09:55Z,17W100P100P0120Z,DAMPIERRE 1,890,UNPLANNED,FAILURE,ACTIVE,2025-04-23T09:38Z,2025-04-24T22:00Z,2025-04-23T09:38Z/2025-04-24T22:00Z/0/890,-
+EDF-05470_EDF_T_00216074,4,2025-04-23T10:37Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-25T10:30Z,2025-04-22T22:10Z/2025-04-25T10:30Z/500/830,"Remontée par paliers en cours
+Prochain palier : 1080 MW
+--------
+Unit is currently ramping up by steps
+Next step : 1080 MW."
+EDF-05470_EDF_T_00216257,1,2025-04-23T11:13Z,17W100P100P0138G,NOGENT 2,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-23T11:12Z,2025-04-24T11:12Z,2025-04-23T11:12Z/2025-04-24T11:12Z/450/860,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00216257,2,2025-04-23T11:42Z,17W100P100P0138G,NOGENT 2,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2025-04-23T11:12Z,2025-04-23T11:40Z,2025-04-23T11:12Z/2025-04-23T11:40Z/450/860,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00216074,5,2025-04-23T14:12Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-25T18:30Z,2025-04-22T22:10Z/2025-04-25T18:30Z/500/830,"Remontée par paliers en cours
+Prochain palier : 1080 MW
+--------
+Unit is currently ramping up by steps
+Next step : 1080 MW."
+EDF-05470_EDF_T_00216245,3,2025-04-23T16:11Z,17W100P100P0120Z,DAMPIERRE 1,890,UNPLANNED,FAILURE,ACTIVE,2025-04-23T09:38Z,2025-04-28T21:00Z,2025-04-23T09:38Z/2025-04-28T21:00Z/0/890,-
+EDF-05470_EDF_T_00215998,2,2025-04-23T18:09Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,FAILURE,ACTIVE,2025-04-22T08:01Z,2025-04-27T21:00Z,2025-04-22T08:01Z/2025-04-27T21:00Z/0/880,-
+EDF-05470_EDF_T_00216074,6,2025-04-24T01:08Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-26T01:30Z,2025-04-22T22:10Z/2025-04-26T01:30Z/500/830,"Remontée par paliers en cours
+Prochain palier : 999 MW
+--------
+Unit is currently ramping up by steps
+Next step : 999 MW."
+EDF-05470_EDF_T_00216358,1,2025-04-24T05:14Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T22:00Z,2025-04-26T22:00Z,2025-04-25T22:00Z/2025-04-26T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216478,1,2025-04-24T07:12Z,17W100P100P0108P,CHINON 3,905,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-26T20:00Z,2025-04-26T21:30Z,2025-04-26T20:00Z/2025-04-26T21:30Z/798/107,-
+EDF-05470_EDF_T_00216483,1,2025-04-24T08:30Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T01:00Z,2025-04-28T05:30Z,2025-04-28T01:00Z/2025-04-28T05:30Z/915/0,"Remontée à puissance maximale sans palier
+--------------------------------
+Ramp-up to maximal power without load threshold"
+EDF-05470_EDF_T_00216074,7,2025-04-24T11:09Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-26T12:00Z,2025-04-22T22:10Z/2025-04-26T12:00Z/525/805,"Remontée par paliers en cours
+Prochain palier : 999 MW
+--------
+Unit is currently ramping up by steps
+Next step : 999 MW."
+EDF-05470_EDF_T_00212476,2,2025-04-24T13:49Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-05-03T10:00Z,2025-05-18T14:00Z,2025-05-03T10:00Z/2025-05-18T14:00Z/905/10,"Essais prévus avec variations de puissance. Si une limitation de puissance se produit pendant l'essai, elle fera l'objet d'une publication spécifique.
+____________________________________
+
+Test runs. In this phase the dispatch schedule and the availability can be affected on short notice by the pending technical test schedules. In case of any limitation, a specific message wille be publisched."
+EDF-05470_EDF_T_00216535,1,2025-04-24T14:29Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-25T12:00Z,2025-04-25T15:00Z,2025-04-25T12:00Z/2025-04-25T15:00Z/430/485,-
+EDF-05470_EDF_T_00216480,1,2025-04-24T15:58Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T02:30Z,2025-04-28T01:00Z,2025-04-27T02:30Z/2025-04-28T01:00Z/0/915,-
+EDF-05470_EDF_T_00216074,8,2025-04-24T16:51Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-26T13:00Z,2025-04-22T22:10Z/2025-04-26T13:00Z/525/805,"Remontée par paliers en cours
+Prochain palier : 999 MW
+--------
+Unit is currently ramping up by steps
+Next step : 999 MW."
+EDF-05470_EDF_T_00216535,2,2025-04-24T19:48Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,FORESEEN_MAINTENANCE,DISMISSED,2025-04-25T12:00Z,2025-04-25T15:00Z,2025-04-25T12:00Z/2025-04-25T15:00Z/430/485,-
+EC-EDF-05470-EDF-T-00081175,10,2025-04-24T20:57Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:00Z,2025-04-25T13:00Z,2025-01-31T23:00Z/2025-04-25T13:00Z/0/915,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 98 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 98 MW."
+EDF-05470_EDF_T_00216559,1,2025-04-24T21:15Z,17W100P100P0144L,PENLY 2,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-24T22:00Z,2025-04-25T00:15Z,2025-04-24T22:00Z/2025-04-25T00:15Z/330/1000,-
+EDF-05470_EDF_T_00216560,1,2025-04-24T21:16Z,17W100P100P0144L,PENLY 2,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-25T00:15Z,2025-04-25T02:30Z,2025-04-25T00:15Z/2025-04-25T02:30Z/0/1330,-
+EDF-05470_EDF_T_00216559,2,2025-04-24T23:49Z,17W100P100P0144L,PENLY 2,1330,PLANNED,FORESEEN_MAINTENANCE,INACTIVE,2025-04-24T22:00Z,2025-04-24T23:30Z,2025-04-24T22:00Z/2025-04-24T23:30Z/330/1000,-
+EDF-05470_EDF_T_00216560,2,2025-04-24T23:49Z,17W100P100P0144L,PENLY 2,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-24T23:30Z,2025-04-25T02:30Z,2025-04-24T23:30Z/2025-04-25T02:30Z/0/1330,-
+EDF-05470_EDF_T_00216560,3,2025-04-25T02:40Z,17W100P100P0144L,PENLY 2,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-24T23:30Z,2025-04-25T03:00Z,2025-04-24T23:30Z/2025-04-25T03:00Z/0/1330,-
+EDF-05470_EDF_T_00216074,9,2025-04-25T03:37Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-28T17:00Z,2025-04-22T22:10Z/2025-04-28T17:00Z/320/1010,"Remontée par paliers en cours
+Prochain palier : 999 MW
+--------
+Unit is currently ramping up by steps
+Next step : 999 MW."
+EC-EDF-05470-EDF-T-00081175,11,2025-04-25T04:20Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:00Z,2025-04-25T06:00Z,2025-01-31T23:00Z/2025-04-25T06:00Z/0/915,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 98 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 98 MW."
+EC-EDF-05470-EDF-T-00081175,12,2025-04-25T05:25Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:00Z,2025-04-25T07:30Z,2025-01-31T23:00Z/2025-04-25T07:30Z/0/915,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 98 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 98 MW."
+EDF-05470_EDF_T_00212476,3,2025-04-25T06:34Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-05-03T10:00Z,2025-05-26T14:00Z,2025-05-03T10:00Z/2025-05-26T14:00Z/905/10,"Essais prévus avec variations de puissance. Si une limitation de puissance se produit pendant l'essai, elle fera l'objet d'une publication spécifique.
+____________________________________
+
+Test runs. In this phase the dispatch schedule and the availability can be affected on short notice by the pending technical test schedules. In case of any limitation, a specific message wille be publisched."
+EDF-05470_EDF_T_00216358,2,2025-04-25T06:45Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T22:00Z,2025-04-27T22:00Z,2025-04-25T22:00Z/2025-04-27T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EC-EDF-05470-EDF-T-00058451,13,2025-04-25T07:34Z,17W100P100P00966,BUGEY 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-02-21T22:30Z,2025-05-06T22:00Z,2025-02-21T22:30Z/2025-05-06T22:00Z/0/910,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+Early restart, subject to TSO agreement."
+EDF-05470_EDF_T_00216074,10,2025-04-25T07:51Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-28T21:30Z,2025-04-22T22:10Z/2025-04-28T21:30Z/550/780,"Remontée par paliers en cours
+Prochain palier : 999 MW
+--------
+Unit is currently ramping up by steps
+Next step : 999 MW."
+EDF-05470_EDF_T_00216582,1,2025-04-25T08:13Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-29T01:00Z,2025-04-25T08:00Z/2025-04-29T01:00Z/98/817,"Remontée par paliers en cours
+Prochain palier : 367 MW
+--------
+Unit is currently ramping up by steps
+Next step : 367 MW."
+EDF-05470_EDF_T_00216709,1,2025-04-25T08:50Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:45Z,2025-04-26T08:45Z,2025-04-25T08:45Z/2025-04-26T08:45Z/0/1620,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00216074,11,2025-04-25T10:22Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-27T10:00Z,2025-04-22T22:10Z/2025-04-27T10:00Z/550/780,"Remontée par paliers en cours
+Prochain palier : 999 MW
+--------
+Unit is currently ramping up by steps
+Next step : 999 MW."
+EDF-05470_EDF_T_00216748,1,2025-04-25T10:47Z,17W100P100P0108P,CHINON 3,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T12:30Z,2025-04-25T13:30Z,2025-04-25T12:30Z/2025-04-25T13:30Z/577/328,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00216582,2,2025-04-25T12:01Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-29T06:00Z,2025-04-25T08:00Z/2025-04-29T06:00Z/98/817,"Remontée par paliers en cours
+Prochain palier : 181 MW
+--------
+Unit is currently ramping up by steps
+Next step : 181 MW."
+EDF-05470_EDF_T_00216582,3,2025-04-25T13:30Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-29T07:00Z,2025-04-25T08:00Z/2025-04-29T07:00Z/98/817,"Remontée par paliers en cours
+Prochain palier : 181 MW
+--------
+Unit is currently ramping up by steps
+Next step : 181 MW."
+EDF-05470_EDF_T_00216784,1,2025-04-25T14:44Z,17W100P100P0135M,GRAVELINES 5,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-26T12:30Z,2025-04-26T16:30Z,2025-04-26T12:30Z/2025-04-26T16:30Z/370/540,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00216074,12,2025-04-25T15:30Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-27T11:30Z,2025-04-22T22:10Z/2025-04-27T11:30Z/550/780,"Remontée par paliers en cours
+Prochain palier : 999 MW
+--------
+Unit is currently ramping up by steps
+Next step : 999 MW."
+EC-EDF-05470-EDF-T-00077033,12,2025-04-25T15:51Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:00Z,2025-05-12T21:00Z,2025-01-31T23:00Z/2025-05-12T21:00Z/0/910,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.
+-------------------------------------
+After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours."
+EC-EDF-05470-EDF-T-00077033,13,2025-04-25T16:18Z,17W100P100P0131U,GRAVELINES 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:00Z,2025-05-12T21:00Z,2025-01-31T23:00Z/2025-05-12T21:00Z/0/910,"Outage duration may be extended : https://doaat.edf.fr/message/edf-2023-00231
+After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Arrêt susceptible d'être prolongé : https://doaat.edf.fr/message/edf-2023-00230
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00216480,2,2025-04-25T16:21Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T02:30Z,2025-04-28T09:00Z,2025-04-27T02:30Z/2025-04-28T09:00Z/0/915,-
+EDF-05470_EDF_T_00216483,2,2025-04-25T16:21Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T09:00Z,2025-04-28T13:30Z,2025-04-28T09:00Z/2025-04-28T13:30Z/915/0,"Remontée à puissance maximale sans palier
+--------------------------------
+Ramp-up to maximal power without load threshold"
+EDF-05470_EDF_T_00216582,4,2025-04-25T16:51Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-29T08:00Z,2025-04-25T08:00Z/2025-04-29T08:00Z/120/795,"Remontée par paliers en cours
+Prochain palier : 181 MW
+--------
+Unit is currently ramping up by steps
+Next step : 181 MW."
+EDF-05470_EDF_T_00216582,5,2025-04-25T18:16Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-29T09:30Z,2025-04-25T08:00Z/2025-04-29T09:30Z/120/795,"Remontée par paliers en cours
+Prochain palier : 181 MW
+--------
+Unit is currently ramping up by steps
+Next step : 181 MW."
+EDF-05470_EDF_T_00216709,2,2025-04-25T19:20Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,ACTIVE,2025-04-25T08:45Z,2025-04-26T08:45Z,2025-04-25T08:45Z/2025-04-26T08:45Z/0/1620,-
+EDF-05470_EDF_T_00216099,2,2025-04-25T19:22Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-24T22:00Z,2025-04-25T22:00Z,2025-04-24T22:00Z/2025-04-25T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216358,3,2025-04-25T19:26Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-26T08:45Z,2025-04-28T22:00Z,2025-04-26T08:45Z/2025-04-28T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216582,6,2025-04-26T00:59Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-29T09:30Z,2025-04-25T08:00Z/2025-04-29T09:30Z/370/545,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EDF-05470_EDF_T_00216818,1,2025-04-26T02:08Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-26T02:07Z,2025-04-27T02:07Z,2025-04-26T02:07Z/2025-04-27T02:07Z/0/915,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00216074,13,2025-04-26T05:08Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-27T11:30Z,2025-04-22T22:10Z/2025-04-27T11:30Z/1000/330,"Remontée par paliers en cours
+Prochain palier : 1328 MW
+--------
+Unit is currently ramping up by steps
+Next step : 1328 MW."
+EDF-05470_EDF_T_00216074,14,2025-04-26T05:31Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-27T09:00Z,2025-04-22T22:10Z/2025-04-27T09:00Z/1000/330,"Remontée par paliers en cours
+Prochain palier : 1328 MW
+--------
+Unit is currently ramping up by steps
+Next step : 1328 MW."
+EDF-05470_EDF_T_00216818,2,2025-04-26T06:32Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,ACTIVE,2025-04-26T02:07Z,2025-04-27T02:00Z,2025-04-26T02:07Z/2025-04-27T02:00Z/0/915,-
+EDF-05470_EDF_T_00216709,3,2025-04-26T08:33Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,ACTIVE,2025-04-25T08:45Z,2025-04-26T21:00Z,2025-04-25T08:45Z/2025-04-26T21:00Z/0/1620,-
+EDF-05470_EDF_T_00216358,4,2025-04-26T08:37Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-26T21:00Z,2025-04-28T22:00Z,2025-04-26T21:00Z/2025-04-28T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216979,1,2025-04-26T12:13Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-26T12:30Z,2025-04-26T13:30Z,2025-04-26T12:30Z/2025-04-26T13:30Z/985/350,-
+EDF-05470_EDF_T_00216984,1,2025-04-26T13:48Z,17W100P100P0115S,CRUAS 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-27T07:00Z,2025-04-27T11:00Z,2025-04-27T07:00Z/2025-04-27T11:00Z/562/353,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00216985,1,2025-04-26T13:48Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-27T02:00Z,2025-04-27T15:00Z,2025-04-27T02:00Z/2025-04-27T15:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00216709,4,2025-04-26T15:49Z,17W100P100P03639,FLAMANVILLE 3,1620,UNPLANNED,FAILURE,ACTIVE,2025-04-25T08:45Z,2025-04-26T17:30Z,2025-04-25T08:45Z/2025-04-26T17:30Z/0/1620,-
+EDF-05470_EDF_T_00216358,5,2025-04-26T15:53Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-26T17:30Z,2025-04-28T06:00Z,2025-04-26T17:30Z/2025-04-28T06:00Z/300/1320,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216995,1,2025-04-26T15:55Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T06:00Z,2025-04-28T22:00Z,2025-04-28T06:00Z/2025-04-28T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216818,3,2025-04-26T16:34Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,ACTIVE,2025-04-26T02:07Z,2025-04-27T15:00Z,2025-04-26T02:07Z/2025-04-27T15:00Z/0/915,-
+EDF-05470_EDF_T_00216985,2,2025-04-26T16:35Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-27T02:00Z,2025-04-27T15:00Z,2025-04-27T02:00Z/2025-04-27T15:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00216074,15,2025-04-26T21:23Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-28T03:00Z,2025-04-22T22:10Z/2025-04-28T03:00Z/1000/330,"Remontée par paliers en cours
+Prochain palier : 1328 MW
+--------
+Unit is currently ramping up by steps
+Next step : 1328 MW."
+EDF-05470_EDF_T_00216582,7,2025-04-26T23:48Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-29T16:30Z,2025-04-25T08:00Z/2025-04-29T16:30Z/370/545,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EDF-05470_EDF_T_00216480,3,2025-04-27T01:19Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T01:30Z,2025-04-28T09:00Z,2025-04-27T01:30Z/2025-04-28T09:00Z/0/915,-
+EDF-05470_EDF_T_00217046,1,2025-04-27T01:59Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T21:00Z,2025-05-02T00:00Z,2025-04-28T21:00Z/2025-05-02T00:00Z/10/880,"Remontée par paliers en cours - prochain palier : 781 MW
+Montée à 781 MW : 15h - Palier à 781 MW : 54h - Montée à 860 MW : 6h 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+---
+Unit is currently ramping up by steps - next step : 781 MW
+Ramp-up to 781 MW : 15h - Threshold at 781 MW : 54h - Ramp-up to 860 MW : 6h 
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00217047,1,2025-04-27T02:31Z,17W100P100P0153K,TRICASTIN 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-27T22:00Z,2025-05-02T22:00Z,2025-04-27T22:00Z/2025-05-02T22:00Z/815/100,"Tranche en prolongation de campagne
+--------
+Ongoing stretch."
+EDF-05470_EDF_T_00216582,8,2025-04-27T05:18Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-29T20:30Z,2025-04-25T08:00Z/2025-04-29T20:30Z/370/545,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EDF-05470_EDF_T_00216995,2,2025-04-27T06:33Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T06:00Z,2025-04-29T22:00Z,2025-04-28T06:00Z/2025-04-29T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00217168,1,2025-04-27T07:58Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,FAILURE,ACTIVE,2025-04-27T07:55Z,2025-04-27T10:00Z,2025-04-27T07:55Z/2025-04-27T10:00Z/674/236,-
+EDF-05470_EDF_T_00217169,1,2025-04-27T08:35Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T08:00Z,2025-04-28T14:00Z,2025-04-28T08:00Z/2025-04-28T14:00Z/872/463,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00217170,1,2025-04-27T08:47Z,17W100P100P0091G,BELLEVILLE 2,1310,UNPLANNED,FAILURE,ACTIVE,2025-04-27T08:44Z,2025-04-27T11:00Z,2025-04-27T08:44Z/2025-04-27T11:00Z/480/830,-
+EDF-05470_EDF_T_00216818,4,2025-04-27T09:23Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,ACTIVE,2025-04-26T02:07Z,2025-04-28T03:00Z,2025-04-26T02:07Z/2025-04-28T03:00Z/0/915,-
+EDF-05470_EDF_T_00217205,1,2025-04-27T09:30Z,17W100P100P0093C,BLAYAIS 2,910,UNPLANNED,FAILURE,ACTIVE,2025-04-27T09:28Z,2025-04-27T10:30Z,2025-04-27T09:28Z/2025-04-27T10:30Z/220/690,-
+EDF-05470_EDF_T_00217170,2,2025-04-27T09:54Z,17W100P100P0091G,BELLEVILLE 2,1310,UNPLANNED,FAILURE,INACTIVE,2025-04-27T08:44Z,2025-04-27T09:52Z,2025-04-27T08:44Z/2025-04-27T09:52Z/480/830,-
+EDF-05470_EDF_T_00217168,2,2025-04-27T10:15Z,17W100P100P0092E,BLAYAIS 1,910,UNPLANNED,FAILURE,ACTIVE,2025-04-27T07:55Z,2025-04-27T11:00Z,2025-04-27T07:55Z/2025-04-27T11:00Z/674/236,-
+EDF-05470_EDF_T_00217215,1,2025-04-27T13:51Z,17W100P100P0141R,PALUEL 3,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T11:00Z,2025-04-28T14:00Z,2025-04-28T11:00Z/2025-04-28T14:00Z/270/1060,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00217226,1,2025-04-27T15:41Z,17W100P100P0149B,TRICASTIN 1,915,UNPLANNED,FAILURE,ACTIVE,2025-04-27T15:40Z,2025-04-28T15:40Z,2025-04-27T15:40Z/2025-04-28T15:40Z/290/625,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00216582,9,2025-04-27T15:47Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-30T08:30Z,2025-04-25T08:00Z/2025-04-30T08:30Z/370/545,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EDF-05470_EDF_T_00215998,3,2025-04-27T16:48Z,17W100P100P01004,BUGEY 5,880,UNPLANNED,FAILURE,ACTIVE,2025-04-22T08:01Z,2025-04-27T18:45Z,2025-04-22T08:01Z/2025-04-27T18:45Z/0/880,-
+EDF-05470_EDF_T_00217226,2,2025-04-27T17:07Z,17W100P100P0149B,TRICASTIN 1,915,UNPLANNED,FAILURE,ACTIVE,2025-04-27T15:40Z,2025-04-27T18:00Z,2025-04-27T15:40Z/2025-04-27T18:00Z/290/625,-
+EDF-05470_EDF_T_00217226,3,2025-04-27T17:13Z,17W100P100P0149B,TRICASTIN 1,915,UNPLANNED,FAILURE,ACTIVE,2025-04-27T15:40Z,2025-04-27T22:00Z,2025-04-27T15:40Z/2025-04-27T22:00Z/290/625,-
+EDF-05470_EDF_T_00217248,1,2025-04-27T17:46Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-27T19:45Z,2025-04-28T01:00Z,2025-04-27T19:45Z/2025-04-28T01:00Z/10/870,"Remontée par paliers en cours - prochain palier : 125 MW
+Montée à 125 MW : 2h - Palier à 125 MW : 30 mn - Montée à 800 MW : 2h -  Montée à PMD: 30 min
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+--------
+Unit is currently ramping up by steps - next step : 125 MW
+Ramp-up to 125 MW : 2h - Threshold at 125 MW : 30 min - Ramp-up to 800 MW : 2h - Ramp-up to PMD : 30 min
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00217248,2,2025-04-27T17:47Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-27T18:45Z,2025-04-28T01:00Z,2025-04-27T18:45Z/2025-04-28T01:00Z/10/870,"Remontée par paliers en cours - prochain palier : 125 MW
+Montée à 125 MW : 2h - Palier à 125 MW : 30 mn - Montée à 800 MW : 2h -  Montée à PMD: 30 min
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+--------
+Unit is currently ramping up by steps - next step : 125 MW
+Ramp-up to 125 MW : 2h - Threshold at 125 MW : 30 min - Ramp-up to 800 MW : 2h - Ramp-up to PMD : 30 min
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00217252,1,2025-04-27T18:55Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T20:30Z,2025-04-28T04:00Z,2025-04-27T20:30Z/2025-04-28T04:00Z/0/915,-
+EDF-05470_EDF_T_00217226,4,2025-04-27T18:57Z,17W100P100P0149B,TRICASTIN 1,915,UNPLANNED,FAILURE,ACTIVE,2025-04-27T15:40Z,2025-04-27T20:30Z,2025-04-27T15:40Z/2025-04-27T20:30Z/290/625,-
+EDF-05470_EDF_T_00216818,5,2025-04-27T19:29Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,ACTIVE,2025-04-26T02:07Z,2025-04-28T15:00Z,2025-04-26T02:07Z/2025-04-28T15:00Z/0/915,-
+EDF-05470_EDF_T_00216074,16,2025-04-27T20:32Z,17W100P100P0144L,PENLY 2,1330,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-22T22:10Z,2025-04-28T04:30Z,2025-04-22T22:10Z/2025-04-28T04:30Z/1000/330,"Remontée par paliers en cours
+Prochain palier : 1328 MW
+--------
+Unit is currently ramping up by steps
+Next step : 1328 MW."
+EDF-05470_EDF_T_00217265,1,2025-04-27T21:10Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T22:30Z,2025-04-28T00:00Z,2025-04-27T22:30Z/2025-04-28T00:00Z/0/915,-
+EDF-05470_EDF_T_00217248,3,2025-04-27T22:19Z,17W100P100P01004,BUGEY 5,880,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-27T18:45Z,2025-04-27T23:20Z,2025-04-27T18:45Z/2025-04-27T23:20Z/10/870,"Remontée par paliers en cours - prochain palier : 125 MW
+Montée à 125 MW : 2h - Palier à 125 MW : 30 mn - Montée à 800 MW : 2h -  Montée à PMD: 30 min
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+--------
+Unit is currently ramping up by steps - next step : 125 MW
+Ramp-up to 125 MW : 2h - Threshold at 125 MW : 30 min - Ramp-up to 800 MW : 2h - Ramp-up to PMD : 30 min
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00216245,4,2025-04-27T23:49Z,17W100P100P0120Z,DAMPIERRE 1,890,UNPLANNED,FAILURE,ACTIVE,2025-04-23T09:38Z,2025-04-28T09:00Z,2025-04-23T09:38Z/2025-04-28T09:00Z/0/890,-
+EDF-05470_EDF_T_00217046,2,2025-04-27T23:49Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T09:00Z,2025-05-02T00:00Z,2025-04-28T09:00Z/2025-05-02T00:00Z/10/880,"Remontée par paliers en cours - prochain palier : 781 MW
+Montée à 781 MW : 15h - Palier à 781 MW : 54h - Montée à 860 MW : 6h 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+---
+Unit is currently ramping up by steps - next step : 781 MW
+Ramp-up to 781 MW : 15h - Threshold at 781 MW : 54h - Ramp-up to 860 MW : 6h 
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00217265,2,2025-04-27T23:58Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T22:30Z,2025-04-28T01:00Z,2025-04-27T22:30Z/2025-04-28T01:00Z/0/915,-
+EDF-05470_EDF_T_00216582,10,2025-04-28T00:01Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-30T09:30Z,2025-04-25T08:00Z/2025-04-30T09:30Z/370/545,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EDF-05470_EDF_T_00217265,3,2025-04-28T01:05Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T22:30Z,2025-04-28T01:45Z,2025-04-27T22:30Z/2025-04-28T01:45Z/0/915,-
+EDF-05470_EDF_T_00216582,11,2025-04-28T01:07Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-30T10:30Z,2025-04-25T08:00Z/2025-04-30T10:30Z/370/545,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EDF-05470_EDF_T_00217252,2,2025-04-28T01:45Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T20:30Z,2025-04-28T15:00Z,2025-04-27T20:30Z/2025-04-28T15:00Z/0/915,-
+EDF-05470_EDF_T_00216582,12,2025-04-28T03:30Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-30T14:30Z,2025-04-25T08:00Z/2025-04-30T14:30Z/370/545,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EDF-05470_EDF_T_00216480,4,2025-04-28T03:33Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T01:30Z,2025-04-28T04:30Z,2025-04-27T01:30Z/2025-04-28T04:30Z/0/915,-
+EDF-05470_EDF_T_00216483,3,2025-04-28T03:35Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T04:30Z,2025-04-28T10:00Z,2025-04-28T04:30Z/2025-04-28T10:00Z/915/0,"Remontée à puissance maximale sans palier
+--------------------------------
+Ramp-up to maximal power without load threshold"
+EDF-05470_EDF_T_00216483,4,2025-04-28T04:06Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T04:00Z,2025-04-28T08:30Z,2025-04-28T04:00Z/2025-04-28T08:30Z/915/0,"Remontée à puissance maximale sans palier
+--------------------------------
+Ramp-up to maximal power without load threshold"
+EDF-05470_EDF_T_00217295,1,2025-04-28T06:14Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-29T22:00Z,2025-04-30T22:00Z,2025-04-29T22:00Z/2025-04-30T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216483,5,2025-04-28T06:29Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2025-04-28T04:00Z,2025-04-28T06:27Z,2025-04-28T04:00Z/2025-04-28T06:27Z/915/0,"Remontée à puissance maximale sans palier
+--------------------------------
+Ramp-up to maximal power without load threshold"
+EDF-05470_EDF_T_00216995,3,2025-04-28T06:49Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T06:00Z,2025-04-30T22:00Z,2025-04-28T06:00Z/2025-04-30T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00217295,2,2025-04-28T06:50Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-29T22:00Z,2025-04-30T22:00Z,2025-04-29T22:00Z/2025-04-30T22:00Z/490/1130,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216582,13,2025-04-28T07:15Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-04-30T21:30Z,2025-04-25T08:00Z/2025-04-30T21:30Z/370/545,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EC-EDF-05470-EDF-T-00081166,13,2025-04-28T08:15Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:30Z,2025-04-29T21:00Z,2025-01-31T23:30Z/2025-04-29T21:00Z/0/905,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+Early restart, subject to TSO agreement."
+EDF-05470_EDF_T_00217252,3,2025-04-28T08:38Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T20:30Z,2025-05-02T21:00Z,2025-04-27T20:30Z/2025-05-02T21:00Z/0/915,-
+EDF-05470_EDF_T_00216995,4,2025-04-28T08:47Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T06:00Z,2025-04-30T22:00Z,2025-04-28T06:00Z/2025-04-30T22:00Z/435/1185,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00216818,6,2025-04-28T09:28Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,ACTIVE,2025-04-26T02:07Z,2025-04-28T13:00Z,2025-04-26T02:07Z/2025-04-28T13:00Z/0/915,-
+EC-EDF-05470-EDF-T-00081166,14,2025-04-28T10:01Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:30Z,2025-04-29T21:00Z,2025-01-31T23:30Z/2025-04-29T21:00Z/0/905,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours."
+EDF-05470_EDF_T_00217455,1,2025-04-28T10:42Z,17W100P100P0128J,GOLFECH 1,1310,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T10:40Z,2025-04-29T10:40Z,2025-04-28T10:40Z/2025-04-29T10:40Z/0/1310,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00216818,7,2025-04-28T13:09Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,ACTIVE,2025-04-26T02:07Z,2025-04-28T16:00Z,2025-04-26T02:07Z/2025-04-28T16:00Z/0/915,-
+EDF-05470_EDF_T_00216582,14,2025-04-28T13:16Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-05-01T17:30Z,2025-04-25T08:00Z/2025-05-01T17:30Z/367/548,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EC-EDF-05470-EDF-T-00081166,15,2025-04-28T13:41Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:30Z,2025-04-29T22:00Z,2025-01-31T23:30Z/2025-04-29T22:00Z/0/905,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours."
+EDF-05470_EDF_T_00217470,1,2025-04-28T13:51Z,17W100P100P0115S,CRUAS 1,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-29T12:00Z,2025-04-29T13:00Z,2025-04-29T12:00Z/2025-04-29T13:00Z/578/337,-
+EDF-05470_EDF_T_00217471,1,2025-04-28T13:56Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-29T12:00Z,2025-04-29T13:00Z,2025-04-29T12:00Z/2025-04-29T13:00Z/180/735,-
+EDF-05470_EDF_T_00217472,1,2025-04-28T14:00Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-29T07:00Z,2025-04-29T13:30Z,2025-04-29T07:00Z/2025-04-29T13:30Z/180/730,-
+EC-EDF-05470-EDF-T-00081166,16,2025-04-28T14:01Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:30Z,2025-04-29T22:00Z,2025-01-31T23:30Z/2025-04-29T22:00Z/0/905,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 181 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 181 MW."
+EDF-05470_EDF_T_00217474,1,2025-04-28T14:05Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-29T09:00Z,2025-04-30T14:00Z,2025-04-29T09:00Z/2025-04-30T14:00Z/0/1495,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00217475,1,2025-04-28T14:18Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-29T22:00Z,2025-05-02T20:00Z,2025-04-29T22:00Z/2025-05-02T20:00Z/10/895,"Remontée par paliers en cours - prochain palier : 267 MW
+Montée à 781 MW : 17h 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+--------
+Unit is currently ramping up by steps - next step : 267MW
+Ramp-up to 781 MW : 17h
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00217491,1,2025-04-28T14:56Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-29T07:00Z,2025-04-29T15:00Z,2025-04-29T07:00Z/2025-04-29T15:00Z/872/463,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00216818,8,2025-04-28T15:07Z,17W100P100P0118M,CRUAS 3,915,UNPLANNED,FAILURE,ACTIVE,2025-04-26T02:07Z,2025-04-29T01:00Z,2025-04-26T02:07Z/2025-04-29T01:00Z/0/915,-
+EDF-05470_EDF_T_00217472,2,2025-04-28T16:03Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,FORESEEN_MAINTENANCE,DISMISSED,2025-04-29T07:00Z,2025-04-29T13:30Z,2025-04-29T07:00Z/2025-04-29T13:30Z/180/730,-
+EDF-05470_EDF_T_00217516,1,2025-04-28T16:39Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-29T01:00Z,2025-05-05T06:00Z,2025-04-29T01:00Z/2025-05-05T06:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00217046,3,2025-04-28T19:41Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T09:00Z,2025-05-02T00:00Z,2025-04-28T09:00Z/2025-05-02T00:00Z/580/310,"Remontée par paliers en cours - prochain palier : 781 MW
+Montée à 781 MW : 6,5h - Palier à 781 MW : 54h - Montée à 860 MW : 6h 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+---
+Unit is currently ramping up by steps - next step : 781 MW
+Ramp-up to 781 MW : 6,5h - Threshold at 781 MW : 54h - Ramp-up to 860 MW : 6h 
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00217475,2,2025-04-28T20:38Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-29T22:00Z,2025-05-02T20:00Z,2025-04-29T22:00Z/2025-05-02T20:00Z/10/895,"Remontée par paliers en cours - prochain palier : 267 MW
+Montée à 781 MW : 17h 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+--------
+Unit is currently ramping up by steps - next step : 267MW
+Ramp-up to 781 MW : 17h
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00217455,2,2025-04-28T20:40Z,17W100P100P0128J,GOLFECH 1,1310,UNPLANNED,FAILURE,ACTIVE,2025-04-28T10:40Z,2025-04-29T17:30Z,2025-04-28T10:40Z/2025-04-29T17:30Z/0/1310,-
+EDF-05470_EDF_T_00209982,1,2025-04-28T22:03Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2028-04-28T22:00Z,2028-06-08T22:00Z,2028-04-28T22:00Z/2028-06-08T22:00Z/0/905,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h."
+EDF-05470_EDF_T_00217046,4,2025-04-28T22:31Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T09:00Z,2025-05-02T00:00Z,2025-04-28T09:00Z/2025-05-02T00:00Z/780/110,"Remontée par paliers en cours - prochain palier : 860 MW
+Palier à 781 MW : 54h - Montée à 860 MW : 6h 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+---
+Unit is currently ramping up by steps - next step : 860 MW
+Threshold at 781 MW : 54h - Ramp-up to 860 MW : 6h 
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00217474,2,2025-04-28T23:39Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-29T09:00Z,2025-04-30T14:00Z,2025-04-29T09:00Z/2025-04-30T14:00Z/0/1495,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00216995,5,2025-04-29T05:56Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T06:00Z,2025-05-01T22:00Z,2025-04-28T06:00Z/2025-05-01T22:00Z/435/1185,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00217046,5,2025-04-29T06:08Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T09:00Z,2025-05-01T11:00Z,2025-04-28T09:00Z/2025-05-01T11:00Z/780/110,"Remontée par paliers en cours - prochain palier : 860 MW
+Palier à 781 MW : 54h - Montée à 860 MW : 6h 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+---
+Unit is currently ramping up by steps - next step : 860 MW
+Threshold at 781 MW : 54h - Ramp-up to 860 MW : 6h 
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00217491,2,2025-04-29T06:59Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-29T07:00Z,2025-04-29T15:00Z,2025-04-29T07:00Z/2025-04-29T15:00Z/872/463,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00217470,2,2025-04-29T08:43Z,17W100P100P0115S,CRUAS 1,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-29T11:00Z,2025-04-29T12:30Z,2025-04-29T11:00Z/2025-04-29T12:30Z/578/337,-
+EDF-05470_EDF_T_00217455,3,2025-04-29T08:48Z,17W100P100P0128J,GOLFECH 1,1310,UNPLANNED,FAILURE,ACTIVE,2025-04-28T10:40Z,2025-04-29T14:00Z,2025-04-28T10:40Z/2025-04-29T14:00Z/0/1310,-
+EDF-05470_EDF_T_00212476,4,2025-04-29T10:37Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-05-03T10:00Z,2025-05-26T14:00Z,2025-05-03T10:00Z/2025-05-26T14:00Z/905/10,"Essais prévus avec variations de puissance. Si une limitation de puissance se produit pendant l'essai, elle fera l'objet d'une publication spécifique.
+____________________________________
+
+Test runs. In this phase the dispatch schedule and the availability can be affected on short notice by the pending technical test schedules. In case of any limitation, a specific message wille be publisched."
+EDF-05470_EDF_T_00216582,15,2025-04-29T10:44Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-05-01T21:30Z,2025-04-25T08:00Z/2025-05-01T21:30Z/367/548,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EC-EDF-05470-EDF-T-00081166,17,2025-04-29T11:58Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:30Z,2025-04-30T10:00Z,2025-01-31T23:30Z/2025-04-30T10:00Z/0/905,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 181 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 181 MW."
+EDF-05470_EDF_T_00217695,1,2025-04-29T13:31Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-30T12:00Z,2025-04-30T15:00Z,2025-04-30T12:00Z/2025-04-30T15:00Z/872/463,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00217696,1,2025-04-29T13:31Z,17W100P100P0103Z,CATTENOM 2,1300,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-30T12:00Z,2025-04-30T15:00Z,2025-04-30T12:00Z/2025-04-30T15:00Z/260/1040,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00217252,4,2025-04-29T14:13Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-04-27T20:30Z,2025-04-30T21:00Z,2025-04-27T20:30Z/2025-04-30T21:00Z/0/915,-
+EDF-05470_EDF_T_00217699,1,2025-04-29T14:15Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-30T21:00Z,2025-05-04T16:00Z,2025-04-30T21:00Z/2025-05-04T16:00Z/0/915,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00217700,1,2025-04-29T14:40Z,17W100P100P0148D,ST LAURENT 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-30T12:00Z,2025-04-30T14:00Z,2025-04-30T12:00Z/2025-04-30T14:00Z/430/485,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00217710,1,2025-04-29T15:59Z,17W100P100P0128J,GOLFECH 1,1310,UNPLANNED,FAILURE,ACTIVE,2025-04-29T15:57Z,2025-04-29T17:00Z,2025-04-29T15:57Z/2025-04-29T17:00Z/1180/130,-
+EDF-05470_EDF_T_00217711,1,2025-04-29T16:04Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,FAILURE,ACTIVE,2025-04-29T16:02Z,2025-04-29T18:00Z,2025-04-29T16:02Z/2025-04-29T18:00Z/790/125,-
+EDF-05470_EDF_T_00216582,16,2025-04-29T16:14Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-05-02T17:30Z,2025-04-25T08:00Z/2025-05-02T17:30Z/367/548,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EDF-05470_EDF_T_00217711,2,2025-04-29T17:21Z,17W100P100P0148D,ST LAURENT 2,915,UNPLANNED,FAILURE,INACTIVE,2025-04-29T16:02Z,2025-04-29T17:19Z,2025-04-29T16:02Z/2025-04-29T17:19Z/790/125,-
+EC-EDF-05470-EDF-T-00081166,18,2025-04-29T19:15Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:30Z,2025-04-30T13:00Z,2025-01-31T23:30Z/2025-04-30T13:00Z/0/905,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 181 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 181 MW."
+EDF-05470_EDF_T_00216995,6,2025-04-30T05:20Z,17W100P100P03639,FLAMANVILLE 3,1620,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T06:00Z,2025-05-02T22:00Z,2025-04-28T06:00Z/2025-05-02T22:00Z/435/1185,"Essais prévus avec variation de puissance
+-------
+Tests runs with load variations"
+EDF-05470_EDF_T_00217046,6,2025-04-30T05:36Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-28T09:00Z,2025-05-02T23:00Z,2025-04-28T09:00Z/2025-05-02T23:00Z/780/110,"Remontée par paliers en cours - prochain palier : 860 MW
+Palier à 781 MW : 90h - Montée à 860 MW : 6h 
+Les durées indiquées peuvent varier en fonction de l'évolution de paramètres techniques
+---
+Unit is currently ramping up by steps - next step : 860 MW
+Threshold at 781 MW : 90h - Ramp-up to 860 MW : 6h 
+The indicated duration could be reassessed according to technical analysis."
+EDF-05470_EDF_T_00217817,1,2025-04-30T06:49Z,17W100P100P0144L,PENLY 2,1330,PLANNED,FORESEEN_MAINTENANCE,ACTIVE,2025-05-03T08:00Z,2025-05-03T12:00Z,2025-05-03T08:00Z/2025-05-03T12:00Z/0/1330,-
+EDF-05470_EDF_T_00217699,2,2025-04-30T07:10Z,17W100P100P0149B,TRICASTIN 1,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-30T21:00Z,2025-05-04T16:00Z,2025-04-30T21:00Z/2025-05-04T16:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient.
+La durée minimale d'arrêt est de 24h.
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions.
+The duration of the outage will be a least of 24 hours."
+EDF-05470_EDF_T_00217845,1,2025-04-30T07:34Z,17W100P100P0113W,CIVAUX 1,1495,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-30T18:00Z,2025-05-05T05:00Z,2025-04-30T18:00Z/2025-05-05T05:00Z/1495/0,"Tranche maintenue couplée sans imposition de puissance
+---------------
+Plant maintained in operation without imposed power step"
+EDF-05470_EDF_T_00216582,17,2025-04-30T08:59Z,17W100P100P0116Q,CRUAS 2,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-25T08:00Z,2025-05-03T01:30Z,2025-04-25T08:00Z/2025-05-03T01:30Z/367/548,"Remontée par paliers en cours
+Prochain palier : 781 MW
+--------
+Unit is currently ramping up by steps
+Next step : 781 MW."
+EC-EDF-05470-EDF-T-00081166,19,2025-04-30T10:29Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-01-31T23:30Z,2025-04-30T22:00Z,2025-01-31T23:30Z/2025-04-30T22:00Z/0/905,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Premier palier à atteindre : 181 MW.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+First threshold after restart : 181 MW."
+EDF-05470_EDF_T_00217874,1,2025-04-30T13:15Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-05-01T07:00Z,2025-05-01T16:00Z,2025-05-01T07:00Z/2025-05-01T16:00Z/436/474,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00217875,1,2025-04-30T13:17Z,17W100P100P0093C,BLAYAIS 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-05-01T00:45Z,2025-05-04T18:00Z,2025-05-01T00:45Z/2025-05-04T18:00Z/0/910,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00217874,2,2025-04-30T13:19Z,17W100P100P0092E,BLAYAIS 1,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-05-01T07:00Z,2025-05-01T16:00Z,2025-05-01T07:00Z/2025-05-01T16:00Z/436/474,"Essai à puissance stable.
+Le niveau de puissance pourra être réinterrogé si les conditions économiques le justifient.
+--------
+Test at stable power.
+The power level will be reassessed depending on economic conditions."
+EDF-05470_EDF_T_00217877,1,2025-04-30T13:20Z,17W100P100P0146H,ST ALBAN 2,1335,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-05-01T01:45Z,2025-05-02T14:30Z,2025-05-01T01:45Z/2025-05-02T14:30Z/0/1335,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EC-EDF-05470-EDF-T-00058451,14,2025-04-30T15:20Z,17W100P100P00966,BUGEY 2,910,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-02-21T22:30Z,2025-05-12T22:00Z,2025-02-21T22:30Z/2025-05-12T22:00Z/0/910,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+Early restart, subject to TSO agreement."
+EDF-05470_EDF_T_00217891,1,2025-04-30T15:27Z,17W100P100P0130W,GRAVELINES 1,910,UNPLANNED,FAILURE,ACTIVE,2025-04-30T15:25Z,2025-04-30T17:30Z,2025-04-30T15:25Z/2025-04-30T17:30Z/670/240,-
+EDF-05470_EDF_T_00217516,2,2025-04-30T15:32Z,17W100P100P0118M,CRUAS 3,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-29T01:00Z,2025-05-04T17:00Z,2025-04-29T01:00Z/2025-05-04T17:00Z/0/915,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés et la tranche sera redémarrée si les conditions économiques le justifient
+--------
+The planning and duration of this unavailability for modulation supply will be reassessed and the plant will be restarted depending on economic conditions."
+EDF-05470_EDF_T_00217891,2,2025-04-30T15:44Z,17W100P100P0130W,GRAVELINES 1,910,UNPLANNED,FAILURE,INACTIVE,2025-04-30T15:25Z,2025-04-30T15:43Z,2025-04-30T15:25Z/2025-04-30T15:43Z/670/240,-
+EC-EDF-05470-EDF-T-00167103,5,2025-04-30T17:54Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-06-26T22:00Z,2025-06-27T22:00Z,2025-06-26T22:00Z/2025-06-27T22:00Z/0/890,"Le placement et la durée de cet arrêt pour modulation seront réinterrogés si les conditions économiques le justifient. https://doaat.edf.fr/message/edf-2024-00277
+Déplacement et réduction d'arrêt, sous réserve d'accord du gestionnaire de réseau de transport
+-------
+The planning and duration of this unavailability for modulation supply will be reassessed for economic reasons. https://doaat.edf.fr/message/edf-2024-00278
+New placement and duration, subject to TSO agreement"
+EC-EDF-05470-EDF-T-00066673,9,2025-04-30T17:56Z,17W100P100P0120Z,DAMPIERRE 1,890,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-06-27T22:00Z,2025-09-30T22:00Z,2025-06-27T22:00Z/2025-09-30T22:00Z/0/890,"After its restart, the plant will gradually return by various load thresholds to full power. The ramp-up period will take at least 48 hours.Outage duration may be extended :  https://doaat.edf.fr/message/edf-2023-00231
+-------------------------------------
+Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance. La remontée durera au moins 48h.Arrêt susceptible d'être prolongé :  https://doaat.edf.fr/message/edf-2023-00230"
+EDF-05470_EDF_T_00217911,1,2025-04-30T21:53Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-30T22:00Z,2025-05-03T20:00Z,2025-04-30T22:00Z/2025-05-03T20:00Z/10/895,"Remontée par paliers en cours
+Prochain palier : 181MW
+--------
+Unit is currently ramping up by steps
+Next step : 181 MW."
+EDF-05470_EDF_T_00217912,1,2025-04-30T22:30Z,17W100P100P0106T,CHINON 1,905,UNPLANNED,FAILURE,ACTIVE,2025-04-30T22:25Z,2025-04-30T23:25Z,2025-04-30T22:25Z/2025-04-30T23:25Z/0/905,-
+EDF-05470_EDF_T_00217911,2,2025-04-30T22:31Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-30T23:25Z,2025-05-03T21:25Z,2025-04-30T23:25Z/2025-05-03T21:25Z/10/895,"Remontée par paliers en cours
+Prochain palier : 181MW
+--------
+Unit is currently ramping up by steps
+Next step : 181 MW."
+EDF-05470_EDF_T_00217914,1,2025-04-30T23:24Z,17W100P100P0103Z,CATTENOM 2,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2025-04-30T23:22Z,2025-05-01T23:22Z,2025-04-30T23:22Z/2025-05-01T23:22Z/330/970,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00217911,3,2025-04-30T23:38Z,17W100P100P0106T,CHINON 1,905,PLANNED,COMPLEMENTARY_INFORMATION,DISMISSED,2025-04-30T23:25Z,2025-05-03T21:25Z,2025-04-30T23:25Z/2025-05-03T21:25Z/10/895,"Remontée par paliers en cours
+Prochain palier : 181MW
+--------
+Unit is currently ramping up by steps
+Next step : 181 MW."
+EDF-05470_EDF_T_00217914,2,2025-04-30T23:47Z,17W100P100P0103Z,CATTENOM 2,1300,UNPLANNED,COMPLEMENTARY_INFORMATION,INACTIVE,2025-04-30T23:22Z,2025-04-30T23:45Z,2025-04-30T23:22Z/2025-04-30T23:45Z/330/970,"La durée indiquée de l'indisponibilité correspond à une durée forfaitaire de 24h, évaluée sur la base du retour d'expérience sur le parc nucléaire.
+Une nouvelle version sera publiée en fonction des diagnostics et des analyses qui seront réalisés.
+--------
+The duration of the unavailability is a pre-defined 24 hours period, assessed on the basis of the nuclear fleet feedback
+A new version will be published according to diagnostic and technical instruction."
+EDF-05470_EDF_T_00217912,2,2025-04-30T23:59Z,17W100P100P0106T,CHINON 1,905,UNPLANNED,FAILURE,ACTIVE,2025-04-30T22:25Z,2025-05-01T00:30Z,2025-04-30T22:25Z/2025-05-01T00:30Z/0/905,-

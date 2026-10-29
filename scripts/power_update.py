@@ -48,7 +48,7 @@ def run():
         client = RteClient(api="unavailability", pause_seconds=1)
         newest = latest_publication()
         start = (newest - timedelta(hours=2)) if newest else now - timedelta(days=3)
-        rows, _ = fetch_notices(client, start, now + timedelta(minutes=5))
+        rows, _ = fetch_notices(client, start, now - timedelta(minutes=1))  # RTE rejects end dates in the future
         print(f"Nuclear notices: {upsert_notices(rows)} rows added or changed")
         state["notices_fetched_to_utc"] = fmt_utc(now)
     except Exception as error:

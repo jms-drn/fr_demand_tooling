@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-10-29T21:16Z",
+ "generated_utc": "2026-10-29T21:17Z",
  "series": {
   "realised": {
    "months": [
@@ -695,13 +695,13 @@
    "last_utc": "2026-11-07T22:30Z"
   }
  },
- "last_live_update_utc": "2026-10-29T21:16Z",
+ "last_live_update_utc": "2026-10-29T21:17Z",
  "last_backfill_utc": "2026-10-26T15:47Z",
  "last_errors": [],
  "power": {
-  "updated_utc": null,
+  "updated_utc": "2026-10-29T21:17Z",
   "errors": [
-   "power update: No module named 'numpy'"
+   "notices: HTTP 400 for generation_unavailabilities {'fuel_type': 'NUCLEAR', 'date_type': 'PUBLICATION_DATE', 'start_date': '2026-10-29T16:07:00Z', 'end_date': '2026-10-29T21:22:28Z'}: {\"error\":\"UNADINFO_GENUN_F02\",\"error_description\":\"The value of \\\"end_date\\\" field is incorrect. Publication dates must be in the past.\"}"
   ]
  }
 }

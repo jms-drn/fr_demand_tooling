@@ -7,26 +7,23 @@
 | Tab | What it shows |
 |---|---|
 | **Today** | Actual demand against RTE's intraday, D-1 and D-2 forecasts, with optional same-weekday references from earlier years |
-| **Explorer** | Any period from Dec 2012 at 15-minute to monthly resolution; average, peak, minimum or energy; comparisons with last year, the average of the previous N years and their min–max range (each toggled), aligned by calendar date or weekday; public holidays marked or excluded; average daily profile view |
-| **Forecast accuracy** | D-1, D-2 and week-ahead (3–9 days) error over time, by lead time, by weekday, by hour and season, and the biggest misses |
-| **Outlook** | The next 10 days (D-1, D-2, latest week-ahead), week-ahead peaks with RTE's temperature assumptions, and RTE's annual forecast and supply margin against actual demand |
+| **Explorer** | Any period from Dec 2012 at 15-minute to monthly resolution; average, peak, minimum or energy. Periods can run past today into RTE's forecasts (to the end of the week-ahead horizon), with a projection for the whole period. Comparisons with last year, the average of the previous 2–5 years and their min–max range (each toggled), aligned by calendar date or weekday; difference view in % or GW; public holidays marked or excluded; event markers; average daily (diurnal) profile; ranking of the period across every year since 2013 |
+| **Forecast accuracy** | D-1, D-2 and week-ahead (3–9 days) error over time, by lead time, weekday, hour and season, distribution of daily errors, and the biggest misses |
+| **Outlook** | Next 10 days (actual, intraday, D-1, D-2, latest week-ahead) with a timeline of which forecast covers which day, week-ahead peaks with RTE's temperature assumptions, RTE's annual forecast range against actual weekly peaks and minimums, and the year-ahead supply margin by year |
 
-On every chart: hover for values, drag across the chart to zoom, double-click to reset; the legend shows each series' average for the period in view and hides or shows series; PNG and CSV export the chart and the data in view. The address bar stores the settings, so links can be shared.
+On every chart: hover for values, drag across the chart to zoom (overview strip on the main charts), double-click to reset; the legend shows each series' average for the period in view and hides or shows series; PNG (with source footer), copy-to-clipboard and CSV export. The address bar stores the settings, so links can be shared. The Display menu offers dark/light mode, seven line colour schemes (including high contrast and colour-blind safe), line thickness and data-point markers. "What's new" lists every version; "About the data" has a glossary.
 
-The site is static (GitHub Pages) and reads the CSV files below. Code: `index.html`, `style.css`, `js/` (ECharts 5.6 is included in `js/vendor/`).
-
-Data source: RTE consumption API (user guide v2.2). Figures cover mainland France, include grid losses and exclude pumping consumption at hydropower plants. Values are average power over each interval, in MW.
+The site is static (GitHub Pages) and reads the CSV files below. Code: `index.html`, `style.css`, `js/` (ECharts 5.6 is included in `js/vendor/`). Site settings, including the refresh service address, are in `js/config.js`; the version history is in `js/changelog.js`.
 
 ## How the data is collected
 
-| Workflow | When | What it does |
+| Process | When | What it does |
 |---|---|---|
-| **Update RTE data (hourly)** | Every hour at :17 UTC, or by hand | Fetches the latest actuals and forecasts, re-checks the past 7 days, fetches week-ahead and annual forecasts, rebuilds the summaries |
+| **Refresh service** (Cloudflare Worker, `worker/`) | Every 15 minutes, and when someone presses Refresh (at most every 5 minutes) | Starts the *Update RTE data* workflow; also serves the latest RTE data directly to the Refresh button. Setup: [`worker/SETUP.md`](worker/SETUP.md) |
+| **Update RTE data** (GitHub workflow) | When started by the refresh service, hourly as a backup, or by hand | Fetches the latest actuals and forecasts, re-checks the past 7 days, fetches week-ahead and annual forecasts, rebuilds the summaries. Safe to re-run |
 | **Backfill RTE history (one-off)** | By hand only | Fetches history in chunks (from 17 Dec 2012 for actuals/D-1/D-2). Safe to re-run |
 
-Both run on GitHub Actions using the `RTE_CLIENT_ID` and `RTE_CLIENT_SECRET` repository secrets. They never run at the same time.
-
-To run the backfill: **Actions** tab → **Backfill RTE history (one-off)** → **Run workflow**.
+The workflows use the `RTE_CLIENT_ID` and `RTE_CLIENT_SECRET` repository secrets and never run at the same time. The site checks for new data every two minutes.
 
 ## Data files
 
@@ -59,4 +56,3 @@ All times are stored in UTC (`2026-10-23T22:00Z`). Files are split by month in P
 - **Actuals** are overwritten when RTE revises them; the hourly run re-checks the last 7 days.
 - The undocumented `CORRECTED` block sometimes returned by the API is ignored.
 
-Data updates run every 30 minutes; GitHub can delay or skip scheduled runs, and each run re-checks the past 7 days.

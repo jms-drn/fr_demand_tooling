@@ -3,19 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="French electricity demand: live data, comparisons with past periods, forecast accuracy and outlook, from RTE data.">
   <title>France Power Demand Intelligence</title>
+  <meta name="description" content="French electricity demand from RTE data: live demand and forecasts, history since 2012 compared with earlier years, forecast accuracy and the outlook.">
+  <meta name="theme-color" content="#0b1220">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="France Power Demand Intelligence">
+  <meta property="og:title" content="France Power Demand Intelligence">
+  <meta property="og:description" content="Live French electricity demand, history since 2012, forecast accuracy and outlook, from RTE data.">
+  <meta property="og:url" content="https://jms-drn.github.io/fr_demand_tooling/">
+  <meta property="og:image" content="https://jms-drn.github.io/fr_demand_tooling/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jms-drn.github.io/fr_demand_tooling/og-image.png">
 
   <script>
+    // Apply the saved theme before anything draws, to avoid a flash.
     try {
-      const saved = localStorage.getItem("theme");
-      if (saved === "light" || saved === "dark") document.documentElement.dataset.theme = saved;
+      const saved = JSON.parse(localStorage.getItem("display") || "{}");
+      const theme = saved.theme || localStorage.getItem("theme");
+      if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
     } catch (error) {}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="js/vendor/echarts.min.js"></script>
 </head>
@@ -26,15 +44,27 @@
       <div class="header-row">
         <a class="brand" href="#today" aria-label="France Power Demand Intelligence, home">
           <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-          <p class="brand-name">France Power <em>Demand Intelligence</em></p>
+          <span class="brand-text">
+            <span class="brand-name">France Power <em>Demand Intelligence</em></span>
+            <span class="byline">by jms-drn</span>
+          </span>
         </a>
 
         <div class="header-actions">
-          <span class="status-pill" title="Time of the latest data update">
+          <span class="status-pill" id="status-pill" title="Time of the latest data (Paris time)">
             <span id="status-dot" class="status-dot"></span>
             <span id="status-text" class="status-text">Loading…</span>
           </span>
-          <button id="theme-toggle" class="btn" type="button">Light mode</button>
+          <button id="refresh" class="btn" type="button" title="Get the latest data from RTE">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4"/></svg>
+            <span>Refresh</span>
+          </button>
+          <button id="whats-new" class="btn ghost" type="button">What's new<span class="new-dot" hidden></span></button>
+          <div class="menu">
+            <button id="display-button" class="btn ghost" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="display-menu">Display <span aria-hidden="true">▾</span></button>
+            <div id="display-menu" class="popover" hidden></div>
+          </div>
+          <a class="btn ghost projects" href="https://github.com/jms-drn" target="_blank" rel="noopener">Other projects <span aria-hidden="true">↗</span></a>
         </div>
       </div>
 
@@ -55,12 +85,25 @@
 
     <footer>
       <div>
-        Data: RTE consumption API. Mainland France, including grid losses, excluding hydro pumping.
-        Times in Europe/Paris.
+        <b>France Power Demand Intelligence</b> <span class="muted">v<span data-version></span></span><br>
+        Data: RTE consumption API. Mainland France, including grid losses, excluding hydro pumping. Times in Europe/Paris.
       </div>
-      <div><a href="https://github.com/jms-drn/fr_demand_tooling" target="_blank" rel="noopener">Methodology and data files</a></div>
+      <div class="footer-links">
+        <button class="link" type="button" data-open="about">About the data</button>
+        <button class="link" type="button" data-open="whatsnew">What's new</button>
+        <a href="https://github.com/jms-drn/fr_demand_tooling" target="_blank" rel="noopener">Data files and code</a>
+      </div>
     </footer>
   </main>
+
+  <div class="drawer-backdrop" hidden></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+    <div class="drawer-head">
+      <h2 id="drawer-title"></h2>
+      <button class="btn ghost" type="button" data-close aria-label="Close">Close</button>
+    </div>
+    <div class="drawer-body"></div>
+  </aside>
 
   <script type="module" src="js/main.js"></script>
 </body>

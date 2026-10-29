@@ -1,13 +1,13 @@
-name: Update RTE data (hourly)
+name: Update RTE data
 
-# Scheduled every 30 minutes (at :07 and :37 UTC). GitHub delays or skips
-# scheduled runs when it is busy, so running twice an hour keeps the data
-# fresh even when some runs are dropped; each run also re-checks the past
-# 7 days, so a missed run loses nothing. Can be started by hand from the
-# Actions tab ("Run workflow"); re-running an old run is also safe.
+# Normally started every 15 minutes by the Cloudflare refresh service
+# (worker/SETUP.md) and by the site's Refresh button. GitHub's own schedule
+# below is an hourly backup: GitHub delays or skips many scheduled runs.
+# Each run also re-checks the past 7 days, so a missed run loses nothing.
+# Can be started by hand from the Actions tab; re-running an old run is safe.
 on:
   schedule:
-    - cron: "7,37 * * * *"
+    - cron: "47 * * * *"
   workflow_dispatch:
 
 permissions:

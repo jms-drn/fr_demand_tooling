@@ -1,44 +1,29 @@
-// Explorer: actual demand for any period at 15-minute to monthly resolution,
-// compared with the same period in earlier years, plus a daily-profile view.
+// Explorer: demand for any period since Dec 2012 at 15-minute to monthly
+// resolution, extended with RTE's forecasts up to the week-ahead horizon,
+// compared with the same period in earlier years. Also: daily (diurnal)
+// profile, difference view, ranking of the period across years, events.
 
 import { ChartPanel } from "./chart.js";
-import { getDaily, getRange } from "./data.js";
+import { bestForecast, getDaily, getLatest, getRange, horizonDate, latestSeries, parseUtc } from "./data.js";
+import { eventsBetween } from "./events.js";
 import {
-  csvDate, csvDateTime, DAY, HOUR, QUARTER, addDays, alignDate, dateKey, dateRange, daysBetween, el, fmtDate, fmtDateTime,
-  fmtDayTime, fmtGW, fmtLongDate, fmtMonth, fmtNumber, fmtPct, holidayName, parisMidnight, timeKey,
-  todayParis, weekStart, writeHash
+  HOUR, QUARTER, addDays, alignDate, copyText, csvDate, csvDateTime, dateKey, dateRange, daysBetween,
+  fmtDate, fmtDateTime, fmtGW, fmtFromTo, fmtLongDate, fmtMonth, fmtNumber, fmtPct, fmtPeriod, fmtShortDate,
+  fmtTime, heroHtml, holidayName, hoursInDay, ordinal, parisMidnight, timeKey, todayParis, weekStart, writeHash
 } from "./util.js";
 
 const RES_LABEL = { "15m": "15-minute", "1h": "hourly", "1d": "daily", "1w": "weekly", "1M": "monthly" };
+const MEASURE_LABEL = { mean: "Average demand", max: "Peak demand", min: "Minimum demand", energy: "Energy consumed" };
 const MAX_15M_DAYS = 366;
 const MAX_1H_DAYS = 1100;
 const MAX_PROFILE_DAYS = 366;
-
-function presetRange(preset, today) {
-  const y = today.slice(0, 4);
-  switch (preset) {
-    case "mtd": return [`${today.slice(0, 7)}-01`, today];
-    case "ytd": return [`${y}-01-01`, today];
-    case "last7": return [addDays(today, -6), today];
-    case "last30": return [addDays(today, -29), today];
-    case "last365": return [addDays(today, -364), today];
-    case "lastmonth": {
-      const firstThis = `${today.slice(0, 7)}-01`;
-      const lastPrev = addDays(firstThis, -1);
-      return [`${lastPrev.slice(0, 7)}-01`, lastPrev];
-    }
-    case "lastyear": return [`${Number(y) - 1}-01-01`, `${Number(y) - 1}-12-31`];
-    default: return null;
-  }
-}
+const FIRST_DATE = "2012-12-17";
 
 function defaults() {
-  const today = todayParis();
-  const [from, to] = presetRange("mtd", today);
   return {
-    preset: "mtd", from, to, res: "1d", measure: "mean",
-    ly: "1", avg: "1", band: "0", n: "3", align: "cal",
-    hol: "off", profile: "0", d1: "0", d2: "0"
+    preset: "mtd", from: "", to: "", res: "1d", measure: "mean",
+    ly: "1", avg: "1", band: "0", n: "3", align: "cal", hol: "off",
+    profile: "0", d1: "0", d2: "0", fc: "1", ev: "0", view: "abs", ref: "avg"
   };
 }
 
@@ -46,109 +31,154 @@ export class Explorer {
   constructor(root) {
     this.root = root;
     this.state = defaults();
+    this.status = null;
     this.renderId = 0;
     this.build();
+  }
+
+  setStatus(status) {
+    this.status = status;
+    const horizon = this.horizon();
+    for (const input of this.root.querySelectorAll('input[type="date"]')) input.max = horizon;
+    if (this.state.preset !== "custom") this.applyPreset();
+  }
+
+  horizon() {
+    return this.status ? horizonDate(this.status) : todayParis();
+  }
+
+  presetRange(preset) {
+    const today = todayParis();
+    const y = Number(today.slice(0, 4));
+    const monthStart = `${today.slice(0, 7)}-01`;
+    const monthEnd = addDays(`${addDays(monthStart, 32).slice(0, 7)}-01`, -1);
+    switch (preset) {
+      case "mtd": return [monthStart, today];
+      case "mfc": return [monthStart, monthEnd < this.horizon() ? monthEnd : this.horizon()];
+      case "ahead": return [addDays(today, -6), this.horizon()];
+      case "last7": return [addDays(today, -6), today];
+      case "last30": return [addDays(today, -29), today];
+      case "ytd": return [`${y}-01-01`, today];
+      case "last365": return [addDays(today, -364), today];
+      case "lastmonth": {
+        const last = addDays(monthStart, -1);
+        return [`${last.slice(0, 7)}-01`, last];
+      }
+      case "lastyear": return [`${y - 1}-01-01`, `${y - 1}-12-31`];
+      default: return null;
+    }
+  }
+
+  applyPreset() {
+    const range = this.presetRange(this.state.preset);
+    if (range) [this.state.from, this.state.to] = range;
+    this.syncControls();
   }
 
   setParams(params) {
     const state = defaults();
     for (const key of Object.keys(state)) if (params.has(key)) state[key] = params.get(key);
-    if (state.preset !== "custom") {
-      const range = presetRange(state.preset, todayParis());
-      if (range) [state.from, state.to] = range;
-    }
     this.state = state;
+    if (state.preset !== "custom" || !state.from) this.applyPreset();
     this.syncControls();
   }
 
   // ---------- UI ----------
 
+  chip(key, label, colour) {
+    return `<button class="chip" type="button" data-chip="${key}" style="color:var(${colour})"><span class="swatch"></span><span class="chip-label">${label}</span></button>`;
+  }
+
   build() {
     this.root.innerHTML = `
+      ${heroHtml("Explore demand,", "since 2012.", "Demand for any period since December 2012, from 15-minute detail to monthly averages, compared with the same period in earlier years. Periods can run into RTE's forecasts, and Daily profile shows the average shape of a day across any period.")}
       <div class="toolbar" role="group" aria-label="Explorer settings">
-        <label class="field"><span>Period</span>
-          <select data-k="preset">
-            <option value="mtd">Month to date</option>
-            <option value="lastmonth">Last month</option>
-            <option value="last7">Last 7 days</option>
-            <option value="last30">Last 30 days</option>
-            <option value="ytd">Year to date</option>
-            <option value="last365">Last 365 days</option>
-            <option value="lastyear">Last calendar year</option>
-            <option value="custom">Custom</option>
-          </select>
-        </label>
-        <label class="field"><span>From</span><input type="date" data-k="from" min="2012-12-17"></label>
-        <label class="field"><span>To</span><input type="date" data-k="to" min="2012-12-17"></label>
-        <label class="field"><span>Resolution</span>
-          <select data-k="res">
-            <option value="15m">15 minutes</option>
-            <option value="1h">Hourly</option>
-            <option value="1d">Daily</option>
-            <option value="1w">Weekly</option>
-            <option value="1M">Monthly</option>
-          </select>
-        </label>
-        <label class="field"><span>Measure</span>
-          <select data-k="measure">
-            <option value="mean">Average (GW)</option>
-            <option value="max">Peak (GW)</option>
-            <option value="min">Minimum (GW)</option>
-            <option value="energy">Energy</option>
-          </select>
-        </label>
-        <span class="divider"></span>
-        <div class="field"><span>Compare with</span>
-          <div class="chips">
-            <button class="chip" type="button" data-chip="ly" style="color:var(--s-ly)"><span class="swatch"></span><span style="color:var(--text-soft)">Last year</span></button>
-            <button class="chip" type="button" data-chip="avg" style="color:var(--s-avg)"><span class="swatch"></span><span style="color:var(--text-soft)">Average of previous</span></button>
-            <select data-k="n" aria-label="Number of previous years" style="height:32px">
-              <option value="2">2 years</option><option value="3">3 years</option><option value="4">4 years</option><option value="5">5 years</option>
+        <div class="toolbar-row">
+          <label class="field"><span>Period</span>
+            <select data-k="preset">
+              <option value="mtd">Month to date</option>
+              <option value="mfc">This month, with forecast</option>
+              <option value="ahead">Last 7 days and next 9</option>
+              <option value="lastmonth">Last month</option>
+              <option value="last7">Last 7 days</option>
+              <option value="last30">Last 30 days</option>
+              <option value="ytd">Year to date</option>
+              <option value="last365">Last 365 days</option>
+              <option value="lastyear">Last calendar year</option>
+              <option value="custom">Custom</option>
             </select>
-            <button class="chip" type="button" data-chip="band" style="color:var(--s-avg)"><span class="swatch"></span><span style="color:var(--text-soft)">Min–max range</span></button>
-          </div>
+          </label>
+          <label class="field"><span>From</span><input type="date" data-k="from" min="${FIRST_DATE}"></label>
+          <label class="field"><span>To</span><input type="date" data-k="to" min="${FIRST_DATE}"></label>
+          <label class="field"><span>Resolution</span>
+            <select data-k="res">
+              <option value="15m">15 minutes</option><option value="1h">Hourly</option><option value="1d">Daily</option>
+              <option value="1w">Weekly</option><option value="1M">Monthly</option>
+            </select>
+          </label>
+          <label class="field"><span>Measure</span>
+            <select data-k="measure">
+              <option value="mean">Average (GW)</option><option value="max">Peak (GW)</option>
+              <option value="min">Minimum (GW)</option><option value="energy">Energy</option>
+            </select>
+          </label>
+          <label class="field"><span>Show</span>
+            <select data-k="view">
+              <option value="abs">Values</option><option value="pct">Difference (%)</option><option value="gw">Difference (GW)</option>
+            </select>
+          </label>
+          <label class="field" data-ref-field><span>Difference vs</span>
+            <select data-k="ref"><option value="avg">Earlier-years average</option><option value="ly">Last year</option></select>
+          </label>
         </div>
-        <label class="field"><span>Align by</span>
-          <select data-k="align">
-            <option value="cal">Calendar date</option>
-            <option value="wd">Weekday</option>
-          </select>
-        </label>
-        <label class="field"><span>Public holidays</span>
-          <select data-k="hol">
-            <option value="off">Ignore</option>
-            <option value="mark">Mark</option>
-            <option value="excl">Mark and exclude</option>
-          </select>
-        </label>
-        <span class="divider"></span>
-        <div class="field"><span>Forecasts</span>
-          <div class="chips">
-            <button class="chip" type="button" data-chip="d1" style="color:var(--s-d1)"><span class="swatch"></span><span style="color:var(--text-soft)">D-1</span></button>
-            <button class="chip" type="button" data-chip="d2" style="color:var(--s-d2)"><span class="swatch"></span><span style="color:var(--text-soft)">D-2</span></button>
+        <div class="toolbar-row">
+          <div class="field"><span>Compare with</span>
+            <div class="chips">
+              ${this.chip("ly", "Last year", "--s-ly")}
+              ${this.chip("avg", "Average of previous", "--s-avg")}
+              <select data-k="n" aria-label="Number of previous years" class="compact">
+                <option value="2">2 years</option><option value="3">3 years</option><option value="4">4 years</option><option value="5">5 years</option>
+              </select>
+              ${this.chip("band", "Min–max range", "--s-avg")}
+            </div>
           </div>
-        </div>
-        <div class="field"><span>View</span>
-          <div class="chips">
-            <button class="chip" type="button" data-chip="profile" style="color:var(--accent)"><span class="swatch"></span><span style="color:var(--text-soft)">Daily profile</span></button>
+          <label class="field"><span>Align by</span>
+            <select data-k="align"><option value="cal">Calendar date</option><option value="wd">Weekday</option></select>
+          </label>
+          <label class="field"><span>Public holidays</span>
+            <select data-k="hol"><option value="off">Ignore</option><option value="mark">Mark</option><option value="excl">Mark and exclude</option></select>
+          </label>
+          <div class="field"><span>Overlays</span>
+            <div class="chips">
+              ${this.chip("fc", "Forecast ahead", "--s-fcst")}
+              ${this.chip("d1", "D-1", "--s-d1")}
+              ${this.chip("d2", "D-2", "--s-d2")}
+              ${this.chip("ev", "Events", "--muted")}
+            </div>
+          </div>
+          <div class="field"><span>View</span>
+            <div class="chips">${this.chip("profile", "Daily profile", "--accent")}</div>
           </div>
         </div>
       </div>
-      <p class="headline" data-headline>Loading…</p>
-      <div class="cards" data-cards></div>
-      <div data-chart></div>`;
+      <div class="headline"><p data-headline>Loading…</p><button class="btn ghost small" type="button" data-copy title="Copy this sentence">Copy</button></div>
+      <p class="explain" data-explain hidden></p>
+      <div class="cards" data-cards>${'<div class="card skeleton"></div>'.repeat(5)}</div>
+      <div data-chart></div>
+      <div data-rank></div>`;
 
     this.headline = this.root.querySelector("[data-headline]");
+    this.explain = this.root.querySelector("[data-explain]");
     this.cards = this.root.querySelector("[data-cards]");
-    this.panel = new ChartPanel(this.root.querySelector("[data-chart]"), { title: "Demand", size: "tall" });
+    this.panel = new ChartPanel(this.root.querySelector("[data-chart]"), { title: "Demand", size: "tall", overview: true });
+    this.rankPanel = new ChartPanel(this.root.querySelector("[data-rank]"), { title: "The same period in every year", size: "short" });
+    this.root.querySelector("[data-copy]").addEventListener("click", () => copyText(this.headline.textContent));
 
     this.root.querySelectorAll("[data-k]").forEach(input => {
       input.addEventListener("change", () => {
         const key = input.dataset.k;
         this.state[key] = input.value;
-        if (key === "preset" && input.value !== "custom") {
-          [this.state.from, this.state.to] = presetRange(input.value, todayParis());
-        }
+        if (key === "preset" && input.value !== "custom") this.applyPreset();
         if (key === "from" || key === "to") this.state.preset = "custom";
         if (this.state.from > this.state.to) [this.state.from, this.state.to] = [this.state.to, this.state.from];
         this.syncControls();
@@ -173,138 +203,203 @@ export class Explorer {
     this.root.querySelectorAll("[data-k]").forEach(input => { input.value = s[input.dataset.k]; });
     this.root.querySelectorAll("[data-chip]").forEach(chip => chip.setAttribute("aria-pressed", s[chip.dataset.chip] === "1"));
     const profile = s.profile === "1";
+    const diff = s.view !== "abs";
     this.root.querySelector('[data-k="measure"]').disabled = profile || ["15m", "1h"].includes(s.res);
-    this.root.querySelector('[data-chip="d1"]').disabled = profile;
-    this.root.querySelector('[data-chip="d2"]').disabled = profile;
-    this.root.querySelector('[data-k="n"]').disabled = s.avg !== "1" && s.band !== "1";
-    const today = todayParis();
-    this.root.querySelector('[data-k="from"]').max = today;
-    this.root.querySelector('[data-k="to"]').max = today;
+    this.root.querySelector('[data-k="view"]').disabled = profile;
+    this.root.querySelector("[data-ref-field]").classList.toggle("hidden", !diff || profile);
+    for (const key of ["d1", "d2"]) this.root.querySelector(`[data-chip="${key}"]`).disabled = profile || diff;
+    this.root.querySelector('[data-chip="fc"]').disabled = profile;
+    this.root.querySelector('[data-chip="ev"]').disabled = profile;
+    this.root.querySelector('[data-chip="band"]').disabled = diff;
+    this.root.querySelector('[data-k="n"]').disabled = s.avg !== "1" && s.band !== "1" && !(diff && s.ref === "avg");
   }
 
   activate() {
     this.update();
   }
 
-  // ---------- Data ----------
+  // ---------- Helpers ----------
 
   yearsNeeded() {
     const s = this.state;
     const n = Number(s.n);
-    return Math.max(s.ly === "1" ? 1 : 0, s.avg === "1" || s.band === "1" ? n : 0);
+    const diffAvg = s.view !== "abs" && s.ref === "avg";
+    const diffLy = s.view !== "abs" && s.ref === "ly";
+    return Math.max(s.ly === "1" || diffLy ? 1 : 0, s.avg === "1" || s.band === "1" || diffAvg ? n : 0);
   }
 
   excluded(date) {
     return this.state.hol === "excl" && holidayName(date) !== null;
   }
 
-  /** Load an aligned comparison year as Map("YYYY-MM-DD HH:MM" Paris -> MW). */
-  async comparisonLookup(k) {
-    const { from, to, align } = this.state;
-    const start = alignDate(from, k, align) ?? alignDate(addDays(from, 1), k, align);
-    const end = alignDate(to, k, align) ?? alignDate(addDays(to, -1), k, align);
+  multiYear() {
+    return this.state.from.slice(0, 4) !== this.state.to.slice(0, 4);
+  }
+
+  yearsLabel() {
+    const n = Number(this.state.n);
+    const y = Number(this.state.from.slice(0, 4));
+    return this.multiYear() ? `previous ${n} years` : `${y - n}–${String(y - 1).slice(-2)}`;
+  }
+
+  avgName() {
+    return this.multiYear() ? `Average of previous ${this.state.n} years` : `Average ${this.yearsLabel()}`;
+  }
+
+  lastYearName() {
+    return this.multiYear() ? "One year earlier" : `Last year (${Number(this.state.from.slice(0, 4)) - 1})`;
+  }
+
+  pick(stats) {
+    if (!stats) return null;
+    const m = this.state.measure;
+    return m === "mean" ? stats.mean : m === "max" ? stats.max : m === "min" ? stats.min : stats.energy;
+  }
+
+  // ---------- Data ----------
+
+  /** Last published actual interval (archive or live refresh). */
+  async lastActualMs() {
+    const latest = await getLatest();
+    const live = [...latestSeries(latest, "REALISED").keys()];
+    const archived = parseUtc(this.status?.series?.realised?.last_utc) ?? -Infinity;
+    return Math.max(archived, ...live);
+  }
+
+  /** Actual 15-minute values (archive plus live) between two dates. */
+  async actualIntervals(from, to) {
+    const [arch, latest] = await Promise.all([getRange("realised", from, to), getLatest()]);
+    const out = new Map(arch);
+    for (const [x, v] of latestSeries(latest, "REALISED")) {
+      const d = dateKey(x);
+      if (d >= from && d <= to) out.set(x, v);
+    }
+    return out;
+  }
+
+  static statsFrom(points, kind) {
+    const values = points.map(p => p[1]);
+    const mean = values.reduce((a, b) => a + b, 0) / values.length;
+    let peak = points[0];
+    let low = points[0];
+    for (const p of points) { if (p[1] > peak[1]) peak = p; if (p[1] < low[1]) low = p; }
+    return { mean, max: peak[1], min: low[1], peakAt: peak[0], minAt: low[0], kind };
+  }
+
+  /**
+   * Per-day statistics for the selected period: actual days from the daily
+   * summary, and for the last actual day onwards, actual intervals completed
+   * with RTE's forecast. Returns { days: Map(date -> stats), lastActual, ... }.
+   */
+  async periodDays() {
+    const s = this.state;
+    const [daily, lastActual] = await Promise.all([getDaily(), this.lastActualMs()]);
+    const lastDate = dateKey(lastActual);
+    // The forecast extension applies when the period runs past the last actual day.
+    const useForecast = s.fc === "1" && s.to > lastDate && s.profile !== "1";
+    const tailFrom = s.from > lastDate ? s.from : lastDate;
+    let tail = new Map();
+    let forecast = { values: new Map(), source: new Map() };
+
+    if (s.to >= lastDate) {
+      [tail, forecast] = await Promise.all([
+        this.actualIntervals(tailFrom, s.to),
+        useForecast ? bestForecast(tailFrom, s.to, lastActual) : forecast
+      ]);
+    }
+
+    const days = new Map();
+    for (const date of dateRange(s.from, s.to)) {
+      if (this.excluded(date)) continue;
+      const hours = hoursInDay(date);
+
+      if (date < lastDate) {
+        const r = daily.byDate.get(date);
+        if (r && r.mean_mw != null) {
+          days.set(date, {
+            mean: r.mean_mw, max: r.max_mw, min: r.min_mw, hours, kind: "actual",
+            energy: r.energy_gwh ?? r.mean_mw * hours / 1000,
+            peakText: `${fmtDate(parisMidnight(date) + 12 * HOUR)}, ${r.peak_time_paris}`,
+            minText: `${fmtDate(parisMidnight(date) + 12 * HOUR)}, ${r.min_time_paris}`
+          });
+        }
+        continue;
+      }
+
+      const start = parisMidnight(date);
+      const end = parisMidnight(addDays(date, 1));
+      const act = [];
+      const comb = [];
+      for (let x = start; x < end; x += QUARTER) {
+        const a = tail.get(x);
+        if (a != null) { act.push([x, a]); comb.push([x, a]); continue; }
+        const f = forecast.values.get(x);
+        if (f != null) comb.push([x, f]);
+      }
+      const expected = hours * 4;
+      let stats = null;
+      if (useForecast && comb.length > act.length && comb.length >= 0.9 * expected) stats = Explorer.statsFrom(comb, "forecast");
+      else if (act.length) stats = Explorer.statsFrom(act, act.length >= 0.9 * expected ? "actual" : "partial");
+      if (!stats) continue;
+      stats.hours = hours;
+      stats.energy = stats.mean * hours / 1000;
+      if (act.length) {
+        const a = Explorer.statsFrom(act, "actual");
+        stats.actual = a;
+        stats.peakText = fmtDateTime(a.peakAt);
+        stats.minText = fmtDateTime(a.minAt);
+      }
+      days.set(date, stats);
+    }
+
+    return { days, lastActual, lastDate, useForecast, forecast, tail, daily };
+  }
+
+  /** Earlier-year values for each date of the period: [k-1] -> Map(date -> value). */
+  comparisonDays(daily) {
+    const s = this.state;
+    const years = this.yearsNeeded();
+    const perYear = Array.from({ length: years }, () => new Map());
+    const perYearHours = Array.from({ length: years }, () => new Map());
+    for (const date of dateRange(s.from, s.to)) {
+      if (this.excluded(date)) continue;
+      for (let k = 1; k <= years; k++) {
+        const src = alignDate(date, k, s.align);
+        if (!src || this.excluded(src)) continue;
+        const r = daily.byDate.get(src);
+        if (!r || r.mean_mw == null) continue;
+        const v = this.pick({ mean: r.mean_mw, max: r.max_mw, min: r.min_mw, energy: r.energy_gwh ?? r.mean_mw * r.hours / 1000 });
+        if (v != null) { perYear[k - 1].set(date, v); perYearHours[k - 1].set(date, r.hours); }
+      }
+    }
+    return { perYear, perYearHours };
+  }
+
+  /** Earlier-year 15-minute values mapped onto this period's timeline. */
+  async comparisonIntervals(k) {
+    const s = this.state;
+    const start = alignDate(s.from, k, s.align) ?? alignDate(addDays(s.from, 1), k, s.align);
+    const end = alignDate(s.to, k, s.align) ?? alignDate(addDays(s.to, -1), k, s.align);
     const map = await getRange("realised", addDays(start, -1), addDays(end, 1));
     const sums = new Map();
     for (const [ms, mw] of map) {
       const key = `${dateKey(ms)} ${timeKey(ms)}`;
       const acc = sums.get(key);
-      // The repeated hour on the October clock change maps to one key: average it.
-      if (acc) { acc[0] += mw; acc[1] += 1; } else sums.set(key, [mw, 1]);
+      if (acc) { acc[0] += mw; acc[1] += 1; } else sums.set(key, [mw, 1]); // repeated October hour: average
     }
-    return new Map([...sums].map(([key, [sum, count]]) => [key, sum / count]));
-  }
-
-  /** Base 15-minute data on the current timeline. Returns { grid, actual, perYear[k], d1, d2 }. */
-  async intradayBase() {
-    const s = this.state;
-    const years = this.yearsNeeded();
-    const [actualMap, d1Map, d2Map, ...lookups] = await Promise.all([
-      getRange("realised", s.from, s.to),
-      s.d1 === "1" && s.profile !== "1" ? getRange("d1", s.from, s.to) : null,
-      s.d2 === "1" && s.profile !== "1" ? getRange("d2", s.from, s.to) : null,
-      ...Array.from({ length: years }, (_, i) => this.comparisonLookup(i + 1))
-    ]);
-
-    const start = parisMidnight(s.from);
-    const end = parisMidnight(addDays(s.to, 1));
-    const grid = [];
-    for (let x = start; x < end; x += QUARTER) grid.push(x);
-
-    const actual = new Map();
-    const perYear = lookups.map(() => new Map());
-
-    for (const x of grid) {
+    const lookup = new Map([...sums].map(([key, [sum, n]]) => [key, sum / n]));
+    const out = new Map();
+    for (let x = parisMidnight(s.from); x < parisMidnight(addDays(s.to, 1)); x += QUARTER) {
       const date = dateKey(x);
       if (this.excluded(date)) continue;
-      if (actualMap.has(x)) actual.set(x, actualMap.get(x));
-      const time = timeKey(x);
-      lookups.forEach((lookup, i) => {
-        const src = alignDate(date, i + 1, s.align);
-        if (!src || this.excluded(src)) return;
-        const v = lookup.get(`${src} ${time}`);
-        if (v != null) perYear[i].set(x, v);
-      });
+      const src = alignDate(date, k, s.align);
+      if (!src || this.excluded(src)) continue;
+      const v = lookup.get(`${src} ${timeKey(x)}`);
+      if (v != null) out.set(x, v);
     }
-
-    const filterExcluded = map => {
-      if (!map) return null;
-      const out = new Map();
-      for (const [x, v] of map) if (!this.excluded(dateKey(x))) out.set(x, v);
-      return out;
-    };
-
-    return { grid, actual, perYear, d1: filterExcluded(d1Map), d2: filterExcluded(d2Map) };
+    return out;
   }
 
-  /** Base daily values for the chosen measure. */
-  async dailyBase() {
-    const s = this.state;
-    const daily = await getDaily();
-    const years = this.yearsNeeded();
-    const dates = dateRange(s.from, s.to);
-    const pick = (row, prefix = "") => {
-      if (!row) return null;
-      if (prefix) {
-        if (s.measure === "mean") return row[`${prefix}_mean_mw`];
-        if (s.measure === "max") return row[`${prefix}_peak_mw`];
-        if (s.measure === "energy") return row[`${prefix}_mean_mw`] == null ? null : row[`${prefix}_mean_mw`] * row.hours / 1000;
-        return null;
-      }
-      if (s.measure === "mean") return row.mean_mw;
-      if (s.measure === "max") return row.max_mw;
-      if (s.measure === "min") return row.min_mw;
-      return row.energy_gwh;
-    };
-
-    const actual = new Map();
-    const weights = new Map();
-    const perYear = Array.from({ length: years }, () => new Map());
-    const perYearWeights = Array.from({ length: years }, () => new Map());
-    const d1 = s.d1 === "1" ? new Map() : null;
-    const d2 = s.d2 === "1" ? new Map() : null;
-
-    for (const date of dates) {
-      if (this.excluded(date)) continue;
-      const row = daily.byDate.get(date);
-      const v = pick(row);
-      if (v != null) { actual.set(date, v); weights.set(date, row.intervals / 4 || row.hours); }
-      if (d1) { const f = pick(row, "d1"); if (f != null) d1.set(date, f); }
-      if (d2) { const f = pick(row, "d2"); if (f != null) d2.set(date, f); }
-      for (let k = 1; k <= years; k++) {
-        const src = alignDate(date, k, s.align);
-        if (!src || this.excluded(src)) continue;
-        const srcRow = daily.byDate.get(src);
-        const cv = pick(srcRow);
-        if (cv != null) { perYear[k - 1].set(date, cv); perYearWeights[k - 1].set(date, srcRow.hours); }
-      }
-    }
-
-    return { dates, actual, weights, perYear, perYearWeights, d1, d2, daily };
-  }
-
-  // ---------- Aggregation ----------
-
-  /** Average 15-minute maps into hours. */
   static toHourly(map) {
     if (!map) return null;
     const sums = new Map();
@@ -316,14 +411,18 @@ export class Explorer {
     return new Map([...sums].map(([h, [sum, n]]) => [h, sum / n]));
   }
 
-  /** Group daily values into weeks or months according to the measure. */
-  groupDaily(map, weights, res) {
+  groupKey(date, res) {
+    return res === "1w" ? weekStart(date) : `${date.slice(0, 7)}-01`;
+  }
+
+  /** Group date -> value maps into weeks or months, following the measure. */
+  group(map, hoursOf, res) {
     if (!map) return null;
     const groups = new Map();
     for (const [date, v] of map) {
-      const key = res === "1w" ? weekStart(date) : `${date.slice(0, 7)}-01`;
+      const key = this.groupKey(date, res);
       if (!groups.has(key)) groups.set(key, []);
-      groups.get(key).push([v, weights?.get(date) ?? 24]);
+      groups.get(key).push([v, hoursOf(date)]);
     }
     const m = this.state.measure;
     const out = new Map();
@@ -332,44 +431,27 @@ export class Explorer {
       if (m === "max") value = Math.max(...items.map(i => i[0]));
       else if (m === "min") value = Math.min(...items.map(i => i[0]));
       else if (m === "energy") value = items.reduce((a, i) => a + i[0], 0);
-      else {
-        const w = items.reduce((a, i) => a + i[1], 0);
-        value = items.reduce((a, i) => a + i[0] * i[1], 0) / w;
-      }
+      else value = items.reduce((a, i) => a + i[0] * i[1], 0) / items.reduce((a, i) => a + i[1], 0);
       out.set(key, value);
     }
     return out;
   }
 
-  /** Combine per-year maps into last year / average / band series. */
+  /** Last year / average / range from per-year maps. */
   combine(perYear, keys) {
     const s = this.state;
     const n = Number(s.n);
-    const ly = [];
-    const avg = [];
-    const band = [];
+    const ly = new Map();
+    const avg = new Map();
+    const band = new Map();
     for (const key of keys) {
-      if (s.ly === "1") { const v = perYear[0]?.get(key); if (v != null) ly.push([key, v]); }
+      const v1 = perYear[0]?.get(key);
+      if (v1 != null) ly.set(key, v1);
       const values = perYear.slice(0, n).map(m => m.get(key)).filter(v => v != null);
-      if (s.avg === "1" && values.length) avg.push([key, values.reduce((a, b) => a + b, 0) / values.length]);
-      if (s.band === "1" && values.length >= 2) band.push([key, Math.min(...values), Math.max(...values)]);
+      if (values.length) avg.set(key, values.reduce((a, b) => a + b, 0) / values.length);
+      if (values.length >= 2) band.set(key, [Math.min(...values), Math.max(...values)]);
     }
     return { ly, avg, band };
-  }
-
-  multiYear() {
-    return this.state.from.slice(0, 4) !== this.state.to.slice(0, 4);
-  }
-
-  /** "2023–25" for a single-year period; "previous 3 years" when the period spans years. */
-  yearsLabel() {
-    const n = Number(this.state.n);
-    const y = Number(this.state.from.slice(0, 4));
-    return this.multiYear() ? `of previous ${n} years` : `${y - n}–${String(y - 1).slice(-2)}`;
-  }
-
-  lastYearLabel() {
-    return this.multiYear() ? "One year earlier" : `Last year (${Number(this.state.from.slice(0, 4)) - 1})`;
   }
 
   // ---------- Render ----------
@@ -378,21 +460,22 @@ export class Explorer {
     const id = ++this.renderId;
     const s = this.state;
     writeHash("explorer", s);
+    this.panel.setLoading(true);
     this.headline.textContent = "Loading…";
 
     try {
-      const days = daysBetween(s.from, s.to) + 1;
       const notes = [];
-      let result;
+      const days = daysBetween(s.from, s.to) + 1;
+      const period = await this.periodDays();
+      if (id !== this.renderId) return;
 
+      let result;
       if (s.profile === "1") {
         if (days > MAX_PROFILE_DAYS) {
-          this.headline.textContent = "Select a period of up to one year to see the daily profile.";
-          this.cards.innerHTML = "";
-          this.panel.render({ xType: "category", categories: [], xLabel: x => x, series: [] });
-          return;
+          result = { title: "Average daily profile", subtitle: "", spec: { xType: "category", categories: [], xLabel: x => x, series: [], empty: "Select a period of up to one year to see the daily profile." } };
+        } else {
+          result = await this.buildProfile(notes);
         }
-        result = await this.buildProfile(notes);
       } else {
         let res = s.res;
         if (["15m", "1h"].includes(res) && days > MAX_1H_DAYS) {
@@ -402,138 +485,241 @@ export class Explorer {
           notes.push("15-minute views are limited to one year, so this period is shown hourly.");
           res = "1h";
         }
-        result = ["15m", "1h"].includes(res) ? await this.buildIntraday(res, notes) : await this.buildDaily(res, notes);
+        result = ["15m", "1h"].includes(res) ? await this.buildIntraday(res, period, notes) : this.buildDaily(res, period, notes);
       }
+      if (id !== this.renderId) return;
 
-      if (id !== this.renderId) return; // a newer update started
-
-      this.addAlignmentNotes(notes);
+      this.addNotes(notes, period);
       result.spec.notes = [...notes, ...(result.spec.notes || [])];
       this.panel.setTitle(result.title, result.subtitle);
       this.panel.render(result.spec);
-      this.renderSummary(result.summary);
+      this.renderSummary(period);
+      this.renderExplain(period);
+      this.renderRanking(period);
     } catch (error) {
       console.error(error);
-      if (id === this.renderId) this.headline.textContent = `The data could not be loaded (${error.message}).`;
+      if (id === this.renderId) {
+        this.headline.textContent = `The data could not be loaded (${error.message}).`;
+        this.panel.setLoading(false);
+      }
     }
   }
 
-  addAlignmentNotes(notes) {
+  addNotes(notes, period) {
     const s = this.state;
     if (this.yearsNeeded()) {
       notes.push(s.align === "cal"
-        ? "Comparisons use the same calendar dates in earlier years, matched on Paris local time (29 February has no match in non-leap years)."
-        : "Comparisons use the same weekday in earlier years (52 weeks = 364 days earlier per year), matched on Paris local time.");
+        ? "Earlier years use the same calendar dates, matched on Paris local time (29 February has no match in non-leap years)."
+        : "Earlier years use the same weekday (52 weeks = 364 days earlier per year), matched on Paris local time.");
     }
-    if (s.hol === "excl") notes.push("French public holidays are excluded from the current period and from comparison years.");
+    if (s.hol === "excl") notes.push("French public holidays are excluded from this period and from earlier years.");
+    if (period.useForecast) notes.push(`After the last actual value, ${s.view === "abs" ? "the dashed line" : "the forecast series"} uses RTE's best available forecast: intraday for the rest of today, then D-1, D-2 and the latest week-ahead forecast.`);
+    else if (s.to >= period.lastDate && s.profile !== "1") notes.push(`The last day is incomplete: actual data runs to ${fmtTime(period.lastActual + QUARTER)} Paris time.`);
   }
 
-  async buildIntraday(res, notes) {
+  eventsFor() {
+    return this.state.ev === "1" ? eventsBetween(this.state.from, this.state.to) : [];
+  }
+
+  holidayAreas(daily) {
     const s = this.state;
-    const base = await this.intradayBase();
-    const step = res === "1h" ? HOUR : QUARTER;
-    const agg = map => (res === "1h" ? Explorer.toHourly(map) : map);
+    if (s.hol === "off") return [];
+    const areas = [];
+    for (const date of dateRange(s.from, s.to)) {
+      const name = holidayName(date);
+      if (!name) continue;
+      const start = parisMidnight(date);
+      areas.push(daily
+        ? { from: start - 12 * HOUR, to: start + 12 * HOUR, label: name }
+        : { from: start, to: parisMidnight(addDays(date, 1)), label: name });
+    }
+    return areas;
+  }
 
-    const actual = agg(base.actual);
-    const perYear = base.perYear.map(agg);
-    const keys = res === "1h" ? [...new Set(base.grid.map(x => Math.floor(x / HOUR) * HOUR))] : base.grid;
-    const { ly, avg, band } = this.combine(perYear, keys);
-    const toGW = arr => arr.map(p => (p.length === 3 ? [p[0], p[1] / 1000, p[2] / 1000] : [p[0], p[1] / 1000]));
+  /** Series shown in difference view: values minus the reference. */
+  diffSeries(actualPts, forecastPts, refMap, unit, isBars, toKey) {
+    const s = this.state;
+    const refName = s.ref === "ly" ? this.lastYearName().replace("Last year", "last year") : `the ${this.yearsLabel()} average`;
+    const pct = s.view === "pct";
+    const diff = pts => pts.map(([x, v]) => {
+      const r = refMap.get(toKey(x));
+      if (r == null) return null;
+      return [x, pct ? (v / r - 1) * 100 : v - r];
+    }).filter(Boolean);
+    const u = pct ? "%" : unit;
+    const format = v => (pct ? fmtPct(v, 1) : `${v > 0 ? "+" : v < 0 ? "−" : ""}${fmtNumber(Math.abs(v), unit === "GWh" ? 0 : 2)} ${unit}`);
+    const out = [{ name: `Actual vs ${refName}`, colour: "--s-actual", type: isBars ? "bar" : "line", data: diff(actualPts), unit: u, format, width: 2, z: 20 }];
+    if (forecastPts.length) out.push({ name: `Forecast vs ${refName}`, colour: "--s-d1", type: isBars ? "bar" : "line", data: diff(forecastPts), unit: u, format, dashed: !isBars, width: 2 });
+    return { series: out, yName: u };
+  }
 
-    const series = [];
-    if (band.length) series.push({ name: `Range ${this.yearsLabel()}`, colour: "--s-band", type: "band", data: toGW(band), unit: "GW" });
-    if (avg.length) series.push({ name: `Average ${this.yearsLabel()}`, colour: "--s-avg", type: "line", data: toGW(avg), dashed: true, width: 1.8, unit: "GW" });
-    if (ly.length) series.push({ name: this.lastYearLabel(), colour: "--s-ly", type: "line", data: toGW(ly), width: 1.6, unit: "GW" });
-    if (base.d2) series.push({ name: "D-2 forecast", colour: "--s-d2", type: "line", data: toGW([...agg(base.d2)].sort((a, b) => a[0] - b[0])), width: 1.6, unit: "GW" });
-    if (base.d1) series.push({ name: "D-1 forecast", colour: "--s-d1", type: "line", data: toGW([...agg(base.d1)].sort((a, b) => a[0] - b[0])), width: 1.6, unit: "GW" });
-    series.push({ name: "Actual", colour: "--s-actual", type: "line", data: toGW([...actual].sort((a, b) => a[0] - b[0])), width: 2.4, area: true, unit: "GW", z: 20 });
+  async buildIntraday(res, period, notes) {
+    const s = this.state;
+    const years = this.yearsNeeded();
+    const diff = s.view !== "abs";
+    const [actualMap, d1Arch, d2Arch, latest, ...lookups] = await Promise.all([
+      this.actualIntervals(s.from, s.to),
+      s.d1 === "1" && !diff ? getRange("d1", s.from, s.to) : null,
+      s.d2 === "1" && !diff ? getRange("d2", s.from, s.to) : null,
+      getLatest(),
+      ...Array.from({ length: years }, (_, i) => this.comparisonIntervals(i + 1))
+    ]);
 
-    if (base.d1 && res === "15m") notes.push("D-1 is natively half-hourly for most of its history: its quarter-hour values are interpolated (2012–22) or repeated (2024).");
-    if (base.d2 && res === "15m") notes.push("D-2 is published half-hourly.");
-
-    const spec = {
-      xType: "time", xLabel: x => fmtDateTime(x), axisLabel: x => fmtDayTime(x), csvLabel: csvDateTime,
-      yName: "GW", series, markAreas: this.holidayAreas(s.from, s.to, false),
-      legendCaption: "Average for the period in view"
+    const keep = map => {
+      if (!map) return null;
+      const out = new Map();
+      for (const [x, v] of map) if (!this.excluded(dateKey(x))) out.set(x, v);
+      return out;
     };
+    const agg = map => (map && res === "1h" ? Explorer.toHourly(map) : map);
+    const actual = agg(keep(actualMap));
+    const forecastRaw = period.useForecast ? keep(period.forecast.values) : new Map();
+    const forecast = agg(forecastRaw);
+    const perYear = lookups.map(agg);
+
+    const step = res === "1h" ? HOUR : QUARTER;
+    const keys = [];
+    for (let x = parisMidnight(s.from); x < parisMidnight(addDays(s.to, 1)); x += step) keys.push(x);
+    const { ly, avg, band } = this.combine(perYear, keys);
+    const sorted = map => [...map].sort((a, b) => a[0] - b[0]);
+    const gw = pts => pts.map(p => (p.length === 3 ? [p[0], p[1] / 1000, p[2] / 1000] : [p[0], p[1] / 1000]));
+
+    const actualPts = sorted(actual);
+    let forecastPts = sorted(forecast);
+    if (forecastPts.length && actualPts.length) forecastPts = [actualPts[actualPts.length - 1], ...forecastPts];
+
+    let series;
+    let yName = "GW";
+    if (diff) {
+      const refMap = new Map([...(s.ref === "ly" ? ly : avg)].map(([k, v]) => [k, v / 1000]));
+      ({ series, yName } = this.diffSeries(gw(actualPts), gw(forecastPts.slice(1)), refMap, "GW", false, x => x));
+    } else {
+      series = [];
+      if (s.band === "1" && band.size) series.push({ name: `Range ${this.yearsLabel()}`, colour: "--s-band", type: "band", data: gw(sorted(band).map(([x, [lo, hi]]) => [x, lo, hi])), unit: "GW" });
+      if (s.avg === "1" && avg.size) series.push({ name: this.avgName(), colour: "--s-avg", type: "line", data: gw(sorted(avg)), dashed: true, width: 1.6, unit: "GW" });
+      if (s.ly === "1" && ly.size) series.push({ name: this.lastYearName(), colour: "--s-ly", type: "line", data: gw(sorted(ly)), width: 1.5, unit: "GW" });
+      if (d2Arch) series.push({ name: "D-2 forecast", colour: "--s-d2", type: "line", data: gw(sorted(agg(keep(new Map([...d2Arch, ...latestSeries(latest, "D-2")]))))), width: 1.5, unit: "GW" });
+      if (d1Arch) series.push({ name: "D-1 forecast", colour: "--s-d1", type: "line", data: gw(sorted(agg(keep(new Map([...d1Arch, ...latestSeries(latest, "D-1")]))))), width: 1.5, unit: "GW" });
+      if (forecastPts.length) series.push({ name: "Forecast ahead", colour: "--s-fcst", type: "line", data: gw(forecastPts), dashed: true, width: 2.4, unit: "GW", z: 19 });
+      series.push({ name: "Actual", colour: "--s-actual", type: "line", data: gw(actualPts), width: 2.6, unit: "GW", z: 20 });
+      if (d1Arch && res === "15m") notes.push("D-1 is natively half-hourly for most of its history: its quarter-hour values are interpolated (2012–22) or repeated (2024).");
+    }
 
     return {
-      spec,
-      title: `Demand, ${RES_LABEL[res]}`,
-      subtitle: `${fmtLongDate(s.from)} – ${fmtLongDate(s.to)} · GW`,
-      summary: this.summaryFromIntraday(base)
+      title: diff ? `Difference from ${s.ref === "ly" ? "last year" : "earlier years"}, ${RES_LABEL[res]}` : `Demand, ${RES_LABEL[res]}`,
+      subtitle: `${fmtPeriod(s.from, s.to)} · ${yName}`,
+      spec: {
+        xType: "time", xLabel: x => fmtDateTime(x), csvLabel: csvDateTime, yName, series, zeroLine: diff,
+        yFormat: v => fmtNumber(v, 1),
+        markAreas: this.holidayAreas(false), events: this.eventsFor()
+      }
     };
   }
 
-  async buildDaily(res, notes) {
+  buildDaily(res, period, notes) {
     const s = this.state;
-    const base = await this.dailyBase();
     const m = s.measure;
-    const scale = m === "energy" ? (res === "1d" ? 1 : 1000) : 1000; // MW->GW, GWh->TWh for week/month
-    const unit = m === "energy" ? (res === "1d" ? "GWh" : "TWh") : "GW";
+    const diff = s.view !== "abs";
+    const { perYear, perYearHours } = this.comparisonDays(period.daily);
+    const hoursOf = date => period.days.get(date)?.hours ?? hoursInDay(date);
 
-    let actual = base.actual;
-    let perYear = base.perYear;
-    let d1 = base.d1;
-    let d2 = base.d2;
-    let keys = base.dates.filter(d => !this.excluded(d));
+    const actualVals = new Map();
+    const forecastVals = new Map();
+    for (const [date, st] of period.days) (st.kind === "forecast" ? forecastVals : actualVals).set(date, this.pick(st));
+
+    // D-1 / D-2 daily overlays from the summary.
+    const overlay = prefix => {
+      if (s[prefix] !== "1" || diff || m === "min") return null;
+      const out = new Map();
+      for (const date of dateRange(s.from, s.to)) {
+        if (this.excluded(date)) continue;
+        const r = period.daily.byDate.get(date);
+        const meanMw = r?.[`${prefix}_mean_mw`];
+        if (meanMw == null) continue;
+        out.set(date, m === "max" ? r[`${prefix}_peak_mw`] : m === "energy" ? meanMw * r.hours / 1000 : meanMw);
+      }
+      return out;
+    };
+    let d1 = overlay("d1");
+    let d2 = overlay("d2");
+
+    let keys = dateRange(s.from, s.to).filter(d => !this.excluded(d));
+    let actual = actualVals;
+    let forecast = forecastVals;
+    let years = perYear;
 
     if (res !== "1d") {
-      actual = this.groupDaily(base.actual, base.weights, res);
-      perYear = base.perYear.map((map, i) => this.groupDaily(map, base.perYearWeights[i], res));
-      d1 = this.groupDaily(base.d1, base.weights, res);
-      d2 = this.groupDaily(base.d2, base.weights, res);
-      keys = [...new Set(keys.map(d => (res === "1w" ? weekStart(d) : `${d.slice(0, 7)}-01`)))];
-      const first = keys[0];
-      const lastDate = base.dates[base.dates.length - 1];
-      const partialStart = res === "1w" ? first !== s.from : !s.from.endsWith("-01");
-      const nextGroup = res === "1w" ? addDays(weekStart(lastDate), 7) : addDays(`${lastDate.slice(0, 7)}-28`, 4).slice(0, 7) + "-01";
-      const partialEnd = addDays(lastDate, 1) !== nextGroup;
-      if (partialStart || partialEnd) notes.push(`The first or last ${res === "1w" ? "week" : "month"} only covers the part inside the selected period.`);
+      // A group that contains forecast days is shown as forecast.
+      const allVals = new Map([...actualVals, ...forecastVals]);
+      const grouped = this.group(allVals, hoursOf, res);
+      const fcGroups = new Set([...forecastVals.keys()].map(d => this.groupKey(d, res)));
+      actual = new Map([...grouped].filter(([k]) => !fcGroups.has(k)));
+      forecast = new Map([...grouped].filter(([k]) => fcGroups.has(k)));
+      years = perYear.map((map, i) => this.group(map, d => perYearHours[i].get(d) ?? 24, res));
+      d1 = this.group(d1, hoursOf, res);
+      d2 = this.group(d2, hoursOf, res);
+      keys = [...new Set(keys.map(d => this.groupKey(d, res)))];
+      const startsMid = res === "1w" ? weekStart(s.from) !== s.from : !s.from.endsWith("-01");
+      const nextGroup = res === "1w" ? addDays(weekStart(s.to), 7) : `${addDays(`${s.to.slice(0, 7)}-28`, 4).slice(0, 7)}-01`;
+      if (startsMid || addDays(s.to, 1) !== nextGroup) notes.push(`The first or last ${res === "1w" ? "week" : "month"} only covers the part inside the selected period.`);
     }
 
-    const keySet = new Set(keys);
-    const toPoints = map => (map ? [...map].filter(([k]) => keySet.has(k)).sort(([a], [b]) => (a < b ? -1 : 1)).map(([k, v]) => [parisMidnight(k), v / scale]) : null);
-    const { ly, avg, band } = this.combine(perYear, keys);
-    const conv = arr => arr.map(p => (p.length === 3 ? [parisMidnight(p[0]), p[1] / scale, p[2] / scale] : [parisMidnight(p[0]), p[1] / scale]));
-
+    const energyUnit = res === "1d" ? "GWh" : "TWh";
+    const unit = m === "energy" ? energyUnit : "GW";
+    const scale = m === "energy" ? (res === "1d" ? 1 : 1000) : 1000;
     const decimals = unit === "GWh" ? 0 : 2;
     const avgFn = m === "energy" ? values => values.reduce((a, b) => a + b, 0) : undefined;
-    const series = [];
-    if (band.length) series.push({ name: `Range ${this.yearsLabel()}`, colour: "--s-band", type: "band", data: conv(band), unit, decimals });
-    if (avg.length) series.push({ name: `Average ${this.yearsLabel()}`, colour: "--s-avg", type: "line", data: conv(avg), dashed: true, width: 1.8, unit, decimals, avg: avgFn, symbols: res !== "1d" });
-    if (ly.length) series.push({ name: this.lastYearLabel(), colour: "--s-ly", type: "line", data: conv(ly), width: 1.6, unit, decimals, avg: avgFn, symbols: res !== "1d" });
-    if (d2) series.push({ name: "D-2 forecast", colour: "--s-d2", type: "line", data: toPoints(d2), width: 1.6, unit, decimals, avg: avgFn, symbols: res !== "1d" });
-    if (d1) series.push({ name: "D-1 forecast", colour: "--s-d1", type: "line", data: toPoints(d1), width: 1.6, unit, decimals, avg: avgFn, symbols: res !== "1d" });
-    series.push({ name: "Actual", colour: "--s-actual", type: "line", data: toPoints(actual), width: 2.4, area: true, unit, decimals, avg: avgFn, z: 20, symbols: res !== "1d" });
+    const pts = map => (map ? [...map].sort(([a], [b]) => (a < b ? -1 : 1)).map(([k, v]) => [parisMidnight(k), v / scale]) : []);
+    const { ly, avg, band } = this.combine(years, keys);
+    const markers = res !== "1d" ? true : undefined;
 
-    if (m === "min" && (s.d1 === "1" || s.d2 === "1")) notes.push("Forecast minimums are not summarised, so forecasts are not shown for this measure.");
-    if (m === "energy") notes.push("The legend shows totals for the period in view rather than averages.");
-    if (s.to >= todayParis()) notes.push("Today is incomplete: its values cover the hours published so far.");
+    const actualPts = pts(actual);
+    let forecastPts = pts(forecast);
+    if (forecastPts.length && actualPts.length && !diff) forecastPts = [actualPts[actualPts.length - 1], ...forecastPts];
 
-    const measureLabel = { mean: "Average demand", max: "Peak demand", min: "Minimum demand", energy: "Energy consumed" }[m];
+    let series;
+    let yName = unit;
+    if (diff) {
+      const refMap = new Map([...(s.ref === "ly" ? ly : avg)].map(([k, v]) => [parisMidnight(k), v / scale]));
+      ({ series, yName } = this.diffSeries(actualPts, forecastPts, refMap, unit, true, x => x));
+    } else {
+      series = [];
+      if (s.band === "1" && band.size) {
+        const bandPts = [...band].sort(([a], [b]) => (a < b ? -1 : 1)).map(([k, [lo, hi]]) => [parisMidnight(k), lo / scale, hi / scale]);
+        series.push({ name: `Range ${this.yearsLabel()}`, colour: "--s-band", type: "band", data: bandPts, unit, decimals });
+      }
+      if (s.avg === "1" && avg.size) series.push({ name: this.avgName(), colour: "--s-avg", type: "line", data: pts(avg), dashed: true, width: 1.6, unit, decimals, avg: avgFn, symbols: markers });
+      if (s.ly === "1" && ly.size) series.push({ name: this.lastYearName(), colour: "--s-ly", type: "line", data: pts(ly), width: 1.5, unit, decimals, avg: avgFn, symbols: markers });
+      if (d2) series.push({ name: "D-2 forecast", colour: "--s-d2", type: "line", data: pts(d2), width: 1.5, unit, decimals, avg: avgFn, symbols: markers });
+      if (d1) series.push({ name: "D-1 forecast", colour: "--s-d1", type: "line", data: pts(d1), width: 1.5, unit, decimals, avg: avgFn, symbols: markers });
+      if (forecastPts.length) series.push({ name: "Forecast ahead", colour: "--s-fcst", type: "line", data: forecastPts, dashed: true, width: 2.4, unit, decimals, avg: avgFn, z: 19, symbols: markers });
+      series.push({ name: "Actual", colour: "--s-actual", type: "line", data: actualPts, width: 2.6, unit, decimals, avg: avgFn, z: 20, symbols: markers });
+    }
+
+    if (m === "min" && (s.d1 === "1" || s.d2 === "1") && !diff) notes.push("RTE's forecasts aren't summarised as daily minimums, so D-1 and D-2 aren't shown for this measure.");
+    if (m === "energy" && !diff) notes.push("For energy, the legend shows totals for the period in view rather than averages.");
+
     const xLabel = res === "1M" ? x => fmtMonth(x) : res === "1w" ? x => `Week of ${fmtDate(x)}` : x => fmtDate(x);
-
-    const spec = {
-      xType: "time", xLabel, axisLabel: res === "1M" ? x => fmtMonth(x) : x => fmtDayShort(x), csvLabel: csvDate,
-      xHeader: res === "1M" ? "Month" : res === "1w" ? "Week starting" : "Date",
-      yName: unit, series,
-      markAreas: res === "1d" ? this.holidayAreas(s.from, s.to, true) : [],
-      legendCaption: m === "energy" ? "Total for the period in view" : "Average for the period in view"
-    };
-
     return {
-      spec,
-      title: `${measureLabel}, ${RES_LABEL[res]}`,
-      subtitle: `${fmtLongDate(s.from)} – ${fmtLongDate(s.to)} · ${unit}`,
-      summary: this.summaryFromDaily(base)
+      title: diff ? `${MEASURE_LABEL[m]}: difference from ${s.ref === "ly" ? "last year" : "earlier years"}, ${RES_LABEL[res]}` : `${MEASURE_LABEL[m]}, ${RES_LABEL[res]}`,
+      subtitle: `${fmtPeriod(s.from, s.to)} · ${yName}`,
+      spec: {
+        xType: "time", xLabel, csvLabel: csvDate, axisLabel: res === "1M" ? x => fmtMonth(x) : undefined,
+        xHeader: res === "1M" ? "Month" : res === "1w" ? "Week starting" : "Date",
+        yName, series, zeroLine: diff, yFormat: v => fmtNumber(v, unit === "GWh" ? 0 : 1),
+        markAreas: res === "1d" ? this.holidayAreas(true) : [], events: this.eventsFor(),
+        legendCaption: m === "energy" && !diff ? "Total for the period in view" : "Average for the period in view"
+      }
     };
   }
 
   async buildProfile(notes) {
     const s = this.state;
-    const base = await this.intradayBase();
-    // Quarter-hour slots unless the hourly resolution is selected.
+    const years = this.yearsNeeded();
+    const [actualMap, ...lookups] = await Promise.all([
+      this.actualIntervals(s.from, s.to),
+      ...Array.from({ length: years }, (_, i) => this.comparisonIntervals(i + 1))
+    ]);
     const hourly = s.res === "1h";
     const slots = hourly ? 24 : 96;
     const slotOf = x => {
@@ -542,24 +728,27 @@ export class Explorer {
     };
     const profile = map => {
       const acc = Array.from({ length: slots }, () => [0, 0]);
-      for (const [x, v] of map) { const i = slotOf(x); acc[i][0] += v; acc[i][1] += 1; }
+      for (const [x, v] of map) {
+        if (this.excluded(dateKey(x))) continue;
+        const i = slotOf(x);
+        acc[i][0] += v; acc[i][1] += 1;
+      }
       return acc.map(([sum, n]) => (n ? sum / n : null));
     };
 
     const categories = Array.from({ length: slots }, (_, i) => (hourly
       ? `${String(i).padStart(2, "0")}:00`
       : `${String(Math.floor(i / 4)).padStart(2, "0")}:${String((i % 4) * 15).padStart(2, "0")}`));
-
-    const current = profile(base.actual);
-    const years = base.perYear.map(profile);
+    const current = profile(actualMap);
+    const prev = lookups.map(profile);
     const n = Number(s.n);
-    const series = [];
     const pts = arr => arr.map((v, i) => [i, v == null ? null : v / 1000]).filter(p => p[1] != null);
+    const series = [];
 
     if (s.band === "1") {
       const band = [];
       for (let i = 0; i < slots; i++) {
-        const values = years.slice(0, n).map(p => p[i]).filter(v => v != null);
+        const values = prev.slice(0, n).map(p => p[i]).filter(v => v != null);
         if (values.length >= 2) band.push([i, Math.min(...values) / 1000, Math.max(...values) / 1000]);
       }
       if (band.length) series.push({ name: `Range ${this.yearsLabel()}`, colour: "--s-band", type: "band", data: band, unit: "GW" });
@@ -567,159 +756,213 @@ export class Explorer {
     if (s.avg === "1") {
       const avg = [];
       for (let i = 0; i < slots; i++) {
-        const values = years.slice(0, n).map(p => p[i]).filter(v => v != null);
+        const values = prev.slice(0, n).map(p => p[i]).filter(v => v != null);
         if (values.length) avg.push([i, values.reduce((a, b) => a + b, 0) / values.length / 1000]);
       }
-      series.push({ name: `Average ${this.yearsLabel()}`, colour: "--s-avg", type: "line", data: avg, dashed: true, width: 1.8, unit: "GW" });
+      series.push({ name: this.avgName(), colour: "--s-avg", type: "line", data: avg, dashed: true, width: 1.6, unit: "GW" });
     }
-    if (s.ly === "1" && years[0]) series.push({ name: this.lastYearLabel(), colour: "--s-ly", type: "line", data: pts(years[0]), width: 1.6, unit: "GW" });
-    series.push({ name: "Actual", colour: "--s-actual", type: "line", data: pts(current), width: 2.6, area: true, unit: "GW", z: 20, symbols: hourly });
+    if (s.ly === "1" && prev[0]) series.push({ name: this.lastYearName(), colour: "--s-ly", type: "line", data: pts(prev[0]), width: 1.5, unit: "GW" });
+    series.push({ name: "Actual", colour: "--s-actual", type: "line", data: pts(current), width: 2.6, unit: "GW", z: 20 });
 
-    notes.push(`Each point is the average for that ${hourly ? "hour" : "quarter-hour"} of the day across every day in the period (Paris local time).`);
-
-    const spec = {
-      xType: "category", categories, xLabel: x => x, xHeader: "Time of day (Europe/Paris)",
-      yName: "GW", series, legendCaption: "Average across the time of day in view"
-    };
+    notes.push(`Each point is the average for that ${hourly ? "hour" : "quarter-hour"} of the day across every day in the period (Paris local time). Choose Hourly resolution for an hourly profile. The profile uses actual data only.`);
 
     return {
-      spec,
       title: `Average daily profile, ${hourly ? "hourly" : "15-minute"}`,
-      subtitle: `${fmtLongDate(s.from)} – ${fmtLongDate(s.to)} · GW`,
-      summary: this.summaryFromIntraday(base)
+      subtitle: `${fmtPeriod(s.from, s.to)} · GW`,
+      spec: { xType: "category", categories, xLabel: x => x, xHeader: "Time of day (Europe/Paris)", yName: "GW", series, legendCaption: "Average across the times of day in view" }
     };
   }
 
-  holidayAreas(from, to, daily) {
-    if (this.state.hol === "off") return [];
-    const areas = [];
-    for (const date of dateRange(from, to)) {
-      const name = holidayName(date);
-      if (!name) continue;
-      const start = parisMidnight(date);
-      const end = parisMidnight(addDays(date, 1));
-      areas.push(daily
-        ? { from: start - 12 * HOUR, to: start + 12 * HOUR, label: name }
-        : { from: start, to: end, label: name });
-    }
-    return areas;
+  // ---------- Summary, explainer, ranking ----------
+
+  /** Hours-weighted aggregate of a measure over days. */
+  aggregate(entries) {
+    if (!entries.length) return null;
+    const m = this.state.measure;
+    if (m === "max") return Math.max(...entries.map(e => e.v));
+    if (m === "min") return Math.min(...entries.map(e => e.v));
+    if (m === "energy") return entries.reduce((a, e) => a + e.v, 0);
+    return entries.reduce((a, e) => a + e.v * e.h, 0) / entries.reduce((a, e) => a + e.h, 0);
   }
 
-  // ---------- Summary ----------
-
-  summaryFromIntraday(base) {
-    const values = [...base.actual];
-    if (!values.length) return null;
-    const mean = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
-    const actualMean = mean(values.map(v => v[1]));
-    let peak = values[0];
-    let low = values[0];
-    for (const p of values) { if (p[1] > peak[1]) peak = p; if (p[1] < low[1]) low = p; }
-
-    // Like-for-like: compare only where the actual value exists.
-    const compare = map => {
-      const pairs = values.filter(([x]) => map.has(x));
-      if (!pairs.length) return null;
-      return { cur: mean(pairs.map(p => p[1])), cmp: mean(pairs.map(([x]) => map.get(x))) };
-    };
-    const n = Number(this.state.n);
-    const avgMap = new Map();
-    for (const [x] of values) {
-      const vs = base.perYear.slice(0, n).map(m => m.get(x)).filter(v => v != null);
-      if (vs.length) avgMap.set(x, vs.reduce((a, b) => a + b, 0) / vs.length);
-    }
-
-    return {
-      mean: actualMean,
-      peak: { value: peak[1], when: fmtDateTime(peak[0]) },
-      low: { value: low[1], when: fmtDateTime(low[0]) },
-      energyGwh: actualMean * values.length * 0.25 / 1000,
-      vsAvg: this.state.avg === "1" || this.state.band === "1" ? compare(avgMap) : null,
-      vsLy: this.state.ly === "1" && base.perYear[0] ? compare(base.perYear[0]) : null,
-      coverage: values.length
-    };
+  fmtMeasure(v) {
+    if (v == null) return "–";
+    if (this.state.measure === "energy") return v >= 1000 ? `${fmtNumber(v / 1000, 2)} TWh` : `${fmtNumber(v, 0)} GWh`;
+    return fmtGW(v, 1);
   }
 
-  summaryFromDaily(base) {
-    const rows = base.dates.filter(d => !this.excluded(d)).map(d => base.daily.byDate.get(d)).filter(r => r && r.mean_mw != null);
-    if (!rows.length) return null;
-    const hours = r => r.intervals / 4;
-    const totalHours = rows.reduce((a, r) => a + hours(r), 0);
-    const mean = rows.reduce((a, r) => a + r.mean_mw * hours(r), 0) / totalHours;
-    const peak = rows.reduce((a, r) => (r.max_mw > a.max_mw ? r : a));
-    const low = rows.reduce((a, r) => (r.min_mw < a.min_mw ? r : a));
-
-    const n = Number(this.state.n);
-    const compare = years => {
-      let cur = 0; let cmp = 0; let w = 0;
-      for (const r of rows) {
-        const vals = years.map(k => {
-          const src = alignDate(r.date, k, this.state.align);
-          if (!src || this.excluded(src)) return null;
-          return base.daily.byDate.get(src)?.mean_mw ?? null;
-        }).filter(v => v != null);
-        if (!vals.length) continue;
-        cur += r.mean_mw * hours(r);
-        cmp += (vals.reduce((a, b) => a + b, 0) / vals.length) * hours(r);
-        w += hours(r);
-      }
-      return w ? { cur: cur / w, cmp: cmp / w } : null;
-    };
-
-    return {
-      mean,
-      peak: { value: peak.max_mw, when: `${fmtDate(parisMidnight(peak.date) + 12 * HOUR)} ${peak.peak_time_paris}` },
-      low: { value: low.min_mw, when: `${fmtDate(parisMidnight(low.date) + 12 * HOUR)} ${low.min_time_paris}` },
-      // Use the stored daily energy (average x hours in the day) where available.
-      energyGwh: rows.reduce((a, r) => a + (r.energy_gwh ?? r.mean_mw * hours(r) / 1000), 0),
-      vsAvg: this.state.avg === "1" || this.state.band === "1" ? compare(Array.from({ length: n }, (_, i) => i + 1)) : null,
-      vsLy: this.state.ly === "1" ? compare([1]) : null
-    };
-  }
-
-  renderSummary(summary) {
+  /** Compare this period's days with earlier years, like-for-like. */
+  versus(entries, years) {
     const s = this.state;
-    if (!summary) {
-      this.headline.textContent = "No actual demand data for this period.";
+    const daily = this.dailyCache;
+    const cur = [];
+    const cmp = [];
+    for (const e of entries) {
+      const vals = years.map(k => {
+        const src = alignDate(e.date, k, s.align);
+        if (!src || this.excluded(src)) return null;
+        const r = daily.byDate.get(src);
+        return r && r.mean_mw != null ? this.pick({ mean: r.mean_mw, max: r.max_mw, min: r.min_mw, energy: r.energy_gwh ?? r.mean_mw * r.hours / 1000 }) : null;
+      }).filter(v => v != null);
+      if (!vals.length) continue;
+      cur.push(e);
+      cmp.push({ v: vals.reduce((a, b) => a + b, 0) / vals.length, h: e.h });
+    }
+    if (!cur.length) return null;
+    const a = this.aggregate(cur);
+    const b = this.aggregate(cmp);
+    return { cur: a, cmp: b, pct: (a / b - 1) * 100 };
+  }
+
+  renderSummary(period) {
+    const s = this.state;
+    this.dailyCache = period.daily;
+    const all = [...period.days].map(([date, st]) => ({ date, v: this.pick(st), h: st.hours, st }));
+    const actualOnly = all.filter(e => e.st.kind !== "forecast" || e.st.actual).map(e => (e.st.kind === "forecast"
+      ? { ...e, v: this.pick({ ...e.st.actual, energy: e.st.actual.mean * e.h / 1000 }), st: { ...e.st.actual, peakText: e.st.peakText, minText: e.st.minText } }
+      : e));
+    if (!all.length) {
+      this.headline.textContent = "No demand data for this period.";
       this.cards.innerHTML = "";
       return;
     }
 
-    const pct = c => (c ? (c.cur - c.cmp) / c.cmp * 100 : null);
-    const vsAvg = pct(summary.vsAvg);
-    const vsLy = pct(summary.vsLy);
-    const period = s.from === s.to ? fmtLongDate(s.from) : `${fmtLongDate(s.from)} to ${fmtLongDate(s.to)}`;
+    const n = Number(s.n);
+    const avgYears = Array.from({ length: n }, (_, i) => i + 1);
+    const label = MEASURE_LABEL[s.measure].toLowerCase();
+    const hasForecast = period.useForecast && all.some(e => e.st.kind === "forecast");
+    const base = hasForecast ? all : actualOnly;
+    const total = this.aggregate(base);
+    const vsAvg = s.avg === "1" || s.band === "1" ? this.versus(base, avgYears) : null;
+    const vsLy = s.ly === "1" ? this.versus(base, [1]) : null;
+    const so = this.aggregate(actualOnly);
     const dir = v => (v >= 0 ? "above" : "below");
+    const verb = s.measure === "energy" ? "totalled" : s.measure === "max" ? "reached" : "was";
 
-    let text = `Demand from ${period} averaged ${fmtGW(summary.mean, 1)}`;
-    const parts = [];
-    if (vsAvg != null) parts.push(`${fmtNumber(Math.abs(vsAvg), 1)}% ${dir(vsAvg)} ${this.multiYear() ? `the average of the previous ${s.n} years` : `the ${this.yearsLabel()} average`} for the same ${s.align === "cal" ? "dates" : "weekdays"}`);
-    if (vsLy != null) parts.push(`${fmtNumber(Math.abs(vsLy), 1)}% ${dir(vsLy)} ${this.multiYear() ? "the same period one year earlier" : "last year"}`);
-    if (parts.length) text += `, ${parts.join(" and ")}`;
-    text += s.hol === "excl" ? " (public holidays excluded)." : ".";
+    const comparisons = [];
+    if (vsAvg) comparisons.push(`${fmtNumber(Math.abs(vsAvg.pct), 1)}% ${dir(vsAvg.pct)} ${this.multiYear() ? `the average of the previous ${n} years` : `the ${this.yearsLabel()} average`} for the same ${s.align === "cal" ? "dates" : "weekdays"}`);
+    if (vsLy) comparisons.push(`${fmtNumber(Math.abs(vsLy.pct), 1)}% ${dir(vsLy.pct)} ${this.multiYear() ? "the same period a year earlier" : "last year"}`);
+    const tail = comparisons.length ? `, ${comparisons.join(" and ")}` : "";
+
+    let text;
+    if (hasForecast) {
+      const lastActualDay = actualOnly.length ? actualOnly[actualOnly.length - 1].date : s.from;
+      const soFar = actualOnly.length ? `${MEASURE_LABEL[s.measure]} ${fmtFromTo(s.from, lastActualDay)} ${verb} ${this.fmtMeasure(so)}. ` : "";
+      text = `${soFar}Including RTE's forecasts to ${fmtLongDate(s.to)}, ${label} for the whole period is on track for ${this.fmtMeasure(total)}${tail}.`;
+    } else {
+      text = `${MEASURE_LABEL[s.measure]} ${fmtFromTo(s.from, s.to)} ${verb} ${this.fmtMeasure(total)}${tail}.`;
+    }
+    if (s.hol === "excl") text = text.replace(/\.$/, " (public holidays excluded).");
     this.headline.textContent = text;
 
-    const energy = summary.energyGwh >= 1000 ? `${fmtNumber(summary.energyGwh / 1000, 2)} TWh` : `${fmtNumber(summary.energyGwh, 0)} GWh`;
-    const card = (label, value, detail = "", cls = "") =>
-      `<div class="card"><div class="label">${label}</div><div class="value ${cls}">${value}</div><div class="detail">${detail}</div></div>`;
+    const peakSrc = actualOnly.reduce((a, e) => (!a || e.st.max > a.st.max ? e : a), null);
+    const lowSrc = actualOnly.reduce((a, e) => (!a || e.st.min < a.st.min ? e : a), null);
+    const energy = base.reduce((a, e) => a + (e.st.energy ?? e.st.mean * e.h / 1000), 0);
+    const card = (lbl, value, detail = "", cls = "") =>
+      `<div class="card${cls}"><div class="label">${lbl}</div><div class="value">${value}</div><div class="detail">${detail}</div></div>`;
 
     this.cards.innerHTML = [
-      card("Average demand", fmtGW(summary.mean, 1), "Actual, period so far"),
-      vsAvg != null ? card(this.multiYear() ? `vs previous ${s.n}-year average` : `vs ${this.yearsLabel()} average`, fmtPct(vsAvg), `${fmtGW(summary.vsAvg.cmp, 1)} like-for-like`) : "",
-      vsLy != null ? card(this.multiYear() ? "vs one year earlier" : "vs last year", fmtPct(vsLy), `${fmtGW(summary.vsLy.cmp, 1)} like-for-like`) : "",
-      card("Peak", fmtGW(summary.peak.value, 1), summary.peak.when),
-      card("Minimum", fmtGW(summary.low.value, 1), summary.low.when),
-      card("Energy", energy, "Actual, period so far")
+      hasForecast
+        ? card("Projected for the period", this.fmtMeasure(total), `Actual to date plus forecast to ${fmtShortDate(s.to)}`, " accent")
+        : card(MEASURE_LABEL[s.measure], this.fmtMeasure(total), s.to >= period.lastDate ? "Actual, period so far" : "Actual"),
+      hasForecast ? card("Actual so far", this.fmtMeasure(so), `${fmtShortDate(s.from)} to ${fmtTime(period.lastActual + QUARTER)} on ${fmtShortDate(dateKey(period.lastActual))}`) : "",
+      vsAvg ? card(`vs ${this.multiYear() ? `previous ${n}-year average` : `${this.yearsLabel()} average`}`, fmtPct(vsAvg.pct), `${this.fmtMeasure(vsAvg.cmp)} like-for-like`) : "",
+      vsLy ? card(this.multiYear() ? "vs a year earlier" : "vs last year", fmtPct(vsLy.pct), `${this.fmtMeasure(vsLy.cmp)} like-for-like`) : "",
+      peakSrc ? card("Peak", fmtGW(peakSrc.st.max), peakSrc.st.peakText || "") : "",
+      lowSrc ? card("Minimum", fmtGW(lowSrc.st.min), lowSrc.st.minText || "") : "",
+      s.measure !== "energy" ? card(hasForecast ? "Energy (projected)" : "Energy", energy >= 1000 ? `${fmtNumber(energy / 1000, 2)} TWh` : `${fmtNumber(energy, 0)} GWh`, hasForecast ? "Actual plus forecast" : "") : ""
     ].join("");
+  }
+
+  renderExplain(period) {
+    const s = this.state;
+    if (!period.useForecast || s.profile === "1") { this.explain.hidden = true; return; }
+    const sources = new Set(period.forecast.source.values());
+    this.explain.hidden = false;
+    this.explain.innerHTML = `<b>Actual and forecast.</b> The solid line is actual demand up to ${fmtDateTime(period.lastActual + QUARTER)}. The dashed line continues with RTE's latest forecasts to ${fmtLongDate(s.to)} (${[...sources].join(", ")}). Earlier years cover the whole period, so you can see where this period is heading against them.`;
+  }
+
+  renderRanking(period) {
+    const s = this.state;
+    const days = daysBetween(s.from, s.to) + 1;
+    if (s.profile === "1" || days > 366) {
+      this.rankPanel.show(false);
+      return;
+    }
+    this.rankPanel.show(true);
+    const daily = period.daily;
+    const thisYear = Number(s.from.slice(0, 4));
+    const rows = [];
+
+    for (let k = 0; thisYear - k >= 2013; k++) {
+      const entries = [];
+      let expected = 0;
+      for (const date of dateRange(s.from, s.to)) {
+        if (this.excluded(date)) continue;
+        expected += 1;
+        if (k === 0) {
+          const st = period.days.get(date);
+          if (st) entries.push({ v: this.pick(st), h: st.hours });
+          continue;
+        }
+        const src = alignDate(date, k, s.align);
+        if (!src || src < FIRST_DATE || this.excluded(src)) continue;
+        const r = daily.byDate.get(src);
+        if (r && r.mean_mw != null && r.intervals >= 0.9 * r.expected_intervals) {
+          entries.push({ v: this.pick({ mean: r.mean_mw, max: r.max_mw, min: r.min_mw, energy: r.energy_gwh ?? r.mean_mw * r.hours / 1000 }), h: r.hours });
+        }
+      }
+      if (entries.length < 0.9 * expected) continue;
+      const startDate = k === 0 ? s.from : alignDate(s.from, k, s.align) ?? alignDate(addDays(s.from, 1), k, s.align);
+      const yearLabel = s.from.slice(0, 4) === s.to.slice(0, 4) ? startDate.slice(0, 4) : `${startDate.slice(0, 4)}–${String(Number(startDate.slice(0, 4)) + 1).slice(-2)}`;
+      rows.push({ k, label: yearLabel, value: this.aggregate(entries) });
+    }
+
+    rows.reverse();
+    const scale = s.measure === "energy" ? 1000 : 1000;
+    const unit = s.measure === "energy" ? "TWh" : "GW";
+    const current = rows.find(r => r.k === 0);
+    const n = Number(s.n);
+    const sortedDesc = [...rows].sort((a, b) => b.value - a.value);
+    const rankHigh = current ? sortedDesc.indexOf(current) + 1 : null;
+    const rankLow = current ? rows.length - rankHigh + 1 : null;
+    const forecastNote = period.useForecast ? " (including forecast)" : s.to >= period.lastDate ? " (so far)" : "";
+    const rankText = current
+      ? (rankLow <= rankHigh ? `${rankLow === 1 ? "" : `${ordinal(rankLow)} `}lowest` : `${rankHigh === 1 ? "" : `${ordinal(rankHigh)} `}highest`) + ` of ${rows.length} years`
+      : "";
+    const measure = MEASURE_LABEL[s.measure].toLowerCase();
+
+    this.rankPanel.setTitle(
+      current ? `${fmtPeriod(s.from, s.to)}: ${rankText}` : "The same period in every year",
+      `${MEASURE_LABEL[s.measure]} for the same ${s.align === "cal" ? "dates" : "weekdays"} in each year since 2013${forecastNote} · ${unit}`
+    );
+    const colourFor = (_, i) => {
+      const r = rows[i];
+      if (!r) return "--s-avg";
+      if (r.k === 0) return "--s-actual";
+      return r.k <= n ? "--s-avg" : "--s-band";
+    };
+    this.rankPanel.render({
+      xType: "category", categories: rows.map(r => r.label + (r.k === 0 && period.useForecast ? "*" : "")),
+      xLabel: x => x, xHeader: "Year", yName: unit, yMin: 0, yScale: false,
+      yFormat: v => fmtNumber(v, 0),
+      series: [{
+        name: `${MEASURE_LABEL[s.measure]}, same period`, colour: "--s-actual", type: "bar",
+        data: rows.map((r, i) => [i, r.value / scale]), unit, decimals: 2, colourFn: colourFor, avg: false, barWidth: 34,
+        labels: v => fmtNumber(v, s.measure === "energy" ? 1 : 1),
+        barColours: i => colourFor(null, i)
+      }],
+      legendCaption: null,
+      notes: [
+        `Highlighted: this period${forecastNote}. Mid-tone bars are the years used for the ${this.yearsLabel()} average. Years with less than 90% of days available are left out.`,
+        period.useForecast ? "* Includes RTE's forecast for the days still to come." : "",
+        current ? `This period's ${measure} ranks ${rankText}.` : ""
+      ]
+    });
   }
 
   refreshTheme() {
     this.panel.refreshTheme();
+    this.rankPanel.refreshTheme();
   }
 }
-
-function fmtDayShort(x) {
-  return new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Paris", day: "numeric", month: "short" }).format(x);
-}
-
-export { DAY };

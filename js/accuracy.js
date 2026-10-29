@@ -3,8 +3,9 @@
 
 import { ChartPanel } from "./chart.js";
 import { getDaily, getErrorProfile, getWeeklyErrors } from "./data.js";
+import { eventsBetween } from "./events.js";
 import {
-  csvDate, HOUR, addDays, el, fmtDate, fmtLongDate, fmtMonth, fmtNumber, fmtPct, fmtSignedGW, holidayName,
+  copyText, heroHtml, csvDate, HOUR, addDays, el, fmtDate, fmtLongDate, fmtMonth, fmtNumber, fmtPct, fmtSignedGW, holidayName,
   parisMidnight, todayParis, weekdayIndex, writeHash
 } from "./util.js";
 
@@ -39,7 +40,7 @@ export class Accuracy {
   constructor(root) {
     this.root = root;
     const [from, to] = presetRange("1y", todayParis());
-    this.state = { fc: "d1", lead: "3", metric: "mape", preset: "1y", from, to, roll: "30" };
+    this.state = { fc: "d1", lead: "3", metric: "mape", preset: "1y", from, to, roll: "30", ev: "0" };
     this.build();
   }
 
@@ -51,31 +52,36 @@ export class Accuracy {
 
   build() {
     this.root.innerHTML = `
+      ${heroHtml("Forecast accuracy,", "measured.", "How close RTE's day-ahead, two-day-ahead and week-ahead forecasts came to actual demand, and where they miss.")}
       <div class="toolbar" role="group" aria-label="Accuracy settings">
-        <label class="field"><span>Forecast</span>
-          <select data-k="fc"><option value="d1">D-1 (day-ahead)</option><option value="d2">D-2 (two days ahead)</option><option value="wk">Week-ahead</option></select>
-        </label>
-        <label class="field" data-lead><span>Lead time</span>
-          <select data-k="lead">${[3, 4, 5, 6, 7, 8, 9].map(l => `<option value="${l}">${l} days ahead</option>`).join("")}</select>
-        </label>
-        <label class="field"><span>Measure</span>
-          <select data-k="metric"><option value="mape">MAPE (%)</option><option value="mae">MAE (GW)</option><option value="bias">Bias (GW)</option></select>
-        </label>
-        <span class="divider"></span>
-        <label class="field"><span>Period</span>
-          <select data-k="preset"><option value="90d">Last 90 days</option><option value="1y">Last year</option><option value="3y">Last 3 years</option><option value="all">All (from Dec 2012)</option><option value="custom">Custom</option></select>
-        </label>
-        <label class="field"><span>From</span><input type="date" data-k="from" min="2012-12-17"></label>
-        <label class="field"><span>To</span><input type="date" data-k="to" min="2012-12-17"></label>
-        <label class="field"><span>Rolling average</span>
-          <select data-k="roll"><option value="7">7 days</option><option value="30">30 days</option><option value="90">90 days</option></select>
-        </label>
+        <div class="toolbar-row">
+          <label class="field"><span>Forecast</span>
+            <select data-k="fc"><option value="d1">D-1 (day-ahead)</option><option value="d2">D-2 (two days ahead)</option><option value="wk">Week-ahead</option></select>
+          </label>
+          <label class="field" data-lead><span>Lead time</span>
+            <select data-k="lead">${[3, 4, 5, 6, 7, 8, 9].map(l => `<option value="${l}">${l} days ahead</option>`).join("")}</select>
+          </label>
+          <label class="field"><span>Measure</span>
+            <select data-k="metric"><option value="mape">MAPE (%)</option><option value="mae">MAE (GW)</option><option value="bias">Bias (GW)</option></select>
+          </label>
+          <label class="field"><span>Period</span>
+            <select data-k="preset"><option value="90d">Last 90 days</option><option value="1y">Last year</option><option value="3y">Last 3 years</option><option value="all">All (from Dec 2012)</option><option value="custom">Custom</option></select>
+          </label>
+          <label class="field"><span>From</span><input type="date" data-k="from" min="2012-12-17"></label>
+          <label class="field"><span>To</span><input type="date" data-k="to" min="2012-12-17"></label>
+          <label class="field"><span>Rolling average</span>
+            <select data-k="roll"><option value="7">7 days</option><option value="30">30 days</option><option value="90">90 days</option></select>
+          </label>
+          <div class="field"><span>Overlays</span>
+            <div class="chips"><button class="chip" type="button" data-chip="ev" style="color:var(--muted)"><span class="swatch"></span><span class="chip-label">Events</span></button></div>
+          </div>
+        </div>
       </div>
-      <p class="headline" data-headline>Loading…</p>
-      <div class="cards" data-cards></div>
+      <div class="headline"><p data-headline>Loading…</p><button class="btn ghost small" type="button" data-copy title="Copy this sentence">Copy</button></div>
+      <div class="cards" data-cards>${'<div class="card skeleton"></div>'.repeat(5)}</div>
       <div data-time></div>
       <div class="grid-2"><div data-lead-chart></div><div data-weekday></div></div>
-      <div data-hour></div>
+      <div class="grid-2"><div data-hour></div><div data-dist></div></div>
       <article class="panel">
         <div class="panel-head"><div><h2>Biggest misses</h2><p data-miss-sub></p></div></div>
         <div class="table-scroll" style="margin:12px 16px 16px;max-height:none" data-misses></div>
@@ -87,6 +93,13 @@ export class Accuracy {
     this.leadPanel = new ChartPanel(this.root.querySelector("[data-lead-chart]"), { title: "Error by lead time", size: "short" });
     this.weekdayPanel = new ChartPanel(this.root.querySelector("[data-weekday]"), { title: "Error by weekday", size: "short" });
     this.hourPanel = new ChartPanel(this.root.querySelector("[data-hour]"), { title: "Error by time of day and season", size: "short" });
+    this.distPanel = new ChartPanel(this.root.querySelector("[data-dist]"), { title: "Distribution of daily errors", size: "short" });
+    this.root.querySelector("[data-copy]").addEventListener("click", () => copyText(this.headline.textContent));
+    this.root.querySelector('[data-chip="ev"]').addEventListener("click", () => {
+      this.state.ev = this.state.ev === "1" ? "0" : "1";
+      this.syncControls();
+      this.update();
+    });
     this.misses = this.root.querySelector("[data-misses]");
     this.missSub = this.root.querySelector("[data-miss-sub]");
 
@@ -105,6 +118,7 @@ export class Accuracy {
   syncControls() {
     this.root.querySelectorAll("[data-k]").forEach(input => { input.value = this.state[input.dataset.k]; });
     this.root.querySelector("[data-lead]").classList.toggle("hidden", this.state.fc !== "wk");
+    this.root.querySelector('[data-chip="ev"]').setAttribute("aria-pressed", this.state.ev === "1");
   }
 
   activate() {
@@ -155,6 +169,7 @@ export class Accuracy {
       const [rows, profile] = await Promise.all([this.dailyErrors(), getErrorProfile()]);
       this.renderTime(rows);
       this.renderProfileCharts(profile);
+      this.renderDistribution(rows);
       this.renderMisses(rows);
       this.renderSummary(rows);
     } catch (error) {
@@ -204,7 +219,38 @@ export class Accuracy {
         { name: `Daily ${m.label}`, colour: "--s-avg", type: points.length > 400 ? "line" : "bar", data: points.map(p => [p[0], p[1]]), width: 1, format, unit: m.unit },
         { name: `${window}-day rolling average`, colour: "--s-actual", type: "line", data: rolling, width: 2.4, format, unit: m.unit, avg: false }
       ],
+      events: [
+        ...(s.ev === "1" ? eventsBetween(s.from, s.to) : []),
+        ...(s.fc === "d1" && s.to >= "2026-10-26" && s.from <= "2026-10-26" ? [{ from: "2026-10-26", label: "D-1 recorded in advance from here" }] : [])
+      ],
       notes: this.notes()
+    });
+  }
+
+  renderDistribution(rows) {
+    const s = this.state;
+    const m = METRICS[s.metric];
+    const values = rows.map(r => this.metricValue(r)).filter(Number.isFinite);
+    const width = s.metric === "mape" ? 0.25 : s.metric === "mae" ? 0.1 : 0.25;
+    const decimals = width < 0.25 ? 1 : 2;
+    let categories = [];
+    let counts = [];
+    if (values.length) {
+      const lo = Math.floor(Math.min(...values) / width) * width;
+      const hi = Math.max(...values);
+      const bins = Math.min(80, Math.max(1, Math.ceil((hi - lo) / width + 1e-9)));
+      counts = Array(bins).fill(0);
+      for (const v of values) counts[Math.min(bins - 1, Math.floor((v - lo) / width + 1e-9))] += 1;
+      categories = counts.map((_, i) => `${fmtNumber(lo + i * width, decimals)} to ${fmtNumber(lo + (i + 1) * width, decimals)}`);
+    }
+    const share = v => (values.length ? `${v} days (${fmtNumber(v / values.length * 100, 1)}%)` : `${v} days`);
+    this.distPanel.setTitle(`Distribution of daily ${m.label}`, `${this.forecastName()} · number of days in each ${m.unit === "%" ? `${width}-point` : `${width} GW`} band`);
+    this.distPanel.render({
+      xType: "category", categories, xLabel: x => x, xHeader: `Daily ${m.label} (${m.unit})`, yName: "Days", yMin: 0,
+      yFormat: v => fmtNumber(v, 0),
+      series: [{ name: "Days", colour: "--s-actual", type: "bar", data: counts.map((c, i) => [i, c]), format: share, avg: false, decimals: 0 }],
+      legendCaption: null,
+      notes: [s.metric === "bias" ? "Bars left of zero are days RTE under-forecast demand; right of zero, over-forecast." : "Further right means a larger miss."]
     });
   }
 
@@ -356,7 +402,7 @@ export class Accuracy {
   }
 
   refreshTheme() {
-    for (const p of [this.timePanel, this.leadPanel, this.weekdayPanel, this.hourPanel]) p.refreshTheme();
+    for (const p of [this.timePanel, this.leadPanel, this.weekdayPanel, this.hourPanel, this.distPanel]) p.refreshTheme();
   }
 }
 

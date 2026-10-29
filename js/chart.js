@@ -1,22 +1,29 @@
 // A chart panel: title, ECharts chart, legend with averages for the period in
-// view, notes, data table, and PNG/CSV export. Every chart in the site uses it.
+// view, notes, data table, and PNG / copy / CSV export. Every chart uses it.
 //
-// Behaviour:
-//   * hover shows every series' value at that point;
-//   * click and drag across the chart zooms to that period;
-//     double-click (or "Reset zoom") returns to the full period;
-//   * the legend shows each series' average over the period in view and
-//     toggles the series on click;
-//   * PNG exports the chart with its title and legend; CSV exports the data
-//     in view.
+//  * hover shows every series' value at that point;
+//  * click and drag across the chart zooms in; double-click or "Reset" zooms
+//    out; time charts can show an overview strip with draggable handles;
+//  * the legend shows each series' average (or total) for the period in view
+//    and hides/shows series on click;
+//  * time axes are drawn in Paris wall-clock time, so ticks fall on Paris
+//    midnight and round hours;
+//  * lines break where data is missing instead of joining across the gap.
 
-import { cssVar, downloadBlob, el, fmtNumber, slug, toCsv } from "./util.js";
+import { dashFor, settings, widthScale } from "./settings.js";
+import {
+  cssVar, downloadBlob, el, fmtDateTime, fmtNumber, fmtTick, fromWall, parisMidnight, slug, toast, toCsv, toWall
+} from "./util.js";
 
 const panels = new Set();
 
 window.addEventListener("resize", () => {
   for (const panel of panels) panel.chart?.resize();
 });
+
+function role(colour) {
+  return colour?.startsWith("--s-") ? colour.slice(4) : null;
+}
 
 function resolveColour(colour) {
   return colour?.startsWith("--") ? cssVar(colour) : colour;
@@ -32,27 +39,41 @@ function themeTokens() {
     tooltip: cssVar("--tooltip-bg"),
     border: cssVar("--border-strong"),
     panel: cssVar("--panel"),
-    holiday: cssVar("--holiday")
+    holiday: cssVar("--holiday"),
+    event: cssVar("--event"),
+    accent: cssVar("--accent")
   };
+}
+
+/** Typical spacing between points, used to detect gaps. */
+function typicalStep(points) {
+  if (points.length < 3) return Infinity;
+  const diffs = [];
+  const stride = Math.max(1, Math.floor(points.length / 400));
+  for (let i = stride; i < points.length; i += stride) diffs.push(points[i][0] - points[i - stride][0]);
+  diffs.sort((a, b) => a - b);
+  return diffs[Math.floor(diffs.length / 2)] / stride;
 }
 
 export class ChartPanel {
   /**
    * @param {HTMLElement} container
-   * @param {{title: string, subtitle?: string, size?: "short"|"tall", table?: boolean}} options
+   * @param {{title: string, subtitle?: string, size?: string, table?: boolean, overview?: boolean}} options
    */
-  constructor(container, { title, subtitle = "", size = "", table = true } = {}) {
+  constructor(container, { title, subtitle = "", size = "", table = true, overview = false } = {}) {
+    this.overview = overview;
     this.root = el("article", { class: "panel" });
     this.root.innerHTML = `
       <div class="panel-head">
         <div><h2></h2><p></p></div>
         <div class="panel-tools">
-          <button class="btn" type="button" data-act="reset" title="Return to the full period (or double-click the chart)">Reset zoom</button>
-          <button class="btn" type="button" data-act="png" title="Download the chart as an image">PNG</button>
-          <button class="btn" type="button" data-act="csv" title="Download the data in view">CSV</button>
+          <button class="btn ghost" type="button" data-act="reset" title="Zoom back out (or double-click the chart)">Reset</button>
+          <button class="btn ghost" type="button" data-act="copy" title="Copy the chart image to your clipboard">Copy</button>
+          <button class="btn ghost" type="button" data-act="png" title="Download the chart as an image, with source line">PNG</button>
+          <button class="btn ghost" type="button" data-act="csv" title="Download the data in view">CSV</button>
         </div>
       </div>
-      <div class="chart ${size}"></div>
+      <div class="chart-wrap"><div class="chart ${size}"></div><div class="chart-loading" hidden><span></span></div><div class="chart-empty" hidden></div></div>
       <div class="legend"></div>
       <div class="notes"></div>
       ${table ? `<details class="table-wrap"><summary>Show data table</summary><div class="table-scroll"></div></details>` : ""}`;
@@ -61,6 +82,8 @@ export class ChartPanel {
     this.titleEl = this.root.querySelector("h2");
     this.subtitleEl = this.root.querySelector(".panel-head p");
     this.chartEl = this.root.querySelector(".chart");
+    this.loadingEl = this.root.querySelector(".chart-loading");
+    this.emptyEl = this.root.querySelector(".chart-empty");
     this.legendEl = this.root.querySelector(".legend");
     this.notesEl = this.root.querySelector(".notes");
     this.tableEl = this.root.querySelector(".table-scroll");
@@ -68,6 +91,7 @@ export class ChartPanel {
     this.setTitle(title, subtitle);
 
     this.root.querySelector('[data-act="png"]').addEventListener("click", () => this.exportPng());
+    this.root.querySelector('[data-act="copy"]').addEventListener("click", () => this.copyPng());
     this.root.querySelector('[data-act="csv"]').addEventListener("click", () => this.exportCsv());
     this.root.querySelector('[data-act="reset"]').addEventListener("click", () => this.resetZoom());
     this.details?.addEventListener("toggle", () => this.details.open && this.renderTable());
@@ -83,25 +107,49 @@ export class ChartPanel {
     this.subtitleEl.hidden = !subtitle;
   }
 
+  setLoading(loading) {
+    this.loadingEl.hidden = !loading;
+    this.root.classList.toggle("is-loading", loading);
+  }
+
   show(visible) {
     this.root.classList.toggle("hidden", !visible);
     if (visible) this.chart?.resize();
   }
 
+  isTime() {
+    return this.spec?.xType === "time";
+  }
+
+  /** Chart-space x for a real x (Paris wall clock on time axes). */
+  cx(x) {
+    return this.isTime() ? toWall(x) : x;
+  }
+
+  /** Real x for a chart-space x. */
+  rx(x) {
+    return this.isTime() ? fromWall(x) : x;
+  }
+
   /**
    * spec = {
    *   xType: "time" | "category", categories?: string[],
-   *   xLabel: x => string (tooltip, table, CSV), axisLabel?: x => string,
-   *   yName, yFormat?: v => string, yMin?, yAxis2?: {name, format},
+   *   xLabel: x => string (tooltip and table), csvLabel?: x => string,
+   *   axisLabel?: x => string, xHeader?, xMin?, xMax?,
+   *   yName, yFormat?: v => string, yMin?, yScale?, yAxis2?: {name, format},
    *   series: [{ name, colour, type: "line"|"bar"|"band", data, dashed?, width?,
-   *              area?, yAxis?, avg?: false | (values) => number, decimals?, unit?, step? }],
-   *   markAreas?: [{ from, to, label }], notes?: string[], legendCaption?
+   *              yAxis?, avg?: false | (values) => number, decimals?, unit?, format?,
+   *              symbols?, step?, colourFn?, hidden?, barColours? }],
+   *   markAreas?: [{ from, to, label, colour? }], events?: [{from, to?, label}],
+   *   zeroLine?: boolean, notes?: string[], legendCaption?, empty?: string
    * }
-   * Line/bar data are [x, y] pairs; band data are [x, low, high].
+   * Line and bar data are [x, y] pairs; band data are [x, low, high].
    */
   render(spec) {
     this.spec = spec;
+    this.setLoading(false);
     this.hidden = new Set(spec.series.filter(s => s.hidden).map(s => s.name));
+    for (const s of spec.series) delete s._lookup;
 
     if (!this.chart) {
       this.chart = echarts.init(this.chartEl, null, { renderer: "canvas" });
@@ -109,14 +157,17 @@ export class ChartPanel {
       this.chart.getZr().on("dblclick", () => this.resetZoom());
     }
 
+    const empty = spec.empty || (!spec.series.some(s => s.data?.length) ? "No data for this selection." : "");
+    this.emptyEl.hidden = !empty;
+    this.emptyEl.textContent = empty;
+
     this.chart.setOption(this.buildOption(spec), { notMerge: true });
     this.enableDragZoom();
     this.renderLegend();
-    this.notesEl.innerHTML = (spec.notes || []).map(note => `<p>${note}</p>`).join("");
+    this.notesEl.innerHTML = (spec.notes || []).filter(Boolean).map(note => `<p>${note}</p>`).join("");
     if (this.details?.open) this.renderTable();
   }
 
-  /** Re-draw with current theme colours. */
   refreshTheme() {
     if (this.spec) this.render(this.spec);
   }
@@ -131,65 +182,107 @@ export class ChartPanel {
     this.updateLegend();
   }
 
+  /** Line points in chart space, with nulls inserted at gaps. */
+  chartPoints(data) {
+    if (!this.isTime()) return data;
+    const step = typicalStep(data);
+    const out = [];
+    let prevReal = null;
+    let prevWall = null;
+    for (const point of data) {
+      const [x, ...rest] = point;
+      const w = toWall(x);
+      if (prevWall !== null && w <= prevWall) continue; // repeated October hour
+      // Break the line for gaps of three or more intervals; bridge single missing points.
+      if (prevReal !== null && x - prevReal > step * 2.5) out.push([(prevWall + w) / 2, ...rest.map(() => null)]);
+      out.push([w, ...rest]);
+      prevReal = x;
+      prevWall = w;
+    }
+    return out;
+  }
+
   buildOption(spec, { forExport = false } = {}) {
     const t = themeTokens();
+    const scale = widthScale();
+    const markers = settings().markers;
     const series = [];
     const yFormat = spec.yFormat || (v => fmtNumber(v, 1));
 
     spec.series.forEach((s, index) => {
       const colour = resolveColour(s.colour);
       const common = { name: s.name, yAxisIndex: s.yAxis || 0, z: s.z ?? 10 - Math.min(index, 8) };
+      const points = this.chartPoints(s.data);
 
       if (s.type === "band") {
         series.push({
-          ...common, type: "line", stack: `band-${index}`, symbol: "none", silent: true,
-          lineStyle: { opacity: 0 }, data: s.data.map(([x, lo]) => [x, lo]), z: 1, tooltip: { show: false }
+          ...common, type: "line", stack: `band-${index}`, symbol: "none", silent: true, connectNulls: false,
+          lineStyle: { opacity: 0 }, data: points.map(([x, lo]) => [x, lo]), z: 1, tooltip: { show: false }
         });
         series.push({
-          ...common, type: "line", stack: `band-${index}`, symbol: "none", silent: true,
+          ...common, type: "line", stack: `band-${index}`, symbol: "none", silent: true, connectNulls: false,
           lineStyle: { opacity: 0 }, areaStyle: { color: colour, opacity: 1 },
-          data: s.data.map(([x, lo, hi]) => [x, hi - lo]), z: 1, tooltip: { show: false }
+          data: points.map(([x, lo, hi]) => [x, hi == null || lo == null ? null : hi - lo]), z: 1, tooltip: { show: false }
         });
         return;
       }
 
       if (s.type === "bar") {
         series.push({
-          ...common, type: "bar", data: s.data, barMaxWidth: 14, large: s.data.length > 2000,
-          itemStyle: { color: s.colourFn ? p => resolveColour(s.colourFn(p.value[1])) : colour, borderRadius: [2, 2, 0, 0] }
+          ...common, type: "bar", data: points.filter(p => p[1] != null), barMaxWidth: s.barWidth || 16, large: points.length > 2000,
+          label: s.labels ? { show: true, position: "top", color: t.soft, fontSize: 11, fontFamily: "JetBrains Mono", formatter: p => s.labels(p.value[1], p.dataIndex) } : undefined,
+          itemStyle: {
+            borderRadius: [2, 2, 0, 0],
+            color: s.colourFn ? p => resolveColour(s.colourFn(p.value[1], p.dataIndex)) : colour
+          }
         });
         return;
       }
 
+      const dash = s.dashed ? (dashFor(role(s.colour)) || [6, 4]) : dashFor(role(s.colour));
+      const showSymbols = s.symbols ?? markers;
       series.push({
-        ...common, type: "line", data: s.data, showSymbol: s.symbols || false, symbolSize: 5,
-        step: s.step || false, connectNulls: false, sampling: s.data.length > 4000 ? "lttb" : undefined,
-        lineStyle: { color: colour, width: s.width ?? 2, type: s.dashed ? [6, 4] : "solid" },
+        ...common, type: "line", data: points, connectNulls: false,
+        showSymbol: showSymbols, showAllSymbol: showSymbols ? "auto" : undefined, symbol: "circle",
+        symbolSize: points.length > 400 ? 3 : 5,
+        step: s.step || false, sampling: points.length > 4000 && !showSymbols ? "lttb" : undefined,
+        lineStyle: { color: colour, width: (s.width ?? 2) * scale, type: dash || "solid" },
         itemStyle: { color: colour },
-        areaStyle: s.area ? { color: colour, opacity: 0.08 } : undefined,
         emphasis: { disabled: true }
       });
     });
 
-    if (spec.markAreas?.length && series.length) {
-      series[series.length - 1].markArea = {
-        silent: true,
-        itemStyle: { color: t.holiday },
-        label: { color: t.muted, fontSize: 10, position: "insideTop" },
-        data: spec.markAreas.map(area => [
-          { xAxis: area.from, name: area.label, itemStyle: area.colour ? { color: resolveColour(area.colour) } : undefined },
-          { xAxis: area.to }
-        ])
-      };
+    // Shaded periods (holidays, today) and events live on an invisible helper series.
+    const areas = (spec.markAreas || []).map(area => [
+      { xAxis: this.cx(area.from), name: area.label, itemStyle: { color: area.colour ? resolveColour(area.colour) : t.holiday } },
+      { xAxis: this.cx(area.to) }
+    ]);
+    const lines = [];
+    for (const e of spec.events || []) {
+      const from = parisMidnight(e.from);
+      if (e.to && e.to !== e.from) {
+        const to = parisMidnight(e.to) + 24 * 3600000;
+        areas.push([{ xAxis: this.cx(from), name: e.label, itemStyle: { color: t.event } }, { xAxis: this.cx(to) }]);
+      } else {
+        lines.push({ xAxis: this.cx(from), name: e.label });
+      }
+    }
+    if (spec.zeroLine) lines.push({ yAxis: 0, name: "", label: { show: false }, lineStyle: { type: "solid", color: t.axis } });
+
+    if (areas.length || lines.length) {
+      series.push({
+        name: "__marks", type: "line", data: [], silent: true, tooltip: { show: false },
+        markArea: areas.length ? { silent: true, label: { color: t.muted, fontSize: 10, position: "insideTop" }, data: areas } : undefined,
+        markLine: lines.length ? {
+          silent: true, symbol: "none", lineStyle: { color: t.muted, type: [4, 4], width: 1 },
+          label: { color: t.muted, fontSize: 10, formatter: p => p.name, position: "insideEndTop" }, data: lines
+        } : undefined
+      });
     }
 
     const legendNames = spec.series.map(s => s.name);
     const selected = Object.fromEntries(legendNames.map(name => [name, !this.hidden.has(name)]));
-
-    const axisLabel = {
-      color: t.muted, fontSize: 11, fontFamily: "JetBrains Mono", hideOverlap: true,
-      formatter: spec.axisLabel || spec.xLabel
-    };
+    const labelFn = spec.axisLabel || (this.isTime() ? fmtTick : spec.xLabel);
 
     const yAxes = [{
       type: "value", scale: spec.yScale ?? spec.yMin === undefined, min: spec.yMin, name: spec.yName,
@@ -207,27 +300,47 @@ export class ChartPanel {
       });
     }
 
+    const overview = this.overview && this.isTime() && !forExport;
+    const exportFooter = forExport
+      ? `Source: RTE (French TSO) · France Power Demand Intelligence by jms-drn · Exported ${fmtDateTime(Date.now())} Paris time`
+      : "";
+
     return {
       backgroundColor: forExport ? t.panel : "transparent",
       animation: false,
+      useUTC: true,
       title: forExport ? {
-        text: this.title, subtext: this.subtitle, left: 16, top: 12,
-        textStyle: { color: t.text, fontSize: 18, fontFamily: "Inter" },
-        subtextStyle: { color: t.muted, fontSize: 12 }
+        text: this.title, subtext: this.subtitle, left: 20, top: 14,
+        textStyle: { color: t.text, fontSize: 20, fontFamily: "Inter", fontWeight: 700 },
+        subtextStyle: { color: t.muted, fontSize: 13 }
       } : undefined,
+      graphic: forExport ? [{
+        type: "text", left: 20, bottom: 14,
+        style: { text: exportFooter, fill: t.muted, font: "12px Inter, sans-serif" }
+      }] : undefined,
       legend: {
-        show: forExport, bottom: 10, left: 16, data: legendNames, selected,
-        textStyle: { color: t.soft, fontSize: 12 }, itemWidth: 18, itemHeight: 4, icon: "roundRect"
+        show: forExport, bottom: 40, left: 20, data: legendNames, selected,
+        textStyle: { color: t.soft, fontSize: 13 }, itemWidth: 20, itemHeight: 4, icon: "roundRect"
       },
       grid: forExport
-        ? { left: 64, right: spec.yAxis2 ? 64 : 28, top: 84, bottom: 70 }
-        : { left: 56, right: spec.yAxis2 ? 56 : 20, top: 36, bottom: 34 },
+        ? { left: 70, right: spec.yAxis2 ? 70 : 32, top: 108, bottom: 96 }
+        : { left: 56, right: spec.yAxis2 ? 56 : 20, top: 36, bottom: overview ? 74 : 34 },
       toolbox: forExport ? undefined : {
         show: true, right: 14, top: 0, itemSize: 13,
         iconStyle: { borderColor: t.muted },
         feature: { dataZoom: { yAxisIndex: "none", title: { zoom: "Drag to zoom", back: "Undo zoom" } } }
       },
-      dataZoom: [{ type: "inside", xAxisIndex: 0, zoomOnMouseWheel: false, moveOnMouseMove: false, moveOnMouseWheel: false, filterMode: "none" }],
+      dataZoom: [
+        { type: "inside", xAxisIndex: 0, zoomOnMouseWheel: false, moveOnMouseMove: false, moveOnMouseWheel: false, filterMode: "none" },
+        ...(overview ? [{
+          type: "slider", xAxisIndex: 0, filterMode: "none", height: 26, bottom: 10,
+          borderColor: t.grid, backgroundColor: "transparent", fillerColor: `${t.accent}22`,
+          dataBackground: { lineStyle: { color: t.muted, opacity: 0.5 }, areaStyle: { color: t.muted, opacity: 0.08 } },
+          selectedDataBackground: { lineStyle: { color: t.accent }, areaStyle: { color: t.accent, opacity: 0.12 } },
+          handleStyle: { color: t.accent, borderColor: t.accent }, moveHandleStyle: { color: t.accent, opacity: 0.4 },
+          textStyle: { color: t.muted, fontSize: 10 }, labelFormatter: v => fmtTick(fromWall(v))
+        }] : [])
+      ],
       tooltip: forExport ? undefined : {
         trigger: "axis", confine: true,
         backgroundColor: t.tooltip, borderColor: t.border, padding: [9, 12],
@@ -236,8 +349,15 @@ export class ChartPanel {
         formatter: params => this.tooltip(params)
       },
       xAxis: {
-        type: spec.xType, data: spec.categories, min: spec.xMin, max: spec.xMax, boundaryGap: spec.series.some(s => s.type === "bar") && spec.xType === "category",
-        axisLine: { lineStyle: { color: t.axis } }, axisTick: { show: false }, axisLabel,
+        type: spec.xType, data: spec.categories,
+        min: spec.xMin == null ? undefined : this.cx(spec.xMin), max: spec.xMax == null ? undefined : this.cx(spec.xMax),
+        boundaryGap: spec.series.some(s => s.type === "bar") && spec.xType === "category",
+        axisLine: { lineStyle: { color: t.axis } }, axisTick: { show: false },
+        axisLabel: {
+          color: t.muted, fontSize: 11, fontFamily: "JetBrains Mono", hideOverlap: true,
+          showMinLabel: this.isTime() ? false : undefined, showMaxLabel: this.isTime() ? false : undefined,
+          formatter: this.isTime() ? v => labelFn(fromWall(v)) : labelFn
+        },
         splitLine: { show: false }
       },
       yAxis: yAxes,
@@ -246,23 +366,21 @@ export class ChartPanel {
   }
 
   tooltip(params) {
-    if (!params.length) return "";
     const spec = this.spec;
+    params = params.filter(p => !p.seriesName.startsWith("__"));
+    if (!params.length) return "";
     const first = params[0];
-    const x = spec.xType === "category" ? spec.categories[first.dataIndex] : first.value[0];
-    const xIndex = first.dataIndex;
-    const rows = [];
-
+    const x = spec.xType === "category" ? first.dataIndex : this.rx(first.value[0]);
     const nearest = new Map(params.filter(p => Array.isArray(p.value)).map(p => [p.seriesName, p.value[1]]));
+    const rows = [];
 
     for (const s of spec.series) {
       if (this.hidden.has(s.name)) continue;
-      let value = this.valueAt(s, x, xIndex);
-      // Series on a different time grid (e.g. half-hourly) have no point at
-      // exactly x; use the nearest point ECharts picked for that series.
+      let value = this.valueAt(s, x);
+      // Series on a coarser grid (e.g. half-hourly) have no point at exactly x.
       if (value == null && s.type !== "band" && spec.xType !== "category") value = nearest.get(s.name) ?? null;
       if (value == null) continue;
-      const colour = resolveColour(s.colour);
+      const colour = resolveColour(s.barColours ? s.barColours(x) : s.colour);
       const text = Array.isArray(value)
         ? `${this.formatValue(s, value[0])} – ${this.formatValue(s, value[1])}`
         : this.formatValue(s, value);
@@ -271,8 +389,9 @@ export class ChartPanel {
         <b style="font-family:JetBrains Mono,monospace">${text}</b></div>`);
     }
 
+    const label = spec.xType === "category" ? spec.categories[x] : spec.xLabel(x);
     const extra = spec.tooltipExtra ? spec.tooltipExtra(x) : "";
-    return `<div style="font-weight:700;margin-bottom:2px">${spec.xLabel(x)}</div>${rows.join("")}${extra}`;
+    return `<div style="font-weight:700;margin-bottom:2px">${label}</div>${rows.join("")}${extra}`;
   }
 
   formatValue(s, value) {
@@ -284,24 +403,21 @@ export class ChartPanel {
   lookup(s) {
     if (!s._lookup) {
       s._lookup = new Map();
-      s.data.forEach((point, i) => {
-        const key = this.spec.xType === "category" ? i : point[0];
-        s._lookup.set(key, s.type === "band" ? [point[1], point[2]] : point[1]);
-      });
+      for (const point of s.data) s._lookup.set(point[0], s.type === "band" ? [point[1], point[2]] : point[1]);
     }
     return s._lookup;
   }
 
-  valueAt(s, x, index) {
-    const map = this.lookup(s);
-    return this.spec.xType === "category" ? map.get(index) ?? null : map.get(x) ?? null;
+  valueAt(s, x) {
+    return this.lookup(s).get(x) ?? null;
   }
 
-  /** [min, max] of the x-axis in view (indices for category axes). */
+  /** [min, max] of the x-axis in view, in real x (indices on category axes). */
   visibleExtent() {
     try {
       const axis = this.chart.getModel().getComponent("xAxis", 0).axis;
-      return axis.scale.getExtent();
+      const [lo, hi] = axis.scale.getExtent();
+      return this.isTime() ? [this.rx(lo), this.rx(hi)] : [lo, hi];
     } catch (error) {
       return [-Infinity, Infinity];
     }
@@ -309,10 +425,7 @@ export class ChartPanel {
 
   inView(s) {
     const [lo, hi] = this.visibleExtent();
-    if (this.spec.xType === "category") {
-      return s.data.filter((_, i) => i >= lo - 1e-9 && i <= hi + 1e-9);
-    }
-    return s.data.filter(p => p[0] >= lo && p[0] <= hi);
+    return s.data.filter(p => p[0] >= lo - 1e-9 && p[0] <= hi + 1e-9);
   }
 
   renderLegend() {
@@ -322,7 +435,7 @@ export class ChartPanel {
     for (const s of spec.series) {
       const colour = resolveColour(s.colour);
       const item = el("button", { class: `legend-item${this.hidden.has(s.name) ? " off" : ""}`, type: "button", title: "Show or hide this series" });
-      const keyClass = s.type === "band" ? "key band" : s.dashed ? "key dashed" : "key";
+      const keyClass = s.type === "band" ? "key band" : s.type === "bar" ? "key bar" : s.dashed || dashFor(role(s.colour)) ? "key dashed" : "key";
       item.innerHTML = `<span class="${keyClass}" style="background:${colour};color:${colour}"></span><span>${s.name}</span><b data-avg></b>`;
       item.addEventListener("click", () => {
         if (this.hidden.has(s.name)) this.hidden.delete(s.name);
@@ -334,9 +447,9 @@ export class ChartPanel {
       this.legendEl.appendChild(item);
     }
 
-    const caption = el("span", { class: "legend-caption" }, spec.legendCaption ?? "Average for the period in view");
-    this.legendEl.appendChild(caption);
-    // Wait one frame so the axis extent reflects the new option.
+    if (spec.legendCaption !== null) {
+      this.legendEl.appendChild(el("span", { class: "legend-caption" }, spec.legendCaption ?? "Average for the period in view"));
+    }
     requestAnimationFrame(() => this.updateLegend());
   }
 
@@ -372,24 +485,22 @@ export class ChartPanel {
     const keys = new Set();
     const keyed = spec.series.map(s => {
       const map = new Map();
-      this.inView(s).forEach(p => {
-        const key = spec.xType === "category" ? s.data.indexOf(p) : p[0];
-        keys.add(key);
-        map.set(key, s.type === "band" ? [p[1], p[2]] : p[1]);
-      });
+      for (const p of this.inView(s)) {
+        keys.add(p[0]);
+        map.set(p[0], s.type === "band" ? [p[1], p[2]] : p[1]);
+      }
       return map;
     });
 
-    const sorted = [...keys].sort((a, b) => a - b);
-    const rows = sorted.map(key => {
-      const label = spec.xType === "category" ? spec.categories[key] : (spec.csvLabel || spec.xLabel)(key);
-      const values = columns.map(({ s, part }) => {
+    const label = spec.xType === "category" ? k => spec.categories[k] : spec.csvLabel || spec.xLabel;
+    const rows = [...keys].sort((a, b) => a - b).map(key => [
+      label(key),
+      ...columns.map(({ s, part }) => {
         const v = keyed[spec.series.indexOf(s)].get(key);
         const raw = part === null ? v : v?.[part];
         return raw == null || !Number.isFinite(raw) ? "" : Number(raw.toFixed(s.decimals ?? 3));
-      });
-      return [label, ...values];
-    });
+      })
+    ]);
 
     return { headers, rows };
   }
@@ -409,26 +520,42 @@ export class ChartPanel {
     downloadBlob(`${slug(this.title)}.csv`, new Blob([toCsv(headers, rows)], { type: "text/csv;charset=utf-8" }));
   }
 
-  exportPng() {
-    if (!this.spec) return;
+  /** The chart as a PNG blob, with title, legend and source footer. */
+  async pngBlob() {
     const holder = el("div");
-    holder.style.cssText = "position:absolute;left:-10000px;top:0;width:1400px;height:720px";
+    holder.style.cssText = "position:absolute;left:-10000px;top:0;width:1400px;height:760px";
     document.body.appendChild(holder);
     const exporter = echarts.init(holder, null, { renderer: "canvas" });
     const option = this.buildOption(this.spec, { forExport: true });
     const [lo, hi] = this.visibleExtent();
     if (Number.isFinite(lo)) {
-      option.xAxis.min = this.spec.xType === "category" ? Math.ceil(lo) : lo;
-      option.xAxis.max = this.spec.xType === "category" ? Math.floor(hi) : hi;
+      option.xAxis.min = this.isTime() ? this.cx(lo) : Math.ceil(lo);
+      option.xAxis.max = this.isTime() ? this.cx(hi) : Math.floor(hi);
     }
     exporter.setOption(option);
     const url = exporter.getDataURL({ type: "png", pixelRatio: 2, backgroundColor: themeTokens().panel });
     exporter.dispose();
     holder.remove();
-    fetch(url).then(r => r.blob()).then(blob => downloadBlob(`${slug(this.title)}.png`, blob));
+    return (await fetch(url)).blob();
+  }
+
+  async exportPng() {
+    if (!this.spec) return;
+    downloadBlob(`${slug(this.title)}.png`, await this.pngBlob());
+  }
+
+  async copyPng() {
+    if (!this.spec) return;
+    try {
+      const blob = await this.pngBlob();
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+      toast("Chart copied to clipboard");
+    } catch (error) {
+      toast("Your browser doesn't allow copying images here. Use PNG instead.", { error: true });
+    }
   }
 }
 
-export function refreshAllThemes() {
+export function refreshAllCharts() {
   for (const panel of panels) panel.refreshTheme();
 }

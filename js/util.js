@@ -1,5 +1,5 @@
 // Shared helpers: Paris time, formatting, French public holidays, URL state,
-// file downloads.
+// downloads and small DOM helpers.
 
 export const HOUR = 3600000;
 export const DAY = 86400000;
@@ -32,9 +32,20 @@ export function parisOffset(ms) {
   return ms >= start && ms < end ? 2 * HOUR : HOUR;
 }
 
+/** Paris wall-clock time expressed as if it were UTC (used for chart axes). */
+export function toWall(ms) {
+  return ms + parisOffset(ms);
+}
+
+/** Inverse of toWall (the repeated October hour maps to its first occurrence). */
+export function fromWall(wallMs) {
+  const candidate = wallMs - HOUR;
+  return parisOffset(candidate) === HOUR ? candidate : wallMs - 2 * HOUR;
+}
+
 /** A Date whose getUTC* fields read as Paris wall-clock time. */
 export function wall(ms) {
-  return new Date(ms + parisOffset(ms));
+  return new Date(toWall(ms));
 }
 
 const pad = n => String(n).padStart(2, "0");
@@ -94,6 +105,10 @@ export function weekStart(date) {
   return addDays(date, -weekdayIndex(date));
 }
 
+export function hoursInDay(date) {
+  return (parisMidnight(addDays(date, 1)) - parisMidnight(date)) / HOUR;
+}
+
 export function isLeapDay(date) {
   return date.slice(5) === "02-29";
 }
@@ -131,8 +146,34 @@ export const fmtDateTime = ms => fmt({ weekday: "short", day: "numeric", month: 
 export const fmtTime = ms => fmt({ hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(ms);
 export const fmtDayTime = ms => fmt({ day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(ms);
 
+/** Axis tick label for a time axis: date at midnight, time otherwise. */
+export function fmtTick(ms) {
+  if (timeKey(ms) !== "00:00") return fmtTime(ms);
+  const date = dateKey(ms);
+  if (date.endsWith("-01-01")) return date.slice(0, 4);
+  if (date.endsWith("-01")) return fmtMonth(ms + 12 * HOUR);
+  return fmtDateShort(ms);
+}
+
 export function fmtLongDate(date) {
   return fmt({ day: "numeric", month: "short", year: "numeric" }).format(parisMidnight(date) + 12 * HOUR);
+}
+
+export function fmtShortDate(date) {
+  return fmt({ day: "numeric", month: "short" }).format(parisMidnight(date) + 12 * HOUR);
+}
+
+export function fmtPeriod(from, to) {
+  if (from === to) return fmtLongDate(from);
+  if (from.slice(0, 4) === to.slice(0, 4)) return `${fmtShortDate(from)} – ${fmtLongDate(to)}`;
+  return `${fmtLongDate(from)} – ${fmtLongDate(to)}`;
+}
+
+/** "1 Oct to 29 Oct 2026" for use in sentences. */
+export function fmtFromTo(from, to) {
+  if (from === to) return `on ${fmtLongDate(from)}`;
+  const first = from.slice(0, 4) === to.slice(0, 4) ? fmtShortDate(from) : fmtLongDate(from);
+  return `from ${first} to ${fmtLongDate(to)}`;
 }
 
 export function fmtNumber(value, decimals = 1) {
@@ -156,10 +197,20 @@ export function fmtSignedGW(mw, decimals = 2) {
   return `${sign}${fmtNumber(Math.abs(mw) / 1000, decimals)} GW`;
 }
 
+export function ordinal(n) {
+  const s = ["th", "st", "nd", "rd"];
+  const v = n % 100;
+  return `${n}${s[(v - 20) % 10] || s[v] || s[0]}`;
+}
+
 export function mean(values) {
   const finite = values.filter(Number.isFinite);
   return finite.length ? finite.reduce((a, b) => a + b, 0) / finite.length : null;
 }
+
+/** Spreadsheet-friendly Paris local timestamps for CSV files. */
+export const csvDateTime = ms => `${dateKey(ms)} ${timeKey(ms)}`;
+export const csvDate = ms => dateKey(ms + 12 * HOUR);
 
 // ---------- French public holidays ----------
 
@@ -224,7 +275,7 @@ export function writeHash(tab, params) {
   if (location.hash !== hash) history.replaceState(null, "", hash);
 }
 
-// ---------- Downloads ----------
+// ---------- Downloads, clipboard, DOM ----------
 
 export function downloadBlob(filename, blob) {
   const url = URL.createObjectURL(blob);
@@ -246,7 +297,7 @@ export function toCsv(headers, rows) {
 }
 
 export function slug(text) {
-  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return text.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
 export function el(tag, attrs = {}, html = "") {
@@ -263,6 +314,31 @@ export function cssVar(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
 
-/** Spreadsheet-friendly Paris local timestamps for CSV files. */
-export const csvDateTime = ms => `${dateKey(ms)} ${timeKey(ms)}`;
-export const csvDate = ms => dateKey(ms + 12 * HOUR);
+let toastTimer = null;
+
+/** Small notification at the bottom of the screen. */
+export function toast(message, { error = false } = {}) {
+  let node = document.getElementById("toast");
+  if (!node) {
+    node = el("div", { id: "toast", role: "status", "aria-live": "polite" });
+    document.body.appendChild(node);
+  }
+  node.textContent = message;
+  node.className = `toast show${error ? " error" : ""}`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { node.className = "toast"; }, 3200);
+}
+
+export async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    toast("Copied to clipboard");
+  } catch (error) {
+    toast("Your browser blocked copying. Select the text and copy it instead.", { error: true });
+  }
+}
+
+/** A tab's title and one-line description. */
+export function heroHtml(title, accent, description) {
+  return `<div class="hero"><div><h1>${title} <span>${accent}</span></h1><p>${description}</p></div></div>`;
+}

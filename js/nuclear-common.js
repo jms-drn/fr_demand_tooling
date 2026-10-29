@@ -88,3 +88,33 @@ export function siteSort(a, b) {
 }
 
 export { addDays };
+
+/** Red and yellow diagonal stripes (unplanned outages), as an ECharts fill pattern. */
+export function stripePattern(red, yellow, size = 8) {
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = red;
+  ctx.fillRect(0, 0, size, size);
+  ctx.strokeStyle = yellow;
+  ctx.lineWidth = size / 4;
+  ctx.beginPath();
+  for (let k = -size; k <= size * 2; k += size / 2) {
+    ctx.moveTo(k, 0);
+    ctx.lineTo(k - size, size);
+  }
+  ctx.stroke();
+  return { image: canvas, repeat: "repeat" };
+}
+
+/** An on/off switch between two labels (left = off, right = on). */
+export function switchHtml(attr, left, right) {
+  return `<button type="button" class="switch" role="switch" ${attr} aria-checked="false"><span data-left>${left}</span><span class="track" aria-hidden="true"></span><span data-right>${right}</span></button>`;
+}
+
+export function setSwitch(button, on) {
+  button.setAttribute("aria-checked", on);
+  button.querySelector("[data-left]").classList.toggle("on", !on);
+  button.querySelector("[data-right]").classList.toggle("on", on);
+}

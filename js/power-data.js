@@ -119,7 +119,9 @@ function outlookMonth(month) {
     const text = await fetchText(`data/nuclear/outlook/${month.slice(0, 4)}/${month}.csv`, { optional: true });
     const map = new Map();
     if (!text) return map;
-    for (const r of simpleCsv(text)) map.set(r.as_of, { asOf: r.as_of, first: r.first_target, values: r.mw10.split(" ").map(v => Number(v) * 10) });
+    for (const r of simpleCsv(text)) {
+      map.set(r.as_of, { asOf: r.as_of, first: r.first_target, values: r.mw10.split(" ").map(v => Number(v) * 10), unplanned: (r.unplanned10 || "").split(" ").filter(Boolean).map(v => Number(v) * 10) });
+    }
     return map;
   });
 }
@@ -133,13 +135,18 @@ export async function getOutlookAsOf(asOf, today) {
   let entry;
   if (asOf >= today) {
     const live = await getLive();
-    entry = { asOf: today, first: live.outlook.first_target, values: live.outlook.mw10.split(" ").map(v => Number(v) * 10), live: true };
+    entry = {
+      asOf: today, first: live.outlook.first_target, live: true,
+      values: live.outlook.mw10.split(" ").map(v => Number(v) * 10),
+      unplanned: (live.outlook.unplanned10 || "").split(" ").filter(Boolean).map(v => Number(v) * 10)
+    };
   } else {
     entry = (await outlookMonth(asOf.slice(0, 7))).get(asOf);
   }
   if (!entry) return null;
   if (!entry.byDate) {
     entry.byDate = new Map(entry.values.map((v, i) => [addDays(entry.first, i), v]));
+    entry.unplByDate = new Map((entry.unplanned || []).map((v, i) => [addDays(entry.first, i), v]));
   }
   return entry;
 }
@@ -172,6 +179,16 @@ export async function getOutages(years) {
 export function getReserves() {
   return cached("hydro-reserves", async () => simpleCsv(await fetchText("data/hydro/reserves.csv"))
     .map(r => ({ start: r.week_start, end: r.week_end, mwh: Number(r.mwh), updated: r.updated_utc })));
+}
+
+/** Installed nuclear capacity (MW) on a Paris date, from the reactor list. */
+export function installedOn(fleet, date) {
+  const t = parisMidnight(date) + 12 * 3600000;
+  return fleet.reactors.reduce((sum, r) => {
+    const from = r.from_utc ? Date.parse(r.from_utc.replace("Z", ":00Z")) : -Infinity;
+    const to = r.to_utc ? Date.parse(r.to_utc.replace("Z", ":00Z")) : Infinity;
+    return t >= from && t < to ? sum + r.mw : sum;
+  }, 0);
 }
 
 export { dateKey, monthKey };

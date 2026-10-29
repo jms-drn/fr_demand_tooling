@@ -5,7 +5,7 @@
 import { ChartPanel } from "./chart.js";
 import { DAY, HOUR, addDays, copyText, cssVar, csvDateTime, dateKey, downloadBlob, fmtDateTime, fmtDayTime, fmtLongDate,
   fmtNumber, fmtTick, fromWall, heroHtml, parisMidnight, toCsv, toWall, todayParis, writeHash } from "./util.js";
-import { fmtDuration, fmtStamp, reasonLabel, siteSort } from "./nuclear-common.js";
+import { fmtDuration, fmtStamp, reasonLabel, siteSort, stripePattern } from "./nuclear-common.js";
 import { getFleet, getOutages } from "./power-data.js";
 
 const DURATIONS = { 0: "Any length", 1: "1 day or more", 7: "1 week or more", 30: "1 month or more" };
@@ -34,7 +34,7 @@ export class NuclearOutages {
     const years = [];
     for (let k = y + 1; k >= 2015; k--) years.push(k);
     this.root.innerHTML = `
-      ${heroHtml("Nuclear outages,", "reactor by reactor.", "Every planned and unplanned outage notice, as a timeline for each reactor and as a table. The amber part of a bar is how far the outage has run, or is expected to run, beyond the end date first announced.")}
+      ${heroHtml("Nuclear outages,", "reactor by reactor.", "Every planned and unplanned outage notice, as a timeline for each reactor and as a table. The purple part of a bar is how far the outage has run, or is expected to run, beyond the end date first announced.")}
       <div class="toolbar" role="group" aria-label="Outage filters">
         <div class="toolbar-row">
           <label class="field"><span>Window</span>
@@ -254,8 +254,8 @@ export class NuclearOutages {
     const hi = toWall(this.winTo);
 
     const option = (t, { forExport }) => {
-      const colours = [cssVar("--st-planned"), cssVar("--st-unplanned")];
-      const overrun = cssVar("--warn");
+      const colours = [cssVar("--st-planned"), stripePattern(cssVar("--st-unplanned"), cssVar("--st-stripe"))];
+      const overrun = cssVar("--st-overrun");
       return {
         backgroundColor: "transparent", animation: false, useUTC: true,
         grid: forExport ? { left: 120, right: 30, top: 108, bottom: 60 } : { left: 112, right: 18, top: 10, bottom: 56 },
@@ -307,7 +307,7 @@ export class NuclearOutages {
       series: [],
       custom: {
         option, exportSize: height + 170,
-        legend: [{ name: "Planned", colour: "--st-planned" }, { name: "Unplanned", colour: "--st-unplanned" }, { name: "Beyond the end date first announced", colour: "--warn" }],
+        legend: [{ name: "Planned", colour: "--st-planned" }, { name: "Unplanned", colour: "--st-unplanned", stripes: true }, { name: "Beyond the end date first announced", colour: "--st-overrun" }],
         table: () => this.tableRows()
       },
       legendCaption: null,

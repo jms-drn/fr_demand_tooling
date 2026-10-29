@@ -2,7 +2,7 @@
 // and a small trend chart, plus a copyable list of the main points.
 
 import { getDaily, getLatest, latestSeries } from "./data.js";
-import { isoWeek } from "./hydro.js";
+import { RESERVOIR_CAPACITY_MWH, isoWeek } from "./hydro.js";
 import { getLive, getNuclearDaily, getReserves } from "./power-data.js";
 import { parseUtc } from "./data.js";
 import {
@@ -177,11 +177,11 @@ export class Overview {
       if (vals.length >= 2) band.push([k, Math.min(...vals), Math.max(...vals)]);
     }
     const lines = [
-      `Week ${w}, to ${fmtShortDate(addDays(r.end, -1))}`,
+      `${fmtNumber(100 * r.mwh / RESERVOIR_CAPACITY_MWH, 1)}% full · week ${w}, to ${fmtShortDate(addDays(r.end, -1))}`,
       pct != null ? `<b class="${dir(pct)}">${pct >= 0 ? "+" : "−"}${fmtNumber(Math.abs(pct), 1)}%</b> vs the 5-year average for this week` : "",
       `<span class="muted">${iy} by week, against the range of the previous 5 years</span>`
     ].filter(Boolean);
-    const points = [`Hydro reservoirs held ${fmtNumber(r.mwh / 1e6, 2)} TWh in the week to ${fmtLongDate(addDays(r.end, -1))}${pct != null ? `, ${fmtNumber(Math.abs(pct), 1)}% ${pct >= 0 ? "above" : "below"} the five-year average for the week` : ""}${ly ? ` and ${fmtNumber(Math.abs((r.mwh / ly.mwh - 1) * 100), 1)}% ${r.mwh >= ly.mwh ? "above" : "below"} last year` : ""}.`];
+    const points = [`Hydro reservoirs held ${fmtNumber(r.mwh / 1e6, 2)} TWh (${fmtNumber(100 * r.mwh / RESERVOIR_CAPACITY_MWH, 1)}% full) in the week to ${fmtLongDate(addDays(r.end, -1))}${pct != null ? `, ${fmtNumber(Math.abs(pct), 1)}% ${pct >= 0 ? "above" : "below"} the five-year average for the week` : ""}${ly ? ` and ${fmtNumber(Math.abs((r.mwh / ly.mwh - 1) * 100), 1)}% ${r.mwh >= ly.mwh ? "above" : "below"} last year` : ""}.`];
     return {
       html: this.tile("hydro", "Hydro reserves", "#hydro", `${fmtNumber(r.mwh / 1e6, 2)} TWh`, "stored", lines,
         sparkline([{ values: year, colour: "--s-actual" }], { band })),

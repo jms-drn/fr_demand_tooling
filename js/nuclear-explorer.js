@@ -7,7 +7,7 @@
 import { ChartPanel } from "./chart.js";
 import { parseUtc } from "./data.js";
 import { eventsBetween } from "./events.js";
-import { shiftMsYears } from "./nuclear-common.js";
+import { setSwitch, shiftMsYears, switchHtml } from "./nuclear-common.js";
 import { getFleet, getLive, getNuclearDaily, getNuclearHourly, getUnitDaily } from "./power-data.js";
 import {
   HOUR, addDays, alignDate, copyText, csvDate, csvDateTime, dateKey, dateRange, daysBetween, fmtDate, fmtDateTime,
@@ -23,16 +23,28 @@ const MEASURES = {
   avail: { label: "Available capacity", unit: "GW", short: "availability" },
   off: { label: "Unavailable capacity", unit: "GW", short: "unavailable capacity" },
   avpct: { label: "Availability rate", unit: "%", short: "availability rate" },
+  unpct: { label: "Unavailability rate", unit: "%", short: "unavailability rate" },
   output: { label: "Nuclear output", unit: "GW", short: "output" },
   lf: { label: "Load factor", unit: "%", short: "load factor" },
   offline: { label: "Reactors offline", unit: "reactors", short: "reactors offline" }
 };
 const to2018 = to => to >= "2016-01-01";
+// The measure dropdown shows families; the switch picks unavailable or available.
+const FAMILIES = {
+  cap: { label: "Capacity (GW)", un: "off", av: "avail" },
+  rate: { label: "Rate (% of installed)", un: "unpct", av: "avpct" },
+  output: { label: "Output (GW)" },
+  lf: { label: "Load factor (%)" },
+  offline: { label: "Reactors offline" }
+};
+const CAPACITY = ["avail", "off", "avpct", "unpct"];
+const familyOf = m => (m === "off" || m === "avail" ? "cap" : m === "avpct" || m === "unpct" ? "rate" : m);
+
 const RES_LABEL = { "1h": "hourly", "1d": "daily", "1w": "weekly", "1M": "monthly" };
 
 function defaults() {
   return {
-    preset: "ytd", from: "", to: "", res: "1d", measure: "avail", scope: "fleet",
+    preset: "ytd", from: "", to: "", res: "1d", measure: "off", scope: "fleet",
     ly: "1", avg: "1", band: "1", n: "5", align: "cal", fc: "1", split: "1", ev: "0", view: "abs", ref: "avg"
   };
 }
@@ -85,7 +97,7 @@ export class NuclearExplorer {
 
   build() {
     this.root.innerHTML = `
-      ${heroHtml("Explore nuclear availability,", "since 2015.", "Available and unavailable nuclear capacity, output and reactors offline for any period, from hourly detail to monthly averages, compared with the same period in earlier years. Narrow it to one site or reactor series, or run the period into the months ahead using the current outage notices.")}
+      ${heroHtml("Explore nuclear unavailability,", "since 2015.", "Unavailable or available nuclear capacity (use the switch), output and reactors offline for any period, from hourly detail to monthly averages, compared with the same period in earlier years. Narrow it to one site or reactor series, or run the period into the months ahead using the current outage notices.")}
       <div class="toolbar" role="group" aria-label="Explorer settings">
         <div class="toolbar-row">
           <label class="field"><span>Period</span>
@@ -101,11 +113,12 @@ export class NuclearExplorer {
           <label class="field"><span>Resolution</span>
             <select data-k="res"><option value="1h">Hourly</option><option value="1d">Daily</option><option value="1w">Weekly</option><option value="1M">Monthly</option></select>
           </label>
+          <div class="field"><span>Show</span>${switchHtml("data-avail", "Unavailable", "Available")}</div>
           <label class="field"><span>Measure</span>
-            <select data-k="measure">${Object.entries(MEASURES).map(([k, m]) => `<option value="${k}">${m.label}${m.unit === "GW" ? " (GW)" : m.unit === "%" ? " (%)" : ""}</option>`).join("")}</select>
+            <select data-family>${Object.entries(FAMILIES).map(([k, f]) => `<option value="${k}">${f.label}</option>`).join("")}</select>
           </label>
           <label class="field"><span>Reactors</span><select data-k="scope" data-scope></select></label>
-          <label class="field"><span>Show</span>
+          <label class="field"><span>View</span>
             <select data-k="view"><option value="abs">Values</option><option value="diff">Difference</option><option value="pct">Difference (%)</option></select>
           </label>
           <label class="field" data-ref-field><span>Difference vs</span>
@@ -155,6 +168,20 @@ export class NuclearExplorer {
       this.syncControls();
       this.update();
     }));
+    this.root.querySelector("[data-family]").addEventListener("change", e => {
+      const f = FAMILIES[e.target.value];
+      const available = this.state.measure === "avail" || this.state.measure === "avpct";
+      this.state.measure = f.un ? (available ? f.av : f.un) : e.target.value;
+      this.syncControls();
+      this.update();
+    });
+    this.root.querySelector("[data-avail]").addEventListener("click", () => {
+      const f = FAMILIES[familyOf(this.state.measure)];
+      if (!f.un) return;
+      this.state.measure = this.state.measure === f.un ? f.av : f.un;
+      this.syncControls();
+      this.update();
+    });
     this.root.querySelectorAll("[data-chip]").forEach(chip => chip.addEventListener("click", () => {
       const key = chip.dataset.chip;
       this.state[key] = this.state[key] === "1" ? "0" : "1";
@@ -183,7 +210,12 @@ export class NuclearExplorer {
     this.root.querySelector('[data-chip="band"]').disabled = diff;
     this.root.querySelector('[data-chip="split"]').disabled = s.measure !== "off" || diff || s.scope !== "fleet";
     this.root.querySelector('[data-chip="fc"]').disabled = ["output", "lf", "offline"].includes(s.measure);
-    this.root.querySelector('[data-k="scope"]').disabled = !["avail", "off", "avpct"].includes(s.measure);
+    this.root.querySelector('[data-k="scope"]').disabled = !CAPACITY.includes(s.measure);
+    const family = familyOf(s.measure);
+    this.root.querySelector("[data-family]").value = family;
+    const sw = this.root.querySelector("[data-avail]");
+    setSwitch(sw, s.measure === "avail" || s.measure === "avpct");
+    sw.disabled = !FAMILIES[family]?.un;
   }
 
   activate() {
@@ -198,6 +230,7 @@ export class NuclearExplorer {
       case "avail": return row.available_mw;
       case "off": return row.planned_off_mw != null ? row.planned_off_mw + row.unplanned_off_mw : row.installed_mw - row.available_mw;
       case "avpct": return row.installed_mw ? 100 * row.available_mw / row.installed_mw : null;
+      case "unpct": return row.installed_mw ? 100 * (row.installed_mw - row.available_mw) / row.installed_mw : null;
       case "output": return row.output_mw;
       case "lf": return row.output_mw != null && row.installed_mw ? 100 * row.output_mw / row.installed_mw : null;
       case "offline": return row.offline_reactors;
@@ -226,7 +259,7 @@ export class NuclearExplorer {
 
   /** Daily rows (fleet, or summed over the scope's reactors) for a date range. */
   async dailyRows(from, to) {
-    const reactors = ["avail", "off", "avpct"].includes(this.state.measure) ? this.scopeReactors() : null;
+    const reactors = CAPACITY.includes(this.state.measure) ? this.scopeReactors() : null;
     if (!reactors) {
       const daily = await getNuclearDaily();
       return new Map(dateRange(from, to).map(d => [d, daily.byDate.get(d)]).filter(([, r]) => r));
@@ -274,7 +307,7 @@ export class NuclearExplorer {
       }
       const days = daysBetween(from, s.to) + 1;
       let res = s.res;
-      const scoped = s.scope !== "fleet" && ["avail", "off", "avpct"].includes(m);
+      const scoped = s.scope !== "fleet" && CAPACITY.includes(m);
       if (res === "1h" && (days > MAX_1H_DAYS || scoped || m === "offline")) {
         notes.push(scoped ? "Site and series views are daily, so this is shown daily." : m === "offline" ? "Reactors offline are counted per day." : "Hourly views are limited to about a year, so this period is shown daily.");
         res = "1d";
@@ -408,7 +441,7 @@ export class NuclearExplorer {
       if (s.ly === "1" && ly.size) series.push({ name: from.slice(0, 4) === s.to.slice(0, 4) ? `Last year (${Number(from.slice(0, 4)) - 1})` : "One year earlier", colour: "--s-ly", type: "line", data: pts(ly), width: 1.5, unit, decimals, symbols: markers });
       if (m === "off" && s.split === "1" && planned.size && s.scope === "fleet") {
         series.push({ name: "Planned", colour: "--st-planned", type: "line", stack: "off", data: pts(g(planned)), width: 0.8, unit, decimals, z: 5, symbols: false });
-        series.push({ name: "Unplanned", colour: "--st-unplanned", type: "line", stack: "off", data: pts(g(unplanned)), width: 0.8, unit, decimals, z: 5, symbols: false });
+        series.push({ name: "Unplanned", colour: "--st-unplanned-solid", type: "line", stack: "off", data: pts(g(unplanned)), width: 0.8, unit, decimals, z: 5, symbols: false });
       }
       let fcPts = pts(fcG);
       const aPts = pts(actualG);
@@ -421,9 +454,9 @@ export class NuclearExplorer {
     if (years) notes.push(s.align === "cal" ? "Earlier years use the same calendar dates." : "Earlier years use the same weekday (364 days earlier per year).");
     if (m === "off" && s.split === "1" && s.scope === "fleet" && !diff) notes.push("Shaded areas split the unavailable capacity into planned and unplanned outages (stacked). Where they overlap on one reactor, the overlap counts as planned.");
     if (res !== "1d") notes.push(`Each point is the average of the days in that ${res === "1w" ? "week" : "month"} inside the period.`);
-    if (s.scope !== "fleet" && ["avail", "off", "avpct"].includes(m)) notes.push(`Only reactors in ${this.scopeName()} are included. Expected values ahead are only available for the whole fleet.`);
+    if (s.scope !== "fleet" && CAPACITY.includes(m)) notes.push(`Only reactors in ${this.scopeName()} are included. Expected values ahead are only available for the whole fleet.`);
     if (m === "offline") notes.push("A reactor counts as offline on a day when its average availability is below 10% of its capacity.");
-    if (from < "2018-01-01" && to2018(s.to) && ["avail", "off", "avpct"].includes(m)) notes.push("In parts of 2016 and 2017 measured output exceeds the availability implied by the notices by up to 2.5 GW, so some notices then overstated outages: treat availability in those years as approximate.");
+    if (from < "2018-01-01" && to2018(s.to) && CAPACITY.includes(m)) notes.push("In parts of 2016 and 2017 measured output exceeds the availability implied by the notices by up to 2.5 GW, so some notices then overstated outages: treat availability in those years as approximate.");
 
     const xLabel = res === "1M" ? x => fmtMonth(x) : res === "1w" ? x => `Week of ${fmtDate(x)}` : x => fmtDate(x);
     const label = MEASURES[m].label;
@@ -453,6 +486,7 @@ export class NuclearExplorer {
         case "avail": return r.available;
         case "off": return r.planned + r.unplanned;
         case "avpct": return r.installed ? 100 * r.available / r.installed : null;
+        case "unpct": return r.installed ? 100 * (r.installed - r.available) / r.installed : null;
         case "output": return r.output;
         case "lf": return r.output != null && r.installed ? 100 * r.output / r.installed : null;
         default: return null;
@@ -461,7 +495,7 @@ export class NuclearExplorer {
     const rows = await getNuclearHourly(from, s.to < today ? s.to : today);
     const actual = new Map(rows.map(r => [r.x, pick(r)]).filter(([, v]) => v != null));
     const fc = new Map();
-    if (s.fc === "1" && s.to >= today && ["avail", "off", "avpct"].includes(m)) {
+    if (s.fc === "1" && s.to >= today && CAPACITY.includes(m)) {
       const live = await getLive();
       const start = parseUtc(live.next14.start_utc);
       const lastActual = Math.max(...actual.keys(), 0);
@@ -516,7 +550,7 @@ export class NuclearExplorer {
       if (s.ly === "1" && ly.size) series.push({ name: "Last year", colour: "--s-ly", type: "line", data: sorted(ly), width: 1.5, unit });
       if (m === "off" && s.split === "1") {
         series.push({ name: "Planned", colour: "--st-planned", type: "line", stack: "off", data: sorted(planned), width: 0.8, unit, symbols: false });
-        series.push({ name: "Unplanned", colour: "--st-unplanned", type: "line", stack: "off", data: sorted(unplanned), width: 0.8, unit, symbols: false });
+        series.push({ name: "Unplanned", colour: "--st-unplanned-solid", type: "line", stack: "off", data: sorted(unplanned), width: 0.8, unit, symbols: false });
       }
       const aPts = sorted(actual);
       let fPts = sorted(fc);
@@ -648,7 +682,7 @@ export class NuclearExplorer {
     const desc = [...rows].sort((a, b) => b.value - a.value);
     const rankHigh = current ? desc.indexOf(current) + 1 : null;
     const rankLow = current ? rows.length - rankHigh + 1 : null;
-    const rankText = current ? (rankLow <= rankHigh ? `${rankLow === 1 ? "" : `${ordinal(rankLow)} `}lowest` : `${rankHigh === 1 ? "" : `${ordinal(rankHigh)} `}highest`) + ` of ${rows.length} years` : "";
+    const rankText = current ? (rankLow <= rankHigh ? `${rankLow === 1 ? "" : `${ordinal(rankLow)} `}lowest` : `${rankHigh === 1 ? "" : `${ordinal(rankHigh)} `}highest`) + ` ${MEASURES[m].short} of ${rows.length} years` : "";
     const sc = this.scale(m);
     const n = Number(s.n);
     const colourFor = (_, i) => (rows[i]?.k === 0 ? "--s-actual" : rows[i]?.k <= n ? "--s-avg" : "--s-band");

@@ -1,10 +1,15 @@
-// Nuclear outlook: expected availability for a future period from the outage
-// notices, compared with what the notices said at other dates — a week or a
-// month ago, or at the same point in earlier years — and with what actually
-// happened in those years.
+// Nuclear outlook: expected unavailability (or availability) for a future
+// period from the outage notices, compared with what the notices said at
+// other dates — a week or a month earlier, or at the same point in earlier
+// years and on average over five years — and with what actually happened.
+//
+// Chart convention: colour = which year; solid = what the notices said at
+// the time; dashed = this year's outlook at an earlier date; dotted = what
+// actually happened.
 
 import { ChartPanel } from "./chart.js";
-import { getNuclearDaily, getOutlookAsOf, getOutlookRange } from "./power-data.js";
+import { setSwitch, switchHtml } from "./nuclear-common.js";
+import { getFleet, getNuclearDaily, getOutlookAsOf, getOutlookRange, installedOn } from "./power-data.js";
 import {
   addDays, alignDate, copyText, csvDate, dateRange, daysBetween, fmtDate, fmtLongDate, fmtMonth, fmtNumber, fmtPeriod,
   fmtShortDate, heroHtml, parisMidnight, todayParis, weekStart, writeHash
@@ -12,9 +17,14 @@ import {
 
 const FIRST_ASOF = "2015-01-01";
 const HORIZON = 540;
+const YEAR_COLOURS = { 0: "--s-actual", 1: "--s-ly", 2: "--s-week", 3: "--s-d2" };
+const DOTTED = [2, 4];
 
 function defaults() {
-  return { preset: "nextmonth", from: "", to: "", asof: "", res: "1d", wk: "1", mo: "0", ly: "1", ly2: "0", ly3: "0", act: "1", cmp: "" };
+  return {
+    preset: "nextmonth", from: "", to: "", asof: "", res: "1d", av: "0",
+    wk: "1", mo: "0", ly: "1", ly2: "0", ly3: "0", avg5: "1", act: "1", cmp: ""
+  };
 }
 
 const sum = values => values.reduce((a, b) => a + b, 0);
@@ -33,6 +43,14 @@ export class NuclearOutlook {
     const today = todayParis();
     const a = this.state.asof;
     return a && a < today && a >= FIRST_ASOF ? a : today;
+  }
+
+  available() {
+    return this.state.av === "1";
+  }
+
+  word() {
+    return this.available() ? "availability" : "unavailability";
   }
 
   presetRange(preset) {
@@ -89,9 +107,10 @@ export class NuclearOutlook {
 
   build() {
     this.root.innerHTML = `
-      ${heroHtml("Nuclear outlook,", "and how it has changed.", "Expected nuclear availability for any period up to 18 months ahead, from the outage notices published so far. Compare it with what the notices said a week or a month earlier, or on the same date in earlier years, and with what actually happened.")}
+      ${heroHtml("Nuclear outlook,", "and how it has changed.", "Expected nuclear unavailability (or availability) for any period up to 18 months ahead, from the outage notices published so far. Compare it with what the notices said a week or a month earlier, at the same point in earlier years or on average over five years, and with what actually happened.")}
       <div class="toolbar" role="group" aria-label="Outlook settings">
         <div class="toolbar-row">
+          <div class="field"><span>Show</span>${switchHtml("data-avail", "Unavailable", "Available")}</div>
           <label class="field"><span>Period ahead</span>
             <select data-k="preset">
               <option value="next30">Next 30 days</option><option value="rest">Rest of this month</option><option value="nextmonth">Next calendar month</option>
@@ -105,21 +124,27 @@ export class NuclearOutlook {
           <label class="field"><span>Outlook as of</span><input type="date" data-k="asof" min="${FIRST_ASOF}" title="Leave as today for the latest notices"></label>
         </div>
         <div class="toolbar-row">
-          <div class="field"><span>Compare with the outlook</span>
+          <div class="field"><span>This year's outlook earlier</span>
+            <div class="chips">${this.chip("wk", "A week earlier", "--s-actual")}${this.chip("mo", "A month earlier", "--s-actual")}</div>
+          </div>
+          <div class="field"><span>Same point in earlier years</span>
             <div class="chips">
-              ${this.chip("wk", "A week earlier", "--s-d1")}
-              ${this.chip("mo", "A month earlier", "--s-d2")}
-              ${this.chip("ly", "Same date last year", "--s-ly")}
-              ${this.chip("ly2", "2 years ago", "--s-week")}
-              ${this.chip("ly3", "3 years ago", "--s-avg")}
+              ${this.chip("ly", "Last year", "--s-ly")}${this.chip("ly2", "2 years ago", "--s-week")}${this.chip("ly3", "3 years ago", "--s-d2")}
+              ${this.chip("avg5", "5-year average", "--s-avg")}
             </div>
           </div>
           <label class="field"><span>…or as of any date</span><input type="date" data-k="cmp" min="${FIRST_ASOF}"></label>
-          <div class="field"><span>Outcome</span><div class="chips">${this.chip("act", "What actually happened", "--s-id")}</div></div>
+          <div class="field"><span>Outcome</span><div class="chips">${this.chip("act", "What actually happened", "--text-soft")}</div></div>
         </div>
       </div>
       <div class="headline"><p data-headline>Loading…</p><button class="btn ghost small" type="button" data-copy title="Copy this sentence">Copy</button></div>
       <div class="cards" data-cards>${'<div class="card skeleton"></div>'.repeat(5)}</div>
+      <div class="outlook-key">
+        <span><b>How to read the chart:</b> colour shows which year</span>
+        <span><i class="sample"></i>solid: what the notices said at the time</span>
+        <span><i class="sample dashed"></i>dashed: this year's outlook at an earlier date</span>
+        <span><i class="sample dotted"></i>dotted: what actually happened</span>
+      </div>
       <div data-main></div>
       <div data-evolution></div>
       <div data-history></div>`;
@@ -129,6 +154,11 @@ export class NuclearOutlook {
     this.evolution = new ChartPanel(this.root.querySelector("[data-evolution]"), { title: "How the outlook for this period changed", size: "short" });
     this.history = new ChartPanel(this.root.querySelector("[data-history]"), { title: "Outlook and outcome in every year", size: "short" });
     this.root.querySelector("[data-copy]").addEventListener("click", () => copyText(this.headline.textContent));
+    this.root.querySelector("[data-avail]").addEventListener("click", () => {
+      this.state.av = this.available() ? "0" : "1";
+      this.syncControls();
+      this.update();
+    });
     this.root.querySelectorAll("[data-k]").forEach(input => input.addEventListener("change", () => {
       const key = input.dataset.k;
       this.state[key] = input.value;
@@ -162,40 +192,66 @@ export class NuclearOutlook {
     this.root.querySelector('[data-k="asof"]').max = todayParis();
     this.root.querySelector('[data-k="cmp"]').max = addDays(base, -1);
     this.root.querySelectorAll("[data-chip]").forEach(chip => chip.setAttribute("aria-pressed", s[chip.dataset.chip] === "1"));
+    setSwitch(this.root.querySelector("[data-avail]"), this.available());
   }
 
   activate() {
     this.update();
   }
 
-  /** The comparisons to draw: { key, name, asOf, shift (years), colour }. */
-  comparisons() {
-    const s = this.state;
-    const base = this.base();
-    const list = [];
-    if (s.wk === "1") list.push({ key: "wk", name: `As of ${fmtLongDate(addDays(base, -7))} (a week earlier)`, asOf: addDays(base, -7), shift: 0, colour: "--s-d1" });
-    if (s.mo === "1") list.push({ key: "mo", name: `As of ${fmtLongDate(addDays(base, -30))} (30 days earlier)`, asOf: addDays(base, -30), shift: 0, colour: "--s-d2" });
-    [["ly", 1, "--s-ly"], ["ly2", 2, "--s-week"], ["ly3", 3, "--s-avg"]].forEach(([key, k, colour]) => {
-      if (s[key] !== "1") return;
-      const asOf = alignDate(base, k, "cal") || addDays(base, -365 * k);
-      list.push({ key, name: `As of ${fmtLongDate(asOf)}, for ${this.periodLabel(k)}`, asOf, shift: k, colour });
-    });
-    if (s.cmp && s.cmp < base && s.cmp >= FIRST_ASOF) {
-      const k = Math.round(daysBetween(s.cmp, base) / 365.25);
-      list.push({ key: "cmp", name: `As of ${fmtLongDate(s.cmp)}${k ? `, for ${this.periodLabel(k)}` : ""}`, asOf: s.cmp, shift: k, colour: "--s-temp" });
-    }
-    return list.filter(c => c.asOf >= FIRST_ASOF);
-  }
-
-  periodLabel(k) {
-    const { from, to } = this.state;
-    const a = alignDate(from, k, "cal") || addDays(from, 1);
-    const b = alignDate(to, k, "cal") || addDays(to, -1);
-    return fmtPeriod(a, b);
-  }
+  // ---------- Helpers ----------
 
   shiftDate(date, k) {
     return k ? alignDate(date, k, "cal") || alignDate(addDays(date, -1), k, "cal") : date;
+  }
+
+  asOfYearsBack(base, k) {
+    return alignDate(base, k, "cal") || addDays(base, -365 * k);
+  }
+
+  /** "Nov 2025" for whole calendar months, otherwise the date range. */
+  periodLabel(k) {
+    const { from, to } = this.state;
+    const a = this.shiftDate(from, k);
+    const b = this.shiftDate(to, k);
+    const monthEnd = d => addDays(`${addDays(`${d.slice(0, 7)}-28`, 4).slice(0, 7)}-01`, -1);
+    if (a.endsWith("-01") && b === monthEnd(a) && a.slice(0, 7) === b.slice(0, 7)) return fmtMonth(parisMidnight(a) + 43200000);
+    return fmtPeriod(a, b);
+  }
+
+  /** Expected value (MW) for a source date from an outlook entry. */
+  expected(entry, src) {
+    const av = entry?.byDate.get(src);
+    if (av == null) return null;
+    return this.available() ? av : installedOn(this.fleet, src) - av;
+  }
+
+  actual(src, today) {
+    if (src >= today) return null;
+    const r = this.daily.byDate.get(src);
+    if (!r) return null;
+    return this.available() ? r.available_mw : r.planned_off_mw + r.unplanned_off_mw;
+  }
+
+  /** Map(date of this period -> MW) for an outlook shifted k years. */
+  seriesFrom(entry, dates, k) {
+    const map = new Map();
+    for (const d of dates) {
+      const src = this.shiftDate(d, k);
+      const v = src ? this.expected(entry, src) : null;
+      if (v != null) map.set(d, v);
+    }
+    return map;
+  }
+
+  actualFrom(dates, k, today) {
+    const map = new Map();
+    for (const d of dates) {
+      const src = this.shiftDate(d, k);
+      const v = src ? this.actual(src, today) : null;
+      if (v != null) map.set(d, v);
+    }
+    return map;
   }
 
   groupKey(date) {
@@ -214,6 +270,8 @@ export class NuclearOutlook {
     return new Map([...acc].map(([k, vs]) => [k, avg(vs)]));
   }
 
+  // ---------- Render ----------
+
   async update() {
     const id = ++this.renderId;
     const s = this.state;
@@ -223,73 +281,122 @@ export class NuclearOutlook {
     try {
       const today = todayParis();
       const dates = dateRange(s.from, s.to);
-      const comps = this.comparisons();
-      const [baseOutlook, daily, ...compOutlooks] = await Promise.all([
-        getOutlookAsOf(base, today), getNuclearDaily(), ...comps.map(c => getOutlookAsOf(c.asOf, today))
-      ]);
+      const complete = map => map.size >= dates.length * 0.95;
+      [this.fleet, this.daily] = await Promise.all([getFleet(), getNuclearDaily()]);
+      const baseOutlook = await getOutlookAsOf(base, today);
       if (id !== this.renderId) return;
       if (!baseOutlook) throw new Error(`no outlook stored for ${base}`);
 
-      const baseMap = new Map(dates.map(d => [d, baseOutlook.byDate.get(d)]).filter(([, v]) => v != null));
       const series = [];
       const notes = [];
       const pts = map => [...this.grouped(map)].sort(([a], [b]) => (a < b ? -1 : 1)).map(([d, v]) => [parisMidnight(d), v / 1000]);
       const markers = s.res !== "1d" ? true : undefined;
-      const results = [];
+      const line = (name, colour, map, extra = {}) => series.push({ name, colour, type: "line", data: pts(map), unit: "GW", decimals: 2, symbols: markers, width: 1.8, ...extra });
+      const P0 = this.periodLabel(0);
+      const results = {};
 
-      comps.forEach((c, i) => {
-        const o = compOutlooks[i];
-        if (!o) { notes.push(`No outlook is stored for ${fmtLongDate(c.asOf)}.`); return; }
-        const map = new Map();
-        for (const d of dates) {
-          const src = this.shiftDate(d, c.shift);
-          const v = src ? o.byDate.get(src) : null;
-          if (v != null) map.set(d, v);
+      // This year: now, and earlier readings of the same period.
+      const baseMap = this.seriesFrom(baseOutlook, dates, 0);
+      results.base = { map: baseMap, mean: avg([...baseMap.values()]) };
+      const unpl = dates.map(d => baseOutlook.unplByDate?.get(d)).filter(v => v != null);
+      results.base.unplanned = unpl.length ? avg(unpl) : null;
+      for (const [key, days, dash] of [["wk", 7, [7, 4]], ["mo", 30, [12, 5]]]) {
+        if (s[key] !== "1") continue;
+        const asOf = addDays(base, -days);
+        if (asOf < FIRST_ASOF) continue;
+        const entry = await getOutlookAsOf(asOf, today);
+        if (!entry) continue;
+        const map = this.seriesFrom(entry, dates, 0);
+        results[key] = { asOf, map, mean: avg([...map.values()]) };
+        line(`${P0}: expected on ${fmtShortDate(asOf)} (${days === 7 ? "a week" : "30 days"} earlier)`, "--s-actual", map, { dash, width: 1.5 });
+      }
+      if (s.act === "1" && base < today) {
+        const map = this.actualFrom(dates, 0, today);
+        if (map.size) {
+          results.act0 = { map, mean: avg([...map.values()]), complete: complete(map) };
+          line(`${P0}: what happened`, "--s-actual", map, { dash: DOTTED, width: 2 });
         }
-        results.push({ ...c, map, mean: avg([...map.values()]) });
-        series.push({ name: c.name, colour: c.colour, type: "line", data: pts(map), width: 1.8, unit: "GW", decimals: 2, dashed: c.shift === 0, symbols: markers });
-      });
+      }
 
-      // What actually happened in the shifted years (and for any past dates).
-      const outcomes = [];
-      if (s.act === "1") {
-        const shifts = [...new Set(comps.filter(c => c.shift > 0).map(c => c.shift))];
-        for (const k of shifts) {
-          const map = new Map();
-          for (const d of dates) {
-            const src = this.shiftDate(d, k);
-            const v = src && src < today ? daily.byDate.get(src)?.available_mw : null;
-            if (v != null) map.set(d, v);
+      // Earlier years at the same point.
+      results.years = [];
+      for (const [key, k] of [["ly", 1], ["ly2", 2], ["ly3", 3]]) {
+        if (s[key] !== "1") continue;
+        const asOf = this.asOfYearsBack(base, k);
+        if (asOf < FIRST_ASOF) continue;
+        const entry = await getOutlookAsOf(asOf, today);
+        if (!entry) { notes.push(`No outlook is stored for ${fmtLongDate(asOf)}.`); continue; }
+        const map = this.seriesFrom(entry, dates, k);
+        const Pk = this.periodLabel(k);
+        const r = { k, asOf, map, mean: avg([...map.values()]), label: Pk };
+        line(`${Pk}: expected on ${fmtLongDate(asOf)}`, YEAR_COLOURS[k], map);
+        if (s.act === "1") {
+          const act = this.actualFrom(dates, k, today);
+          if (act.size) {
+            r.actual = avg([...act.values()]);
+            r.actualComplete = complete(act);
+            line(`${Pk}: what happened`, YEAR_COLOURS[k], act, { dash: DOTTED });
           }
-          if (!map.size) continue;
-          outcomes.push({ k, map, mean: avg([...map.values()]), complete: map.size >= dates.length * 0.95 });
-          series.push({ name: `Actual, ${this.periodLabel(k)}`, colour: "--s-id", type: "line", data: pts(map), width: 1.4, unit: "GW", decimals: 2, symbols: markers, dashed: k > 1 });
         }
-        if (base < today) {
-          const map = new Map();
-          for (const d of dates) { const v = d < today ? daily.byDate.get(d)?.available_mw : null; if (v != null) map.set(d, v); }
-          if (map.size) {
-            outcomes.push({ k: 0, map, mean: avg([...map.values()]), complete: map.size >= dates.length * 0.95 });
-            series.push({ name: `Actual, ${fmtPeriod(s.from, s.to)}`, colour: "--s-id", type: "line", data: pts(map), width: 2, unit: "GW", decimals: 2, symbols: markers });
+        results.years.push(r);
+      }
+
+      // Five-year average of outlooks at the same point, and of outcomes.
+      if (s.avg5 === "1") {
+        const exp = new Map();
+        const act = new Map();
+        let n = 0;
+        for (let k = 1; k <= 5; k++) {
+          const asOf = this.asOfYearsBack(base, k);
+          if (asOf < FIRST_ASOF) break;
+          const entry = await getOutlookAsOf(asOf, today);
+          const m = entry ? this.seriesFrom(entry, dates, k) : new Map();
+          if (!complete(m)) continue;
+          n += 1;
+          for (const [d, v] of m) exp.set(d, [...(exp.get(d) || []), v]);
+          for (const [d, v] of this.actualFrom(dates, k, today)) act.set(d, [...(act.get(d) || []), v]);
+        }
+        if (n) {
+          const expMap = new Map([...exp].map(([d, vs]) => [d, avg(vs)]));
+          const actMap = new Map([...act].filter(([, vs]) => vs.length === n).map(([d, vs]) => [d, avg(vs)]));
+          results.avg5 = { n, mean: avg([...expMap.values()]), actual: actMap.size ? avg([...actMap.values()]) : null };
+          line(`${n}-year average: expected at the same point`, "--s-avg", expMap, { width: 1.6 });
+          if (s.act === "1" && actMap.size) line(`${n}-year average: what happened`, "--s-avg", actMap, { dash: DOTTED, width: 1.6 });
+        }
+      }
+
+      // Any chosen date.
+      if (s.cmp && s.cmp < base && s.cmp >= FIRST_ASOF) {
+        const k = Math.round(daysBetween(s.cmp, base) / 365.25);
+        const entry = await getOutlookAsOf(s.cmp, today);
+        if (entry) {
+          const map = this.seriesFrom(entry, dates, k);
+          results.cmp = { asOf: s.cmp, k, map, mean: avg([...map.values()]) };
+          line(`${this.periodLabel(k)}: expected on ${fmtLongDate(s.cmp)}`, "--s-temp", map);
+          if (k && s.act === "1") {
+            const act = this.actualFrom(dates, k, today);
+            if (act.size) line(`${this.periodLabel(k)}: what happened`, "--s-temp", act, { dash: DOTTED });
           }
         }
       }
-      series.push({ name: `As of ${fmtLongDate(base)}${base === today ? " (latest)" : ""}`, colour: "--s-actual", type: "line", data: pts(baseMap), width: 2.8, unit: "GW", decimals: 2, z: 20, symbols: markers });
 
-      notes.push("Each line is the daily average availability implied by the notices published up to the end of that day (Paris time). Earlier years are drawn on this period's dates (same calendar date).");
-      notes.push("Outlooks only include outages already announced. New unplanned outages usually pull actual availability below the outlook.");
+      line(`${P0}: expected now (${fmtShortDate(base)})`, "--s-actual", baseMap, { width: 3, z: 20 });
+      if (id !== this.renderId) return;
+
+      notes.push(`Each outlook line is the daily average ${this.word()} implied by the notices published by the end of that day (Paris time). Earlier years are drawn on this period's dates (same calendar date).`);
+      notes.push("Outlooks only include outages already announced. New unplanned outages and extensions usually make unavailability higher than expected.");
       const xLabel = s.res === "1M" ? x => fmtMonth(x) : s.res === "1w" ? x => `Week of ${fmtDate(x)}` : x => fmtDate(x);
-      this.main.setTitle(`Outlook for ${fmtPeriod(s.from, s.to)}`, `Expected nuclear availability · GW · ${s.res === "1d" ? "daily" : s.res === "1w" ? "weekly" : "monthly"} averages`);
+      this.main.setTitle(`Outlook for ${P0}: nuclear ${this.word()}`, `Expected and actual ${this.word()} · GW · ${s.res === "1d" ? "daily" : s.res === "1w" ? "weekly" : "monthly"} averages`);
       this.main.render({
         xType: "time", xLabel, csvLabel: csvDate, xHeader: s.res === "1M" ? "Month" : s.res === "1w" ? "Week starting" : "Date",
-        axisLabel: s.res === "1M" ? x => fmtMonth(x) : undefined, yName: "GW", yFormat: v => fmtNumber(v, Number.isInteger(v) ? 0 : 1), series, notes
+        axisLabel: s.res === "1M" ? x => fmtMonth(x) : undefined, yName: "GW", yFormat: v => fmtNumber(v, Number.isInteger(v) ? 0 : 1),
+        yMin: this.available() ? undefined : 0, series, notes
       });
 
-      const baseMean = avg([...baseMap.values()]);
-      this.renderSummary(base, baseMean, results, outcomes);
-      await this.renderEvolution(base, comps);
+      this.renderSummary(base, results);
+      await this.renderEvolution(base, dates);
       if (id !== this.renderId) return;
-      await this.renderHistory(base, daily, today);
+      await this.renderHistory(base, dates, today);
     } catch (error) {
       console.error(error);
       if (id === this.renderId) {
@@ -299,68 +406,72 @@ export class NuclearOutlook {
     }
   }
 
-  renderSummary(base, baseMean, results, outcomes) {
-    const s = this.state;
+  renderSummary(base, r) {
     const gw = v => `${fmtNumber(v / 1000, 1)} GW`;
     const signed = v => `${v >= 0 ? "+" : "−"}${fmtNumber(Math.abs(v) / 1000, 1)} GW`;
-    const period = fmtPeriod(s.from, s.to);
-    let text = `As of ${fmtLongDate(base)}, the outage notices point to average nuclear availability of ${gw(baseMean)} for ${period}.`;
-    const ly = results.find(r => r.shift === 1) || results.find(r => r.shift > 0);
-    const wk = results.find(r => r.key === "wk");
+    const more = v => (v >= 0 ? "more" : "less");
+    const word = this.word();
+    const P0 = this.periodLabel(0);
+    let text = `As of ${fmtLongDate(base)}, the outage notices point to average nuclear ${word} of ${gw(r.base.mean)} in ${P0}`;
+    if (!this.available() && r.base.unplanned != null) text += r.base.unplanned < 50 ? ", all of it planned" : `, of which ${gw(r.base.unplanned)} unplanned`;
+    text += ".";
+    const ly = r.years.find(y => y.k === 1) || r.years[0];
     if (ly) {
-      const diff = baseMean - ly.mean;
-      text += ` That is ${gw(Math.abs(diff))} ${diff >= 0 ? "more" : "less"} than was expected for ${this.periodLabel(ly.shift)} on ${fmtLongDate(ly.asOf)} (${gw(ly.mean)}).`;
-      const out = outcomes.find(o => o.k === ly.shift);
-      if (out) text += ` ${this.periodLabel(ly.shift)} ${out.complete ? "actually averaged" : "has averaged"} ${gw(out.mean)}, ${gw(Math.abs(out.mean - ly.mean))} ${out.mean >= ly.mean ? "above" : "below"} that outlook.`;
+      text += ` That is ${gw(Math.abs(r.base.mean - ly.mean))} ${more(r.base.mean - ly.mean)} than was expected for ${ly.label} at the same point (${fmtLongDate(ly.asOf)}: ${gw(ly.mean)}).`;
+      if (ly.actual != null) text += ` ${ly.label} ${ly.actualComplete ? "ended up" : "has so far come in"} at ${gw(ly.actual)}, ${gw(Math.abs(ly.actual - ly.mean))} ${ly.actual >= ly.mean ? "above" : "below"} that outlook.`;
     }
-    if (wk) text += ` A week earlier the outlook was ${gw(wk.mean)} (${signed(baseMean - wk.mean)} since).`;
+    if (r.avg5?.actual != null) text += ` Over the previous ${r.avg5.n} years, the outlook at this point averaged ${gw(r.avg5.mean)} and the outcome ${gw(r.avg5.actual)}.`;
+    if (r.wk) text += ` A week earlier the outlook was ${gw(r.wk.mean)} (${signed(r.base.mean - r.wk.mean)} since).`;
     this.headline.textContent = text;
+
     const card = (l, v, d = "", c = "") => `<div class="card${c}"><div class="label">${l}</div><div class="value">${v}</div><div class="detail">${d}</div></div>`;
-    this.cards.innerHTML = [
-      card("Expected average", gw(baseMean), `${period}, as of ${fmtShortDate(base)}`, " accent"),
-      ...results.map(r => card(r.shift ? `vs outlook ${r.shift === 1 ? "a year" : `${r.shift} years`} earlier` : r.key === "wk" ? "Change in the past week" : r.key === "mo" ? "Change in the past 30 days" : `vs ${fmtShortDate(r.asOf)}`,
-        signed(baseMean - r.mean), `${gw(r.mean)} as of ${fmtLongDate(r.asOf)}`)),
-      ...outcomes.filter(o => o.k > 0).map(o => card(`Actual, ${this.periodLabel(o.k)}`, gw(o.mean), o.complete ? "Outcome" : "So far"))
-    ].join("");
+    const cards = [card(`Expected ${word}`, gw(r.base.mean), `${P0}, as of ${fmtShortDate(base)}${!this.available() && r.base.unplanned != null ? ` · ${gw(r.base.mean - r.base.unplanned)} planned, ${gw(r.base.unplanned)} unplanned` : ""}`, " accent")];
+    if (r.wk) cards.push(card("Change in the past week", signed(r.base.mean - r.wk.mean), `${gw(r.wk.mean)} as of ${fmtShortDate(r.wk.asOf)}`));
+    if (r.mo) cards.push(card("Change in the past 30 days", signed(r.base.mean - r.mo.mean), `${gw(r.mo.mean)} as of ${fmtShortDate(r.mo.asOf)}`));
+    for (const y of r.years) {
+      cards.push(card(`vs outlook for ${y.label}`, signed(r.base.mean - y.mean), `${gw(y.mean)} expected on ${fmtLongDate(y.asOf)}`));
+      if (y.actual != null) cards.push(card(`${y.label}: what happened`, gw(y.actual), `${signed(y.actual - y.mean)} vs its outlook`));
+    }
+    if (r.avg5) {
+      cards.push(card(`${r.avg5.n}-year average outlook`, gw(r.avg5.mean), "Same period, same point ahead"));
+      if (r.avg5.actual != null) cards.push(card(`${r.avg5.n}-year average outcome`, gw(r.avg5.actual), `${signed(r.avg5.actual - r.avg5.mean)} vs the outlook`));
+    }
+    this.cards.innerHTML = cards.join("");
   }
 
-  /** Mean expected availability for the period, by as-of date. */
-  async renderEvolution(base, comps) {
+  /** Mean expected value for the period, by as-of date, this year and earlier years. */
+  async renderEvolution(base, dates) {
     const s = this.state;
     const span = 180;
     const lastAsOf = base < addDays(s.from, -1) ? base : addDays(s.from, -1);
     const firstAsOf = [addDays(lastAsOf, -span), addDays(s.to, -HORIZON + 1), FIRST_ASOF].sort().at(-1);
     if (firstAsOf > lastAsOf) { this.evolution.show(false); return; }
     this.evolution.show(true);
-    const dates = dateRange(s.from, s.to);
     const meanFor = (entry, k) => {
-      const vals = dates.map(d => entry.byDate.get(this.shiftDate(d, k))).filter(v => v != null);
+      const vals = dates.map(d => this.expected(entry, this.shiftDate(d, k))).filter(v => v != null);
       return vals.length >= dates.length * 0.95 ? avg(vals) : null;
     };
     const withMaps = list => list.map(e => ({ ...e, byDate: e.byDate || new Map(e.values.map((v, i) => [addDays(e.first, i), v])) }));
+    const shifts = [0, ...[["ly", 1], ["ly2", 2], ["ly3", 3]].filter(([key]) => s[key] === "1").map(([, k]) => k)];
     const series = [];
-    const shifts = [0, ...new Set(comps.filter(c => c.shift > 0).map(c => c.shift))];
-    const colours = { 0: "--s-actual", 1: "--s-ly", 2: "--s-week", 3: "--s-avg" };
     for (const k of shifts) {
-      const a = alignDate(firstAsOf, k, "cal") || addDays(firstAsOf, -365 * k);
-      const b = alignDate(lastAsOf, k, "cal") || addDays(lastAsOf, -365 * k);
+      const a = this.asOfYearsBack(firstAsOf, k);
+      const b = this.asOfYearsBack(lastAsOf, k);
       if (b < FIRST_ASOF) continue;
       const entries = withMaps(await getOutlookRange(a < FIRST_ASOF ? FIRST_ASOF : a, b));
       const pts = [];
       for (const e of entries) {
         const v = meanFor(e, k);
-        if (v == null) continue;
-        const onAxis = k ? addDays(e.asOf, daysBetween(a, firstAsOf)) : e.asOf;
-        pts.push([parisMidnight(onAxis), v / 1000]);
+        if (v != null) pts.push([parisMidnight(k ? addDays(e.asOf, daysBetween(a, firstAsOf)) : e.asOf), v / 1000]);
       }
       if (k === 0 && base === todayParis() && lastAsOf === base) {
         const live = await getOutlookAsOf(base, base);
         const v = live && meanFor(live, 0);
         if (v != null) pts.push([parisMidnight(base), v / 1000]);
       }
-      series.push({ name: k ? `For ${this.periodLabel(k)} (as-of dates ${k} year${k > 1 ? "s" : ""} earlier)` : `For ${fmtPeriod(s.from, s.to)}`, colour: colours[k] || "--s-avg", type: "line", data: pts, width: k ? 1.6 : 2.6, unit: "GW", decimals: 2, z: k ? 10 : 20 });
+      series.push({ name: `${this.periodLabel(k)}: expected, by date read${k ? ` (dates ${k} year${k > 1 ? "s" : ""} earlier)` : ""}`, colour: YEAR_COLOURS[k], type: "line", data: pts, width: k ? 1.6 : 2.6, unit: "GW", decimals: 2, z: k ? 10 : 20 });
     }
-    this.evolution.setTitle("How the outlook for this period changed", `Average expected availability for the period, by the date the notices were read · GW`);
+    this.evolution.setTitle("How the outlook for this period changed", `Average expected ${this.word()} for the period, by the date the notices were read · GW`);
     this.evolution.render({
       xType: "time", xLabel: x => `As of ${fmtDate(x)}`, csvLabel: csvDate, xHeader: "Outlook as of", yName: "GW",
       yFormat: v => fmtNumber(v, Number.isInteger(v) ? 0 : 1), series,
@@ -369,18 +480,16 @@ export class NuclearOutlook {
   }
 
   /** For each year: the outlook at the same lead time, and the outcome. */
-  async renderHistory(base, daily, today) {
-    const s = this.state;
-    const dates = dateRange(s.from, s.to);
+  async renderHistory(base, dates, today) {
     const rows = [];
     for (let k = 0; ; k++) {
-      const asOf = k ? alignDate(base, k, "cal") || addDays(base, -365 * k) : base;
+      const asOf = k ? this.asOfYearsBack(base, k) : base;
       if (asOf < FIRST_ASOF) break;
       const entry = await getOutlookAsOf(asOf, today);
       if (!entry) continue;
       const shifted = dates.map(d => this.shiftDate(d, k));
-      const exp = shifted.map(d => entry.byDate.get(d)).filter(v => v != null);
-      const act = shifted.map(d => (d < today ? daily.byDate.get(d)?.available_mw : null)).filter(v => v != null);
+      const exp = shifted.map(d => this.expected(entry, d)).filter(v => v != null);
+      const act = shifted.map(d => this.actual(d, today)).filter(v => v != null);
       if (exp.length < dates.length * 0.95) continue;
       const a = shifted[0].slice(0, 4);
       const b = shifted.at(-1).slice(0, 4);
@@ -390,19 +499,19 @@ export class NuclearOutlook {
     if (rows.length < 2) { this.history.show(false); return; }
     this.history.show(true);
     const done = rows.filter(r => r.actual != null);
-    const bias = done.length ? avg(done.map(r => r.actual - r.expected)) : null;
-    const lead = daysBetween(base, s.from);
+    const gap = done.length ? avg(done.map(r => r.actual - r.expected)) : null;
+    const lead = daysBetween(base, this.state.from);
     this.history.setTitle(`The same period in every year, seen ${lead} day${lead === 1 ? "" : "s"} ahead`,
-      bias != null ? `On average, the outcome was ${fmtNumber(Math.abs(bias) / 1000, 1)} GW ${bias < 0 ? "below" : "above"} the outlook at this lead time (${done.length} years) · GW` : "Expected average availability · GW");
+      gap != null ? `On average, ${this.word()} turned out ${fmtNumber(Math.abs(gap) / 1000, 1)} GW ${gap >= 0 ? "higher" : "lower"} than the outlook at this point (${done.length} years) · GW` : `Expected average ${this.word()} · GW`);
     this.history.render({
       xType: "category", categories: rows.map(r => r.label), xLabel: x => x, xHeader: "Year", yName: "GW", yMin: 0, yScale: false,
       yFormat: v => fmtNumber(v, Number.isInteger(v) ? 0 : 1),
       series: [
-        { name: "Outlook at the same lead time", colour: "--s-actual", type: "bar", data: rows.map((r, i) => [i, r.expected / 1000]), unit: "GW", decimals: 2, avg: false, barWidth: 18, labels: v => fmtNumber(v, 1) },
-        { name: "What happened", colour: "--s-id", type: "bar", data: rows.map((r, i) => (r.actual == null ? null : [i, r.actual / 1000])).filter(Boolean), unit: "GW", decimals: 2, avg: false, barWidth: 18, labels: v => fmtNumber(v, 1) }
+        { name: "Expected at the same point", colour: "--s-actual", type: "bar", data: rows.map((r, i) => [i, r.expected / 1000]), unit: "GW", decimals: 2, avg: false, barWidth: 18, labels: v => fmtNumber(v, 1) },
+        { name: "What happened", colour: "--s-avg", type: "bar", data: rows.map((r, i) => (r.actual == null ? null : [i, r.actual / 1000])).filter(Boolean), unit: "GW", decimals: 2, avg: false, barWidth: 18, labels: v => fmtNumber(v, 1) }
       ],
       legendCaption: null,
-      notes: ["Each year uses the outlook from the same calendar date as the one selected above, for the same calendar period. The gap between the bars is how much unannounced outages (and extensions) cost in that year."]
+      notes: ["Each year uses the outlook from the same calendar date as the one selected above, for the same calendar period. The gap between the bars shows how much unannounced outages and extensions changed the picture."]
     });
   }
 

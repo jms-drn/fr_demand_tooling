@@ -1,8 +1,45 @@
 // Version history shown in the "What's new" panel. Newest first.
 
-export const VERSION = "3.0";
+export const VERSION = "3.1";
 
 export const CHANGELOG = [
+  {
+    version: "3.1",
+    date: "29 Oct 2026",
+    title: "Unavailability first, hydro fill levels and a cleaner nuclear Today page",
+    sections: [
+      {
+        heading: "Nuclear availability: Today",
+        items: [
+          "Tiles regrouped into three labelled rows: Availability, Output and Reactors. New tiles for average output today and over the last 7 days (each against the same hours last year), the share of available capacity actually used, and reactors modulating (online but producing under 80% of their available capacity). \"Running below capacity\" is now \"Partially available\", meaning notices that take out only part of a reactor.",
+          "New map colours: planned outages red, unplanned outages red-and-yellow striped, partial availability amber. Time offline and time until return now run from yellow (shortest) through orange to deep crimson (6 months or more).",
+          "The list of reactors not at full capacity can be sorted by return date, time offline, most recent or size.",
+          "The availability chart has Past (week to a year, or custom) and Next (none to three months) choices, and now shows the 5-year average and range. Longer windows switch to daily averages.",
+          "The output heat map runs red (0%) through amber (50%) to green (100%), or a blue-to-yellow scale with the colourblind-friendly palette.",
+          "Notice changes can be sorted by clicking any column heading, and a \"Delays only\" switch shows just the notices that pushed a return date back."
+        ]
+      },
+      {
+        heading: "Explorer and Outlook",
+        items: [
+          "Both now open on unavailability, with a switch to change to availability. The Explorer adds an unavailability rate (% of installed capacity).",
+          "Outlook lines follow one rule, shown above the chart: colour shows the year, solid is what the notices said at the time, dashed is this year's outlook at an earlier date, dotted is what actually happened. Names read e.g. \"Nov 2025: expected on 29 Oct 2025\".",
+          "New 5-year average of the outlook at the same point ahead, and of what happened, for the same period. The expected split between planned and unplanned unavailability is now stored and shown."
+        ]
+      },
+      {
+        heading: "Hydro reserves",
+        items: [
+          "New \"Measure in\" switch: stored energy (TWh) or fill level (% of RTE's 3,591 GWh capacity). In fill level, every comparison is in percentage points, on the cards and the charts.",
+          "The headline adds the recent trend: the change over the past four weeks against the usual change at this time of year, and whether the gap to the average is widening or narrowing."
+        ]
+      },
+      {
+        heading: "General",
+        items: ["The nuclear page is now France Power Nuclear Availability Intelligence. The colour-blind palette is renamed Colourblind-friendly."]
+      }
+    ]
+  },
   {
     version: "3.0",
     date: "29 Oct 2026",

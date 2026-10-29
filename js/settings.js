@@ -39,7 +39,7 @@ export const PALETTES = {
     width: 1.25
   },
   colourblind: {
-    name: "Colour-blind safe",
+    name: "Colourblind-friendly",
     // Okabe–Ito palette, plus dash patterns so series differ by more than colour.
     dark: { actual: "#56b4e9", id: "#009e73", d1: "#e69f00", d2: "#cc79a7", week: "#d55e00", ly: "#f0e442", avg: "#bbbbbb", band: "rgba(86,180,233,0.16)", temp: "#d55e00" },
     light: { actual: "#0072b2", id: "#009e73", d1: "#e69f00", d2: "#cc79a7", week: "#d55e00", ly: "#000000", avg: "#777777", band: "rgba(0,114,178,0.13)", temp: "#d55e00" },

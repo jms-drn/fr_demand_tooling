@@ -264,7 +264,7 @@ export class ChartPanel {
         return;
       }
 
-      const dash = s.dashed ? (dashFor(role(s.colour)) || [6, 4]) : dashFor(role(s.colour));
+      const dash = s.dash || (s.dashed ? (dashFor(role(s.colour)) || [6, 4]) : dashFor(role(s.colour)));
       const showSymbols = s.symbols ?? markers;
       series.push({
         ...common, type: "line", data: points, connectNulls: false,
@@ -459,7 +459,7 @@ export class ChartPanel {
     this.legendEl.innerHTML = "";
     if (spec.custom) {
       this.legendEl.innerHTML = (spec.custom.legend || []).map(item =>
-        `<span class="legend-item static"><span class="key ${item.shape || "bar"}" style="background:${resolveColour(item.colour)};color:${resolveColour(item.colour)}"></span><span>${item.name}</span></span>`).join("")
+        `<span class="legend-item static"><span class="key ${item.shape || "bar"}${item.stripes ? " stripes" : ""}" style="background:${resolveColour(item.colour)};color:${resolveColour(item.colour)}"></span><span>${item.name}</span></span>`).join("")
         + (spec.legendCaption ? `<span class="legend-caption">${spec.legendCaption}</span>` : "");
       this.legendEl.hidden = !this.legendEl.innerHTML;
       return;
@@ -469,7 +469,7 @@ export class ChartPanel {
     for (const s of spec.series) {
       const colour = resolveColour(s.colour);
       const item = el("button", { class: `legend-item${this.hidden.has(s.name) ? " off" : ""}`, type: "button", title: "Show or hide this series" });
-      const keyClass = s.type === "band" ? "key band" : s.type === "bar" ? "key bar" : s.dashed || dashFor(role(s.colour)) ? "key dashed" : "key";
+      const keyClass = s.type === "band" ? "key band" : s.type === "bar" ? "key bar" : s.dash ? "key dotted" : s.dashed || dashFor(role(s.colour)) ? "key dashed" : "key";
       item.innerHTML = `<span class="${keyClass}" style="background:${colour};color:${colour}"></span><span>${s.name}</span><b data-avg></b>`;
       item.addEventListener("click", () => {
         if (this.hidden.has(s.name)) this.hidden.delete(s.name);

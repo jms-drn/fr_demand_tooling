@@ -5,12 +5,13 @@
 import { ChartPanel } from "./chart.js";
 import { parseUtc } from "./data.js";
 import {
-  DURATION_BUCKETS, SEQ, STATE_COLOUR, bucketOf, fmtDuration, fmtWhen, reasonLabel, shiftMsYears, siteSort, stateKey
+  DURATION_BUCKETS, SEQ, STATE_COLOUR, bucketOf, fmtDuration, fmtWhen, reasonLabel, shiftMsYears, siteSort, stateKey, stripePattern
 } from "./nuclear-common.js";
+import { settings } from "./settings.js";
 import { getFleet, getLive, getNuclearDaily, getNuclearHourly, getOutages } from "./power-data.js";
 import {
-  DAY, HOUR, addDays, alignDate, copyText, cssVar, csvDateTime, downloadBlob, fmtDateShort, fmtDateTime, fmtDayTime, fmtGW, fmtNumber,
-  fmtSignedGW, fmtTime, heroHtml, mean, toCsv, todayParis, writeHash
+  DAY, HOUR, addDays, alignDate, copyText, cssVar, csvDate, csvDateTime, dateKey, dateRange, daysBetween, downloadBlob, fmtDate,
+  fmtDateShort, fmtDateTime, fmtDayTime, fmtGW, fmtNumber, fmtSignedGW, fmtTime, heroHtml, mean, parisMidnight, toCsv, todayParis, writeHash
 } from "./util.js";
 
 let mapReady = null;
@@ -34,13 +35,14 @@ const MODES = {
 export class NuclearToday {
   constructor(root) {
     this.root = root;
-    this.state = { colour: "status" };
+    this.state = { colour: "status", sort: "back", past: "7", next: "14", from: "", delays: "0", csort: "pub", cdir: "desc" };
     this.selected = null;
     this.build();
   }
 
   setParams(params) {
-    if (params.has("colour") && MODES[params.get("colour")]) this.state.colour = params.get("colour");
+    for (const key of Object.keys(this.state)) if (params.has(key)) this.state[key] = params.get(key);
+    if (!MODES[this.state.colour]) this.state.colour = "status";
     this.syncControls();
   }
 
@@ -48,7 +50,7 @@ export class NuclearToday {
     this.root.innerHTML = `
       ${heroHtml("Nuclear fleet,", "right now.", "Available nuclear capacity from EDF's unavailability notices published through RTE, with the latest output, every reactor on the map and the notices changed in the past three days.")}
       <div class="headline"><p data-headline>Loading…</p><button class="btn ghost small" type="button" data-copy title="Copy this sentence">Copy</button></div>
-      <div class="cards" data-cards>${'<div class="card skeleton"></div>'.repeat(6)}</div>
+      <div class="card-groups" data-cards><div class="cards">${'<div class="card skeleton"></div>'.repeat(6)}</div></div>
       <div class="map-layout">
         <div class="map-col">
           <div class="map-controls">
@@ -60,16 +62,30 @@ export class NuclearToday {
           <div data-map></div>
         </div>
         <aside class="panel reactor-list">
-          <div class="panel-head"><div><h2>Reactors not at full capacity</h2><p data-list-sub></p></div></div>
+          <div class="panel-head"><div><h2>Reactors not at full capacity</h2><p data-list-sub></p></div>
+            <div class="panel-tools"><select data-sort class="compact" aria-label="Sort reactors">
+              <option value="back">Back soonest</option><option value="longest">Offline longest</option>
+              <option value="recent">Offline most recently</option><option value="size">Largest first</option>
+            </select></div></div>
           <div class="reactor-rows" data-list><div class="card skeleton" style="margin:12px 16px"></div></div>
         </aside>
+      </div>
+      <div class="panel-controls" data-ahead-controls>
+        <label class="field"><span>Past</span><select data-ak="past">
+          <option value="7">Week</option><option value="14">Two weeks</option><option value="30">Month</option>
+          <option value="91">Quarter</option><option value="365">Year</option><option value="custom">Custom</option></select></label>
+        <label class="field" data-ahead-from hidden><span>From</span><input type="date" data-ak="from" min="2015-01-01"></label>
+        <label class="field"><span>Next</span><select data-ak="next">
+          <option value="0">None</option><option value="7">Week</option><option value="14">Two weeks</option>
+          <option value="30">Month</option><option value="91">Three months</option></select></label>
       </div>
       <div data-ahead></div>
       <div data-heat></div>
       <article class="panel">
         <div class="panel-head">
-          <div><h2>Notices changed in the past 72 hours</h2><p>Each line is a new version of an EDF unavailability notice, newest first. Times are Paris time.</p></div>
+          <div><h2>Notices changed in the past 72 hours</h2><p>Each line is a new version of an EDF unavailability notice. Click a column heading to sort. Times are Paris time.</p></div>
           <div class="panel-tools">
+            <button class="chip" type="button" data-delays style="color:var(--st-overrun)"><span class="swatch"></span><span class="chip-label">Delays only</span></button>
             <select data-change-filter aria-label="Filter changes" class="compact">
               <option value="all">All changes</option><option value="new">New notices</option>
               <option value="dates">Dates moved</option><option value="cancelled">Cancelled</option>
@@ -86,7 +102,7 @@ export class NuclearToday {
     this.listSub = this.root.querySelector("[data-list-sub]");
     this.changesEl = this.root.querySelector("[data-changes]");
     this.mapPanel = new ChartPanel(this.root.querySelector("[data-map]"), { title: "Reactors", size: "map", table: true });
-    this.aheadPanel = new ChartPanel(this.root.querySelector("[data-ahead]"), { title: "Available capacity, past 7 days and next 14", size: "", overview: false });
+    this.aheadPanel = new ChartPanel(this.root.querySelector("[data-ahead]"), { title: "Available capacity", size: "", overview: false });
     this.heatPanel = new ChartPanel(this.root.querySelector("[data-heat]"), { title: "Output by reactor, past 7 days", size: "heat" });
 
     this.root.querySelector("[data-copy]").addEventListener("click", () => copyText(this.headline.textContent));
@@ -97,13 +113,49 @@ export class NuclearToday {
       this.renderMap();
       this.renderList();
     }));
+
     this.root.querySelector("[data-change-filter]").addEventListener("change", () => this.renderChanges());
+    this.root.querySelector("[data-sort]").addEventListener("change", e => { this.state.sort = e.target.value; this.saveHash(); this.renderList(); });
+    this.root.querySelectorAll("[data-ak]").forEach(input => input.addEventListener("change", () => {
+      this.state[input.dataset.ak] = input.value;
+      if (input.dataset.ak === "from") this.state.past = "custom";
+      this.syncControls();
+      this.saveHash();
+      this.renderAhead();
+    }));
+    this.root.querySelector("[data-delays]").addEventListener("click", () => {
+      this.state.delays = this.state.delays === "1" ? "0" : "1";
+      this.syncControls();
+      this.saveHash();
+      this.renderChanges();
+    });
+    this.changesEl.addEventListener("click", event => {
+      const th = event.target.closest("th[data-sort]");
+      if (!th) return;
+      const key = th.dataset.sort;
+      this.state.cdir = this.state.csort === key && this.state.cdir === "desc" ? "asc" : "desc";
+      this.state.csort = key;
+      this.saveHash();
+      this.renderChanges();
+    });
     this.root.querySelector("[data-changes-csv]").addEventListener("click", () => this.exportChanges());
     this.syncControls();
   }
 
   syncControls() {
-    this.root.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === this.state.colour));
+    const s = this.state;
+    this.root.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === s.colour));
+    this.root.querySelector("[data-sort]").value = s.sort;
+    this.root.querySelectorAll("[data-ak]").forEach(input => { input.value = s[input.dataset.ak]; });
+    if (s.past === "custom" && !s.from) s.from = addDays(todayParis(), -30);
+    this.root.querySelector("[data-ahead-from]").hidden = s.past !== "custom";
+    this.root.querySelector('[data-ak="from"]').value = s.from;
+    this.root.querySelector('[data-ak="from"]').max = todayParis();
+    this.root.querySelector("[data-delays]").setAttribute("aria-pressed", s.delays === "1");
+  }
+
+  saveHash() {
+    writeHash("nuclear/today", this.state);
   }
 
   activate() {
@@ -160,48 +212,84 @@ export class NuclearToday {
     return { starts: [...unique.values()], returns };
   }
 
+  /** Average output over [from, to) from hourly rows, with hours counted. */
+  outputBetween(rows, from, to) {
+    const vals = rows.filter(r => r.x >= from && r.x < to && r.output != null).map(r => r.output);
+    return vals.length ? { mean: mean(vals), hours: vals.length } : null;
+  }
+
+  lastYearRows(from, to) {
+    const map = new Map(this.lastYear.map(r => [r.x, r]));
+    const rows = [];
+    for (let x = from; x < to; x += HOUR) {
+      const src = shiftMsYears(x, 1);
+      const r = src != null ? map.get(src) : null;
+      if (r) rows.push({ ...r, x });
+    }
+    return rows;
+  }
+
   renderSummary() {
     const f = this.live.fleet;
     const units = this.units;
     const offline = units.filter(u => u.state === "offline");
-    const reduced = units.filter(u => u.state === "reduced");
+    const partial = units.filter(u => u.state === "reduced");
+    const modulating = units.filter(u => u.state === "online" && u.output_mw != null && u.output_mw < 0.8 * u.available_mw);
     const offPlanned = offline.filter(u => u.key === "planned").length;
     const offUnplanned = offline.length - offPlanned;
     const pct = 100 * f.available_mw / f.installed_mw;
     const ly = this.sameHourLastYear();
-    const outputHour = this.past.filter(r => r.output != null).at(-1);
     const today = todayParis();
 
-    // Five-year average for today's date (daily means).
+    // Five-year average availability for today's date (daily means).
     const prev = [1, 2, 3, 4, 5].map(k => this.daily.byDate.get(alignDate(today, k, "cal"))?.available_mw).filter(v => v != null);
     const avg5 = prev.length ? mean(prev) : null;
     const todayRow = this.daily.byDate.get(today);
     const { starts, returns } = this.upcoming(7);
     const backMw = returns.reduce((a, u) => a + u.off_mw, 0);
 
-    const parts = [`French nuclear availability is ${fmtGW(f.available_mw)} of ${fmtGW(f.installed_mw)} installed (${fmtNumber(pct, 0)}%) at ${fmtTime(this.now)} Paris time`];
-    parts[0] += `, with ${offline.length} of ${units.length} reactors offline (${offPlanned} planned, ${offUnplanned} unplanned)`;
-    if (reduced.length) parts[0] += ` and ${reduced.length} running below capacity`;
-    let text = `${parts[0]}.`;
+    // Output: today so far and the last 7 days (168 hours), each against the same hours last year.
+    const lastHour = this.past.filter(r => r.output != null).at(-1)?.x;
+    const end = lastHour != null ? lastHour + HOUR : null;
+    const dayStart = parisMidnight(today);
+    const outToday = end ? this.outputBetween(this.past, dayStart, end) : null;
+    const out7 = end ? this.outputBetween(this.past, end - 7 * DAY, end) : null;
+    const lyToday = end ? this.outputBetween(this.lastYearRows(dayStart, end), dayStart, end) : null;
+    const ly7 = end ? this.outputBetween(this.lastYearRows(end - 7 * DAY, end), end - 7 * DAY, end) : null;
+
+    let text = `French nuclear availability is ${fmtGW(f.available_mw)} of ${fmtGW(f.installed_mw)} installed (${fmtNumber(pct, 0)}%) at ${fmtTime(this.now)} Paris time, with ${offline.length} of ${units.length} reactors offline (${offPlanned} planned, ${offUnplanned} unplanned)`;
+    if (partial.length) text += ` and ${partial.length} partially available`;
+    text += ".";
     if (ly != null) text += ` That is ${fmtGW(Math.abs(f.available_mw - ly))} ${f.available_mw >= ly ? "more" : "less"} than at the same time last year (${fmtGW(ly)}).`;
-    if (outputHour) text += ` Output in the hour from ${fmtTime(outputHour.x)} was ${fmtGW(outputHour.output)}.`;
+    if (outToday) text += ` Output has averaged ${fmtGW(outToday.mean)} today so far${out7 ? ` and ${fmtGW(out7.mean)} over the past 7 days` : ""}.`;
     this.headline.textContent = text;
 
     const card = (label, value, detail = "", cls = "") =>
       `<div class="card${cls}"><div class="label">${label}</div><div class="value">${value}</div><div class="detail">${detail}</div></div>`;
+    const vs = (cur, ref, what) => (cur && ref ? `${fmtSignedGW(cur.mean - ref.mean, 1)} vs ${what} (${fmtGW(ref.mean)})` : "");
+    const group = (label, cards) => `<div class="card-group"><div class="group-label">${label}</div><div class="cards">${cards.filter(Boolean).join("")}</div></div>`;
     this.cards.innerHTML = [
-      card("Available now", fmtGW(f.available_mw), `${fmtNumber(pct, 1)}% of ${fmtGW(f.installed_mw)} installed`, " accent"),
-      outputHour ? card("Output, latest hour", fmtGW(outputHour.output), `${fmtTime(outputHour.x)}–${fmtTime(outputHour.x + HOUR)} · ${fmtNumber(100 * outputHour.output / f.available_mw, 0)}% of available`) : "",
-      card("Reactors offline", `${offline.length}`, `${offPlanned} planned · ${offUnplanned} unplanned`),
-      card("Running below capacity", `${reduced.length}`, `${fmtGW(reduced.reduce((a, u) => a + u.off_mw, 0))} unavailable`),
-      card("Unavailable now", fmtGW(f.planned_off_mw + f.unplanned_off_mw), `${fmtGW(f.planned_off_mw)} planned · ${fmtGW(f.unplanned_off_mw)} unplanned`),
-      ly != null ? card("vs same hour last year", fmtSignedGW(f.available_mw - ly, 1), `${fmtGW(ly)} a year ago`) : "",
-      avg5 != null && todayRow ? card("Today vs 5-year average", fmtSignedGW(todayRow.available_mw - avg5, 1), `Daily mean ${fmtGW(todayRow.available_mw)} vs ${fmtGW(avg5)} (${prev.length} years)`) : "",
-      card("Due back in 7 days", `${returns.length}`, `${fmtGW(backMw)} returning · ${starts.length} major outage${starts.length === 1 ? "" : "s"} due to start`)
+      group("Availability", [
+        card("Available now", fmtGW(f.available_mw), `${fmtNumber(pct, 1)}% of ${fmtGW(f.installed_mw)} installed`, " accent"),
+        ly != null ? card("Available vs same hour last year", fmtSignedGW(f.available_mw - ly, 1), `${fmtGW(ly)} a year ago`) : "",
+        avg5 != null && todayRow ? card("Today's availability vs 5-year average", fmtSignedGW(todayRow.available_mw - avg5, 1), `Daily average ${fmtGW(todayRow.available_mw)} vs ${fmtGW(avg5)}`) : "",
+        card("Unavailable now", fmtGW(f.planned_off_mw + f.unplanned_off_mw), `${fmtGW(f.planned_off_mw)} planned · ${fmtGW(f.unplanned_off_mw)} unplanned`)
+      ]),
+      group("Output", [
+        outToday ? card("Average output today", fmtGW(outToday.mean), `${outToday.hours} hours to ${fmtTime(end)} · ${vs(outToday, lyToday, "last year")}`) : "",
+        out7 ? card("Average output, last 7 days", fmtGW(out7.mean), vs(out7, ly7, "last year")) : "",
+        out7 && todayRow ? card("Output as share of available", `${fmtNumber(100 * out7.mean / mean(this.past.filter(r => r.x >= end - 7 * DAY && r.x < end).map(r => r.available)), 0)}%`, "Last 7 days · lower means more modulation") : ""
+      ]),
+      group("Reactors", [
+        card("Offline", `${offline.length}`, `${offPlanned} planned · ${offUnplanned} unplanned`),
+        card("Partially available", `${partial.length}`, partial.length ? `${fmtGW(partial.reduce((a, u) => a + u.off_mw, 0))} declared unavailable` : "Notices for part of a reactor"),
+        card("Modulating", `${modulating.length}`, `Online but producing under 80% of available capacity in the hour from ${fmtTime(parseUtc(units.find(u => u.output_hour_utc)?.output_hour_utc))}`),
+        card("Due back in 7 days", `${returns.length}`, `${fmtGW(backMw)} returning · ${starts.length} major outage${starts.length === 1 ? "" : "s"} due to start`)
+      ])
     ].join("");
 
     const notices = parseUtc(this.live.latest_notice_utc);
-    this.listSub.textContent = `${offline.length + reduced.length} reactors · notices to ${fmtDayTime(notices)}`;
+    this.listSub.textContent = `${offline.length + partial.length} reactors · notices to ${fmtDayTime(notices)}`;
   }
 
   // ---------- Map ----------
@@ -214,14 +302,25 @@ export class NuclearToday {
     return u.until ? SEQ[bucketOf((u.until - this.now) / DAY)] : "--muted";
   }
 
+  striped(u) {
+    return this.state.colour === "status" && u.key === "unplanned";
+  }
+
+  /** CSS background for a reactor's dot in lists and tooltips. */
+  dotCss(u) {
+    return this.striped(u)
+      ? `repeating-linear-gradient(45deg, ${cssVar("--st-unplanned")} 0 3px, ${cssVar("--st-stripe")} 3px 6px)`
+      : cssVar(this.colourFor(u));
+  }
+
   legendItems() {
     const mode = this.state.colour;
     if (mode === "status") {
       return [
         { name: "Online", colour: STATE_COLOUR.online, shape: "dot" },
-        { name: "Reduced output", colour: STATE_COLOUR.reduced, shape: "dot" },
-        { name: "Offline, planned", colour: STATE_COLOUR.planned, shape: "dot" },
-        { name: "Offline, unplanned", colour: STATE_COLOUR.unplanned, shape: "dot" }
+        { name: "Partially<br>available", colour: STATE_COLOUR.reduced, shape: "dot" },
+        { name: "Offline<br>planned", colour: STATE_COLOUR.planned, shape: "dot" },
+        { name: "Offline<br>unplanned", colour: STATE_COLOUR.unplanned, shape: "dot", stripes: true }
       ];
     }
     const items = DURATION_BUCKETS.map((b, i) => ({ name: b.label, colour: SEQ[i], shape: "dot" }));
@@ -253,8 +352,8 @@ export class NuclearToday {
 
   tooltipFor(u) {
     const cap = u.mw;
-    const colour = cssVar(this.colourFor(u));
-    const status = u.state === "online" ? "Online" : u.state === "reduced" ? "Reduced capacity" : `Offline (${u.key})`;
+    const colour = this.dotCss(u);
+    const status = u.state === "online" ? "Online" : u.state === "reduced" ? "Partially available" : `Offline (${u.key})`;
     const lines = [
       `<div style="font-weight:700;font-size:13px;margin-bottom:2px"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${colour};margin-right:7px"></span>${u.label}</div>`,
       `<div class="muted">${this.fleet.reactors.find(r => r.name === u.name)?.series || ""} · ${fmtNumber(cap, 0)} MW</div>`,
@@ -315,7 +414,7 @@ export class NuclearToday {
             name: u.label, value: pos.get(u.name) || [0, 0],
             symbolSize: (u.state === "online" ? 7 : 10) + (u.mw - 880) / 120,
             itemStyle: {
-              color: cssVar(this.colourFor(u)),
+              color: this.striped(u) ? stripePattern(cssVar("--st-unplanned"), cssVar("--st-stripe")) : cssVar(this.colourFor(u)),
               borderColor: t.panel, borderWidth: 1.2,
               opacity: u.state === "online" ? 0.7 : 1,
               shadowBlur: u.state === "online" ? 0 : 6, shadowColor: cssVar(this.colourFor(u))
@@ -339,7 +438,7 @@ export class NuclearToday {
       },
       legendCaption: null,
       notes: [
-        "Status uses the latest version of every notice covering this moment. A reactor counts as offline below 10% of its capacity and as reduced below 90%.",
+        "Status uses the latest version of every notice covering this moment. A reactor counts as offline below 10% of its capacity and as partially available between 10% and 90%.",
         "“Since” is when the reactor last had at least 90% of its capacity available, so back-to-back notices count as one stoppage. “Expected back” is when the current notices say it returns to 90% or more.",
         "Reactors are drawn in a small ring around each site, so positions are approximate. Map: Natural Earth."
       ]
@@ -353,19 +452,25 @@ export class NuclearToday {
     const groups = [
       ["Offline, unplanned", this.units.filter(u => u.state === "offline" && u.key === "unplanned")],
       ["Offline, planned", this.units.filter(u => u.state === "offline" && u.key === "planned")],
-      ["Reduced capacity", this.units.filter(u => u.state === "reduced")]
+      ["Partially available", this.units.filter(u => u.state === "reduced")]
     ];
+    const order = {
+      back: (a, b) => (a.until ?? Infinity) - (b.until ?? Infinity),
+      longest: (a, b) => (a.since ?? 0) - (b.since ?? 0),
+      recent: (a, b) => (b.since ?? 0) - (a.since ?? 0),
+      size: (a, b) => b.off_mw - a.off_mw || b.mw - a.mw
+    }[this.state.sort] || ((a, b) => (a.until ?? Infinity) - (b.until ?? Infinity));
     const html = groups.filter(([, list]) => list.length).map(([title, list]) => `
       <div class="reactor-group">${title} <span class="muted">${list.length} · ${fmtGW(list.reduce((a, u) => a + u.off_mw, 0))}</span></div>
-      ${list.sort((a, b) => (a.until ?? Infinity) - (b.until ?? Infinity)).map(u => {
+      ${list.sort(order).map(u => {
         const total = u.until && u.since ? u.until - u.since : null;
         const done = total ? Math.min(1, Math.max(0, (this.now - u.since) / total)) : 0;
         const colour = cssVar(this.colourFor(u));
         return `<button type="button" class="reactor-row" data-unit="${u.name}">
-          <span class="dot" style="background:${colour}"></span>
+          <span class="dot" style="background:${this.dotCss(u)}"></span>
           <span class="reactor-name"><b>${u.label}</b><span>${fmtNumber(u.off_mw, 0)} of ${fmtNumber(u.mw, 0)} MW off</span></span>
           <span class="reactor-when"><span>${u.until ? `back ${fmtDayTime(u.until)}` : "no return date"}</span>
-            <span class="progress" title="${fmtDuration(this.now - u.since)} so far${total ? ` of ${fmtDuration(total)}` : ""}"><i style="width:${(done * 100).toFixed(0)}%;background:${colour}"></i></span>
+            <span class="progress" title="${fmtDuration(this.now - u.since)} so far${total ? ` of ${fmtDuration(total)}` : ""}"><i style="width:${(done * 100).toFixed(0)}%;background:${this.dotCss(u)}"></i></span>
             <span class="muted">${fmtDuration(this.now - u.since)} so far${u.until ? ` · ${fmtDuration(u.until - this.now)} to go` : ""}</span></span>
         </button>`;
       }).join("")}`).join("");
@@ -384,40 +489,114 @@ export class NuclearToday {
     });
   }
 
-  // ---------- Next 14 days ----------
+  // ---------- Past and next ----------
 
-  renderAhead() {
-    const n14 = this.live.next14;
-    const start = parseUtc(n14.start_utc);
-    const ahead = n14.available_mw.map((v, i) => [start + i * HOUR, v / 1000]);
-    const installedAhead = n14.installed_mw.map((v, i) => [start + i * HOUR, v / 1000]);
-    const past = this.past.filter(r => r.x < start);
-    const pts = key => past.filter(r => r[key] != null).map(r => [r.x, r[key] / 1000]);
-    const lyMap = new Map(this.lastYear.map(r => [r.x, r]));
-    const lyPts = [];
-    const end = start + ahead.length * HOUR;
-    for (let x = past[0]?.x ?? start; x < end; x += HOUR) {
-      const src = shiftMsYears(x, 1);
-      const r = src != null ? lyMap.get(src) : null;
-      if (r?.available != null) lyPts.push([x, r.available / 1000]);
-    }
-    const expected = past.length ? [[past.at(-1).x, past.at(-1).available / 1000], ...ahead] : ahead;
-    this.aheadPanel.setTitle("Available capacity, past 7 days and next 14", "Hourly · GW · after now, as expected from the current notices");
-    this.aheadPanel.render({
-      xType: "time", xLabel: x => fmtDateTime(x), csvLabel: csvDateTime, yName: "GW", yFormat: v => fmtNumber(v, Number.isInteger(v) ? 0 : 1),
-      series: [
+  async renderAhead() {
+    const s = this.state;
+    const today = todayParis();
+    const pastDays = s.past === "custom" ? Math.max(1, daysBetween(s.from || addDays(today, -30), today)) : Number(s.past);
+    const nextDays = Number(s.next);
+    const from = addDays(today, -pastDays);
+    const to = addDays(today, nextDays);
+    const daily = pastDays + nextDays > 45 || nextDays > 14;
+    const id = (this.aheadId = (this.aheadId || 0) + 1);
+    this.aheadPanel.setLoading(true);
+    const years = [1, 2, 3, 4, 5];
+    const series = [];
+    const notes = [];
+    let start;
+    if (!daily) {
+      const [past, ...prev] = await Promise.all([
+        getNuclearHourly(from, today),
+        ...years.map(k => getNuclearHourly(alignDate(from, k, "cal") || addDays(from, -365 * k), alignDate(to, k, "cal") || addDays(to, -365 * k)))
+      ]);
+      if (id !== this.aheadId) return;
+      const n14 = this.live.next14;
+      start = parseUtc(n14.start_utc);
+      const end = Math.min(parisMidnight(addDays(to, 1)), start + n14.available_mw.length * HOUR);
+      const pastRows = past.filter(r => r.x < start);
+      const pts = key => pastRows.filter(r => r[key] != null).map(r => [r.x, r[key] / 1000]);
+      const ahead = [];
+      const installedAhead = [];
+      n14.available_mw.forEach((v, i) => {
+        const x = start + i * HOUR;
+        if (x < end && nextDays > 0) { ahead.push([x, v / 1000]); installedAhead.push([x, n14.installed_mw[i] / 1000]); }
+      });
+      const maps = prev.map(rows => new Map(rows.map(r => [r.x, r.available])));
+      const lyPts = [];
+      const avgPts = [];
+      const band = [];
+      const last = nextDays > 0 ? end : start;
+      for (let x = parisMidnight(from); x < last; x += HOUR) {
+        const vals = years.map((k, i) => { const src = shiftMsYears(x, k); return src != null ? maps[i].get(src) : null; });
+        if (vals[0] != null) lyPts.push([x, vals[0] / 1000]);
+        const ok = vals.filter(v => v != null);
+        if (ok.length) avgPts.push([x, mean(ok) / 1000]);
+        if (ok.length >= 2) band.push([x, Math.min(...ok) / 1000, Math.max(...ok) / 1000]);
+      }
+      const expected = pastRows.length && ahead.length ? [[pastRows.at(-1).x, pastRows.at(-1).available / 1000], ...ahead] : ahead;
+      series.push(
         { name: "Installed", colour: "--s-avg", type: "line", data: [...pts("installed"), ...installedAhead], width: 1, dashed: true, unit: "GW", decimals: 2, step: "end" },
-        { name: "Available, same dates last year", colour: "--s-ly", type: "line", data: lyPts, width: 1.5, unit: "GW", decimals: 2 },
+        { name: "Range, previous 5 years", colour: "--s-band", type: "band", data: band, unit: "GW" },
+        { name: "5-year average", colour: "--s-avg", type: "line", data: avgPts, width: 1.4, dashed: true, unit: "GW", decimals: 2 },
+        { name: "Last year", colour: "--s-ly", type: "line", data: lyPts, width: 1.5, unit: "GW", decimals: 2 },
         { name: "Output", colour: "--s-id", type: "line", data: pts("output"), width: 1.8, unit: "GW", decimals: 2 },
         { name: "Expected available", colour: "--s-fcst", type: "line", data: expected, width: 2.4, dashed: true, unit: "GW", decimals: 2, z: 19 },
         { name: "Available", colour: "--s-actual", type: "line", data: pts("available"), width: 2.6, unit: "GW", decimals: 2, z: 20 }
-      ],
-      markAreas: [{ from: start, to: end, label: "Expected", colour: "--today" }],
-      notes: [
-        "Available capacity is installed capacity minus the unavailable capacity in the latest version of each notice; past hours use the final versions.",
-        "Expected availability only reflects outages EDF has announced: unplanned outages that have not happened yet are, by definition, missing, so it tends to be optimistic."
-      ]
+      );
+      this.aheadPanel.setTitle("Available capacity", `${fmtDate(parisMidnight(from))} to ${fmtDate(Math.max(start, last) - HOUR)} · hourly · GW`);
+      this.aheadPanel.render({
+        xType: "time", xLabel: x => fmtDateTime(x), csvLabel: csvDateTime, yName: "GW", yFormat: v => fmtNumber(v, Number.isInteger(v) ? 0 : 1),
+        series, markAreas: nextDays > 0 ? [{ from: start, to: end, label: "Expected", colour: "--today" }] : [],
+        notes: this.aheadNotes(notes, false)
+      });
+      return;
+    }
+
+    // Daily view: daily summary for the past, the live outlook ahead.
+    const live = this.live;
+    const outlook = live.outlook.mw10.split(" ").map(v => Number(v) * 10);
+    const first = live.outlook.first_target;
+    const rows = this.daily.byDate;
+    const pts = key => dateRange(from, today).map(d => [parisMidnight(d), rows.get(d)?.[key]]).filter(p => p[1] != null).map(([x, v]) => [x, v / 1000]);
+    const ahead = nextDays > 0 ? dateRange(addDays(today, 1), to).map(d => [parisMidnight(d), outlook[daysBetween(first, d)]]).filter(p => p[1] != null).map(([x, v]) => [x, v / 1000]) : [];
+    const lyPts = [];
+    const avgPts = [];
+    const band = [];
+    for (const d of dateRange(from, to)) {
+      const vals = years.map(k => rows.get(alignDate(d, k, "cal"))?.available_mw ?? null);
+      const x = parisMidnight(d);
+      if (vals[0] != null) lyPts.push([x, vals[0] / 1000]);
+      const ok = vals.filter(v => v != null);
+      if (ok.length) avgPts.push([x, mean(ok) / 1000]);
+      if (ok.length >= 2) band.push([x, Math.min(...ok) / 1000, Math.max(...ok) / 1000]);
+    }
+    const actual = pts("available_mw");
+    const expected = actual.length && ahead.length ? [actual.at(-1), ...ahead] : ahead;
+    series.push(
+      { name: "Installed", colour: "--s-avg", type: "line", data: [...pts("installed_mw"), ...ahead.map(([x]) => [x, live.fleet.installed_mw / 1000])], width: 1, dashed: true, unit: "GW", decimals: 2, step: "end" },
+      { name: "Range, previous 5 years", colour: "--s-band", type: "band", data: band, unit: "GW" },
+      { name: "5-year average", colour: "--s-avg", type: "line", data: avgPts, width: 1.4, dashed: true, unit: "GW", decimals: 2 },
+      { name: "Last year", colour: "--s-ly", type: "line", data: lyPts, width: 1.5, unit: "GW", decimals: 2 },
+      { name: "Output", colour: "--s-id", type: "line", data: pts("output_mw"), width: 1.8, unit: "GW", decimals: 2 },
+      { name: "Expected available", colour: "--s-fcst", type: "line", data: expected, width: 2.4, dashed: true, unit: "GW", decimals: 2, z: 19 },
+      { name: "Available", colour: "--s-actual", type: "line", data: actual, width: 2.6, unit: "GW", decimals: 2, z: 20 }
+    );
+    notes.push("Periods over about six weeks, or looking more than two weeks ahead, are shown as daily averages.");
+    this.aheadPanel.setTitle("Available capacity", `${fmtDate(parisMidnight(from))} to ${fmtDate(parisMidnight(to))} · daily averages · GW`);
+    this.aheadPanel.render({
+      xType: "time", xLabel: x => fmtDate(x), csvLabel: csvDate, xHeader: "Date", yName: "GW", yFormat: v => fmtNumber(v, Number.isInteger(v) ? 0 : 1),
+      series, markAreas: nextDays > 0 ? [{ from: parisMidnight(addDays(today, 1)), to: parisMidnight(addDays(to, 1)), label: "Expected", colour: "--today" }] : [],
+      notes: this.aheadNotes(notes, true)
     });
+  }
+
+  aheadNotes(notes, daily) {
+    return [
+      ...notes,
+      "Available capacity is installed capacity minus the unavailable capacity in the latest version of each notice. Earlier years are matched on the same calendar date" + (daily ? "." : " and Paris clock time."),
+      "Expected availability only reflects outages EDF has announced: unplanned outages that have not happened yet are, by definition, missing, so it tends to be optimistic."
+    ];
   }
 
   // ---------- Output heat map ----------
@@ -448,11 +627,11 @@ export class NuclearToday {
       visualMap: {
         min: 0, max: 100, calculable: false, orient: "horizontal", left: "center", bottom: forExport ? 40 : 6, itemHeight: 220, itemWidth: 10,
         text: ["100% of capacity", "0%"], textStyle: { color: t.muted, fontSize: 11 }, dimension: 2,
-        inRange: { color: [cssVar("--st-unplanned"), cssVar("--st-reduced"), cssVar("--map-land"), cssVar("--s-actual")] }
+        inRange: { color: settings().palette === "colourblind" ? ["#440154", "#3b528b", "#21918c", "#5ec962", "#fde725"] : ["#dc2626", "#f59e0b", "#22c55e"] }
       },
       series: [{ type: "heatmap", data, progressive: 0, emphasis: { itemStyle: { borderColor: t.text, borderWidth: 1 } } }]
     });
-    this.heatPanel.setTitle("Output by reactor, past 7 days", "Hourly output as a share of each reactor's capacity · grey means no output reported");
+    this.heatPanel.setTitle("Output by reactor, past 7 days", "Hourly output as a share of each reactor's capacity: red 0%, amber 50%, green 100% · blank means no output reported");
     this.heatPanel.render({
       series: [],
       custom: {
@@ -485,15 +664,26 @@ export class NuclearToday {
 
   filteredChanges() {
     const filter = this.root.querySelector("[data-change-filter]").value;
-    return (this.live?.changes || []).map(c => ({ ...c, d: this.describe(c) })).filter(c => filter === "all" || c.d.kind === filter);
+    const delaysOnly = this.state.delays === "1";
+    const rows = (this.live?.changes || []).map(c => ({ ...c, d: this.describe(c), delayed: c.prev_end_utc && parseUtc(c.end_utc) - parseUtc(c.prev_end_utc) >= 30 * 60000 }))
+      .filter(c => (filter === "all" || c.d.kind === filter) && (!delaysOnly || c.delayed));
+    const label = name => this.fleet.reactors.find(r => r.name === name)?.label || name;
+    const key = {
+      pub: c => c.published_utc, unit: c => label(c.unit), type: c => c.type, change: c => c.d.text, mw: c => c.off_mw,
+      start: c => c.start_utc, end: c => c.end_utc
+    }[this.state.csort] || (c => c.published_utc);
+    const sign = this.state.cdir === "asc" ? 1 : -1;
+    return rows.sort((a, b) => { const x = key(a); const y = key(b); return (x < y ? -1 : x > y ? 1 : 0) * sign; });
   }
 
   renderChanges() {
     if (!this.live) return;
     const label = name => this.fleet.reactors.find(r => r.name === name)?.label || name;
     const rows = this.filteredChanges();
-    this.changesEl.innerHTML = rows.length ? `<table><thead><tr><th>Published</th><th>Reactor</th><th>Type</th><th>Change</th><th>MW off</th><th>Start</th><th>End</th><th>Remark</th></tr></thead><tbody>
-      ${rows.map(c => `<tr class="${c.d.kind === "dates" && parseUtc(c.end_utc) > parseUtc(c.prev_end_utc) ? "delay" : ""}">
+    const s = this.state;
+    const head = (key, text) => `<th class="sortable${s.csort === key ? ` sorted ${s.cdir}` : ""}" data-sort="${key}">${text}</th>`;
+    this.changesEl.innerHTML = rows.length ? `<table><thead><tr>${head("pub", "Published")}${head("unit", "Reactor")}${head("type", "Type")}${head("change", "Change")}${head("mw", "MW off")}${head("start", "Start")}${head("end", "End")}<th>Remark</th></tr></thead><tbody>
+      ${rows.map(c => `<tr class="${c.delayed ? "delay" : ""}">
         <td>${fmtDayTime(parseUtc(c.published_utc))}</td><td class="text">${label(c.unit)}</td>
         <td class="text"><span class="tag ${c.type}">${c.type}</span></td><td class="text">${c.d.text}</td>
         <td>${fmtNumber(c.off_mw, 0)}</td><td>${fmtDayTime(parseUtc(c.start_utc))}</td><td>${fmtDayTime(parseUtc(c.end_utc))}</td>
@@ -514,6 +704,7 @@ export class NuclearToday {
   refreshTheme() {
     this.renderMap();
     this.renderList();
+    this.renderHeat();
   }
 }
 

@@ -26,7 +26,7 @@ const PAGES = {
     }
   },
   nuclear: {
-    accent: "Unavailability Intelligence", doc: "France Power Unavailability Intelligence",
+    accent: "Nuclear Availability Intelligence", doc: "France Power Nuclear Availability Intelligence",
     tabs: {
       today: { label: "Today", load: async root => new (await import("./nuclear-today.js")).NuclearToday(root) },
       explorer: { label: "Explorer", load: async root => new (await import("./nuclear-explorer.js")).NuclearExplorer(root) },
@@ -345,10 +345,11 @@ function aboutHtml() {
     <dl class="glossary">
       ${term("Available capacity", "Installed capacity minus the unavailable capacity in the notices covering that moment. Where notices overlap on one reactor, the largest reduction counts (they are not added up).")}
       ${term("Planned / unplanned", "As declared by EDF: planned outages (refuelling, maintenance, ten-yearly inspections) are announced in advance; unplanned ones (failures, other incidents) are not. Modulation to follow demand is not an outage.")}
-      ${term("Offline / reduced", "Offline means below 10% of the reactor's capacity; reduced means below 90%.")}
+      ${term("Offline / partially available", "Offline means the notices leave less than 10% of the reactor's capacity available; partially available means between 10% and 90%.")}
+      ${term("Modulating", "Online, but producing less than 80% of its available capacity in the latest hour, usually to follow demand or prices.")}
       ${term("Output", "Measured nuclear generation from RTE's actual generation data, hourly (fleet since 15 Dec 2014; per reactor for the past week).")}
       ${term("Load factor", "Output divided by installed capacity.")}
-      ${term("Outlook as of a date", "The availability implied by the latest version of each notice published by the end of that day (Paris time), for each of the next 540 days. Comparing outlooks from different dates shows how expectations moved.")}
+      ${term("Outlook as of a date", "The availability (and unavailability, split into planned and unplanned) implied by the latest version of each notice published by the end of that day (Paris time), for each of the next 540 days. Comparing outlooks from different dates shows how expectations moved.")}
       ${term("First announced end", "The end date in the first version of a notice. The change against it shows extensions and early returns.")}
     </dl>
     <ul>
@@ -357,7 +358,7 @@ function aboutHtml() {
       <li>Outlooks only contain outages already announced, so they are usually above what happens.</li>
     </ul>
     <h3 style="margin-top:22px">Hydro reservoirs</h3>
-    <p>RTE's weekly figure for the energy stored in the hydro reservoirs it monitors, in MWh (shown as TWh), since December 2014. Weeks are compared by ISO week number.</p>
+    <p>RTE's weekly figure for the energy stored in the hydro reservoirs it monitors, in MWh (shown as TWh), since December 2014. Fill level is that figure as a share of the reservoirs' total capacity of 3,591 GWh (RTE); differences in fill level are in percentage points (pp). Weeks are compared by ISO week number.</p>
     <p class="muted">Map outline: Natural Earth (public domain). Methodology, data files and code: <a href="${CONFIG.repoUrl}" target="_blank" rel="noopener">GitHub repository</a>.</p>`;
 }
 

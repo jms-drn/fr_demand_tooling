@@ -21,10 +21,12 @@ export function isoWeek(date) {
 }
 
 function defaults() {
-  return { view: "season", year: "", start: "1", ly: "1", avg: "1", n: "5", band: "1", all: "0", show: "abs", week: "" };
+  return { unit: "twh", view: "season", year: "", start: "1", ly: "1", avg: "1", n: "5", band: "1", all: "0", show: "abs", week: "" };
 }
 
 const twh = mwh => mwh / 1e6;
+// Total capacity of the reservoirs in RTE's series (RTE figure).
+export const RESERVOIR_CAPACITY_MWH = 3591000;
 
 export class Hydro {
   constructor(root) {
@@ -46,13 +48,18 @@ export class Hydro {
 
   build() {
     this.root.innerHTML = `
-      ${heroHtml("Hydro reservoirs,", "week by week.", "Energy stored in French hydro reservoirs each week since December 2014, from RTE, compared with earlier years: the range, the average and where this week ranks.")}
+      ${heroHtml("Hydro reservoirs,", "week by week.", "Energy stored in French hydro reservoirs each week since December 2014, from RTE, as TWh or as a fill level of the 3,591 GWh total capacity, compared with earlier years: the range, the average and where this week ranks.")}
       <div class="toolbar" role="group" aria-label="Reservoir settings">
         <div class="toolbar-row">
+          <div class="field"><span>Measure in</span>
+            <div class="segmented" role="group" aria-label="Measure in">
+              <button type="button" data-unit="twh">Stored energy (TWh)</button><button type="button" data-unit="fill">Fill level (%)</button>
+            </div>
+          </div>
           <label class="field"><span>Chart</span><select data-k="view"><option value="season">Year against earlier years</option><option value="history">Full history</option></select></label>
           <label class="field"><span>Year</span><select data-k="year" data-years></select></label>
           <label class="field"><span>Year starts</span><select data-k="start"><option value="1">January</option><option value="40">October (hydro year)</option></select></label>
-          <label class="field"><span>Show</span><select data-k="show"><option value="abs">Stored energy (TWh)</option><option value="diff">Difference from average (TWh)</option><option value="pct">Difference from average (%)</option></select></label>
+          <label class="field"><span>Show</span><select data-k="show"><option value="abs">Values</option><option value="diff" data-diff-label>Difference from average (TWh)</option><option value="pct" data-pct-option>Difference from average (% of average)</option></select></label>
           <div class="field"><span>Compare with</span>
             <div class="chips">
               ${this.chip("ly", "Last year", "--s-ly")}
@@ -66,6 +73,7 @@ export class Hydro {
       </div>
       <div class="headline"><p data-headline>Loading…</p><button class="btn ghost small" type="button" data-copy title="Copy this sentence">Copy</button></div>
       <div class="cards" data-cards>${'<div class="card skeleton"></div>'.repeat(6)}</div>
+      <p class="muted unit-hint" data-unit-hint></p>
       <div data-main></div>
       <div data-rank></div>`;
     this.headline = this.root.querySelector("[data-headline]");
@@ -76,6 +84,12 @@ export class Hydro {
     this.root.querySelectorAll("[data-k]").forEach(input => input.addEventListener("change", () => {
       this.state[input.dataset.k] = input.value;
       if (input.dataset.k === "year") this.state.week = "";
+      this.syncControls();
+      this.update();
+    }));
+    this.root.querySelectorAll("[data-unit]").forEach(b => b.addEventListener("click", () => {
+      this.state.unit = b.dataset.unit;
+      if (this.state.unit === "fill" && this.state.show === "pct") this.state.show = "diff";
       this.syncControls();
       this.update();
     }));
@@ -96,6 +110,40 @@ export class Hydro {
     this.root.querySelectorAll("[data-chip]").forEach(chip => chip.setAttribute("aria-pressed", s[chip.dataset.chip] === "1"));
     this.root.querySelector('[data-chip="band"]').disabled = s.show !== "abs";
     this.root.querySelector('[data-chip="all"]').disabled = s.show !== "abs" || s.view !== "season";
+    const fill = s.unit === "fill";
+    this.root.querySelectorAll("[data-unit]").forEach(b => b.setAttribute("aria-pressed", b.dataset.unit === s.unit));
+    this.root.querySelector("[data-diff-label]").textContent = fill ? "Difference from average (pp)" : "Difference from average (TWh)";
+    this.root.querySelector("[data-pct-option]").disabled = fill;
+    this.root.querySelector("[data-unit-hint]").textContent = fill
+      ? "Comparisons are in percentage points (pp) of the 3,591 GWh capacity. Switch “Measure in” to Stored energy for TWh."
+      : "Switch “Measure in” to Fill level to see the reservoirs as % full and comparisons in percentage points.";
+  }
+
+  fill() {
+    return this.state.unit === "fill";
+  }
+
+  /** MWh in the chosen unit: TWh, or % of capacity. */
+  v(mwh) {
+    return this.fill() ? (100 * mwh) / RESERVOIR_CAPACITY_MWH : mwh / 1e6;
+  }
+
+  U() {
+    return this.fill() ? "%" : "TWh";
+  }
+
+  DU() {
+    return this.fill() ? "pp" : "TWh";
+  }
+
+  fmtV(mwh) {
+    return this.fill() ? `${fmtNumber(this.v(mwh), 1)}%` : `${fmtNumber(this.v(mwh), 2)} TWh`;
+  }
+
+  fmtD(mwh, signed = true) {
+    const v = this.v(mwh);
+    const sign = signed ? (v > 0 ? "+" : v < 0 ? "−" : "") : "";
+    return `${sign}${fmtNumber(Math.abs(v), this.fill() ? 1 : 2)} ${this.DU()}`;
   }
 
   activate() {
@@ -195,42 +243,42 @@ export class Hydro {
         const r = cur.get(i);
         const st = this.slotStats(year, i);
         if (!r || st.avg == null) return null;
-        return [i, pct ? (r.mwh / st.avg - 1) * 100 : twh(r.mwh - st.avg)];
+        return [i, pct ? (r.mwh / st.avg - 1) * 100 : this.v(r.mwh - st.avg)];
       }).filter(Boolean);
-      series.push({ name: `${this.seasonLabel(year)} vs ${avgName.toLowerCase()}`, colour: "--s-actual", type: "bar", data, unit: pct ? "%" : "TWh", decimals: pct ? 1 : 2, colourFn: v => (v >= 0 ? "--ok" : "--danger"), barColours: () => "--s-actual" });
+      series.push({ name: `${this.seasonLabel(year)} vs ${avgName.toLowerCase()}`, colour: "--s-actual", type: "bar", data, unit: pct ? "%" : this.DU(), decimals: pct || this.fill() ? 1 : 2, colourFn: v => (v >= 0 ? "--ok" : "--danger"), barColours: () => "--s-actual" });
       if (s.ly === "1") {
         const lyData = slots.map(i => {
           const r = this.bySeason.get(year - 1)?.get(i);
           const st = this.slotStats(year - 1, i);
           if (!r || st.avg == null) return null;
-          return [i, pct ? (r.mwh / st.avg - 1) * 100 : twh(r.mwh - st.avg)];
+          return [i, pct ? (r.mwh / st.avg - 1) * 100 : this.v(r.mwh - st.avg)];
         }).filter(Boolean);
-        series.push({ name: `${this.seasonLabel(year - 1)} vs its own previous average`, colour: "--s-ly", type: "line", data: lyData, unit: pct ? "%" : "TWh", decimals: pct ? 1 : 2, width: 1.5 });
+        series.push({ name: `${this.seasonLabel(year - 1)} vs its own previous average`, colour: "--s-ly", type: "line", data: lyData, unit: pct ? "%" : this.DU(), decimals: pct || this.fill() ? 1 : 2, width: 1.5 });
       }
     } else {
       if (s.band === "1") {
-        const band = slots.map(i => { const st = this.slotStats(year, i); return st.min == null ? null : [i, twh(st.min), twh(st.max)]; }).filter(Boolean);
-        if (band.length) series.push({ name: `Range ${avgName.replace("Average ", "")}`, colour: "--s-band", type: "band", data: band, unit: "TWh" });
+        const band = slots.map(i => { const st = this.slotStats(year, i); return st.min == null ? null : [i, this.v(st.min), this.v(st.max)]; }).filter(Boolean);
+        if (band.length) series.push({ name: `Range ${avgName.replace("Average ", "")}`, colour: "--s-band", type: "band", data: band, unit: this.U() });
       }
       if (s.all === "1") {
         for (const y of [...this.bySeason.keys()].sort()) {
           if (y === year || (s.ly === "1" && y === year - 1)) continue;
           const m = this.bySeason.get(y);
-          series.push({ name: this.seasonLabel(y), colour: "--muted", type: "line", data: slots.map(i => (m.get(i) ? [i, twh(m.get(i).mwh)] : null)).filter(Boolean), unit: "TWh", decimals: 2, width: 0.8, symbols: false });
+          series.push({ name: this.seasonLabel(y), colour: "--muted", type: "line", data: slots.map(i => (m.get(i) ? [i, this.v(m.get(i).mwh)] : null)).filter(Boolean), unit: this.U(), decimals: this.fill() ? 1 : 2, width: 0.8, symbols: false });
         }
       }
-      if (s.avg === "1") series.push({ name: avgName, colour: "--s-avg", type: "line", dashed: true, width: 1.6, unit: "TWh", decimals: 2, data: slots.map(i => { const st = this.slotStats(year, i); return st.avg == null ? null : [i, twh(st.avg)]; }).filter(Boolean) });
+      if (s.avg === "1") series.push({ name: avgName, colour: "--s-avg", type: "line", dashed: true, width: 1.6, unit: this.U(), decimals: this.fill() ? 1 : 2, data: slots.map(i => { const st = this.slotStats(year, i); return st.avg == null ? null : [i, this.v(st.avg)]; }).filter(Boolean) });
       if (s.ly === "1" && this.bySeason.has(year - 1)) {
         const m = this.bySeason.get(year - 1);
-        series.push({ name: this.seasonLabel(year - 1), colour: "--s-ly", type: "line", data: slots.map(i => (m.get(i) ? [i, twh(m.get(i).mwh)] : null)).filter(Boolean), unit: "TWh", decimals: 2, width: 1.6 });
+        series.push({ name: this.seasonLabel(year - 1), colour: "--s-ly", type: "line", data: slots.map(i => (m.get(i) ? [i, this.v(m.get(i).mwh)] : null)).filter(Boolean), unit: this.U(), decimals: this.fill() ? 1 : 2, width: 1.6 });
       }
-      series.push({ name: this.seasonLabel(year), colour: "--s-actual", type: "line", data: slots.map(i => (cur.get(i) ? [i, twh(cur.get(i).mwh)] : null)).filter(Boolean), unit: "TWh", decimals: 2, width: 2.8, z: 20, symbols: true });
+      series.push({ name: this.seasonLabel(year), colour: "--s-actual", type: "line", data: slots.map(i => (cur.get(i) ? [i, this.v(cur.get(i).mwh)] : null)).filter(Boolean), unit: this.U(), decimals: this.fill() ? 1 : 2, width: 2.8, z: 20, symbols: true });
     }
-    this.main.setTitle(`Hydro reservoirs, ${this.seasonLabel(year)} against earlier years`, `Energy stored at the end of each week · ${diff ? (s.show === "pct" ? "%" : "TWh") : "TWh"}`);
+    this.main.setTitle(`Hydro reservoirs, ${this.seasonLabel(year)} against earlier years`, `${this.fill() ? "Fill level" : "Energy stored"} at the end of each week · ${diff ? (s.show === "pct" ? "% of average" : this.DU()) : this.U()}`);
     this.main.render({
       xType: "category", categories: labels.map(d => `Wk ${isoWeek(d)[1]} · ${fmtShortDate(d)}`), xLabel: x => x, xHeader: "Week (week starting, in the selected year)",
       axisLabel: v => String(v).split(" · ")[1] || v,
-      yName: diff ? (s.show === "pct" ? "%" : "TWh") : "TWh", yFormat: v => fmtNumber(v, 1), zeroLine: diff,
+      yName: diff ? (s.show === "pct" ? "%" : this.DU()) : this.U(), yMin: !diff && this.fill() ? 0 : undefined, yFormat: v => fmtNumber(v, 1), zeroLine: diff,
       series, legendCaption: "Average for the weeks in view",
       tooltipExtra: i => {
         const r = cur.get(i);
@@ -246,20 +294,20 @@ export class Hydro {
   renderHistory() {
     const s = this.state;
     const series = [];
-    const pts = this.rows.map(r => [parisMidnight(r.end), twh(r.mwh)]);
-    const norm = this.rows.map(r => { const st = this.slotStats(r.season, r.slot); return st.avg == null ? null : [parisMidnight(r.end), twh(st.avg)]; }).filter(Boolean);
+    const pts = this.rows.map(r => [parisMidnight(r.end), this.v(r.mwh)]);
+    const norm = this.rows.map(r => { const st = this.slotStats(r.season, r.slot); return st.avg == null ? null : [parisMidnight(r.end), this.v(st.avg)]; }).filter(Boolean);
     if (s.show !== "abs") {
       const pct = s.show === "pct";
-      const data = this.rows.map(r => { const st = this.slotStats(r.season, r.slot); return st.avg == null ? null : [parisMidnight(r.end), pct ? (r.mwh / st.avg - 1) * 100 : twh(r.mwh - st.avg)]; }).filter(Boolean);
-      series.push({ name: "Difference from the average of previous years", colour: "--s-actual", type: "bar", data, unit: pct ? "%" : "TWh", decimals: pct ? 1 : 2, colourFn: v => (v >= 0 ? "--ok" : "--danger") });
+      const data = this.rows.map(r => { const st = this.slotStats(r.season, r.slot); return st.avg == null ? null : [parisMidnight(r.end), pct ? (r.mwh / st.avg - 1) * 100 : this.v(r.mwh - st.avg)]; }).filter(Boolean);
+      series.push({ name: "Difference from the average of previous years", colour: "--s-actual", type: "bar", data, unit: pct ? "%" : this.DU(), decimals: pct || this.fill() ? 1 : 2, colourFn: v => (v >= 0 ? "--ok" : "--danger") });
     } else {
-      if (s.avg === "1") series.push({ name: "Average of previous years, same week", colour: "--s-avg", type: "line", data: norm, dashed: true, width: 1.4, unit: "TWh", decimals: 2 });
-      series.push({ name: "Stored energy", colour: "--s-actual", type: "line", data: pts, width: 2.2, unit: "TWh", decimals: 2, z: 20 });
+      if (s.avg === "1") series.push({ name: "Average of previous years, same week", colour: "--s-avg", type: "line", data: norm, dashed: true, width: 1.4, unit: this.U(), decimals: this.fill() ? 1 : 2 });
+      series.push({ name: this.fill() ? "Fill level" : "Stored energy", colour: "--s-actual", type: "line", data: pts, width: 2.2, unit: this.U(), decimals: this.fill() ? 1 : 2, z: 20 });
     }
-    this.main.setTitle("Hydro reservoirs since 2014", `Energy stored at the end of each week · ${s.show === "pct" ? "%" : "TWh"}`);
+    this.main.setTitle("Hydro reservoirs since 2014", `${this.fill() ? "Fill level" : "Energy stored"} at the end of each week · ${s.show === "pct" ? "% of average" : s.show === "diff" ? this.DU() : this.U()}`);
     this.main.render({
       xType: "time", xLabel: x => `Week to ${fmtDate(x - 86400000)}`, csvLabel: x => csvDate(x - 86400000), xHeader: "Week ending",
-      yName: s.show === "pct" ? "%" : "TWh", yFormat: v => fmtNumber(v, 1), zeroLine: s.show !== "abs", series,
+      yName: s.show === "pct" ? "%" : s.show === "diff" ? this.DU() : this.U(), yFormat: v => fmtNumber(v, 1), zeroLine: s.show !== "abs", series,
       notes: [`The average uses the ${this.state.n === "all" ? "all earlier" : `${this.state.n} previous`} years available for each week.`]
     });
   }
@@ -271,6 +319,7 @@ export class Hydro {
   renderSummary() {
     const r = this.latest();
     if (!r) return;
+    const fill = this.fill();
     const prevWeek = this.rows.at(-2);
     const st = this.slotStats(r.season, r.slot);
     const sameWeek = [...this.bySeason.entries()].map(([y, m]) => ({ y, v: m.get(r.slot)?.mwh })).filter(e => e.v != null);
@@ -279,27 +328,54 @@ export class Hydro {
     const rankLow = sameWeek.length - rankHigh + 1;
     const rank = rankLow <= rankHigh ? `${rankLow === 1 ? "the lowest" : `the ${ordinal(rankLow)} lowest`}` : `${rankHigh === 1 ? "the highest" : `the ${ordinal(rankHigh)} highest`}`;
     const pctAvg = st.avg ? (r.mwh / st.avg - 1) * 100 : null;
-    const yearsTxt = this.state.n === "all" ? "all previous years" : `the previous ${Math.min(Number(this.state.n), st.n)} years`;
-    let text = `French hydro reservoirs held ${fmtNumber(twh(r.mwh), 2)} TWh in the week to ${fmtLongDate(addDays(r.end, -1))} (week ${r.w})`;
-    if (prevWeek) text += `, ${fmtNumber(Math.abs(twh(r.mwh - prevWeek.mwh)), 2)} TWh ${r.mwh >= prevWeek.mwh ? "more" : "less"} than a week earlier`;
+    const nYears = this.state.n === "all" ? st.n : Math.min(Number(this.state.n), st.n);
+    const yearsTxt = this.state.n === "all" ? "all previous years" : `the previous ${nYears} years`;
+    const pctFull = (100 * r.mwh) / RESERVOIR_CAPACITY_MWH;
+    const weekTo = fmtLongDate(addDays(r.end, -1));
+
+    let text = fill
+      ? `French hydro reservoirs were ${fmtNumber(pctFull, 1)}% full (${fmtNumber(twh(r.mwh), 2)} TWh of 3.591 TWh) in the week to ${weekTo} (week ${r.w})`
+      : `French hydro reservoirs held ${fmtNumber(twh(r.mwh), 2)} TWh (${fmtNumber(pctFull, 1)}% full) in the week to ${weekTo} (week ${r.w})`;
+    if (prevWeek) text += `, ${this.fmtD(Math.abs(r.mwh - prevWeek.mwh), false)} ${r.mwh >= prevWeek.mwh ? "more" : "less"} than a week earlier`;
     text += ".";
     const cmp = [];
-    if (pctAvg != null) cmp.push(`${fmtNumber(Math.abs(pctAvg), 1)}% ${pctAvg >= 0 ? "above" : "below"} the average of ${yearsTxt} for the same week`);
-    if (st.ly != null) cmp.push(`${fmtNumber(Math.abs((r.mwh / st.ly - 1) * 100), 1)}% ${r.mwh >= st.ly ? "above" : "below"} last year`);
+    if (st.avg != null) cmp.push(fill
+      ? `${this.fmtD(Math.abs(r.mwh - st.avg), false)} ${r.mwh >= st.avg ? "above" : "below"} the average of ${yearsTxt} for the same week (${this.fmtV(st.avg)})`
+      : `${fmtNumber(Math.abs(pctAvg), 1)}% ${pctAvg >= 0 ? "above" : "below"} the average of ${yearsTxt} for the same week`);
+    if (st.ly != null) cmp.push(fill
+      ? `${this.fmtD(Math.abs(r.mwh - st.ly), false)} ${r.mwh >= st.ly ? "above" : "below"} last year`
+      : `${fmtNumber(Math.abs((r.mwh / st.ly - 1) * 100), 1)}% ${r.mwh >= st.ly ? "above" : "below"} last year`);
     if (sameWeek.length > 1) cmp.push(`${rank} for this week since ${Math.min(...sameWeek.map(e => e.y))}`);
     if (cmp.length) text += ` That is ${cmp.join(", ").replace(/, ([^,]*)$/, " and $1")}.`.replace("That is the", "It is the");
+
+    // Recent trend: the past four weeks against the usual change over the same weeks.
+    const back = this.rows.at(-5);
+    if (back) {
+      const st4 = this.slotStats(back.season, back.slot);
+      if (st.avg != null && st4.avg != null) {
+        const change = r.mwh - back.mwh;
+        const usual = st.avg - st4.avg;
+        const gapNow = r.mwh - st.avg;
+        const gapThen = back.mwh - st4.avg;
+        const move = v => (v >= 0 ? "risen" : "fallen");
+        const usualTxt = Math.abs(this.v(usual)) < (fill ? 0.05 : 0.005) ? "little change is usual" : `they usually ${usual >= 0 ? "rise" : "fall"} ${this.fmtD(Math.abs(usual), false)}`;
+        const gapTxt = Math.abs(gapNow) > Math.abs(gapThen) ? "widened" : "narrowed";
+        text += ` Over the past four weeks stocks have ${move(change)} ${this.fmtD(Math.abs(change), false)}, while ${usualTxt} at this time of year, so the gap to the average has ${gapTxt} from ${this.fmtD(gapThen)} to ${this.fmtD(gapNow)}.`;
+      }
+    }
     this.headline.textContent = text;
 
     const record = desc[0];
     const low = desc.at(-1);
     const card = (l, v, d = "", c = "") => `<div class="card${c}"><div class="label">${l}</div><div class="value">${v}</div><div class="detail">${d}</div></div>`;
+    const avgLabel = `vs ${this.state.n === "all" ? "all-years" : `${nYears}-year`} average`;
     this.cards.innerHTML = [
-      card("Stored energy", `${fmtNumber(twh(r.mwh), 2)} TWh`, `Week ${r.w}, to ${fmtShortDate(addDays(r.end, -1))}`, " accent"),
-      prevWeek ? card("Change on the week", `${r.mwh >= prevWeek.mwh ? "+" : "−"}${fmtNumber(Math.abs(twh(r.mwh - prevWeek.mwh)), 2)} TWh`, fmtPct((r.mwh / prevWeek.mwh - 1) * 100)) : "",
-      pctAvg != null ? card(`vs ${this.state.n === "all" ? "all-years" : `${Math.min(Number(this.state.n), st.n)}-year`} average`, fmtPct(pctAvg), `${fmtNumber(twh(st.avg), 2)} TWh for week ${r.w}`) : "",
-      st.ly != null ? card("vs last year", fmtPct((r.mwh / st.ly - 1) * 100), `${fmtNumber(twh(st.ly), 2)} TWh a year ago`) : "",
+      card(fill ? "Fill level" : "Stored energy", this.fmtV(r.mwh), `Week ${r.w}, to ${fmtShortDate(addDays(r.end, -1))} · ${fill ? `${fmtNumber(twh(r.mwh), 2)} TWh` : `${fmtNumber(pctFull, 1)}% full`}`, " accent"),
+      prevWeek ? card("Change on the week", this.fmtD(r.mwh - prevWeek.mwh), fill ? `${this.fmtV(prevWeek.mwh)} a week earlier` : fmtPct((r.mwh / prevWeek.mwh - 1) * 100)) : "",
+      st.avg != null ? card(avgLabel, fill ? this.fmtD(r.mwh - st.avg) : fmtPct(pctAvg), `${this.fmtV(st.avg)} for week ${r.w}`) : "",
+      st.ly != null ? card("vs last year", fill ? this.fmtD(r.mwh - st.ly) : fmtPct((r.mwh / st.ly - 1) * 100), `${this.fmtV(st.ly)} a year ago`) : "",
       card("Rank for this week", rank.replace("the ", "").replace(/^./, c => c.toUpperCase()), `Of ${sameWeek.length} years`),
-      card("Range for this week", `${fmtNumber(twh(low.v), 1)}–${fmtNumber(twh(record.v), 1)} TWh`, `Low ${this.seasonLabel(low.y)} · high ${this.seasonLabel(record.y)}`)
+      card("Range for this week", fill ? `${fmtNumber(this.v(low.v), 0)}–${fmtNumber(this.v(record.v), 0)}%` : `${fmtNumber(twh(low.v), 1)}–${fmtNumber(twh(record.v), 1)} TWh`, `Low ${this.seasonLabel(low.y)} · high ${this.seasonLabel(record.y)}`)
     ].join("");
   }
 
@@ -312,11 +388,11 @@ export class Hydro {
     const rows = [...this.bySeason.entries()].map(([y, m]) => ({ y, v: m.get(slot)?.mwh })).filter(e => e.v != null).sort((a, b) => a.y - b.y);
     const n = this.previousSeasons(year).length;
     const colourFor = (_, i) => (rows[i]?.y === year ? "--s-actual" : rows[i] && year - rows[i].y <= n && rows[i].y < year ? "--s-avg" : "--s-band");
-    this.rank.setTitle(`Week ${focus.w} in every year`, `Energy stored in the week to ${fmtShortDate(addDays(focus.end, -1))} and the same week of each year · TWh`);
+    this.rank.setTitle(`Week ${focus.w} in every year`, `${this.fill() ? "Fill level" : "Energy stored"} in the week to ${fmtShortDate(addDays(focus.end, -1))} and the same week of each year · ${this.U()}`);
     this.rank.render({
-      xType: "category", categories: rows.map(r => this.seasonLabel(r.y)), xLabel: x => x, xHeader: "Year", yName: "TWh", yMin: 0, yScale: false,
+      xType: "category", categories: rows.map(r => this.seasonLabel(r.y)), xLabel: x => x, xHeader: "Year", yName: this.U(), yMin: 0, yScale: false,
       yFormat: v => fmtNumber(v, 1),
-      series: [{ name: `Week ${focus.w}`, colour: "--s-actual", type: "bar", data: rows.map((r, i) => [i, twh(r.v)]), unit: "TWh", decimals: 2, avg: false, barWidth: 34, colourFn: colourFor, barColours: i => colourFor(null, i), labels: v => fmtNumber(v, 2) }],
+      series: [{ name: `Week ${focus.w}`, colour: "--s-actual", type: "bar", data: rows.map((r, i) => [i, this.v(r.v)]), unit: this.U(), decimals: this.fill() ? 1 : 2, avg: false, barWidth: 34, colourFn: colourFor, barColours: i => colourFor(null, i), labels: v => fmtNumber(v, this.fill() ? 1 : 2) }],
       legendCaption: null,
       notes: ["Highlighted: the selected year. Mid-tone bars are the years in the average."]
     });

@@ -20,7 +20,9 @@ Files written (times UTC unless said otherwise)
   data/summary/nuclear_daily.csv          daily fleet summary (Paris days)
   data/nuclear/outlook/YYYY/YYYY-MM.csv   for each day P: expected daily mean
                                           availability for P+1 .. P+540 as known
-                                          at the end of P (Paris)
+                                          at the end of P (Paris), and the part of
+                                          the unavailability that is unplanned
+                                          (both in units of 10 MW)
   data/nuclear/outages/YYYY.csv           one row per notice (latest version),
                                           by the year the outage starts
   data/nuclear/live.json                  live status per reactor, recent notice
@@ -434,10 +436,14 @@ def outlook_from(fleet, versions, start_day):
     grid = Grid(fleet, a, int(bounds[-1] - a))
     for row in versions:
         grid.apply(row)
-    _, avail, _, _ = grid.totals()
-    total = avail.sum(axis=0, dtype=np.int64)
+    _, avail, _, unplanned = grid.totals()
     rel = bounds - a
-    return np.add.reduceat(total, rel[:-1]) / np.diff(rel)
+
+    def daily(arr):
+        total = arr.sum(axis=0, dtype=np.int64)
+        return np.add.reduceat(total, rel[:-1]) / np.diff(rel)
+
+    return daily(avail), daily(unplanned)
 
 
 def encode(values):
@@ -482,9 +488,9 @@ def build_outlooks(fleet, by_id, now, full):
     while day < today:
         advance(fmt_utc(paris_midnight(day + timedelta(days=1))))
         start = day + timedelta(days=1)
-        values = outlook_from(fleet, relevant(fmt_utc(paris_midnight(start))), start)
+        values, unplanned = outlook_from(fleet, relevant(fmt_utc(paris_midnight(start))), start)
         by_month[day.strftime("%Y-%m")].append({"as_of": day.isoformat(), "first_target": start.isoformat(),
-                                                "mw10": encode(values)})
+                                                "mw10": encode(values), "unplanned10": encode(unplanned)})
         day += timedelta(days=1)
 
     for month, rows in by_month.items():
@@ -492,14 +498,14 @@ def build_outlooks(fleet, by_id, now, full):
         old = {r["as_of"]: r for r in read_csv(path)} if not full else {}
         for r in rows:
             old[r["as_of"]] = r
-        write_csv(path, ["as_of", "first_target", "mw10"], [old[k] for k in sorted(old)])
+        write_csv(path, ["as_of", "first_target", "mw10", "unplanned10"], [old[k] for k in sorted(old)])
 
     # Current outlook (latest knowledge), from tomorrow.
     advance("9999")
     start = today + timedelta(days=1)
-    current = outlook_from(fleet, relevant(fmt_utc(paris_midnight(start))), start)
+    current, current_unplanned = outlook_from(fleet, relevant(fmt_utc(paris_midnight(start))), start)
     months = sorted(p.stem for p in OUTLOOK_DIR.glob("*/*.csv"))
-    return {"as_of_utc": fmt_utc(now), "first_target": start.isoformat(), "mw10": encode(current)}, months
+    return {"as_of_utc": fmt_utc(now), "first_target": start.isoformat(), "mw10": encode(current), "unplanned10": encode(current_unplanned)}, months
 
 
 # --------------------------------------------------------------------------

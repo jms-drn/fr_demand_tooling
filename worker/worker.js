@@ -1,4 +1,4 @@
-// France Power Demand Intelligence — refresh service (Cloudflare Worker).
+// France Power Intelligence — refresh service (Cloudflare Worker).
 //
 // What it does:
 //  1. Every 15 minutes (Cron Trigger), it starts the GitHub workflow that
@@ -12,12 +12,12 @@
 // Secrets (Settings → Variables and Secrets in the Cloudflare dashboard):
 //   RTE_CLIENT_ID, RTE_CLIENT_SECRET  – the same values as the GitHub secrets
 //   GITHUB_TOKEN                       – fine-grained token, Actions: read and write,
-//                                        for jms-drn/fr_demand_tooling only
+//                                        for jms-drn/fr_power_intel only
 // Variable (optional):
 //   ALLOWED_ORIGINS – comma-separated sites allowed to call this service,
 //                     default https://jms-drn.github.io
 
-const REPO = "jms-drn/fr_demand_tooling";
+const REPO = "jms-drn/fr_power_intel";
 const WORKFLOW = "update-rte.yml";
 const RTE = "https://digital.iservices.rte-france.com";
 const LIVE_TTL_MS = 2 * 60 * 1000;        // reuse the live RTE response for 2 minutes

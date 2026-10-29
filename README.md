@@ -1,4 +1,4 @@
-# fr_demand_tooling
+# fr_power_intel
 
 **France Power Intelligence**: a web tool for the French power system from RTE data — electricity demand, nuclear availability and outages, and hydro reservoirs — each compared with earlier years.
 

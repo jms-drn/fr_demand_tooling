@@ -21,7 +21,7 @@ This lets the service start the update workflow, and nothing else.
 3. Fill in:
    - **Token name:** `fr-demand refresh worker`
    - **Expiration:** the longest offered (usually 1 year). Put a reminder in your calendar to renew it.
-   - **Repository access:** *Only select repositories* → `jms-drn/fr_demand_tooling`
+   - **Repository access:** *Only select repositories* → `jms-drn/fr_power_intel`
    - **Permissions → Repository permissions → Actions:** *Read and write*
      (GitHub adds *Metadata: Read-only* automatically; leave everything else as *No access*.)
 4. Click **Generate token** and copy it. GitHub shows it only once, so keep the tab open until Step 3.

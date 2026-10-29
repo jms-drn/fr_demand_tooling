@@ -15,7 +15,7 @@ import {
   weekStart, writeHash
 } from "./util.js";
 
-const FIRST_DATE = "2011-01-01";
+const FIRST_DATE = "2015-01-01";
 const OUTPUT_FIRST = "2014-12-15";
 const MAX_1H_DAYS = 400;
 
@@ -27,6 +27,7 @@ const MEASURES = {
   lf: { label: "Load factor", unit: "%", short: "load factor" },
   offline: { label: "Reactors offline", unit: "reactors", short: "reactors offline" }
 };
+const to2018 = to => to >= "2016-01-01";
 const RES_LABEL = { "1h": "hourly", "1d": "daily", "1w": "weekly", "1M": "monthly" };
 
 function defaults() {
@@ -84,7 +85,7 @@ export class NuclearExplorer {
 
   build() {
     this.root.innerHTML = `
-      ${heroHtml("Explore nuclear availability,", "since 2011.", "Available and unavailable nuclear capacity, output and reactors offline for any period, from hourly detail to monthly averages, compared with the same period in earlier years. Narrow it to one site or reactor series, or run the period into the months ahead using the current outage notices.")}
+      ${heroHtml("Explore nuclear availability,", "since 2015.", "Available and unavailable nuclear capacity, output and reactors offline for any period, from hourly detail to monthly averages, compared with the same period in earlier years. Narrow it to one site or reactor series, or run the period into the months ahead using the current outage notices.")}
       <div class="toolbar" role="group" aria-label="Explorer settings">
         <div class="toolbar-row">
           <label class="field"><span>Period</span>
@@ -422,7 +423,7 @@ export class NuclearExplorer {
     if (res !== "1d") notes.push(`Each point is the average of the days in that ${res === "1w" ? "week" : "month"} inside the period.`);
     if (s.scope !== "fleet" && ["avail", "off", "avpct"].includes(m)) notes.push(`Only reactors in ${this.scopeName()} are included. Expected values ahead are only available for the whole fleet.`);
     if (m === "offline") notes.push("A reactor counts as offline on a day when its average availability is below 10% of its capacity.");
-    if (from < "2015-01-01" && ["avail", "off", "avpct", "offline"].includes(m)) notes.push("Notices before 2015 (when the EU's REMIT transparency rules took full effect) may be less complete, so early availability can look higher than it was.");
+    if (from < "2018-01-01" && to2018(s.to) && ["avail", "off", "avpct"].includes(m)) notes.push("In parts of 2016 and 2017 measured output exceeds the availability implied by the notices by up to 2.5 GW, so some notices then overstated outages: treat availability in those years as approximate.");
 
     const xLabel = res === "1M" ? x => fmtMonth(x) : res === "1w" ? x => `Week of ${fmtDate(x)}` : x => fmtDate(x);
     const label = MEASURES[m].label;
@@ -622,7 +623,7 @@ export class NuclearExplorer {
     const days = daysBetween(from, s.to) + 1;
     if (days > 366) { this.rankPanel.show(false); return; }
     this.rankPanel.show(true);
-    const firstYear = ["output", "lf"].includes(m) ? 2015 : 2011;
+    const firstYear = 2015;
     const thisYear = Number(from.slice(0, 4));
     const rows = [];
     const useFc = s.fc === "1" && s.to > today && !["output", "lf", "offline"].includes(m) && s.scope === "fleet";

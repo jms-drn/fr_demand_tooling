@@ -10,7 +10,7 @@ import {
   fmtShortDate, heroHtml, parisMidnight, todayParis, weekStart, writeHash
 } from "./util.js";
 
-const FIRST_ASOF = "2011-01-01";
+const FIRST_ASOF = "2015-01-01";
 const HORIZON = 540;
 
 function defaults() {

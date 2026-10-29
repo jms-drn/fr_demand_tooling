@@ -55,6 +55,10 @@ UTC = timezone.utc
 STEP = 15  # minutes
 T0 = datetime(2010, 12, 1, tzinfo=UTC)
 HORIZON_DAYS = 540
+# Notices before 2015 are far from complete (about 100 versions a year in
+# 2011-12 and 1,000 in 2013-14, against 4,000+ from 2015, when REMIT
+# publication took full effect), so availability history starts in 2015.
+HISTORY_START = date(2015, 1, 1)
 OFFLINE_SHARE = 0.1  # a reactor below 10% of its capacity counts as offline
 
 HOURLY_DIR = NUCLEAR_DIR / "hourly"
@@ -112,7 +116,7 @@ SERIES_OF = {unit: series for series, units in SERIES.items() for unit in units}
 # Units that joined or left the fleet inside the data period (UTC).
 IN_SERVICE = {
     "FESSENHEIM 1": (None, "2020-02-22T01:00Z"),   # final shutdown 22 Feb 2020
-    "FESSENHEIM 2": (None, "2020-06-29T22:00Z"),   # final shutdown 30 Jun 2020
+    "FESSENHEIM 2": (None, "2020-06-29T21:30Z"),   # final shutdown 29/30 Jun 2020 (EDF notice)
     "FLAMANVILLE 3": ("2024-12-21T10:48Z", None),  # first grid connection
 }
 
@@ -162,6 +166,8 @@ def parse_steps(row, cap):
         if not part:
             continue
         s, e, avail, unavail = part.split("/")
+        if not s or not e:
+            continue
         if unavail not in ("", None):
             off = int(float(unavail))
         elif avail not in ("", None):
@@ -271,11 +277,18 @@ class Grid:
 # Hourly, daily and per-reactor history (current knowledge)
 # --------------------------------------------------------------------------
 
+# RTE's fleet nuclear output has stretches of near-zero values that are data
+# errors (e.g. 16 Sep - 13 Oct 2024); the fleet has never produced this little.
+MIN_PLAUSIBLE_OUTPUT_MW = 15000
+
+
 def load_output():
     out = {}
     for path in sorted(OUTPUT_DIR.glob("*/*.csv")):
         for row in read_csv(path):
-            out[row["start_utc"]] = int(row["mw"])
+            mw = int(row["mw"])
+            if mw >= MIN_PLAUSIBLE_OUTPUT_MW:
+                out[row["start_utc"]] = mw
     return out
 
 
@@ -349,7 +362,7 @@ def build_history_files(fleet, grid, cap, avail, planned, unplanned, now):
         return a[: hours_n * 4].reshape(hours_n, 4).mean(axis=1)
 
     hours = [T0 + timedelta(hours=k) for k in range(hours_n)]
-    first_hour = datetime(2010, 12, 15, tzinfo=UTC)
+    first_hour = paris_midnight(HISTORY_START)
     k0 = int((first_hour - T0).total_seconds() // 3600)
     last_hour = now.replace(minute=0, second=0, microsecond=0)
     months = write_hourly(hours[k0:], hmean(cap_f)[k0:], hmean(avail_f)[k0:], hmean(plan_f)[k0:],
@@ -357,8 +370,7 @@ def build_history_files(fleet, grid, cap, avail, planned, unplanned, now):
 
     # Daily (Paris days) fleet and per-reactor summaries.
     today = now.astimezone(PARIS).date()
-    first_day = date(2010, 12, 15)
-    days, bounds = day_bounds(first_day, today)
+    days, bounds = day_bounds(HISTORY_START, today)
     out_by_day = defaultdict(list)
     for key, mw in output.items():
         out_by_day[parse_ts(key).astimezone(PARIS).date()].append(mw)
@@ -436,7 +448,7 @@ def build_outlooks(fleet, by_id, now, full):
     """One row per as-of day P with the outlook for P+1 .. P+HORIZON."""
     today = now.astimezone(PARIS).date()
     existing_months = {p.stem for p in OUTLOOK_DIR.glob("*/*.csv")}
-    first_day = date(2011, 1, 1)
+    first_day = HISTORY_START
     if not full and existing_months:
         last_month = max(existing_months)
         rows = read_csv(OUTLOOK_DIR / last_month[:4] / f"{last_month}.csv")
@@ -494,14 +506,19 @@ def build_outlooks(fleet, by_id, now, full):
 # Outages table
 # --------------------------------------------------------------------------
 
+FRENCH_HINTS = re.compile(r"[éèêàçùô]| la | le | les | des | du | sera | pour ", re.I)
+
+
 def english_remark(text):
+    """The English half of EDF's bilingual remarks (the order varies)."""
     text = (text or "").strip()
-    if "--------" in text:
-        text = text.split("--------")[-1]
-    elif " / " in text and len(text) < 120:
-        text = text.split(" / ")[0]
-    text = re.sub(r"\s+", " ", text).strip()
-    return text[:300]
+    parts = [p.strip() for p in re.split(r"\n?-{4,}\n?", text) if p.strip() and p.strip() != "-"]
+    if not parts:
+        return ""
+    if len(parts) == 1 and " / " in parts[0] and len(parts[0]) < 120:
+        parts = [x.strip() for x in parts[0].split(" / ")]
+    best = min(parts, key=lambda p: len(FRENCH_HINTS.findall(f" {p} ")) / max(len(p), 1))
+    return re.sub(r"\s+", " ", best).strip()[:300]
 
 
 def build_outages(fleet, by_id):

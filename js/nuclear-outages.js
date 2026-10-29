@@ -32,9 +32,9 @@ export class NuclearOutages {
   build() {
     const y = Number(todayParis().slice(0, 4));
     const years = [];
-    for (let k = y + 1; k >= 2011; k--) years.push(k);
+    for (let k = y + 1; k >= 2015; k--) years.push(k);
     this.root.innerHTML = `
-      ${heroHtml("Nuclear outages,", "reactor by reactor.", "Every planned and unplanned outage notice, as a timeline for each reactor and as a table. The red part of a bar is how far the outage has run, or is expected to run, beyond the end date first announced.")}
+      ${heroHtml("Nuclear outages,", "reactor by reactor.", "Every planned and unplanned outage notice, as a timeline for each reactor and as a table. The amber part of a bar is how far the outage has run, or is expected to run, beyond the end date first announced.")}
       <div class="toolbar" role="group" aria-label="Outage filters">
         <div class="toolbar-row">
           <label class="field"><span>Window</span>
@@ -255,7 +255,7 @@ export class NuclearOutages {
 
     const option = (t, { forExport }) => {
       const colours = [cssVar("--st-planned"), cssVar("--st-unplanned")];
-      const danger = cssVar("--danger");
+      const overrun = cssVar("--warn");
       return {
         backgroundColor: "transparent", animation: false, useUTC: true,
         grid: forExport ? { left: 120, right: 30, top: 108, bottom: 60 } : { left: 112, right: 18, top: 10, bottom: 56 },
@@ -291,7 +291,7 @@ export class NuclearOutages {
             }];
             if (end[0] - Math.max(firstEnd[0], start[0]) > 1) {
               const x0 = Math.max(firstEnd[0], start[0]);
-              children.push({ type: "rect", shape: { x: x0, y: start[1] - h / 2, width: end[0] - x0, height: h, r: 2 }, style: { fill: danger, opacity: 0.85 } });
+              children.push({ type: "rect", shape: { x: x0, y: start[1] - h / 2, width: end[0] - x0, height: h, r: 2 }, style: { fill: overrun, opacity: 0.9 } });
             }
             return { type: "group", children };
           }
@@ -307,7 +307,7 @@ export class NuclearOutages {
       series: [],
       custom: {
         option, exportSize: height + 170,
-        legend: [{ name: "Planned", colour: "--st-planned" }, { name: "Unplanned", colour: "--st-unplanned" }, { name: "Beyond the end date first announced", colour: "--danger" }],
+        legend: [{ name: "Planned", colour: "--st-planned" }, { name: "Unplanned", colour: "--st-unplanned" }, { name: "Beyond the end date first announced", colour: "--warn" }],
         table: () => this.tableRows()
       },
       legendCaption: null,

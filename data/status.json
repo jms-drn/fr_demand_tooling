@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-10-30T13:35Z",
+ "generated_utc": "2026-10-30T13:46Z",
  "series": {
   "realised": {
    "months": [
@@ -696,11 +696,11 @@
    "last_utc": "2026-11-08T22:30Z"
   }
  },
- "last_live_update_utc": "2026-10-30T13:34Z",
+ "last_live_update_utc": "2026-10-30T13:46Z",
  "last_backfill_utc": "2026-10-26T15:47Z",
  "last_errors": [],
  "power": {
-  "updated_utc": "2026-10-30T13:34Z",
+  "updated_utc": "2026-10-30T13:45Z",
   "errors": []
  }
 }

@@ -2035,3 +2035,10 @@ Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de 
 After its restart, the plant will gradually return by various load threshold to full power.
 The ramp-up period will take at least 48 hours.
 Early restart, subject to TSO agreement."
+EC-EDF-05470-EDF-T-00095779,6,2026-10-30T19:35Z,17W100P100P0119K,CRUAS 4,915,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2026-06-12T22:00Z,2026-11-20T22:00Z,2026-06-12T22:00Z/2026-11-20T22:00Z/0/915,"Après son recouplage, la tranche remontera progressivement par palier de charge à sa pleine puissance.
+La remontée durera au moins 48h.
+Retour anticipé d'arrêt programmé, sous réserve d'accord du gestionnaire de réseau de transport.
+--------
+After its restart, the plant will gradually return by various load threshold to full power.
+The ramp-up period will take at least 48 hours.
+Early restart, subject to TSO agreement."

@@ -2054,3 +2054,8 @@ After its restart, the plant will gradually return by various load threshold to 
 The ramp-up period will take at least 48 hours
 First threshold after restart : 540 MW
 Early restart, subject to TSO agreement."
+EDF-05470_EDF_T_00312123,48,2026-10-31T08:58Z,17W100P100P0112Y,CHOOZ 2,1500,PLANNED,COMPLEMENTARY_INFORMATION,ACTIVE,2026-07-10T21:45Z,2026-11-01T11:00Z,2026-07-10T21:45Z/2026-11-01T11:00Z/0/1500,"Causes externes liées à l'environnement
+Le placement et la durée de cet arrêt pour contraintes environnementales seront modifiés en fonction de l'évolution des prévisions météorologiques
+------------
+Environmental issues
+The planning and the duration of the shutdown for environnemental issues could be reassessed according to the weather forecast"
